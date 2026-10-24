@@ -1,0 +1,30 @@
+name: release
+# Creates a GitHub release (tag v<version> + bundles + demo page) whenever package.json
+# carries a version that has no release yet. Bump "version", run `npm run build`, push.
+on:
+  push:
+    branches: [main]
+    paths: ['package.json', '.github/workflows/release.yml', '.github/release-notes.md']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Test the built bundle
+        run: npm test
+      - name: Create the release if this version has none
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          V=$(node -p "require('./package.json').version")
+          if gh release view "v$V" >/dev/null 2>&1; then echo "Release v$V already exists"; exit 0; fi
+          cp docs/index.html vsa-ro-en-demo.html
+          gh release create "v$V" \
+            dist/vsa-ro-translate.min.js dist/vsa-ro-translate.js dist/vsa-ro-translate.mjs dist/vsa-ro-translate.d.ts vsa-ro-en-demo.html \
+            --target "$GITHUB_SHA" --title "v$V" --notes-file .github/release-notes.md
