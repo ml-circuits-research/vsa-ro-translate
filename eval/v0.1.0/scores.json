@@ -1,0 +1,74 @@
+{
+ "vsa": {
+  "chrF": 72.3,
+  "BLEU": 49.7,
+  "slotRecall": 93.2,
+  "allSlots": 73.0,
+  "byDomain": {
+   "diagram": {
+    "chrF": 76.3,
+    "slotRecall": 94.1
+   },
+   "edit": {
+    "chrF": 68.3,
+    "slotRecall": 94.9
+   },
+   "animation": {
+    "chrF": 69.6,
+    "slotRecall": 93.5
+   },
+   "enterprise": {
+    "chrF": 73.8,
+    "slotRecall": 87.3
+   }
+  }
+ },
+ "naive": {
+  "chrF": 52.7,
+  "BLEU": 24.6,
+  "slotRecall": 87.1,
+  "allSlots": 52.0,
+  "byDomain": {
+   "diagram": {
+    "chrF": 54.9,
+    "slotRecall": 86.4
+   },
+   "edit": {
+    "chrF": 51.8,
+    "slotRecall": 90.3
+   },
+   "animation": {
+    "chrF": 50.0,
+    "slotRecall": 84.8
+   },
+   "enterprise": {
+    "chrF": 53.4,
+    "slotRecall": 86.2
+   }
+  }
+ },
+ "source": {
+  "chrF": 25.9,
+  "BLEU": 3.1,
+  "slotRecall": 17.7,
+  "allSlots": 0,
+  "byDomain": {
+   "diagram": {
+    "chrF": 27.4,
+    "slotRecall": 19.1
+   },
+   "edit": {
+    "chrF": 22.6,
+    "slotRecall": 14.6
+   },
+   "animation": {
+    "chrF": 23.2,
+    "slotRecall": 20.8
+   },
+   "enterprise": {
+    "chrF": 31.6,
+    "slotRecall": 16.0
+   }
+  }
+ }
+}

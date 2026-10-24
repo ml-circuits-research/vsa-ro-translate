@@ -1,0 +1,463 @@
+<title>VSA RO→EN Translator</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@80,600;80,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one working column; the console (RO | EN) is the hero, evidence and usage follow below. */
+:root {
+  --paper: #f3f5f7; --panel: #ffffff; --ink: #15202b; --muted: #5a6773; --line: #d8dee4;
+  --accent: #1f48a8; --accent-soft: #e4ebfa;
+  --vsa: #a86f00; --vsa-soft: #fbefd2; --unk: #b8402c; --unk-soft: #f8e1dc; --ok: #2c7a4b; --ok-soft: #dcefe3; --label: #5b4fb0; --label-soft: #e9e6f8;
+  --f-display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0f1419; --panel: #161d24; --ink: #e5eaef; --muted: #93a1ae; --line: #2a343e;
+  --accent: #86a6ff; --accent-soft: #1c2a4a;
+  --vsa: #f1b744; --vsa-soft: #3a2c0f; --unk: #f2846f; --unk-soft: #3d1d17; --ok: #6cc293; --ok-soft: #173325; --label: #b2a8ff; --label-soft: #272247;
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #0f1419; --panel: #161d24; --ink: #e5eaef; --muted: #93a1ae; --line: #2a343e;
+  --accent: #86a6ff; --accent-soft: #1c2a4a;
+  --vsa: #f1b744; --vsa-soft: #3a2c0f; --unk: #f2846f; --unk-soft: #3d1d17; --ok: #6cc293; --ok-soft: #173325; --label: #b2a8ff; --label-soft: #272247;
+  color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--paper); color: var(--ink); font: 15px/1.55 var(--f-body); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px; display: grid; gap: 40px; }
+h1, h2, h3 { font-family: var(--f-display); font-stretch: 80%; font-weight: 700; letter-spacing: 0.005em; text-wrap: balance; margin: 0; line-height: 1.1 }
+h1 { font-size: clamp(30px, 5vw, 44px) }
+h2 { font-size: 26px }
+h3 { font-size: 18px }
+p { margin: 0; max-width: 68ch }
+a { color: var(--accent) }
+code, .mono { font-family: var(--f-mono); font-size: 0.92em }
+.eyebrow { font: 600 12px/1 var(--f-body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted) }
+header { display: grid; gap: 10px }
+.titlerow { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px }
+.badge { font: 500 12px/1 var(--f-mono); padding: 5px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent) }
+.lede { color: var(--muted); font-size: 16px }
+
+/* console */
+.console { display: grid; gap: 14px }
+.panes { display: grid; grid-template-columns: 1fr; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); overflow: hidden }
+@media (min-width: 760px) { .panes { grid-template-columns: 1fr 1fr } .pane + .pane { border-left: 1px solid var(--line) } }
+@media (max-width: 759px) { .pane + .pane { border-top: 1px solid var(--line) } }
+.pane { display: grid; grid-template-rows: auto 1fr auto; min-width: 0 }
+.pane-head { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px 0; gap: 8px }
+textarea#ro { width: 100%; min-height: 132px; resize: vertical; border: 0; background: transparent; color: var(--ink); font: 20px/1.45 var(--f-body); padding: 10px 14px 14px; outline: none }
+#en { font: 20px/1.45 var(--f-body); padding: 10px 14px 14px; min-height: 132px; overflow-wrap: anywhere }
+#chrome-line { padding: 0 14px 12px; color: var(--muted); font-size: 14px; overflow-wrap: anywhere }
+#chrome-line b { font-weight: 600; color: var(--ink) }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; font-size: 12.5px; font-weight: 500 }
+.pill.ok { background: var(--ok-soft); color: var(--ok) }
+.pill.warn { background: var(--unk-soft); color: var(--unk) }
+.examples { display: flex; flex-wrap: wrap; gap: 8px }
+button { font: 500 14px var(--f-body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer }
+button:hover { border-color: var(--accent) }
+button:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+button.primary { background: var(--accent); color: var(--panel); border-color: var(--accent); font-weight: 600 }
+button[disabled] { opacity: .55; cursor: default }
+
+/* token lane */
+.lane { display: flex; flex-wrap: wrap; gap: 6px }
+.tok { display: inline-grid; gap: 1px; padding: 5px 8px 6px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); text-align: left; cursor: pointer; font: inherit; min-width: 0 }
+.tok .ro { font: 500 14px var(--f-body) }
+.tok .en { font: 12px var(--f-mono); color: var(--muted) }
+.tok.vsa { border-color: var(--vsa); background: var(--vsa-soft) }
+.tok.vsa .en { color: var(--vsa) }
+.tok.unknown { border-style: dashed; border-color: var(--unk); background: var(--unk-soft) }
+.tok.unknown .en { color: var(--unk) }
+.tok.label { border-color: var(--label); background: var(--label-soft) }
+.tok.phrase { border-color: var(--accent); background: var(--accent-soft) }
+.tok.sel { box-shadow: 0 0 0 2px var(--accent) }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--muted); font-size: 13px }
+.sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; border: 1px solid var(--line); vertical-align: -1px; margin-right: 5px }
+.sw.vsa { background: var(--vsa-soft); border-color: var(--vsa) } .sw.unknown { background: var(--unk-soft); border: 1px dashed var(--unk) } .sw.label { background: var(--label-soft); border-color: var(--label) } .sw.phrase { background: var(--accent-soft); border-color: var(--accent) }
+
+/* hypervector */
+.hv { display: grid; gap: 14px; grid-template-columns: 1fr; border-top: 1px solid var(--line); padding-top: 14px }
+@media (min-width: 760px) { .hv { grid-template-columns: 1fr 1fr 1fr } }
+.hv figure { margin: 0; display: grid; gap: 6px; min-width: 0 }
+.hv canvas { width: 100%; max-width: 320px; image-rendering: pixelated; border-radius: 4px; border: 1px solid var(--line); background: var(--panel) }
+.hv figcaption { font-size: 13px; color: var(--muted) }
+.hv figcaption b { color: var(--ink); font: 500 13px var(--f-mono) }
+
+/* sections */
+section { display: grid; gap: 16px }
+.cols { display: grid; gap: 16px; grid-template-columns: 1fr }
+@media (min-width: 860px) { .cols { grid-template-columns: 1fr 1fr } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: grid; gap: 12px; min-width: 0; align-content: start }
+.tablewrap { overflow-x: auto }
+table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; font-size: 14px }
+th, td { text-align: left; padding: 7px 10px 7px 0; border-bottom: 1px solid var(--line); vertical-align: top }
+th { font-weight: 600; color: var(--muted); font-size: 12.5px; letter-spacing: .02em }
+td.num, th.num { text-align: right; padding-right: 0; padding-left: 10px }
+tr.us td:first-child { font-weight: 600 }
+.bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; min-width: 60px }
+.bar > i { display: block; height: 100% ; background: var(--accent) }
+.note { color: var(--muted); font-size: 13.5px }
+#run-status { font-size: 14px; color: var(--muted); min-height: 1.4em }
+.items { display: grid; gap: 10px; max-height: 520px; overflow: auto; padding-right: 4px }
+.item { border-top: 1px solid var(--line); padding-top: 10px; display: grid; gap: 3px; font-size: 14px }
+.item .k { display: inline-block; width: 64px; color: var(--muted); font: 12px var(--f-mono) }
+.item .sr { font: 12px var(--f-mono); color: var(--muted) }
+.miss { color: var(--unk) }
+select { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 5px 8px }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+pre { margin: 0; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 12px; overflow-x: auto; font: 13px/1.5 var(--f-mono) }
+.snip { display: grid; gap: 6px; min-width: 0 }
+.snip-head { display: flex; justify-content: space-between; align-items: center; gap: 8px }
+ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 6px; max-width: 70ch }
+footer { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 6px 18px }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Hyperdimensional computing · ro → en</div>
+    <div class="titlerow"><h1>VSA RO→EN Translator</h1><span class="badge">v__VERSION__</span></div>
+    <p class="lede">Romanian commands for diagram, editing, animation and enterprise tools, translated to plain English in your browser. Under a millisecond per command, about 110&nbsp;KB of code, no model to download. Telegraphic English, built to be understood by people and by agents.</p>
+  </header>
+
+  <section class="console" aria-label="Translator">
+    <div class="panes">
+      <div class="pane">
+        <div class="pane-head"><span class="eyebrow">Romanian</span><button id="clear" type="button">Clear</button></div>
+        <textarea id="ro" spellcheck="false" aria-label="Romanian text">Adaugă-i casetei un chenar gri de 2 px si muta nodul Start cu 20 de pixeli la dreapta</textarea>
+        <div></div>
+      </div>
+      <div class="pane">
+        <div class="pane-head"><span class="eyebrow">English</span><button id="copy-en" type="button">Copy</button></div>
+        <div id="en" aria-live="polite"></div>
+        <div id="chrome-line" hidden></div>
+      </div>
+    </div>
+    <div class="meta" id="meta"></div>
+    <div class="examples" id="examples" aria-label="Examples"></div>
+    <div class="card">
+      <div class="legend"><span><span class="sw"></span>exact form</span><span><span class="sw vsa"></span>recovered by VSA (typo, missing diacritics, unseen inflection)</span><span><span class="sw phrase"></span>phrase</span><span><span class="sw label"></span>name or label, kept as is</span><span><span class="sw unknown"></span>unknown, passed through</span></div>
+      <div class="lane" id="lane"></div>
+      <div class="hv" id="hv">
+        <figure><canvas id="cv-q" width="256" height="128"></canvas><figcaption id="cap-q"></figcaption></figure>
+        <figure><canvas id="cv-m" width="256" height="128"></canvas><figcaption id="cap-m"></figcaption></figure>
+        <figure><canvas id="cv-d" width="256" height="128"></canvas><figcaption id="cap-d"></figcaption></figure>
+      </div>
+      <p class="note">Each word is a 2048-bit hypervector: a majority bundle of its character bigrams and trigrams, with letter order encoded by permutation. A word the lexicon does not contain verbatim is matched to the nearest stored form by Hamming distance. Pick any word above to see its vector and its nearest neighbour.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-bench">
+    <h2 id="h-bench">How well it works</h2>
+    <p>Measured on 160 commands written by independent agents, never used to build the lexicon. A <em>slot</em> is something an agent needs to act correctly: the action, the object, a value, a unit, a direction. chrF is the standard character-level overlap with a human reference translation (sacreBLEU settings).</p>
+    <div class="cols">
+      <div class="card">
+        <h3>Fresh set (60 commands, never seen)</h3>
+        <div class="tablewrap"><table id="t-fresh"></table></div>
+        <p class="note">The honest number. Most misses are words outside the ~800-lemma lexicon, which pass through in Romanian.</p>
+      </div>
+      <div class="card">
+        <h3>First held-out set (100 commands)</h3>
+        <div class="tablewrap"><table id="t-held"></table></div>
+        <p class="note" id="judge-note"></p>
+      </div>
+    </div>
+    <div class="cols">
+      <div class="card">
+        <h3>Knowing when it doesn't know</h3>
+        <div class="tablewrap"><table id="t-gate"></table></div>
+        <p class="note">A translation is <em>confident</em> when every content word was found (exactly or by a strong VSA match). Route the rest to a neural translator: that is the hybrid the comparison below measures.</p>
+      </div>
+      <div class="card">
+        <h3>Robustness</h3>
+        <div class="tablewrap"><table id="t-rob"></table></div>
+        <p class="note" id="rob-note"></p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-cmp">
+    <h2 id="h-cmp">Compare with Chrome, in this browser</h2>
+    <p>Desktop Chrome 138+ and Edge ship an on-device translator (the Translator API). This runs both systems on the same 160 commands and scores them the same way. Chrome downloads its Romanian model the first time.</p>
+    <div class="card">
+      <div class="controls">
+        <button class="primary" id="run" type="button">Run the comparison</button>
+        <button id="chrome-live" type="button">Also translate my text with Chrome</button>
+      </div>
+      <div id="run-status" role="status"></div>
+      <div class="tablewrap"><table id="t-live"></table></div>
+      <div class="controls" id="item-controls" hidden>
+        <label for="filter">Show</label>
+        <select id="filter">
+          <option value="all">all commands</option>
+          <option value="vsa-miss">where VSA missed a slot</option>
+          <option value="chrome-miss">where Chrome missed a slot</option>
+          <option value="unconf">where VSA was not confident</option>
+        </select>
+      </div>
+      <div class="items" id="items"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-use">
+    <h2 id="h-use">Use it</h2>
+    <div class="cols">
+      <div class="snip"><div class="snip-head"><span class="eyebrow">Browser, one script tag</span><button type="button" data-copy="s1">Copy</button></div>
+<pre id="s1">&lt;script src="https://cdn.jsdelivr.net/gh/ml-circuits-research/vsa-ro-translate@v__VERSION__/dist/vsa-ro-translate.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  VSARoTranslate.translate('Șterge toate săgețile roșii');
+  // → "Delete all the red arrows"
+&lt;/script&gt;</pre></div>
+      <div class="snip"><div class="snip-head"><span class="eyebrow">ES module</span><button type="button" data-copy="s2">Copy</button></div>
+<pre id="s2">import { translate, translateDetailed } from
+  'https://cdn.jsdelivr.net/gh/ml-circuits-research/vsa-ro-translate@v__VERSION__/dist/vsa-ro-translate.mjs';
+
+const r = translateDetailed('Exportă diagrama ca PDF');
+r.text;              // "Export the diagram as PDF"
+r.stats.confident;   // false → send to a neural fallback</pre></div>
+    </div>
+    <div class="snip"><div class="snip-head"><span class="eyebrow">Hybrid: VSA first, Chrome when unsure</span><button type="button" data-copy="s3">Copy</button></div>
+<pre id="s3">async function toEnglish(ro) {
+  const r = VSARoTranslate.translateDetailed(ro);
+  if (r.stats.confident || !('Translator' in self)) return r.text;
+  const t = await Translator.create({ sourceLanguage: 'ro', targetLanguage: 'en' }); // needs a user gesture the first time
+  return t.translate(ro);
+}</pre></div>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works</h2>
+    <div class="cols">
+      <div class="card">
+        <h3>The VSA part</h3>
+        <ul class="plain">
+          <li><b>Lexical memory.</b> About 5,500 Romanian word forms (generated from ~800 lemmas with their inflections, plus ~250 function words and ~200 phrases) each get a 2048-bit hypervector. Exact forms are found directly; anything else is cleaned up to the nearest stored vector, which absorbs missing diacritics, typos and unseen inflections.</li>
+          <li><b>Word sense.</b> Ambiguous words (<span class="mono">rulează</span>: run or play, <span class="mono">anulează</span>: undo or cancel) pick the sense whose bundled context vector best matches the sentence.</li>
+          <li>Bit-sliced majority bundling builds the whole memory in about 0.25&nbsp;s, lazily, on the first unknown word.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What it is not</h3>
+        <ul class="plain">
+          <li>Word order and grammar (noun–adjective order, genitives, clitics like <span class="mono">mută-l</span>, prepositions, questions) come from a small rule layer, not from VSA.</li>
+          <li>It is a closed-vocabulary tool. Unknown words pass through in Romanian and the result is marked not confident.</li>
+          <li>Only Romanian → English for now. Other Indo-European sources need their own lexicon and a few order rules.</li>
+          <li>Names and quoted labels (<span class="mono">nodul „Aprobare”</span>) are kept as written, because an agent has to find them on the canvas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>vsa-ro-translate v__VERSION__ · MIT</span>
+    <a href="https://github.com/ml-circuits-research/vsa-ro-translate">Source and data on GitHub</a>
+    <a href="https://developer.chrome.com/docs/ai/translator-api">Chrome Translator API</a>
+  </footer>
+</div>
+
+<script>/*__BUNDLE__*/</script>
+<script>/*__METRICS__*/</script>
+<script>/*__DATA__*/</script>
+<script>
+(function () {
+  'use strict';
+  var api = window.VSARoTranslate, D = window.VSA_DEMO_DATA, M = window.VSAMetrics;
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+
+  // ---------- console
+  var chromeTr = null, chromeSeq = 0, selected = null, last = null;
+  function translateNow() {
+    var ro = $('ro').value;
+    var r = api.translateDetailed(ro);
+    last = r;
+    $('en').textContent = r.text || '';
+    var s = r.stats;
+    var conf = s.confident
+      ? '<span class="pill ok">confident</span>'
+      : '<span class="pill warn">not confident' + (s.unknownWords.length ? ': unknown ' + esc(s.unknownWords.join(', ')) : '') + (s.weakMatches.length ? (s.unknownWords.length ? '; ' : ': ') + 'weak match ' + esc(s.weakMatches.join(', ')) : '') + '</span>';
+    $('meta').innerHTML = '<span>' + r.ms.toFixed(2) + ' ms</span><span>' + s.exact + ' exact</span><span>' + s.vsa + ' recovered by VSA</span><span>' + s.unknown + ' unknown</span>' + (ro.trim() ? conf : '');
+    var lane = '';
+    s.tokens.forEach(function (t, i) {
+      if (t.how === 'punct') return;
+      var en = t.how === 'vsa' ? (t.en + ' · ' + (t.match || '') + ' ' + (t.sim ? t.sim.toFixed(2) : '')) : (t.en || t.text);
+      lane += '<button type="button" class="tok ' + t.how + (selected === i ? ' sel' : '') + '" data-i="' + i + '"><span class="ro">' + esc(t.text) + '</span><span class="en">' + esc(en) + '</span></button>';
+    });
+    $('lane').innerHTML = lane;
+    var pick = selected != null && s.tokens[selected] ? selected : s.tokens.findIndex(function (t) { return t.how === 'vsa'; });
+    if (pick < 0) pick = s.tokens.findIndex(function (t) { return t.how === 'exact' && t.text.length >= 4; });
+    if (pick >= 0) showHV(s.tokens[pick]);
+    if (chromeTr && ro.trim()) {
+      var seq = ++chromeSeq, t0 = performance.now();
+      chromeTr.translate(ro).then(function (out) { if (seq === chromeSeq) { $('chrome-line').hidden = false; $('chrome-line').innerHTML = '<b>Chrome:</b> ' + esc(out) + ' <span class="mono">(' + (performance.now() - t0).toFixed(0) + ' ms)</span>'; } });
+    }
+  }
+  function draw(cv, bits, mode, other) {
+    var ctx = cv.getContext('2d'), W = 64, H = 32, c = 4;
+    var on = css('--ink'), off = css('--line'), bad = css('--unk'), bg = css('--panel');
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, cv.width, cv.height);
+    for (var k = 0; k < 2048; k++) {
+      var b = (bits[k >>> 5] >>> (k & 31)) & 1;
+      if (mode === 'diff') { var o = (other[k >>> 5] >>> (k & 31)) & 1; ctx.fillStyle = b !== o ? bad : off; }
+      else ctx.fillStyle = b ? on : off;
+      ctx.fillRect((k % W) * c, Math.floor(k / W) * c, c - 1, c - 1);
+    }
+  }
+  function showHV(t) {
+    var w = api.strip(t.text), m = t.match || w;
+    var q = api.encode(w), mv = api.encode(m);
+    var sim = api.similarity(w, m), diff = Math.round((1 - sim) * 2048);
+    draw($('cv-q'), q); draw($('cv-m'), mv); draw($('cv-d'), q, 'diff', mv);
+    $('cap-q').innerHTML = 'Query <b>' + esc(w) + '</b>';
+    $('cap-m').innerHTML = (t.how === 'vsa' ? 'Nearest stored form ' : 'Stored form ') + '<b>' + esc(m) + '</b>' + (t.en ? ' → ' + esc(t.en) : '');
+    $('cap-d').innerHTML = 'Differing bits <b>' + diff + ' / 2048</b>, similarity <b>' + sim.toFixed(3) + '</b>' + (w === m ? ' (exact hit)' : '') + '. Unrelated words sit near 0.50.';
+  }
+  $('lane').addEventListener('click', function (e) {
+    var b = e.target.closest('.tok'); if (!b) return;
+    selected = +b.dataset.i;
+    Array.prototype.forEach.call(document.querySelectorAll('.tok'), function (x) { x.classList.toggle('sel', x === b); });
+    showHV(last.stats.tokens[selected]);
+  });
+  var timer = null;
+  $('ro').addEventListener('input', function () { selected = null; clearTimeout(timer); timer = setTimeout(translateNow, 60); });
+  $('clear').addEventListener('click', function () { $('ro').value = ''; selected = null; translateNow(); $('ro').focus(); });
+  var EX = [
+    'Setează durata animației la 2 secunde și repetă-o în buclă',
+    'Fa cerclu rosu si mai mare',
+    'Cum export prezentarea în PDF?',
+    'Trimite imaginea în spate și blochează stratul',
+    'Adaugă un romb de decizie după al doilea pas',
+    'Pornește animația când utilizatorul dă clic pe buton',
+    'Dă-i acces de editare colegului meu',
+    'Fă titlul să apară treptat la click'
+  ];
+  $('examples').innerHTML = EX.map(function (x, i) { return '<button type="button" data-ex="' + i + '">' + esc(x) + '</button>'; }).join('');
+  $('examples').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; $('ro').value = EX[+b.dataset.ex]; selected = null; translateNow(); });
+  function copyText(text, btn) {
+    var done = function () { var o = btn.textContent; btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = o; }, 1200); };
+    try { navigator.clipboard.writeText(text).then(done, function () { selectFallback(); }); } catch (e) { selectFallback(); }
+    function selectFallback() { btn.textContent = 'Select and copy'; }
+  }
+  $('copy-en').addEventListener('click', function () { copyText($('en').textContent, this); });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function (b) {
+    b.addEventListener('click', function () {
+      var pre = $(b.dataset.copy); copyText(pre.textContent, b);
+      var sel = window.getSelection(), rg = document.createRange(); rg.selectNodeContents(pre); sel.removeAllRanges(); sel.addRange(rg);
+    });
+  });
+  translateNow();
+  // build the hypervector memory while the page is idle, so the first typo costs nothing
+  (window.requestIdleCallback || function (f) { return setTimeout(f, 300); })(function () { api.warmup(); translateNow(); });
+
+  // ---------- static results
+  var R = D.results;
+  function row(name, s, us, extra) {
+    return '<tr' + (us ? ' class="us"' : '') + '><td>' + name + '</td><td class="num">' + s.chrF.toFixed(1) + '</td><td class="num">' + s.slotRecall.toFixed(0) + '%</td><td class="num">' + s.allSlots.toFixed(0) + '%</td>' + (extra || '') + '</tr>';
+  }
+  var head = '<tr><th>System</th><th class="num">chrF</th><th class="num">Slots kept</th><th class="num">Fully correct</th></tr>';
+  if (R) {
+    $('t-fresh').innerHTML = head + row('VSA v' + D.version, R.test2_fresh.v011, true) + row('VSA v0.1.0', R.test2_fresh.v010) + row('Same lexicon, word by word', R.test2_fresh.naive);
+    $('t-held').innerHTML = head + row('VSA v0.1.0 (frozen)', R.test1_v010_heldout.vsa, true) + row('Same lexicon, word by word', R.test1_v010_heldout.naive) + row('VSA v' + D.version + ' (after error analysis)', R.test1_v011_seen.vsa);
+    var j = R.test1_v010_blind_judge;
+    $('judge-note').innerHTML = 'Blind rating by a separate model that saw only the reference and the output: an agent would act correctly on <b>' + j.vsa.executable_pct.toFixed(0) + '%</b> of VSA translations vs ' + j.naive.executable_pct.toFixed(0) + '% for word-by-word; ' + j.vsa.dist['3'] + '% read naturally. The v' + D.version + ' row is optimistic: its fixes came from looking at this set.';
+    var g = R.confidence_gate.test2;
+    $('t-gate').innerHTML = '<tr><th>Fresh set</th><th class="num">Share</th><th class="num">Slots kept</th><th class="num">Fully correct</th></tr>' +
+      '<tr class="us"><td>Confident</td><td class="num">' + g.confidentShare + '%</td><td class="num">' + g.confident.slotRecall.toFixed(0) + '%</td><td class="num">' + g.confident.allSlots.toFixed(0) + '%</td></tr>' +
+      '<tr><td>Not confident</td><td class="num">' + (100 - g.confidentShare) + '%</td><td class="num">' + g.notConfident.slotRecall.toFixed(0) + '%</td><td class="num">' + g.notConfident.allSlots.toFixed(0) + '%</td></tr>';
+    var rb = R.robustness_dev60;
+    $('t-rob').innerHTML = '<tr><th>Same 60 commands, output unchanged</th><th class="num">VSA</th><th class="num">Word by word</th></tr>' +
+      '<tr><td>Diacritics removed</td><td class="num">' + rb.noDiacritics.vsa + '/60</td><td class="num">' + rb.noDiacritics.naive + '/60</td></tr>' +
+      '<tr class="us"><td>Diacritics removed + one typo</td><td class="num">' + rb.noDiacriticsPlusOneTypo.vsa + '/60</td><td class="num">' + rb.noDiacriticsPlusOneTypo.naive + '/60</td></tr>';
+    $('rob-note').innerHTML = 'On synthetic single-letter typos the VSA memory recovers the right word ' + R.calibration.typoRecovered + ' times (wrong word ' + R.calibration.typoWrongMatch + '). It also wrongly matches ' + R.calibration.outOfLexiconFalseMatch + ' words that are not in the lexicon at all, which is why weak matches lower the confidence flag.';
+  }
+
+  // ---------- live comparison
+  var SETS = D.test1.map(function (x) { return Object.assign({ set: 1 }, x); }).concat(D.test2.map(function (x) { return Object.assign({ set: 2 }, x); }));
+  function status(t) { $('run-status').textContent = t; }
+  function chromeSupportMsg() {
+    if (!('Translator' in self)) return 'This browser has no built-in Translator API, so only VSA runs. Chrome’s API needs desktop Chrome 138+ or Edge, in a top-level page (embedded previews block it). Open this page from GitHub in desktop Chrome to compare.';
+    return null;
+  }
+  async function getChrome() {
+    if (chromeTr) return chromeTr;
+    var msg = chromeSupportMsg(); if (msg) throw new Error(msg);
+    var av = await Translator.availability({ sourceLanguage: 'ro', targetLanguage: 'en' });
+    if (av === 'unavailable') throw new Error('Chrome reports that Romanian → English is unavailable on this device.');
+    chromeTr = await Translator.create({ sourceLanguage: 'ro', targetLanguage: 'en', monitor: function (m) { m.addEventListener('downloadprogress', function (e) { status('Downloading Chrome’s Romanian model: ' + Math.round(e.loaded * 100) + '%'); }); } });
+    return chromeTr;
+  }
+  function score(rows, key) {
+    var outs = rows.map(function (r) { return r[key]; }), refs = rows.map(function (r) { return r.ref; });
+    var rec = rows.map(function (r) { return M.slotRecall(r[key], r.keys); });
+    var ms = rows.map(function (r) { return r[key + 'Ms']; }).filter(function (x) { return x != null; }).sort(function (a, b) { return a - b; });
+    return { chrF: M.chrfCorpus(outs, refs), slotRecall: 100 * rec.reduce(function (a, b) { return a + b; }, 0) / rows.length, allSlots: 100 * rec.filter(function (x) { return x === 1; }).length / rows.length, ms: ms.length ? ms[Math.floor(ms.length / 2)] : null };
+  }
+  var LIVE = null;
+  function renderLive() {
+    if (!LIVE) return;
+    var rows = LIVE, hasC = rows[0].chrome != null;
+    var parts = [[1, 'Set 1 (100)'], [2, 'Fresh set 2 (60)']];
+    var h = '<tr><th>System</th><th>Set</th><th class="num">chrF</th><th class="num">Slots kept</th><th class="num">Fully correct</th><th class="num">Median ms</th></tr>';
+    parts.forEach(function (p) {
+      var sub = rows.filter(function (r) { return r.set === p[0]; }); if (!sub.length) return;
+      var line = function (name, key, us) { var s = score(sub, key); return '<tr' + (us ? ' class="us"' : '') + '><td>' + name + '</td><td>' + p[1] + '</td><td class="num">' + s.chrF.toFixed(1) + '</td><td class="num">' + s.slotRecall.toFixed(0) + '%</td><td class="num">' + s.allSlots.toFixed(0) + '%</td><td class="num">' + (s.ms != null ? s.ms.toFixed(s.ms < 10 ? 2 : 0) : '–') + '</td></tr>'; };
+      h += line('VSA', 'vsa', true);
+      if (hasC) { h += line('Chrome Translator', 'chrome'); h += line('Hybrid (VSA if confident, else Chrome)', 'hybrid'); }
+    });
+    $('t-live').innerHTML = h;
+    $('item-controls').hidden = false;
+    renderItems();
+  }
+  function renderItems() {
+    var f = $('filter').value, rows = LIVE || [];
+    var hasC = rows.length && rows[0].chrome != null;
+    var list = rows.filter(function (r) {
+      if (f === 'vsa-miss') return M.slotRecall(r.vsa, r.keys) < 1;
+      if (f === 'chrome-miss') return hasC && M.slotRecall(r.chrome, r.keys) < 1;
+      if (f === 'unconf') return !r.conf;
+      return true;
+    });
+    $('items').innerHTML = list.slice(0, 200).map(function (r) {
+      var sv = M.slotRecall(r.vsa, r.keys), sc = hasC ? M.slotRecall(r.chrome, r.keys) : null;
+      return '<div class="item"><div><span class="k">' + r.id + '</span>' + esc(r.ro) + '</div>' +
+        '<div><span class="k">ref</span>' + esc(r.ref) + '</div>' +
+        '<div class="' + (sv < 1 ? 'miss' : '') + '"><span class="k">VSA</span>' + esc(r.vsa) + ' <span class="sr">' + Math.round(sv * 100) + '% slots' + (r.conf ? '' : ', not confident') + '</span></div>' +
+        (hasC ? '<div class="' + (sc < 1 ? 'miss' : '') + '"><span class="k">Chrome</span>' + esc(r.chrome) + ' <span class="sr">' + Math.round(sc * 100) + '% slots</span></div>' : '') + '</div>';
+    }).join('') || '<p class="note">Nothing to show for this filter.</p>';
+  }
+  $('filter').addEventListener('change', renderItems);
+  $('run').addEventListener('click', async function () {
+    var btn = this; btn.disabled = true;
+    var tr = null, chromeErr = null;
+    try { tr = await getChrome(); } catch (e) { chromeErr = e.message; }
+    var rows = [];
+    for (var i = 0; i < SETS.length; i++) {
+      var it = SETS[i], t0 = performance.now();
+      var r = api.translateDetailed(it.ro);
+      var row = { set: it.set, id: it.id, ro: it.ro, ref: it.ref, keys: it.keys, vsa: r.text, vsaMs: performance.now() - t0, conf: r.stats.confident };
+      if (tr) {
+        status('Chrome is translating ' + (i + 1) + ' / ' + SETS.length + '…');
+        var t1 = performance.now();
+        try { row.chrome = await tr.translate(it.ro); } catch (e) { row.chrome = ''; }
+        row.chromeMs = performance.now() - t1;
+        row.hybrid = row.conf ? row.vsa : row.chrome;
+        row.hybridMs = row.conf ? row.vsaMs : row.vsaMs + row.chromeMs;
+      }
+      rows.push(row);
+    }
+    LIVE = rows;
+    status(tr ? 'Done: ' + rows.length + ' commands, both systems.' : 'VSA done on ' + rows.length + ' commands. ' + (chromeErr || ''));
+    renderLive(); btn.disabled = false;
+  });
+  $('chrome-live').addEventListener('click', async function () {
+    var btn = this;
+    try { await getChrome(); btn.disabled = true; btn.textContent = 'Chrome is on'; status('Chrome translator ready.'); translateNow(); }
+    catch (e) { status(e.message); }
+  });
+  if (chromeSupportMsg()) { status(chromeSupportMsg()); }
+})();
+</script>

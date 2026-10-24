@@ -1,0 +1,1228 @@
+{
+ "v0.1.0": {
+  "vsa": {
+   "n": 100,
+   "dist": {
+    "0": 0,
+    "1": 15,
+    "2": 52,
+    "3": 33
+   },
+   "mean": 2.18,
+   "executable_pct": 85.0
+  },
+  "naive": {
+   "n": 100,
+   "dist": {
+    "0": 1,
+    "1": 37,
+    "2": 59,
+    "3": 3
+   },
+   "mean": 1.64,
+   "executable_pct": 62.0
+  }
+ },
+ "ratings": {
+  "J001": {
+   "score": 2,
+   "note": "'on' instead of 'to'; destination slightly ambiguous",
+   "sys": "vsa",
+   "id": "T034"
+  },
+  "J002": {
+   "score": 1,
+   "note": "Garbled; template creation recognizable, basis unclear",
+   "sys": "naive",
+   "id": "T094"
+  },
+  "J003": {
+   "score": 2,
+   "note": "Correct, telegraphic",
+   "sys": "naive",
+   "id": "T051"
+  },
+  "J004": {
+   "score": 0,
+   "note": "Main verb 'Retrageti' untranslated; action missing",
+   "sys": "naive",
+   "id": "T097"
+  },
+  "J005": {
+   "score": 2,
+   "note": "Lock background correct; purpose clause garbled",
+   "sys": "naive",
+   "id": "T056"
+  },
+  "J006": {
+   "score": 2,
+   "note": "Correct but awkward phrasing",
+   "sys": "naive",
+   "id": "T061"
+  },
+  "J007": {
+   "score": 2,
+   "note": "Correct; Romanian name kept, odd word order",
+   "sys": "naive",
+   "id": "T007"
+  },
+  "J008": {
+   "score": 3,
+   "note": "Identical to reference",
+   "sys": "vsa",
+   "id": "T002"
+  },
+  "J009": {
+   "score": 3,
+   "note": "Same meaning, natural",
+   "sys": "vsa",
+   "id": "T033"
+  },
+  "J010": {
+   "score": 2,
+   "note": "'twice larger' awkward but clear",
+   "sys": "vsa",
+   "id": "T023"
+  },
+  "J011": {
+   "score": 2,
+   "note": "Correct, telegraphic",
+   "sys": "vsa",
+   "id": "T069"
+  },
+  "J012": {
+   "score": 2,
+   "note": "'included fonts' slightly ambiguous for embedded",
+   "sys": "vsa",
+   "id": "T086"
+  },
+  "J013": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T065"
+  },
+  "J014": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T039"
+  },
+  "J015": {
+   "score": 2,
+   "note": "Draw animation recognizable, awkward",
+   "sys": "vsa",
+   "id": "T080"
+  },
+  "J016": {
+   "score": 1,
+   "note": "'input' for entrance; animation type unclear",
+   "sys": "naive",
+   "id": "T084"
+  },
+  "J017": {
+   "score": 1,
+   "note": "'two or more large' wrong scale value",
+   "sys": "naive",
+   "id": "T023"
+  },
+  "J018": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T066"
+  },
+  "J019": {
+   "score": 3,
+   "note": "Slight vs soft shadow, fine",
+   "sys": "vsa",
+   "id": "T016"
+  },
+  "J020": {
+   "score": 2,
+   "note": "Correct, slightly awkward",
+   "sys": "naive",
+   "id": "T002"
+  },
+  "J021": {
+   "score": 1,
+   "note": "'desenare' untranslated; animation type missing",
+   "sys": "naive",
+   "id": "T080"
+  },
+  "J022": {
+   "score": 1,
+   "note": "Condition garbled double negative",
+   "sys": "naive",
+   "id": "T008"
+  },
+  "J023": {
+   "score": 1,
+   "note": "Lane mistranslated as color/clear",
+   "sys": "vsa",
+   "id": "T022"
+  },
+  "J024": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T064"
+  },
+  "J025": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T094"
+  },
+  "J026": {
+   "score": 2,
+   "note": "Awkward word order, clear",
+   "sys": "vsa",
+   "id": "T082"
+  },
+  "J027": {
+   "score": 2,
+   "note": "Lock position correct; purpose garbled",
+   "sys": "naive",
+   "id": "T024"
+  },
+  "J028": {
+   "score": 2,
+   "note": "Correct action; 'greseala' untranslated, nonessential",
+   "sys": "vsa",
+   "id": "T056"
+  },
+  "J029": {
+   "score": 1,
+   "note": "'doilea' untranslated; which node missing",
+   "sys": "naive",
+   "id": "T003"
+  },
+  "J030": {
+   "score": 2,
+   "note": "'pt' abbreviation left; clear",
+   "sys": "vsa",
+   "id": "T098"
+  },
+  "J031": {
+   "score": 1,
+   "note": "Garbled; 'right' for straight, untranslated words",
+   "sys": "naive",
+   "id": "T019"
+  },
+  "J032": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T062"
+  },
+  "J033": {
+   "score": 3,
+   "note": "Department name kept, natural",
+   "sys": "vsa",
+   "id": "T007"
+  },
+  "J034": {
+   "score": 2,
+   "note": "Understandable, 'unul' untranslated, awkward",
+   "sys": "vsa",
+   "id": "T019"
+  },
+  "J035": {
+   "score": 2,
+   "note": "Correct meaning, broken grammar",
+   "sys": "naive",
+   "id": "T077"
+  },
+  "J036": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T035"
+  },
+  "J037": {
+   "score": 2,
+   "note": "'text select' awkward, correct",
+   "sys": "naive",
+   "id": "T031"
+  },
+  "J038": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T098"
+  },
+  "J039": {
+   "score": 2,
+   "note": "Awkward word order, correct",
+   "sys": "vsa",
+   "id": "T017"
+  },
+  "J040": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T087"
+  },
+  "J041": {
+   "score": 2,
+   "note": "Telegraphic, meaning recoverable",
+   "sys": "naive",
+   "id": "T086"
+  },
+  "J042": {
+   "score": 2,
+   "note": "Word order awkward, correct",
+   "sys": "vsa",
+   "id": "T031"
+  },
+  "J043": {
+   "score": 2,
+   "note": "'in red' preposition error",
+   "sys": "vsa",
+   "id": "T006"
+  },
+  "J044": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T073"
+  },
+  "J045": {
+   "score": 2,
+   "note": "Garbled but pulse loop clear",
+   "sys": "vsa",
+   "id": "T081"
+  },
+  "J046": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T027"
+  },
+  "J047": {
+   "score": 2,
+   "note": "'forward' odd but delay before logo inferable",
+   "sys": "naive",
+   "id": "T063"
+  },
+  "J048": {
+   "score": 1,
+   "note": "Rounding action lost; 'raza' untranslated",
+   "sys": "vsa",
+   "id": "T054"
+  },
+  "J049": {
+   "score": 2,
+   "note": "Correct, awkward",
+   "sys": "naive",
+   "id": "T037"
+  },
+  "J050": {
+   "score": 1,
+   "note": "'in afara' untranslated; except condition missing",
+   "sys": "naive",
+   "id": "T057"
+  },
+  "J051": {
+   "score": 1,
+   "note": "'doilea' untranslated; target paragraph missing",
+   "sys": "naive",
+   "id": "T053"
+  },
+  "J052": {
+   "score": 2,
+   "note": "Broken grammar, remove underline clear",
+   "sys": "naive",
+   "id": "T048"
+  },
+  "J053": {
+   "score": 1,
+   "note": "'gray close' wrong for dark gray; typo",
+   "sys": "naive",
+   "id": "T052"
+  },
+  "J054": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T073"
+  },
+  "J055": {
+   "score": 1,
+   "note": "'culoarul' (lane) untranslated",
+   "sys": "naive",
+   "id": "T022"
+  },
+  "J056": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T001"
+  },
+  "J057": {
+   "score": 2,
+   "note": "Garbled but pulse loop clear",
+   "sys": "naive",
+   "id": "T081"
+  },
+  "J058": {
+   "score": 1,
+   "note": "'Collapse' wrong verb for revoke",
+   "sys": "vsa",
+   "id": "T097"
+  },
+  "J059": {
+   "score": 2,
+   "note": "Word order awkward",
+   "sys": "vsa",
+   "id": "T009"
+  },
+  "J060": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T041"
+  },
+  "J061": {
+   "score": 1,
+   "note": "'gray close' wrong for dark gray",
+   "sys": "vsa",
+   "id": "T052"
+  },
+  "J062": {
+   "score": 2,
+   "note": "'on vertical' telegraphic",
+   "sys": "vsa",
+   "id": "T020"
+  },
+  "J063": {
+   "score": 2,
+   "note": "'and on' awkward for 'also'",
+   "sys": "vsa",
+   "id": "T079"
+  },
+  "J064": {
+   "score": 2,
+   "note": "'view right' awkward, correct",
+   "sys": "vsa",
+   "id": "T089"
+  },
+  "J065": {
+   "score": 2,
+   "note": "Hover phrased awkwardly, correct",
+   "sys": "naive",
+   "id": "T068"
+  },
+  "J066": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T040"
+  },
+  "J067": {
+   "score": 1,
+   "note": "'yellow open' wrong for light yellow",
+   "sys": "naive",
+   "id": "T058"
+  },
+  "J068": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T010"
+  },
+  "J069": {
+   "score": 2,
+   "note": "Double negative awkward, meaning clear",
+   "sys": "vsa",
+   "id": "T008"
+  },
+  "J070": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T089"
+  },
+  "J071": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T074"
+  },
+  "J072": {
+   "score": 1,
+   "note": "'ieri' untranslated; day missing",
+   "sys": "naive",
+   "id": "T090"
+  },
+  "J073": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T033"
+  },
+  "J074": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T043"
+  },
+  "J075": {
+   "score": 1,
+   "note": "'vitzea' (speed) untranslated",
+   "sys": "naive",
+   "id": "T083"
+  },
+  "J076": {
+   "score": 2,
+   "note": "Lock correct; purpose clause garbled",
+   "sys": "vsa",
+   "id": "T024"
+  },
+  "J077": {
+   "score": 2,
+   "note": "Slightly telegraphic, correct",
+   "sys": "vsa",
+   "id": "T053"
+  },
+  "J078": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "naive",
+   "id": "T040"
+  },
+  "J079": {
+   "score": 2,
+   "note": "Awkward word order, correct",
+   "sys": "vsa",
+   "id": "T028"
+  },
+  "J080": {
+   "score": 1,
+   "note": "'expira' untranslated, key property",
+   "sys": "vsa",
+   "id": "T099"
+  },
+  "J081": {
+   "score": 1,
+   "note": "'in jurul csetei' untranslated; target missing",
+   "sys": "naive",
+   "id": "T043"
+  },
+  "J082": {
+   "score": 1,
+   "note": "Verb missing; meaning muddled",
+   "sys": "vsa",
+   "id": "T060"
+  },
+  "J083": {
+   "score": 1,
+   "note": "'calculator' wrong source; position garbled",
+   "sys": "naive",
+   "id": "T055"
+  },
+  "J084": {
+   "score": 2,
+   "note": "Garbled but slide from left clear",
+   "sys": "naive",
+   "id": "T067"
+  },
+  "J085": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T072"
+  },
+  "J086": {
+   "score": 2,
+   "note": "Broken grammar, correct",
+   "sys": "naive",
+   "id": "T017"
+  },
+  "J087": {
+   "score": 2,
+   "note": "'which exit' grammar error",
+   "sys": "vsa",
+   "id": "T010"
+  },
+  "J088": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T071"
+  },
+  "J089": {
+   "score": 1,
+   "note": "'last animation' replaces duration",
+   "sys": "naive",
+   "id": "T062"
+  },
+  "J090": {
+   "score": 2,
+   "note": "Very garbled but meaning recoverable",
+   "sys": "naive",
+   "id": "T088"
+  },
+  "J091": {
+   "score": 2,
+   "note": "Broken grammar, correct",
+   "sys": "naive",
+   "id": "T032"
+  },
+  "J092": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T042"
+  },
+  "J093": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T075"
+  },
+  "J094": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T051"
+  },
+  "J095": {
+   "score": 1,
+   "note": "'upload page' wrong trigger; garbled",
+   "sys": "naive",
+   "id": "T078"
+  },
+  "J096": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T037"
+  },
+  "J097": {
+   "score": 2,
+   "note": "Broken grammar, clear",
+   "sys": "naive",
+   "id": "T014"
+  },
+  "J098": {
+   "score": 2,
+   "note": "'in' instead of 'to'",
+   "sys": "vsa",
+   "id": "T093"
+  },
+  "J099": {
+   "score": 2,
+   "note": "'outside of' awkward for except",
+   "sys": "vsa",
+   "id": "T057"
+  },
+  "J100": {
+   "score": 1,
+   "note": "'tuturor' untranslated; exception clause garbled",
+   "sys": "naive",
+   "id": "T026"
+  },
+  "J101": {
+   "score": 2,
+   "note": "'give it its' awkward, correct",
+   "sys": "vsa",
+   "id": "T088"
+  },
+  "J102": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T003"
+  },
+  "J103": {
+   "score": 1,
+   "note": "'Duplicate' instead of double",
+   "sys": "naive",
+   "id": "T015"
+  },
+  "J104": {
+   "score": 2,
+   "note": "Telegraphic; filename split by space",
+   "sys": "naive",
+   "id": "T092"
+  },
+  "J105": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T050"
+  },
+  "J106": {
+   "score": 2,
+   "note": "'to the back of' slightly awkward",
+   "sys": "vsa",
+   "id": "T050"
+  },
+  "J107": {
+   "score": 2,
+   "note": "'in' for 'to', telegraphic",
+   "sys": "naive",
+   "id": "T066"
+  },
+  "J108": {
+   "score": 2,
+   "note": "Grammar error, correct",
+   "sys": "vsa",
+   "id": "T063"
+  },
+  "J109": {
+   "score": 1,
+   "note": "'months' for Monday; untranslated word",
+   "sys": "vsa",
+   "id": "T100"
+  },
+  "J110": {
+   "score": 2,
+   "note": "Hover phrased awkwardly",
+   "sys": "vsa",
+   "id": "T068"
+  },
+  "J111": {
+   "score": 1,
+   "note": "'ieri' untranslated; day missing",
+   "sys": "vsa",
+   "id": "T090"
+  },
+  "J112": {
+   "score": 2,
+   "note": "'fade effect in' awkward",
+   "sys": "vsa",
+   "id": "T061"
+  },
+  "J113": {
+   "score": 2,
+   "note": "'to this to an arrow' awkward",
+   "sys": "vsa",
+   "id": "T018"
+  },
+  "J114": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T025"
+  },
+  "J115": {
+   "score": 1,
+   "note": "'3 or' garbled count; bullet vs dot",
+   "sys": "naive",
+   "id": "T085"
+  },
+  "J116": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T070"
+  },
+  "J117": {
+   "score": 2,
+   "note": "Garbled but delete last keyframe clear",
+   "sys": "naive",
+   "id": "T075"
+  },
+  "J118": {
+   "score": 2,
+   "note": "'on the left' slightly off",
+   "sys": "vsa",
+   "id": "T067"
+  },
+  "J119": {
+   "score": 2,
+   "note": "Broken grammar, correct",
+   "sys": "naive",
+   "id": "T064"
+  },
+  "J120": {
+   "score": 1,
+   "note": "Garbled direction and spacing",
+   "sys": "naive",
+   "id": "T011"
+  },
+  "J121": {
+   "score": 2,
+   "note": "Broken grammar, clear",
+   "sys": "naive",
+   "id": "T041"
+  },
+  "J122": {
+   "score": 2,
+   "note": "'of on' awkward",
+   "sys": "naive",
+   "id": "T039"
+  },
+  "J123": {
+   "score": 1,
+   "note": "'denumeste' untranslated; naming verb missing",
+   "sys": "naive",
+   "id": "T005"
+  },
+  "J124": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T042"
+  },
+  "J125": {
+   "score": 1,
+   "note": "'vitzea' (speed) untranslated",
+   "sys": "vsa",
+   "id": "T083"
+  },
+  "J126": {
+   "score": 1,
+   "note": "'margin' wrong property for border",
+   "sys": "naive",
+   "id": "T060"
+  },
+  "J127": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T045"
+  },
+  "J128": {
+   "score": 2,
+   "note": "'format square' awkward",
+   "sys": "vsa",
+   "id": "T035"
+  },
+  "J129": {
+   "score": 1,
+   "note": "'nodruile' untranslated object",
+   "sys": "naive",
+   "id": "T027"
+  },
+  "J130": {
+   "score": 2,
+   "note": "Awkward, correct",
+   "sys": "vsa",
+   "id": "T046"
+  },
+  "J131": {
+   "score": 2,
+   "note": "Awkward, correct",
+   "sys": "vsa",
+   "id": "T048"
+  },
+  "J132": {
+   "score": 2,
+   "note": "'in' for 'to', telegraphic",
+   "sys": "naive",
+   "id": "T021"
+  },
+  "J133": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T047"
+  },
+  "J134": {
+   "score": 2,
+   "note": "'Mirror on horizontal' awkward",
+   "sys": "vsa",
+   "id": "T059"
+  },
+  "J135": {
+   "score": 1,
+   "note": "'months' for Monday; untranslated word",
+   "sys": "naive",
+   "id": "T100"
+  },
+  "J136": {
+   "score": 2,
+   "note": "'and on' awkward for 'also'",
+   "sys": "naive",
+   "id": "T079"
+  },
+  "J137": {
+   "score": 2,
+   "note": "Curved clear; 'in loc' untranslated, 'rights'",
+   "sys": "naive",
+   "id": "T013"
+  },
+  "J138": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T091"
+  },
+  "J139": {
+   "score": 2,
+   "note": "'of to' garbled but clear",
+   "sys": "naive",
+   "id": "T074"
+  },
+  "J140": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T038"
+  },
+  "J141": {
+   "score": 1,
+   "note": "Step label 'Comanda' translated to 'the command'",
+   "sys": "vsa",
+   "id": "T030"
+  },
+  "J142": {
+   "score": 2,
+   "note": "'as the image' awkward",
+   "sys": "vsa",
+   "id": "T077"
+  },
+  "J143": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T009"
+  },
+  "J144": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "naive",
+   "id": "T025"
+  },
+  "J145": {
+   "score": 2,
+   "note": "Slightly awkward, correct",
+   "sys": "vsa",
+   "id": "T047"
+  },
+  "J146": {
+   "score": 1,
+   "note": "'of three or' garbled count",
+   "sys": "naive",
+   "id": "T038"
+  },
+  "J147": {
+   "score": 1,
+   "note": "'treilea' untranslated; cycle number missing",
+   "sys": "naive",
+   "id": "T071"
+  },
+  "J148": {
+   "score": 2,
+   "note": "'by 40 px' awkward",
+   "sys": "vsa",
+   "id": "T011"
+  },
+  "J149": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T049"
+  },
+  "J150": {
+   "score": 2,
+   "note": "Awkward word order, correct",
+   "sys": "naive",
+   "id": "T016"
+  },
+  "J151": {
+   "score": 1,
+   "note": "'secuda' untranslated; time unit missing",
+   "sys": "naive",
+   "id": "T069"
+  },
+  "J152": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T059"
+  },
+  "J153": {
+   "score": 2,
+   "note": "Broken grammar, correct",
+   "sys": "naive",
+   "id": "T006"
+  },
+  "J154": {
+   "score": 2,
+   "note": "'on' instead of 'to'",
+   "sys": "naive",
+   "id": "T034"
+  },
+  "J155": {
+   "score": 2,
+   "note": "Slightly awkward, correct",
+   "sys": "vsa",
+   "id": "T045"
+  },
+  "J156": {
+   "score": 2,
+   "note": "Broken grammar, correct",
+   "sys": "naive",
+   "id": "T046"
+  },
+  "J157": {
+   "score": 2,
+   "note": "'rights' for straight, curved clear",
+   "sys": "vsa",
+   "id": "T013"
+  },
+  "J158": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T049"
+  },
+  "J159": {
+   "score": 2,
+   "note": "Filename split by space; 'in'",
+   "sys": "vsa",
+   "id": "T092"
+  },
+  "J160": {
+   "score": 2,
+   "note": "'archive zip' word order",
+   "sys": "vsa",
+   "id": "T096"
+  },
+  "J161": {
+   "score": 2,
+   "note": "'over all' awkward",
+   "sys": "vsa",
+   "id": "T044"
+  },
+  "J162": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "naive",
+   "id": "T091"
+  },
+  "J163": {
+   "score": 2,
+   "note": "Telegraphic",
+   "sys": "naive",
+   "id": "T020"
+  },
+  "J164": {
+   "score": 1,
+   "note": "'3 or' garbled count",
+   "sys": "vsa",
+   "id": "T085"
+  },
+  "J165": {
+   "score": 2,
+   "note": "'over all' awkward",
+   "sys": "naive",
+   "id": "T044"
+  },
+  "J166": {
+   "score": 1,
+   "note": "Folder name translated to 'reports'",
+   "sys": "naive",
+   "id": "T093"
+  },
+  "J167": {
+   "score": 2,
+   "note": "'in' for 'to'",
+   "sys": "vsa",
+   "id": "T021"
+  },
+  "J168": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T001"
+  },
+  "J169": {
+   "score": 2,
+   "note": "'You rog' leftover, correct values",
+   "sys": "naive",
+   "id": "T036"
+  },
+  "J170": {
+   "score": 2,
+   "note": "'to 300 ms distances' awkward",
+   "sys": "vsa",
+   "id": "T076"
+  },
+  "J171": {
+   "score": 1,
+   "note": "'yellow open' wrong for light yellow",
+   "sys": "vsa",
+   "id": "T058"
+  },
+  "J172": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T029"
+  },
+  "J173": {
+   "score": 1,
+   "note": "'raza' (radius) untranslated",
+   "sys": "naive",
+   "id": "T054"
+  },
+  "J174": {
+   "score": 2,
+   "note": "Garbled but meaning recoverable",
+   "sys": "naive",
+   "id": "T096"
+  },
+  "J175": {
+   "score": 2,
+   "note": "Awkward construction, correct",
+   "sys": "vsa",
+   "id": "T084"
+  },
+  "J176": {
+   "score": 2,
+   "note": "'tuturor' leftover; meaning recoverable",
+   "sys": "vsa",
+   "id": "T026"
+  },
+  "J177": {
+   "score": 1,
+   "note": "'of to start' garbles from-beginning",
+   "sys": "naive",
+   "id": "T072"
+  },
+  "J178": {
+   "score": 1,
+   "note": "'expira' untranslated, key property",
+   "sys": "naive",
+   "id": "T099"
+  },
+  "J179": {
+   "score": 1,
+   "note": "'upload of the page' wrong trigger",
+   "sys": "vsa",
+   "id": "T078"
+  },
+  "J180": {
+   "score": 2,
+   "note": "'frame key' awkward",
+   "sys": "naive",
+   "id": "T065"
+  },
+  "J181": {
+   "score": 1,
+   "note": "Step label 'Comanda' translated to 'command'",
+   "sys": "naive",
+   "id": "T030"
+  },
+  "J182": {
+   "score": 1,
+   "note": "'page of two' ambiguous page",
+   "sys": "naive",
+   "id": "T028"
+  },
+  "J183": {
+   "score": 2,
+   "note": "Telegraphic, 'rog' leftover",
+   "sys": "naive",
+   "id": "T012"
+  },
+  "J184": {
+   "score": 2,
+   "note": "Broken grammar, correct",
+   "sys": "naive",
+   "id": "T004"
+  },
+  "J185": {
+   "score": 2,
+   "note": "Naming phrase slightly ambiguous",
+   "sys": "vsa",
+   "id": "T005"
+  },
+  "J186": {
+   "score": 1,
+   "note": "'in calculate' garbles source",
+   "sys": "vsa",
+   "id": "T055"
+  },
+  "J187": {
+   "score": 1,
+   "note": "'unul after altul' untranslated sequencing",
+   "sys": "naive",
+   "id": "T076"
+  },
+  "J188": {
+   "score": 2,
+   "note": "Awkward, correct",
+   "sys": "vsa",
+   "id": "T012"
+  },
+  "J189": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T070"
+  },
+  "J190": {
+   "score": 2,
+   "note": "Broken grammar, clear",
+   "sys": "naive",
+   "id": "T087"
+  },
+  "J191": {
+   "score": 2,
+   "note": "Archaic word order",
+   "sys": "vsa",
+   "id": "T014"
+  },
+  "J192": {
+   "score": 1,
+   "note": "'the last date' garbles meaning",
+   "sys": "vsa",
+   "id": "T095"
+  },
+  "J193": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T018"
+  },
+  "J194": {
+   "score": 2,
+   "note": "Telegraphic, correct",
+   "sys": "naive",
+   "id": "T029"
+  },
+  "J195": {
+   "score": 2,
+   "note": "Slightly awkward",
+   "sys": "vsa",
+   "id": "T032"
+  },
+  "J196": {
+   "score": 3,
+   "note": "Identical",
+   "sys": "vsa",
+   "id": "T036"
+  },
+  "J197": {
+   "score": 1,
+   "note": "'last date' garbles meaning",
+   "sys": "naive",
+   "id": "T095"
+  },
+  "J198": {
+   "score": 2,
+   "note": "'on horizontal' awkward",
+   "sys": "vsa",
+   "id": "T004"
+  },
+  "J199": {
+   "score": 3,
+   "note": "Same meaning",
+   "sys": "vsa",
+   "id": "T015"
+  },
+  "J200": {
+   "score": 2,
+   "note": "Broken grammar, meaning recoverable",
+   "sys": "naive",
+   "id": "T082"
+  }
+ }
+}

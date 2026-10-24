@@ -1,0 +1,2720 @@
+[
+ {
+  "id": "T001",
+  "domain": "diagram",
+  "ro": "Adaugă un dreptunghi albastru în centrul paginii.",
+  "ref": "Add a blue rectangle in the center of the page.",
+  "keys": [
+   [
+    "add",
+    "insert",
+    "create",
+    "place"
+   ],
+   [
+    "rectangle"
+   ],
+   [
+    "blue"
+   ],
+   [
+    "center",
+    "centre",
+    "middle"
+   ],
+   [
+    "page",
+    "canvas"
+   ]
+  ]
+ },
+ {
+  "id": "T002",
+  "domain": "diagram",
+  "ro": "Conectează nodul „Start” cu nodul „Aprobare” printr-o săgeată.",
+  "ref": "Connect the \"Start\" node to the \"Aprobare\" node with an arrow.",
+  "keys": [
+   [
+    "connect",
+    "link",
+    "join"
+   ],
+   [
+    "start"
+   ],
+   [
+    "aprobare",
+    "approval"
+   ],
+   [
+    "arrow"
+   ]
+  ]
+ },
+ {
+  "id": "T003",
+  "domain": "diagram",
+  "ro": "muta al doilea nod cu 20 de pixeli la dreapta",
+  "ref": "Move the second node 20 pixels to the right.",
+  "keys": [
+   [
+    "move",
+    "shift",
+    "nudge"
+   ],
+   [
+    "second",
+    "2nd"
+   ],
+   [
+    "node"
+   ],
+   [
+    "20"
+   ],
+   [
+    "pixels",
+    "pixel",
+    "px"
+   ],
+   [
+    "right"
+   ]
+  ]
+ },
+ {
+  "id": "T004",
+  "domain": "diagram",
+  "ro": "Poți să aliniezi toate casetele pe orizontală?",
+  "ref": "Can you align all the boxes horizontally?",
+  "keys": [
+   [
+    "align"
+   ],
+   [
+    "all"
+   ],
+   [
+    "boxes",
+    "box"
+   ],
+   [
+    "horizontally",
+    "horizontal"
+   ]
+  ]
+ },
+ {
+  "id": "T005",
+  "domain": "diagram",
+  "ro": "Grupează primele trei forme și denumește grupul „Intrare”.",
+  "ref": "Group the first three shapes and name the group \"Intrare\".",
+  "keys": [
+   [
+    "group"
+   ],
+   [
+    "first three",
+    "first 3"
+   ],
+   [
+    "shapes"
+   ],
+   [
+    "name",
+    "rename",
+    "call",
+    "label"
+   ],
+   [
+    "intrare",
+    "input",
+    "entry"
+   ]
+  ]
+ },
+ {
+  "id": "T006",
+  "domain": "diagram",
+  "ro": "Vreau să schimb culoarea săgeții dintre „Start” și „Verificare” în roșu.",
+  "ref": "I want to change the color of the arrow between \"Start\" and \"Verificare\" to red.",
+  "keys": [
+   [
+    "change",
+    "set",
+    "make"
+   ],
+   [
+    "color",
+    "colour"
+   ],
+   [
+    "arrow"
+   ],
+   [
+    "start"
+   ],
+   [
+    "verificare",
+    "verification",
+    "check"
+   ],
+   [
+    "red"
+   ]
+  ]
+ },
+ {
+  "id": "T007",
+  "domain": "diagram",
+  "ro": "adauga un swimlane nou pentru departamentul Financiar",
+  "ref": "Add a new swimlane for the Finance department.",
+  "keys": [
+   [
+    "add",
+    "insert",
+    "create"
+   ],
+   [
+    "swimlane",
+    "swim lane",
+    "lane"
+   ],
+   [
+    "new"
+   ],
+   [
+    "finance",
+    "financial",
+    "financiar"
+   ],
+   [
+    "department"
+   ]
+  ]
+ },
+ {
+  "id": "T008",
+  "domain": "diagram",
+  "ro": "Șterge toți conectorii care nu sunt legați de niciun nod.",
+  "ref": "Delete all connectors that aren't attached to any node.",
+  "keys": [
+   [
+    "delete",
+    "remove"
+   ],
+   [
+    "all"
+   ],
+   [
+    "connectors"
+   ],
+   [
+    "not",
+    "aren't",
+    "unattached",
+    "unconnected",
+    "disconnected",
+    "no node"
+   ],
+   [
+    "node",
+    "nodes"
+   ]
+  ]
+ },
+ {
+  "id": "T009",
+  "domain": "diagram",
+  "ro": "Transformă dreptunghiul selectat într-un romb.",
+  "ref": "Turn the selected rectangle into a diamond.",
+  "keys": [
+   [
+    "turn",
+    "convert",
+    "change",
+    "transform"
+   ],
+   [
+    "selected"
+   ],
+   [
+    "rectangle"
+   ],
+   [
+    "diamond",
+    "rhombus"
+   ]
+  ]
+ },
+ {
+  "id": "T010",
+  "domain": "diagram",
+  "ro": "Pune eticheta „Da” pe săgeata care iese din romb.",
+  "ref": "Put the label \"Da\" on the arrow coming out of the diamond.",
+  "keys": [
+   [
+    "put",
+    "add",
+    "set",
+    "place"
+   ],
+   [
+    "label"
+   ],
+   [
+    "da",
+    "yes"
+   ],
+   [
+    "arrow"
+   ],
+   [
+    "diamond",
+    "rhombus",
+    "decision"
+   ]
+  ]
+ },
+ {
+  "id": "T011",
+  "domain": "diagram",
+  "ro": "Aranjează diagrama de sus în jos, cu 40 px între noduri.",
+  "ref": "Lay out the diagram top to bottom, with 40 px between nodes.",
+  "keys": [
+   [
+    "lay out",
+    "layout",
+    "arrange"
+   ],
+   [
+    "top to bottom",
+    "top-to-bottom",
+    "top-down",
+    "vertical",
+    "vertically"
+   ],
+   [
+    "40"
+   ],
+   [
+    "px",
+    "pixels",
+    "pixel"
+   ],
+   [
+    "between"
+   ],
+   [
+    "nodes"
+   ]
+  ]
+ },
+ {
+  "id": "T012",
+  "domain": "diagram",
+  "ro": "te rog fa un export al diagramei in PNG cu fundal transparent",
+  "ref": "Please export the diagram as a PNG with a transparent background.",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "diagram"
+   ],
+   [
+    "png"
+   ],
+   [
+    "transparent"
+   ],
+   [
+    "background"
+   ]
+  ]
+ },
+ {
+  "id": "T013",
+  "domain": "diagram",
+  "ro": "Fă săgețile curbe în loc de drepte.",
+  "ref": "Make the arrows curved instead of straight.",
+  "keys": [
+   [
+    "make",
+    "change",
+    "set",
+    "turn"
+   ],
+   [
+    "arrows",
+    "arrow",
+    "connectors"
+   ],
+   [
+    "curved",
+    "curve",
+    "curvy"
+   ],
+   [
+    "straight"
+   ]
+  ]
+ },
+ {
+  "id": "T014",
+  "domain": "diagram",
+  "ro": "Cate noduri are diagrama acum?",
+  "ref": "How many nodes does the diagram have right now?",
+  "keys": [
+   [
+    "how many",
+    "number of",
+    "count"
+   ],
+   [
+    "nodes",
+    "node"
+   ],
+   [
+    "diagram"
+   ]
+  ]
+ },
+ {
+  "id": "T015",
+  "domain": "diagram",
+  "ro": "Dublează grosimea liniilor pentru toți conectorii.",
+  "ref": "Double the line thickness for all connectors.",
+  "keys": [
+   [
+    "double",
+    "twice",
+    "2x"
+   ],
+   [
+    "thickness",
+    "width",
+    "weight",
+    "thick"
+   ],
+   [
+    "line",
+    "lines",
+    "stroke"
+   ],
+   [
+    "all"
+   ],
+   [
+    "connectors",
+    "connector"
+   ]
+  ]
+ },
+ {
+  "id": "T016",
+  "domain": "diagram",
+  "ro": "Adaugă-i nodului „Plată” o umbră ușoară.",
+  "ref": "Add a soft shadow to the \"Plată\" node.",
+  "keys": [
+   [
+    "add",
+    "apply",
+    "give"
+   ],
+   [
+    "shadow"
+   ],
+   [
+    "soft",
+    "light",
+    "subtle",
+    "slight"
+   ],
+   [
+    "plată",
+    "plata",
+    "payment"
+   ],
+   [
+    "node"
+   ]
+  ]
+ },
+ {
+  "id": "T017",
+  "domain": "diagram",
+  "ro": "Nu mai vreau grila vizibilă, ascunde-o.",
+  "ref": "I don't want the grid visible anymore, hide it.",
+  "keys": [
+   [
+    "hide",
+    "turn off",
+    "disable",
+    "remove"
+   ],
+   [
+    "grid"
+   ]
+  ]
+ },
+ {
+  "id": "T018",
+  "domain": "diagram",
+  "ro": "Inserati un cerc verde sub ultimul nod si legati-l de acesta cu o sageata",
+  "ref": "Insert a green circle below the last node and connect it to that node with an arrow.",
+  "keys": [
+   [
+    "insert",
+    "add",
+    "create"
+   ],
+   [
+    "green"
+   ],
+   [
+    "circle"
+   ],
+   [
+    "below",
+    "under",
+    "beneath"
+   ],
+   [
+    "last",
+    "final"
+   ],
+   [
+    "connect",
+    "link",
+    "join",
+    "attach",
+    "arrow"
+   ]
+  ]
+ },
+ {
+  "id": "T019",
+  "domain": "diagram",
+  "ro": "Care e diferența între un conector ortogonal și unul drept?",
+  "ref": "What's the difference between an orthogonal connector and a straight one?",
+  "keys": [
+   [
+    "difference",
+    "differ"
+   ],
+   [
+    "orthogonal",
+    "elbow",
+    "right-angle"
+   ],
+   [
+    "straight"
+   ],
+   [
+    "connector"
+   ]
+  ]
+ },
+ {
+  "id": "T020",
+  "domain": "diagram",
+  "ro": "Distribuie nodurile uniform pe verticala",
+  "ref": "Distribute the nodes evenly along the vertical axis.",
+  "keys": [
+   [
+    "distribute",
+    "space"
+   ],
+   [
+    "nodes"
+   ],
+   [
+    "evenly",
+    "equally",
+    "uniformly",
+    "even"
+   ],
+   [
+    "vertical",
+    "vertically"
+   ]
+  ]
+ },
+ {
+  "id": "T021",
+  "domain": "diagram",
+  "ro": "Redenumește nodul „Verificare date” în „Validare”.",
+  "ref": "Rename the \"Verificare date\" node to \"Validare\".",
+  "keys": [
+   [
+    "rename"
+   ],
+   [
+    "verificare date",
+    "data check",
+    "verify data",
+    "data verification",
+    "check data"
+   ],
+   [
+    "validare",
+    "validation"
+   ]
+  ]
+ },
+ {
+  "id": "T022",
+  "domain": "diagram",
+  "ro": "Mută toate nodurile din culoarul „Vânzări” în cuolarul „Logistică”.",
+  "ref": "Move all nodes from the \"Vânzări\" lane to the \"Logistică\" lane.",
+  "keys": [
+   [
+    "move"
+   ],
+   [
+    "all"
+   ],
+   [
+    "nodes"
+   ],
+   [
+    "vânzări",
+    "vanzari",
+    "sales"
+   ],
+   [
+    "logistică",
+    "logistica",
+    "logistics"
+   ],
+   [
+    "lane",
+    "swimlane"
+   ]
+  ]
+ },
+ {
+  "id": "T023",
+  "domain": "diagram",
+  "ro": "Selecteaza caseta de decizie si fa-o de doua ori mai mare",
+  "ref": "Select the decision box and make it twice as big.",
+  "keys": [
+   [
+    "select"
+   ],
+   [
+    "decision"
+   ],
+   [
+    "box",
+    "shape",
+    "node"
+   ],
+   [
+    "twice",
+    "double",
+    "2x",
+    "two times",
+    "200%"
+   ],
+   [
+    "big",
+    "bigger",
+    "large",
+    "larger",
+    "size"
+   ]
+  ]
+ },
+ {
+  "id": "T024",
+  "domain": "diagram",
+  "ro": "Poți să blochezi poziția casetei „Client” ca să nu o mut din greșeală?",
+  "ref": "Can you lock the position of the \"Client\" box so I don't move it by accident?",
+  "keys": [
+   [
+    "lock",
+    "pin",
+    "fix"
+   ],
+   [
+    "position"
+   ],
+   [
+    "client"
+   ],
+   [
+    "box"
+   ]
+  ]
+ },
+ {
+  "id": "T025",
+  "domain": "diagram",
+  "ro": "Adaugă o notă lângă nodul 5 cu textul „De verificat cu juridicul”.",
+  "ref": "Add a note next to node 5 with the text \"De verificat cu juridicul\".",
+  "keys": [
+   [
+    "add",
+    "insert",
+    "create"
+   ],
+   [
+    "note",
+    "annotation",
+    "comment"
+   ],
+   [
+    "next to",
+    "beside",
+    "near"
+   ],
+   [
+    "5",
+    "five"
+   ],
+   [
+    "de verificat cu juridicul",
+    "check with legal",
+    "verify with legal",
+    "legal"
+   ]
+  ]
+ },
+ {
+  "id": "T026",
+  "domain": "diagram",
+  "ro": "Schimbă forma tuturor nodurilor de proces în dreptunghiuri rotunjite, dar nu le modifica pe cele de decizie.",
+  "ref": "Change all process nodes to rounded rectangles, but don't modify the decision nodes.",
+  "keys": [
+   [
+    "change",
+    "convert",
+    "turn"
+   ],
+   [
+    "process"
+   ],
+   [
+    "rounded"
+   ],
+   [
+    "rectangles",
+    "rectangle"
+   ],
+   [
+    "don't",
+    "do not",
+    "leave",
+    "without",
+    "except",
+    "not"
+   ],
+   [
+    "decision"
+   ]
+  ]
+ },
+ {
+  "id": "T027",
+  "domain": "diagram",
+  "ro": "Aliniază nodruile selectate la stânga.",
+  "ref": "Align the selected nodes to the left.",
+  "keys": [
+   [
+    "align"
+   ],
+   [
+    "selected"
+   ],
+   [
+    "nodes"
+   ],
+   [
+    "left"
+   ]
+  ]
+ },
+ {
+  "id": "T028",
+  "domain": "diagram",
+  "ro": "Exportați doar pagina a doua a diagramei în SVG.",
+  "ref": "Export only the second page of the diagram as SVG.",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "only",
+    "just"
+   ],
+   [
+    "second",
+    "2nd",
+    "page 2"
+   ],
+   [
+    "page"
+   ],
+   [
+    "svg"
+   ]
+  ]
+ },
+ {
+  "id": "T029",
+  "domain": "diagram",
+  "ro": "Inverseaza directia sagetii dintre nodurile 3 si 4",
+  "ref": "Reverse the direction of the arrow between nodes 3 and 4.",
+  "keys": [
+   [
+    "reverse",
+    "flip",
+    "invert",
+    "swap"
+   ],
+   [
+    "direction"
+   ],
+   [
+    "arrow"
+   ],
+   [
+    "3",
+    "three"
+   ],
+   [
+    "4",
+    "four"
+   ]
+  ]
+ },
+ {
+  "id": "T030",
+  "domain": "diagram",
+  "ro": "creeaza un flowchart simplu cu 4 pasi: Start, Comanda, Livrare, Stop",
+  "ref": "Create a simple flowchart with 4 steps: Start, Comanda, Livrare, Stop.",
+  "keys": [
+   [
+    "create",
+    "make",
+    "build"
+   ],
+   [
+    "flowchart",
+    "flow chart",
+    "flow diagram"
+   ],
+   [
+    "4",
+    "four"
+   ],
+   [
+    "comanda",
+    "comandă",
+    "order"
+   ],
+   [
+    "livrare",
+    "delivery"
+   ],
+   [
+    "stop",
+    "end"
+   ]
+  ]
+ },
+ {
+  "id": "T031",
+  "domain": "edit",
+  "ro": "Fă textul selectat bold și mărește-l la 18.",
+  "ref": "Make the selected text bold and increase it to size 18.",
+  "keys": [
+   [
+    "bold"
+   ],
+   [
+    "selected",
+    "selection"
+   ],
+   [
+    "text"
+   ],
+   [
+    "increase",
+    "enlarge",
+    "size",
+    "bigger"
+   ],
+   [
+    "18"
+   ]
+  ]
+ },
+ {
+  "id": "T032",
+  "domain": "edit",
+  "ro": "Ce font are titlul acum? Schimbă-l în Roboto.",
+  "ref": "What font is the title using right now? Change it to Roboto.",
+  "keys": [
+   [
+    "what",
+    "which"
+   ],
+   [
+    "font",
+    "typeface"
+   ],
+   [
+    "title",
+    "heading"
+   ],
+   [
+    "change",
+    "switch",
+    "set"
+   ],
+   [
+    "roboto"
+   ]
+  ]
+ },
+ {
+  "id": "T033",
+  "domain": "edit",
+  "ro": "seteaza culoarea textului la #1A73E8",
+  "ref": "Set the text color to #1A73E8.",
+  "keys": [
+   [
+    "set",
+    "change"
+   ],
+   [
+    "color",
+    "colour"
+   ],
+   [
+    "text"
+   ],
+   [
+    "#1a73e8",
+    "1a73e8"
+   ]
+  ]
+ },
+ {
+  "id": "T034",
+  "domain": "edit",
+  "ro": "Mutați imaginea pe primul strat.",
+  "ref": "Move the image to the first layer.",
+  "keys": [
+   [
+    "move",
+    "put"
+   ],
+   [
+    "image",
+    "picture",
+    "photo"
+   ],
+   [
+    "first",
+    "1st",
+    "top"
+   ],
+   [
+    "layer"
+   ]
+  ]
+ },
+ {
+  "id": "T035",
+  "domain": "edit",
+  "ro": "Decupează poza la format pătrat.",
+  "ref": "Crop the photo to a square format.",
+  "keys": [
+   [
+    "crop"
+   ],
+   [
+    "photo",
+    "image",
+    "picture"
+   ],
+   [
+    "square",
+    "1:1"
+   ]
+  ]
+ },
+ {
+  "id": "T036",
+  "domain": "edit",
+  "ro": "Te rog redimensionează logo-ul la 200 x 80 de pixeli.",
+  "ref": "Please resize the logo to 200 x 80 pixels.",
+  "keys": [
+   [
+    "resize",
+    "scale"
+   ],
+   [
+    "logo"
+   ],
+   [
+    "200"
+   ],
+   [
+    "80"
+   ],
+   [
+    "pixels",
+    "pixel",
+    "px"
+   ]
+  ]
+ },
+ {
+  "id": "T037",
+  "domain": "edit",
+  "ro": "roteste-o cu 45 de grade spre stanga",
+  "ref": "Rotate it 45 degrees to the left.",
+  "keys": [
+   [
+    "rotate",
+    "turn"
+   ],
+   [
+    "45"
+   ],
+   [
+    "degrees",
+    "degree",
+    "°"
+   ],
+   [
+    "left",
+    "counterclockwise",
+    "counter-clockwise",
+    "anticlockwise",
+    "anti-clockwise",
+    "ccw"
+   ]
+  ]
+ },
+ {
+  "id": "T038",
+  "domain": "edit",
+  "ro": "Duplică stratul curent de trei ori.",
+  "ref": "Duplicate the current layer three times.",
+  "keys": [
+   [
+    "duplicate",
+    "copy",
+    "clone"
+   ],
+   [
+    "current",
+    "active",
+    "selected"
+   ],
+   [
+    "layer"
+   ],
+   [
+    "three",
+    "3"
+   ]
+  ]
+ },
+ {
+  "id": "T039",
+  "domain": "edit",
+  "ro": "Sterge toate imaginile de pe pagina 3",
+  "ref": "Delete all images on page 3.",
+  "keys": [
+   [
+    "delete",
+    "remove"
+   ],
+   [
+    "all"
+   ],
+   [
+    "images",
+    "pictures",
+    "photos"
+   ],
+   [
+    "page"
+   ],
+   [
+    "3",
+    "three"
+   ]
+  ]
+ },
+ {
+  "id": "T040",
+  "domain": "edit",
+  "ro": "Anuleaza ultimele doua modificari",
+  "ref": "Undo the last two changes.",
+  "keys": [
+   [
+    "undo",
+    "revert",
+    "roll back"
+   ],
+   [
+    "last"
+   ],
+   [
+    "two",
+    "2"
+   ],
+   [
+    "changes",
+    "edits",
+    "actions",
+    "modifications"
+   ]
+  ]
+ },
+ {
+  "id": "T041",
+  "domain": "edit",
+  "ro": "refa ce am anulat",
+  "ref": "Redo what I undid.",
+  "keys": [
+   [
+    "redo",
+    "re-do",
+    "reapply"
+   ],
+   [
+    "undid",
+    "undone",
+    "undo"
+   ]
+  ]
+ },
+ {
+  "id": "T042",
+  "domain": "edit",
+  "ro": "Setați opacitatea fundalului la 60%.",
+  "ref": "Set the background opacity to 60%.",
+  "keys": [
+   [
+    "set",
+    "change"
+   ],
+   [
+    "opacity",
+    "transparency"
+   ],
+   [
+    "background"
+   ],
+   [
+    "60%",
+    "60"
+   ]
+  ]
+ },
+ {
+  "id": "T043",
+  "domain": "edit",
+  "ro": "Adaugă un chenar de 2 px cu culoarea #333 în jurul csetei.",
+  "ref": "Add a 2 px border in color #333 around the box.",
+  "keys": [
+   [
+    "add"
+   ],
+   [
+    "border",
+    "outline",
+    "stroke",
+    "frame"
+   ],
+   [
+    "2"
+   ],
+   [
+    "px",
+    "pixels",
+    "pixel"
+   ],
+   [
+    "#333",
+    "333"
+   ],
+   [
+    "box"
+   ]
+  ]
+ },
+ {
+  "id": "T044",
+  "domain": "edit",
+  "ro": "Înlocuiește peste tot „client” cu „beneficiar”.",
+  "ref": "Replace \"client\" with \"beneficiar\" everywhere.",
+  "keys": [
+   [
+    "replace"
+   ],
+   [
+    "client"
+   ],
+   [
+    "beneficiar",
+    "beneficiary"
+   ],
+   [
+    "everywhere",
+    "all",
+    "throughout",
+    "every"
+   ]
+  ]
+ },
+ {
+  "id": "T045",
+  "domain": "edit",
+  "ro": "Caută cuvântul „factură” în tot documentul.",
+  "ref": "Search for the word \"factură\" throughout the document.",
+  "keys": [
+   [
+    "search",
+    "find",
+    "look for",
+    "look up"
+   ],
+   [
+    "factură",
+    "factura",
+    "invoice"
+   ],
+   [
+    "whole",
+    "entire",
+    "throughout",
+    "all"
+   ],
+   [
+    "document"
+   ]
+  ]
+ },
+ {
+  "id": "T046",
+  "domain": "edit",
+  "ro": "Poti sa aliniezi cele trei imagini la centru pe orizontala?",
+  "ref": "Can you center the three images horizontally?",
+  "keys": [
+   [
+    "align",
+    "center",
+    "centre"
+   ],
+   [
+    "three",
+    "3"
+   ],
+   [
+    "images",
+    "pictures"
+   ],
+   [
+    "center",
+    "centre",
+    "middle"
+   ],
+   [
+    "horizontally",
+    "horizontal"
+   ]
+  ]
+ },
+ {
+  "id": "T047",
+  "domain": "edit",
+  "ro": "Distribuiți elementele selectate la distanțe egale.",
+  "ref": "Distribute the selected elements evenly.",
+  "keys": [
+   [
+    "distribute",
+    "space"
+   ],
+   [
+    "selected"
+   ],
+   [
+    "elements",
+    "items",
+    "objects",
+    "shapes"
+   ],
+   [
+    "evenly",
+    "equally",
+    "equal",
+    "even"
+   ]
+  ]
+ },
+ {
+  "id": "T048",
+  "domain": "edit",
+  "ro": "Nu mai vreau textul subliniat, scoate-i sublinierea.",
+  "ref": "I don't want the text underlined anymore; remove the underline.",
+  "keys": [
+   [
+    "remove",
+    "turn off",
+    "clear",
+    "take off",
+    "delete"
+   ],
+   [
+    "underline",
+    "underlined",
+    "underlining"
+   ],
+   [
+    "text"
+   ]
+  ]
+ },
+ {
+  "id": "T049",
+  "domain": "edit",
+  "ro": "Mărește dimensiunea fontului cu 4 puncte în tot paragraful.",
+  "ref": "Increase the font size by 4 points throughout the paragraph.",
+  "keys": [
+   [
+    "increase",
+    "enlarge",
+    "raise",
+    "bump"
+   ],
+   [
+    "font size",
+    "font",
+    "size"
+   ],
+   [
+    "4",
+    "four"
+   ],
+   [
+    "points",
+    "point",
+    "pt"
+   ],
+   [
+    "paragraph"
+   ]
+  ]
+ },
+ {
+  "id": "T050",
+  "domain": "edit",
+  "ro": "Selecteaza dreptunghiul albastru si muta-l in spatele textului",
+  "ref": "Select the blue rectangle and move it behind the text.",
+  "keys": [
+   [
+    "select"
+   ],
+   [
+    "blue"
+   ],
+   [
+    "rectangle"
+   ],
+   [
+    "move",
+    "send",
+    "put"
+   ],
+   [
+    "behind",
+    "back"
+   ],
+   [
+    "text"
+   ]
+  ]
+ },
+ {
+  "id": "T051",
+  "domain": "edit",
+  "ro": "Adu layer-ul „Logo” în față.",
+  "ref": "Bring the \"Logo\" layer to the front.",
+  "keys": [
+   [
+    "bring",
+    "move"
+   ],
+   [
+    "logo"
+   ],
+   [
+    "layer"
+   ],
+   [
+    "front",
+    "top",
+    "forward"
+   ]
+  ]
+ },
+ {
+  "id": "T052",
+  "domain": "edit",
+  "ro": "pune textul pe itlaic si fa-l gri inchis",
+  "ref": "Make the text italic and dark gray.",
+  "keys": [
+   [
+    "italic",
+    "italics"
+   ],
+   [
+    "text"
+   ],
+   [
+    "dark"
+   ],
+   [
+    "gray",
+    "grey"
+   ]
+  ]
+ },
+ {
+  "id": "T053",
+  "domain": "edit",
+  "ro": "Copiază formatarea din primul paragraf și aplic-o pe al doilea.",
+  "ref": "Copy the formatting from the first paragraph and apply it to the second.",
+  "keys": [
+   [
+    "copy"
+   ],
+   [
+    "formatting",
+    "format",
+    "style"
+   ],
+   [
+    "first"
+   ],
+   [
+    "paragraph"
+   ],
+   [
+    "apply",
+    "paste"
+   ],
+   [
+    "second"
+   ]
+  ]
+ },
+ {
+  "id": "T054",
+  "domain": "edit",
+  "ro": "Vreau colțurile casetei rotunjite, cu o rază de 12 px.",
+  "ref": "I want the box corners rounded with a 12 px radius.",
+  "keys": [
+   [
+    "rounded",
+    "round"
+   ],
+   [
+    "corners",
+    "corner"
+   ],
+   [
+    "box"
+   ],
+   [
+    "12"
+   ],
+   [
+    "radius"
+   ],
+   [
+    "px",
+    "pixels",
+    "pixel"
+   ]
+  ]
+ },
+ {
+  "id": "T055",
+  "domain": "edit",
+  "ro": "Inserați o imagine din calculator în dreapta titlului.",
+  "ref": "Insert an image from the computer to the right of the title.",
+  "keys": [
+   [
+    "insert",
+    "add",
+    "upload"
+   ],
+   [
+    "image",
+    "picture",
+    "photo"
+   ],
+   [
+    "computer",
+    "local",
+    "device"
+   ],
+   [
+    "right"
+   ],
+   [
+    "title",
+    "heading"
+   ]
+  ]
+ },
+ {
+  "id": "T056",
+  "domain": "edit",
+  "ro": "Blocheaza stratul de fundal ca sa nu-l modific din greseala",
+  "ref": "Lock the background layer so I don't change it by mistake.",
+  "keys": [
+   [
+    "lock"
+   ],
+   [
+    "background"
+   ],
+   [
+    "layer"
+   ]
+  ]
+ },
+ {
+  "id": "T057",
+  "domain": "edit",
+  "ro": "Ascunde toate straturile în afară de cel selectat.",
+  "ref": "Hide all layers except the selected one.",
+  "keys": [
+   [
+    "hide"
+   ],
+   [
+    "all"
+   ],
+   [
+    "layers"
+   ],
+   [
+    "except",
+    "but",
+    "other than",
+    "apart from"
+   ],
+   [
+    "selected"
+   ]
+  ]
+ },
+ {
+  "id": "T058",
+  "domain": "edit",
+  "ro": "Schimbă umplerea dreptunghiului în galben deschis.",
+  "ref": "Change the rectangle's fill to light yellow.",
+  "keys": [
+   [
+    "change",
+    "set",
+    "make"
+   ],
+   [
+    "fill"
+   ],
+   [
+    "rectangle"
+   ],
+   [
+    "light",
+    "pale"
+   ],
+   [
+    "yellow"
+   ]
+  ]
+ },
+ {
+  "id": "T059",
+  "domain": "edit",
+  "ro": "Oglindește imaginea pe orizontală.",
+  "ref": "Flip the image horizontally.",
+  "keys": [
+   [
+    "flip",
+    "mirror"
+   ],
+   [
+    "image",
+    "picture",
+    "photo"
+   ],
+   [
+    "horizontally",
+    "horizontal"
+   ]
+  ]
+ },
+ {
+  "id": "T060",
+  "domain": "edit",
+  "ro": "Cum fac marginea casetei mai groasă?",
+  "ref": "How do I make the box border thicker?",
+  "keys": [
+   [
+    "how"
+   ],
+   [
+    "border",
+    "outline",
+    "stroke",
+    "edge"
+   ],
+   [
+    "box"
+   ],
+   [
+    "thicker",
+    "thick",
+    "thickness",
+    "wider"
+   ]
+  ]
+ },
+ {
+  "id": "T061",
+  "domain": "animation",
+  "ro": "Adaugă un efect de fade in de 2 secunde pe titlu.",
+  "ref": "Add a 2-second fade-in effect to the title.",
+  "keys": [
+   [
+    "add",
+    "apply"
+   ],
+   [
+    "fade in",
+    "fade-in",
+    "fades in"
+   ],
+   [
+    "2",
+    "two"
+   ],
+   [
+    "second",
+    "seconds",
+    "sec"
+   ],
+   [
+    "title",
+    "heading"
+   ]
+  ]
+ },
+ {
+  "id": "T062",
+  "domain": "animation",
+  "ro": "Setează durata animației la 500 ms.",
+  "ref": "Set the animation duration to 500 ms.",
+  "keys": [
+   [
+    "set",
+    "change"
+   ],
+   [
+    "duration",
+    "length"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "500"
+   ],
+   [
+    "ms",
+    "milliseconds",
+    "millisecond"
+   ]
+  ]
+ },
+ {
+  "id": "T063",
+  "domain": "animation",
+  "ro": "pune o intarziere de 1,5 secunde inainte sa apara logo-ul",
+  "ref": "Add a 1.5-second delay before the logo appears.",
+  "keys": [
+   [
+    "delay"
+   ],
+   [
+    "1.5",
+    "1,5",
+    "one and a half"
+   ],
+   [
+    "second",
+    "seconds",
+    "sec"
+   ],
+   [
+    "before"
+   ],
+   [
+    "logo"
+   ],
+   [
+    "appears",
+    "appear",
+    "shows",
+    "show"
+   ]
+  ]
+ },
+ {
+  "id": "T064",
+  "domain": "animation",
+  "ro": "Fă animația să se repete în buclă la infinit.",
+  "ref": "Make the animation loop infinitely.",
+  "keys": [
+   [
+    "loop",
+    "repeat"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "infinitely",
+    "infinite",
+    "forever",
+    "indefinitely",
+    "endlessly",
+    "endless"
+   ]
+  ]
+ },
+ {
+  "id": "T065",
+  "domain": "animation",
+  "ro": "Adăugați un cadru cheie la secunda 3 cu opacitatea 0.",
+  "ref": "Add a keyframe at 3 seconds with opacity 0.",
+  "keys": [
+   [
+    "add",
+    "insert",
+    "create"
+   ],
+   [
+    "keyframe",
+    "key frame"
+   ],
+   [
+    "3",
+    "three"
+   ],
+   [
+    "second",
+    "seconds",
+    "sec"
+   ],
+   [
+    "opacity"
+   ],
+   [
+    "0",
+    "zero"
+   ]
+  ]
+ },
+ {
+  "id": "T066",
+  "domain": "animation",
+  "ro": "Schimba easing-ul in ease-in-out pentru toate tranzitiile",
+  "ref": "Change the easing to ease-in-out for all transitions.",
+  "keys": [
+   [
+    "change",
+    "set"
+   ],
+   [
+    "easing"
+   ],
+   [
+    "ease-in-out",
+    "ease in out"
+   ],
+   [
+    "all"
+   ],
+   [
+    "transitions",
+    "transition"
+   ]
+  ]
+ },
+ {
+  "id": "T067",
+  "domain": "animation",
+  "ro": "Fă cutia să intre glisând din stânga ecranului.",
+  "ref": "Make the box slide in from the left of the screen.",
+  "keys": [
+   [
+    "slide",
+    "slides",
+    "sliding"
+   ],
+   [
+    "box"
+   ],
+   [
+    "left"
+   ],
+   [
+    "screen"
+   ]
+  ]
+ },
+ {
+  "id": "T068",
+  "domain": "animation",
+  "ro": "Mărește butonul la 120% când trec cu mouse-ul peste el.",
+  "ref": "Scale the button up to 120% on hover.",
+  "keys": [
+   [
+    "scale",
+    "enlarge",
+    "grow",
+    "increase",
+    "zoom"
+   ],
+   [
+    "button"
+   ],
+   [
+    "120%",
+    "120"
+   ],
+   [
+    "hover",
+    "mouse over",
+    "mouseover",
+    "hovering",
+    "mouse"
+   ]
+  ]
+ },
+ {
+  "id": "T069",
+  "domain": "animation",
+  "ro": "Rotește iconița 360 de grade într-o secudă.",
+  "ref": "Rotate the icon 360 degrees in one second.",
+  "keys": [
+   [
+    "rotate",
+    "spin",
+    "turn"
+   ],
+   [
+    "icon"
+   ],
+   [
+    "360"
+   ],
+   [
+    "degrees",
+    "degree",
+    "°"
+   ],
+   [
+    "one second",
+    "1 second",
+    "1 s",
+    "1s",
+    "a second",
+    "1-second"
+   ]
+  ]
+ },
+ {
+  "id": "T070",
+  "domain": "animation",
+  "ro": "Pornește animația doar la click pe imagine.",
+  "ref": "Start the animation only when the image is clicked.",
+  "keys": [
+   [
+    "start",
+    "play",
+    "trigger",
+    "run"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "only"
+   ],
+   [
+    "click",
+    "clicked",
+    "clicking"
+   ],
+   [
+    "image",
+    "picture"
+   ]
+  ]
+ },
+ {
+  "id": "T071",
+  "domain": "animation",
+  "ro": "Opreste animatia dupa al treilea ciclu",
+  "ref": "Stop the animation after the third cycle.",
+  "keys": [
+   [
+    "stop",
+    "end",
+    "halt"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "after"
+   ],
+   [
+    "third",
+    "3rd"
+   ],
+   [
+    "cycle",
+    "loop",
+    "iteration",
+    "repetition"
+   ]
+  ]
+ },
+ {
+  "id": "T072",
+  "domain": "animation",
+  "ro": "Reda animatia de la inceput",
+  "ref": "Play the animation from the beginning.",
+  "keys": [
+   [
+    "play",
+    "replay",
+    "run"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "beginning",
+    "start"
+   ]
+  ]
+ },
+ {
+  "id": "T073",
+  "domain": "animation",
+  "ro": "Poți să reduci viteza animației la 50%?",
+  "ref": "Can you reduce the animation speed to 50%?",
+  "keys": [
+   [
+    "reduce",
+    "slow",
+    "lower",
+    "decrease"
+   ],
+   [
+    "speed"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "50%",
+    "50",
+    "half"
+   ]
+  ]
+ },
+ {
+  "id": "T074",
+  "domain": "animation",
+  "ro": "Mută keyframe-ul de la 2 s la 2,5 s.",
+  "ref": "Move the keyframe from 2 s to 2.5 s.",
+  "keys": [
+   [
+    "move",
+    "shift"
+   ],
+   [
+    "keyframe",
+    "key frame"
+   ],
+   [
+    "from 2",
+    "2 s",
+    "2s",
+    "2 seconds",
+    "2 sec"
+   ],
+   [
+    "2.5",
+    "2,5"
+   ],
+   [
+    "s",
+    "seconds",
+    "second",
+    "sec"
+   ]
+  ]
+ },
+ {
+  "id": "T075",
+  "domain": "animation",
+  "ro": "Te rog să ștergi ultimul cadru cheie de pe timeline.",
+  "ref": "Please delete the last keyframe on the timeline.",
+  "keys": [
+   [
+    "delete",
+    "remove"
+   ],
+   [
+    "last",
+    "final"
+   ],
+   [
+    "keyframe",
+    "key frame"
+   ],
+   [
+    "timeline"
+   ]
+  ]
+ },
+ {
+  "id": "T076",
+  "domain": "animation",
+  "ro": "Fă textele să apară unul după altul, la 300 ms distanță.",
+  "ref": "Make the texts appear one after another, 300 ms apart.",
+  "keys": [
+   [
+    "appear",
+    "show",
+    "reveal"
+   ],
+   [
+    "texts",
+    "text"
+   ],
+   [
+    "one after another",
+    "one after the other",
+    "sequentially",
+    "in sequence",
+    "one by one",
+    "staggered"
+   ],
+   [
+    "300"
+   ],
+   [
+    "ms",
+    "milliseconds",
+    "millisecond"
+   ]
+  ]
+ },
+ {
+  "id": "T077",
+  "domain": "animation",
+  "ro": "vreau ca imaginea sa dispara treptat dupa 4 secunde",
+  "ref": "I want the image to fade out after 4 seconds.",
+  "keys": [
+   [
+    "fade out",
+    "fade-out",
+    "fades out",
+    "disappear",
+    "disappears",
+    "gradually"
+   ],
+   [
+    "image",
+    "picture"
+   ],
+   [
+    "after"
+   ],
+   [
+    "4",
+    "four"
+   ],
+   [
+    "seconds",
+    "second",
+    "sec"
+   ]
+  ]
+ },
+ {
+  "id": "T078",
+  "domain": "animation",
+  "ro": "Nu mai rula animația automat la încărcarea paginii.",
+  "ref": "Stop running the animation automatically when the page loads.",
+  "keys": [
+   [
+    "stop",
+    "don't",
+    "do not",
+    "no longer",
+    "disable"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "automatically",
+    "auto",
+    "autoplay",
+    "automatic"
+   ],
+   [
+    "page"
+   ],
+   [
+    "load",
+    "loads",
+    "loading"
+   ]
+  ]
+ },
+ {
+  "id": "T079",
+  "domain": "animation",
+  "ro": "Aplicati aceeasi animatie si pe celelalte doua butoane",
+  "ref": "Apply the same animation to the other two buttons as well.",
+  "keys": [
+   [
+    "apply",
+    "copy",
+    "add"
+   ],
+   [
+    "same"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "other"
+   ],
+   [
+    "two",
+    "2"
+   ],
+   [
+    "buttons"
+   ]
+  ]
+ },
+ {
+  "id": "T080",
+  "domain": "animation",
+  "ro": "Adaugă-i săgeții o animație de desenare de la stânga la dreapta.",
+  "ref": "Add a draw-on animation to the arrow, going from left to right.",
+  "keys": [
+   [
+    "add",
+    "apply",
+    "give"
+   ],
+   [
+    "arrow"
+   ],
+   [
+    "draw",
+    "drawing",
+    "draw-on",
+    "stroke"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "left"
+   ],
+   [
+    "right"
+   ]
+  ]
+ },
+ {
+  "id": "T081",
+  "domain": "animation",
+  "ro": "Pune-le pe toate să pulseze ușor, în buclă.",
+  "ref": "Make them all pulse gently in a loop.",
+  "keys": [
+   [
+    "all"
+   ],
+   [
+    "pulse",
+    "pulsing",
+    "pulsate"
+   ],
+   [
+    "gently",
+    "slightly",
+    "subtly",
+    "subtle",
+    "soft",
+    "softly",
+    "lightly",
+    "gentle"
+   ],
+   [
+    "loop",
+    "looping",
+    "repeat"
+   ]
+  ]
+ },
+ {
+  "id": "T082",
+  "domain": "animation",
+  "ro": "Cât durează în total secvența de animații?",
+  "ref": "How long does the animation sequence last in total?",
+  "keys": [
+   [
+    "how long",
+    "duration",
+    "length",
+    "total time"
+   ],
+   [
+    "total",
+    "overall"
+   ],
+   [
+    "sequence"
+   ],
+   [
+    "animation",
+    "animations"
+   ]
+  ]
+ },
+ {
+  "id": "T083",
+  "domain": "animation",
+  "ro": "Setează vitzea de redare la 2x.",
+  "ref": "Set the playback speed to 2x.",
+  "keys": [
+   [
+    "set",
+    "change"
+   ],
+   [
+    "playback",
+    "play"
+   ],
+   [
+    "speed"
+   ],
+   [
+    "2x",
+    "2",
+    "double",
+    "twice"
+   ]
+  ]
+ },
+ {
+  "id": "T084",
+  "domain": "animation",
+  "ro": "Animația de intrare să înceapă la 0,8 secunde după cea anterioară.",
+  "ref": "Start the entrance animation 0.8 seconds after the previous one.",
+  "keys": [
+   [
+    "entrance",
+    "entry",
+    "intro",
+    "enter"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "0.8",
+    "0,8"
+   ],
+   [
+    "seconds",
+    "second",
+    "sec"
+   ],
+   [
+    "after"
+   ],
+   [
+    "previous",
+    "prior",
+    "preceding"
+   ]
+  ]
+ },
+ {
+  "id": "T085",
+  "domain": "animation",
+  "ro": "Fa ca bulina sa sara de 3 ori cu easign bounce",
+  "ref": "Make the dot bounce 3 times with bounce easing.",
+  "keys": [
+   [
+    "dot",
+    "circle",
+    "bullet",
+    "ball"
+   ],
+   [
+    "bounce",
+    "bounces",
+    "jump",
+    "jumps"
+   ],
+   [
+    "3",
+    "three"
+   ],
+   [
+    "times"
+   ],
+   [
+    "easing",
+    "ease"
+   ]
+  ]
+ },
+ {
+  "id": "T086",
+  "domain": "enterprise",
+  "ro": "Cum export documentul în PDF cu fonturile incluse?",
+  "ref": "How do I export the document to PDF with the fonts embedded?",
+  "keys": [
+   [
+    "how"
+   ],
+   [
+    "export",
+    "save"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "fonts",
+    "font"
+   ],
+   [
+    "embedded",
+    "embed",
+    "included",
+    "include",
+    "including"
+   ]
+  ]
+ },
+ {
+  "id": "T087",
+  "domain": "enterprise",
+  "ro": "Unde e istoricul versiunilor pentru fișierul ăsta?",
+  "ref": "Where is the version history for this file?",
+  "keys": [
+   [
+    "where"
+   ],
+   [
+    "version",
+    "versions"
+   ],
+   [
+    "history"
+   ],
+   [
+    "file"
+   ]
+  ]
+ },
+ {
+  "id": "T088",
+  "domain": "enterprise",
+  "ro": "Poți să-i dai lui Andrei drept de editare doar pe proiectul ăsta?",
+  "ref": "Can you give Andrei edit access to this project only?",
+  "keys": [
+   [
+    "give",
+    "grant"
+   ],
+   [
+    "andrei"
+   ],
+   [
+    "edit",
+    "editing",
+    "editor"
+   ],
+   [
+    "access",
+    "rights",
+    "permission",
+    "permissions"
+   ],
+   [
+    "only",
+    "just"
+   ],
+   [
+    "project"
+   ]
+  ]
+ },
+ {
+  "id": "T089",
+  "domain": "enterprise",
+  "ro": "Partajați fișierul cu echipa de marketing, doar cu drept de vizualizare.",
+  "ref": "Share the file with the marketing team, view-only.",
+  "keys": [
+   [
+    "share"
+   ],
+   [
+    "file"
+   ],
+   [
+    "marketing"
+   ],
+   [
+    "team"
+   ],
+   [
+    "view",
+    "view-only",
+    "read-only",
+    "viewing",
+    "viewer"
+   ]
+  ]
+ },
+ {
+  "id": "T090",
+  "domain": "enterprise",
+  "ro": "restaureaza versiunea de ieri de la ora 14:30",
+  "ref": "Restore yesterday's version from 2:30 PM.",
+  "keys": [
+   [
+    "restore",
+    "revert",
+    "roll back"
+   ],
+   [
+    "version"
+   ],
+   [
+    "yesterday"
+   ],
+   [
+    "14:30",
+    "2:30"
+   ]
+  ]
+ },
+ {
+  "id": "T091",
+  "domain": "enterprise",
+  "ro": "Adaugă un comentariu la slide-ul 4: „Cifrele trebuie actualizate”.",
+  "ref": "Add a comment to slide 4: \"Cifrele trebuie actualizate\".",
+  "keys": [
+   [
+    "add",
+    "leave",
+    "post"
+   ],
+   [
+    "comment"
+   ],
+   [
+    "slide"
+   ],
+   [
+    "4",
+    "four"
+   ],
+   [
+    "cifrele trebuie actualizate",
+    "need to be updated",
+    "needs updating",
+    "need updating",
+    "must be updated",
+    "should be updated",
+    "figures"
+   ]
+  ]
+ },
+ {
+  "id": "T092",
+  "domain": "enterprise",
+  "ro": "Importa datele din fisierul vanzari_2025.csv intr-un tabel nou",
+  "ref": "Import the data from vanzari_2025.csv into a new table.",
+  "keys": [
+   [
+    "import",
+    "load"
+   ],
+   [
+    "vanzari_2025.csv"
+   ],
+   [
+    "new"
+   ],
+   [
+    "table"
+   ]
+  ]
+ },
+ {
+  "id": "T093",
+  "domain": "enterprise",
+  "ro": "Redenumește fișierul în „Raport_Q3_final” și salvează-l în folderul Rapoarte.",
+  "ref": "Rename the file to \"Raport_Q3_final\" and save it in the Rapoarte folder.",
+  "keys": [
+   [
+    "rename"
+   ],
+   [
+    "raport_q3_final"
+   ],
+   [
+    "save",
+    "move",
+    "put"
+   ],
+   [
+    "rapoarte",
+    "reports"
+   ],
+   [
+    "folder"
+   ]
+  ]
+ },
+ {
+  "id": "T094",
+  "domain": "enterprise",
+  "ro": "Vreau să creez un șablon nou pornind de la prezentarea asta.",
+  "ref": "I want to create a new template based on this presentation.",
+  "keys": [
+   [
+    "create",
+    "make",
+    "save"
+   ],
+   [
+    "new"
+   ],
+   [
+    "template"
+   ],
+   [
+    "presentation"
+   ]
+  ]
+ },
+ {
+  "id": "T095",
+  "domain": "enterprise",
+  "ro": "Cine a modificat ultima data diagrama asta?",
+  "ref": "Who last modified this diagram?",
+  "keys": [
+   [
+    "who"
+   ],
+   [
+    "last"
+   ],
+   [
+    "modified",
+    "edited",
+    "changed"
+   ],
+   [
+    "diagram"
+   ]
+  ]
+ },
+ {
+  "id": "T096",
+  "domain": "enterprise",
+  "ro": "Poti exporta toate paginile ca SVG-uri separate intr-o arhiva zip?",
+  "ref": "Can you export all pages as separate SVGs in a zip archive?",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "all"
+   ],
+   [
+    "pages"
+   ],
+   [
+    "svg",
+    "svgs"
+   ],
+   [
+    "separate",
+    "individual"
+   ],
+   [
+    "zip",
+    "archive"
+   ]
+  ]
+ },
+ {
+  "id": "T097",
+  "domain": "enterprise",
+  "ro": "Retrageți accesul utilizatorilor externi la acest dosar.",
+  "ref": "Revoke external users' access to this folder.",
+  "keys": [
+   [
+    "revoke",
+    "remove",
+    "withdraw"
+   ],
+   [
+    "access"
+   ],
+   [
+    "external"
+   ],
+   [
+    "users",
+    "user"
+   ],
+   [
+    "folder"
+   ]
+  ]
+ },
+ {
+  "id": "T098",
+  "domain": "enterprise",
+  "ro": "cum activez notificarile pt comentarii noi",
+  "ref": "How do I turn on notifications for new comments?",
+  "keys": [
+   [
+    "how"
+   ],
+   [
+    "enable",
+    "turn on",
+    "activate",
+    "switch on"
+   ],
+   [
+    "notifications",
+    "notification"
+   ],
+   [
+    "new"
+   ],
+   [
+    "comments",
+    "comment"
+   ]
+  ]
+ },
+ {
+  "id": "T099",
+  "domain": "enterprise",
+  "ro": "Se poate seta un link de partajare care expiră după 7 zile?",
+  "ref": "Is it possible to set up a sharing link that expires after 7 days?",
+  "keys": [
+   [
+    "set",
+    "create",
+    "make",
+    "generate"
+   ],
+   [
+    "link"
+   ],
+   [
+    "share",
+    "sharing"
+   ],
+   [
+    "expires",
+    "expire",
+    "expiring",
+    "expiration",
+    "expiry"
+   ],
+   [
+    "7",
+    "seven"
+   ],
+   [
+    "days",
+    "day"
+   ]
+  ]
+ },
+ {
+  "id": "T100",
+  "domain": "enterprise",
+  "ro": "Compară versiunea curentă cu cea de luni și arată-mi diferenețele.",
+  "ref": "Compare the current version with Monday's and show me the differences.",
+  "keys": [
+   [
+    "compare"
+   ],
+   [
+    "current"
+   ],
+   [
+    "version"
+   ],
+   [
+    "monday"
+   ],
+   [
+    "show",
+    "display",
+    "highlight"
+   ],
+   [
+    "differences",
+    "changes",
+    "diff"
+   ]
+  ]
+ }
+]

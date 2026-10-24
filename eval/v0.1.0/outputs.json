@@ -1,0 +1,4245 @@
+[
+ {
+  "id": "T001",
+  "domain": "diagram",
+  "ro": "Adaug\u0103 un dreptunghi albastru \u00een centrul paginii.",
+  "ref": "Add a blue rectangle in the center of the page.",
+  "keys": [
+   [
+    "add",
+    "insert",
+    "create",
+    "place"
+   ],
+   [
+    "rectangle"
+   ],
+   [
+    "blue"
+   ],
+   [
+    "center",
+    "centre",
+    "middle"
+   ],
+   [
+    "page",
+    "canvas"
+   ]
+  ],
+  "vsa": "Add a blue rectangle in the center of the page.",
+  "naive": "Add a rectangle blue in center page.",
+  "source": "Adaug\u0103 un dreptunghi albastru \u00een centrul paginii.",
+  "ms": 9.804847,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T002",
+  "domain": "diagram",
+  "ro": "Conecteaz\u0103 nodul \u201eStart\u201d cu nodul \u201eAprobare\u201d printr-o s\u0103geat\u0103.",
+  "ref": "Connect the \"Start\" node to the \"Aprobare\" node with an arrow.",
+  "keys": [
+   [
+    "connect",
+    "link",
+    "join"
+   ],
+   [
+    "start"
+   ],
+   [
+    "aprobare",
+    "approval"
+   ],
+   [
+    "arrow"
+   ]
+  ],
+  "vsa": "Connect the \"Start\" node to the \"Aprobare\" node with an arrow.",
+  "naive": "Connect node \"Start\" with node \"Aprobare\" through an arrow.",
+  "source": "Conecteaz\u0103 nodul \u201eStart\u201d cu nodul \u201eAprobare\u201d printr-o s\u0103geat\u0103.",
+  "ms": 0.822015,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.5
+  }
+ },
+ {
+  "id": "T003",
+  "domain": "diagram",
+  "ro": "muta al doilea nod cu 20 de pixeli la dreapta",
+  "ref": "Move the second node 20 pixels to the right.",
+  "keys": [
+   [
+    "move",
+    "shift",
+    "nudge"
+   ],
+   [
+    "second",
+    "2nd"
+   ],
+   [
+    "node"
+   ],
+   [
+    "20"
+   ],
+   [
+    "pixels",
+    "pixel",
+    "px"
+   ],
+   [
+    "right"
+   ]
+  ],
+  "vsa": "Move the second node by 20 pixels to the right",
+  "naive": "Move of doilea node with 20 of pixels to right",
+  "source": "muta al doilea nod cu 20 de pixeli la dreapta",
+  "ms": 5.255824,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.833,
+   "source": 0.167
+  }
+ },
+ {
+  "id": "T004",
+  "domain": "diagram",
+  "ro": "Po\u021bi s\u0103 aliniezi toate casetele pe orizontal\u0103?",
+  "ref": "Can you align all the boxes horizontally?",
+  "keys": [
+   [
+    "align"
+   ],
+   [
+    "all"
+   ],
+   [
+    "boxes",
+    "box"
+   ],
+   [
+    "horizontally",
+    "horizontal"
+   ]
+  ],
+  "vsa": "Can you align all the boxes on horizontal?",
+  "naive": "Can its align all boxes on horizontal?",
+  "source": "Po\u021bi s\u0103 aliniezi toate casetele pe orizontal\u0103?",
+  "ms": 0.249973,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T005",
+  "domain": "diagram",
+  "ro": "Grupeaz\u0103 primele trei forme \u0219i denume\u0219te grupul \u201eIntrare\u201d.",
+  "ref": "Group the first three shapes and name the group \"Intrare\".",
+  "keys": [
+   [
+    "group"
+   ],
+   [
+    "first three",
+    "first 3"
+   ],
+   [
+    "shapes"
+   ],
+   [
+    "name",
+    "rename",
+    "call",
+    "label"
+   ],
+   [
+    "intrare",
+    "input",
+    "entry"
+   ]
+  ],
+  "vsa": "Group the first three shapes and name the \"Intrare\" group.",
+  "naive": "Group the first three shapes and denume\u0219te group \"Intrare\".",
+  "source": "Grupeaz\u0103 primele trei forme \u0219i denume\u0219te grupul \u201eIntrare\u201d.",
+  "ms": 2.656571,
+  "stats": {
+   "exact": 6,
+   "vsa": 1,
+   "unknown": 0,
+   "vsaLog": [
+    "denume\u0219te\u2192denumire (0.70)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.8,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T006",
+  "domain": "diagram",
+  "ro": "Vreau s\u0103 schimb culoarea s\u0103ge\u021bii dintre \u201eStart\u201d \u0219i \u201eVerificare\u201d \u00een ro\u0219u.",
+  "ref": "I want to change the color of the arrow between \"Start\" and \"Verificare\" to red.",
+  "keys": [
+   [
+    "change",
+    "set",
+    "make"
+   ],
+   [
+    "color",
+    "colour"
+   ],
+   [
+    "arrow"
+   ],
+   [
+    "start"
+   ],
+   [
+    "verificare",
+    "verification",
+    "check"
+   ],
+   [
+    "red"
+   ]
+  ],
+  "vsa": "I want to change the color of the arrow between \"Start\" and \"Verificare\" in red.",
+  "naive": "Want its change color arrow between \"Start\" and \"Verificare\" in red.",
+  "source": "Vreau s\u0103 schimb culoarea s\u0103ge\u021bii dintre \u201eStart\u201d \u0219i \u201eVerificare\u201d \u00een ro\u0219u.",
+  "ms": 0.758362,
+  "stats": {
+   "exact": 9,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.333
+  }
+ },
+ {
+  "id": "T007",
+  "domain": "diagram",
+  "ro": "adauga un swimlane nou pentru departamentul Financiar",
+  "ref": "Add a new swimlane for the Finance department.",
+  "keys": [
+   [
+    "add",
+    "insert",
+    "create"
+   ],
+   [
+    "swimlane",
+    "swim lane",
+    "lane"
+   ],
+   [
+    "new"
+   ],
+   [
+    "finance",
+    "financial",
+    "financiar"
+   ],
+   [
+    "department"
+   ]
+  ],
+  "vsa": "Add a new swimlane for the Financiar department",
+  "naive": "Add a swimlane new for department Financiar",
+  "source": "adauga un swimlane nou pentru departamentul Financiar",
+  "ms": 0.481241,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T008",
+  "domain": "diagram",
+  "ro": "\u0218terge to\u021bi conectorii care nu sunt lega\u021bi de niciun nod.",
+  "ref": "Delete all connectors that aren't attached to any node.",
+  "keys": [
+   [
+    "delete",
+    "remove"
+   ],
+   [
+    "all"
+   ],
+   [
+    "connectors"
+   ],
+   [
+    "not",
+    "aren't",
+    "unattached",
+    "unconnected",
+    "disconnected",
+    "no node"
+   ],
+   [
+    "node",
+    "nodes"
+   ]
+  ],
+  "vsa": "Delete all the connectors which are not connect to no node.",
+  "naive": "Delete all connectors which not be connect of no node.",
+  "source": "\u0218terge to\u021bi conectorii care nu sunt lega\u021bi de niciun nod.",
+  "ms": 1.548984,
+  "stats": {
+   "exact": 10,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T009",
+  "domain": "diagram",
+  "ro": "Transform\u0103 dreptunghiul selectat \u00eentr-un romb.",
+  "ref": "Turn the selected rectangle into a diamond.",
+  "keys": [
+   [
+    "turn",
+    "convert",
+    "change",
+    "transform"
+   ],
+   [
+    "selected"
+   ],
+   [
+    "rectangle"
+   ],
+   [
+    "diamond",
+    "rhombus"
+   ]
+  ],
+  "vsa": "Convert the rectangle selected into a diamond.",
+  "naive": "Convert rectangle select in a diamond.",
+  "source": "Transform\u0103 dreptunghiul selectat \u00eentr-un romb.",
+  "ms": 0.145284,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.75,
+   "source": 0.25
+  }
+ },
+ {
+  "id": "T010",
+  "domain": "diagram",
+  "ro": "Pune eticheta \u201eDa\u201d pe s\u0103geata care iese din romb.",
+  "ref": "Put the label \"Da\" on the arrow coming out of the diamond.",
+  "keys": [
+   [
+    "put",
+    "add",
+    "set",
+    "place"
+   ],
+   [
+    "label"
+   ],
+   [
+    "da",
+    "yes"
+   ],
+   [
+    "arrow"
+   ],
+   [
+    "diamond",
+    "rhombus",
+    "decision"
+   ]
+  ],
+  "vsa": "Put the \"Da\" label on the arrow which exit from the diamond.",
+  "naive": "Put label \"Da\" on arrow which exit from diamond.",
+  "source": "Pune eticheta \u201eDa\u201d pe s\u0103geata care iese din romb.",
+  "ms": 0.890481,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T011",
+  "domain": "diagram",
+  "ro": "Aranjeaz\u0103 diagrama de sus \u00een jos, cu 40 px \u00eentre noduri.",
+  "ref": "Lay out the diagram top to bottom, with 40 px between nodes.",
+  "keys": [
+   [
+    "lay out",
+    "layout",
+    "arrange"
+   ],
+   [
+    "top to bottom",
+    "top-to-bottom",
+    "top-down",
+    "vertical",
+    "vertically"
+   ],
+   [
+    "40"
+   ],
+   [
+    "px",
+    "pixels",
+    "pixel"
+   ],
+   [
+    "between"
+   ],
+   [
+    "nodes"
+   ]
+  ],
+  "vsa": "Arrange the diagram from top to bottom, by 40 px between nodes.",
+  "naive": "Arrange diagram of up in down, with 40 px enter nodes.",
+  "source": "Aranjeaz\u0103 diagrama de sus \u00een jos, cu 40 px \u00eentre noduri.",
+  "ms": 0.63608,
+  "stats": {
+   "exact": 9,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.667,
+   "source": 0.333
+  }
+ },
+ {
+  "id": "T012",
+  "domain": "diagram",
+  "ro": "te rog fa un export al diagramei in PNG cu fundal transparent",
+  "ref": "Please export the diagram as a PNG with a transparent background.",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "diagram"
+   ],
+   [
+    "png"
+   ],
+   [
+    "transparent"
+   ],
+   [
+    "background"
+   ]
+  ],
+  "vsa": "Please make an export of the diagram in PNG with transparent background",
+  "naive": "You rog make an export of diagram in PNG with background transparent",
+  "source": "te rog fa un export al diagramei in PNG cu fundal transparent",
+  "ms": 0.926804,
+  "stats": {
+   "exact": 10,
+   "vsa": 0,
+   "unknown": 2,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.6
+  }
+ },
+ {
+  "id": "T013",
+  "domain": "diagram",
+  "ro": "F\u0103 s\u0103ge\u021bile curbe \u00een loc de drepte.",
+  "ref": "Make the arrows curved instead of straight.",
+  "keys": [
+   [
+    "make",
+    "change",
+    "set",
+    "turn"
+   ],
+   [
+    "arrows",
+    "arrow",
+    "connectors"
+   ],
+   [
+    "curved",
+    "curve",
+    "curvy"
+   ],
+   [
+    "straight"
+   ]
+  ],
+  "vsa": "Make the arrows curved instead of rights.",
+  "naive": "Make arrows curved in loc of rights.",
+  "source": "F\u0103 s\u0103ge\u021bile curbe \u00een loc de drepte.",
+  "ms": 0.399438,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.75,
+   "naive": 0.75,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T014",
+  "domain": "diagram",
+  "ro": "Cate noduri are diagrama acum?",
+  "ref": "How many nodes does the diagram have right now?",
+  "keys": [
+   [
+    "how many",
+    "number of",
+    "count"
+   ],
+   [
+    "nodes",
+    "node"
+   ],
+   [
+    "diagram"
+   ]
+  ],
+  "vsa": "How many nodes has the diagram now?",
+  "naive": "How many nodes have diagram now?",
+  "source": "Cate noduri are diagrama acum?",
+  "ms": 0.061404,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T015",
+  "domain": "diagram",
+  "ro": "Dubleaz\u0103 grosimea liniilor pentru to\u021bi conectorii.",
+  "ref": "Double the line thickness for all connectors.",
+  "keys": [
+   [
+    "double",
+    "twice",
+    "2x"
+   ],
+   [
+    "thickness",
+    "width",
+    "weight",
+    "thick"
+   ],
+   [
+    "line",
+    "lines",
+    "stroke"
+   ],
+   [
+    "all"
+   ],
+   [
+    "connectors",
+    "connector"
+   ]
+  ],
+  "vsa": "Double the thickness of the lines for all the connectors.",
+  "naive": "Duplicate thickness lines for all connectors.",
+  "source": "Dubleaz\u0103 grosimea liniilor pentru to\u021bi conectorii.",
+  "ms": 0.087807,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.8,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T016",
+  "domain": "diagram",
+  "ro": "Adaug\u0103-i nodului \u201ePlat\u0103\u201d o umbr\u0103 u\u0219oar\u0103.",
+  "ref": "Add a soft shadow to the \"Plat\u0103\" node.",
+  "keys": [
+   [
+    "add",
+    "apply",
+    "give"
+   ],
+   [
+    "shadow"
+   ],
+   [
+    "soft",
+    "light",
+    "subtle",
+    "slight"
+   ],
+   [
+    "plat\u0103",
+    "plata",
+    "payment"
+   ],
+   [
+    "node"
+   ]
+  ],
+  "vsa": "Add a slight shadow to the \"Plat\u0103\" node.",
+  "naive": "Add it node \"Plat\u0103\" a shadow slight.",
+  "source": "Adaug\u0103-i nodului \u201ePlat\u0103\u201d o umbr\u0103 u\u0219oar\u0103.",
+  "ms": 0.570418,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 0.8,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T017",
+  "domain": "diagram",
+  "ro": "Nu mai vreau grila vizibil\u0103, ascunde-o.",
+  "ref": "I don't want the grid visible anymore, hide it.",
+  "keys": [
+   [
+    "hide",
+    "turn off",
+    "disable",
+    "remove"
+   ],
+   [
+    "grid"
+   ]
+  ],
+  "vsa": "No longer I want the visible grid, hide it.",
+  "naive": "Not more want grid visible, hide it.",
+  "source": "Nu mai vreau grila vizibil\u0103, ascunde-o.",
+  "ms": 0.157309,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T018",
+  "domain": "diagram",
+  "ro": "Inserati un cerc verde sub ultimul nod si legati-l de acesta cu o sageata",
+  "ref": "Insert a green circle below the last node and connect it to that node with an arrow.",
+  "keys": [
+   [
+    "insert",
+    "add",
+    "create"
+   ],
+   [
+    "green"
+   ],
+   [
+    "circle"
+   ],
+   [
+    "below",
+    "under",
+    "beneath"
+   ],
+   [
+    "last",
+    "final"
+   ],
+   [
+    "connect",
+    "link",
+    "join",
+    "attach",
+    "arrow"
+   ]
+  ],
+  "vsa": "Insert a green circle below the last node and connect it to this to an arrow",
+  "naive": "Insert a circle green below last node and connect it of this with an arrow",
+  "source": "Inserati un cerc verde sub ultimul nod si legati-l de acesta cu o sageata",
+  "ms": 0.211082,
+  "stats": {
+   "exact": 14,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T019",
+  "domain": "diagram",
+  "ro": "Care e diferen\u021ba \u00eentre un conector ortogonal \u0219i unul drept?",
+  "ref": "What's the difference between an orthogonal connector and a straight one?",
+  "keys": [
+   [
+    "difference",
+    "differ"
+   ],
+   [
+    "orthogonal",
+    "elbow",
+    "right-angle"
+   ],
+   [
+    "straight"
+   ],
+   [
+    "connector"
+   ]
+  ],
+  "vsa": "What is different between a connector ortogonal and straight unul?",
+  "naive": "Which be diferen\u021ban enter a connector ortogonal and unul right?",
+  "source": "Care e diferen\u021ba \u00eentre un conector ortogonal \u0219i unul drept?",
+  "ms": 0.440722,
+  "stats": {
+   "exact": 7,
+   "vsa": 1,
+   "unknown": 2,
+   "vsaLog": [
+    "diferen\u021ba\u2192diferita (0.77)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 0.5,
+   "naive": 0.25,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T020",
+  "domain": "diagram",
+  "ro": "Distribuie nodurile uniform pe verticala",
+  "ref": "Distribute the nodes evenly along the vertical axis.",
+  "keys": [
+   [
+    "distribute",
+    "space"
+   ],
+   [
+    "nodes"
+   ],
+   [
+    "evenly",
+    "equally",
+    "uniformly",
+    "even"
+   ],
+   [
+    "vertical",
+    "vertically"
+   ]
+  ],
+  "vsa": "Distribute the nodes evenly on vertical",
+  "naive": "Distribute nodes evenly on vertical",
+  "source": "Distribuie nodurile uniform pe verticala",
+  "ms": 0.054951,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T021",
+  "domain": "diagram",
+  "ro": "Redenume\u0219te nodul \u201eVerificare date\u201d \u00een \u201eValidare\u201d.",
+  "ref": "Rename the \"Verificare date\" node to \"Validare\".",
+  "keys": [
+   [
+    "rename"
+   ],
+   [
+    "verificare date",
+    "data check",
+    "verify data",
+    "data verification",
+    "check data"
+   ],
+   [
+    "validare",
+    "validation"
+   ]
+  ],
+  "vsa": "Rename the \"Verificare date\" node in \"Validare\".",
+  "naive": "Rename node \"Verificare date\" in \"Validare\".",
+  "source": "Redenume\u0219te nodul \u201eVerificare date\u201d \u00een \u201eValidare\u201d.",
+  "ms": 0.106705,
+  "stats": {
+   "exact": 3,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.667
+  }
+ },
+ {
+  "id": "T022",
+  "domain": "diagram",
+  "ro": "Mut\u0103 toate nodurile din culoarul \u201eV\u00e2nz\u0103ri\u201d \u00een cuolarul \u201eLogistic\u0103\u201d.",
+  "ref": "Move all nodes from the \"V\u00e2nz\u0103ri\" lane to the \"Logistic\u0103\" lane.",
+  "keys": [
+   [
+    "move"
+   ],
+   [
+    "all"
+   ],
+   [
+    "nodes"
+   ],
+   [
+    "v\u00e2nz\u0103ri",
+    "vanzari",
+    "sales"
+   ],
+   [
+    "logistic\u0103",
+    "logistica",
+    "logistics"
+   ],
+   [
+    "lane",
+    "swimlane"
+   ]
+  ],
+  "vsa": "Move all the nodes from the \"V\u00e2nz\u0103ri\" color in clear \"Logistic\u0103\".",
+  "naive": "Move all nodes from culoarul \"V\u00e2nz\u0103ri\" in cuolarul \"Logistic\u0103\".",
+  "source": "Mut\u0103 toate nodurile din culoarul \u201eV\u00e2nz\u0103ri\u201d \u00een cuolarul \u201eLogistic\u0103\u201d.",
+  "ms": 0.853201,
+  "stats": {
+   "exact": 5,
+   "vsa": 2,
+   "unknown": 0,
+   "vsaLog": [
+    "culoarul\u2192culoare (0.78)",
+    "cuolarul\u2192clarul (0.76)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 0.5,
+   "naive": 0.5,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T023",
+  "domain": "diagram",
+  "ro": "Selecteaza caseta de decizie si fa-o de doua ori mai mare",
+  "ref": "Select the decision box and make it twice as big.",
+  "keys": [
+   [
+    "select"
+   ],
+   [
+    "decision"
+   ],
+   [
+    "box",
+    "shape",
+    "node"
+   ],
+   [
+    "twice",
+    "double",
+    "2x",
+    "two times",
+    "200%"
+   ],
+   [
+    "big",
+    "bigger",
+    "large",
+    "larger",
+    "size"
+   ]
+  ],
+  "vsa": "Select the decision box and make it twice larger",
+  "naive": "Select box of decision and make it of two or more large",
+  "source": "Selecteaza caseta de decizie si fa-o de doua ori mai mare",
+  "ms": 0.187456,
+  "stats": {
+   "exact": 11,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.8,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T024",
+  "domain": "diagram",
+  "ro": "Po\u021bi s\u0103 blochezi pozi\u021bia casetei \u201eClient\u201d ca s\u0103 nu o mut din gre\u0219eal\u0103?",
+  "ref": "Can you lock the position of the \"Client\" box so I don't move it by accident?",
+  "keys": [
+   [
+    "lock",
+    "pin",
+    "fix"
+   ],
+   [
+    "position"
+   ],
+   [
+    "client"
+   ],
+   [
+    "box"
+   ]
+  ],
+  "vsa": "Can you lock the position of the \"Client\" box so that not a move from gre\u0219eal\u0103?",
+  "naive": "Can its lock position box \"Client\" that its not a move from gre\u0219eal\u0103?",
+  "source": "Po\u021bi s\u0103 blochezi pozi\u021bia casetei \u201eClient\u201d ca s\u0103 nu o mut din gre\u0219eal\u0103?",
+  "ms": 0.307955,
+  "stats": {
+   "exact": 11,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.25
+  }
+ },
+ {
+  "id": "T025",
+  "domain": "diagram",
+  "ro": "Adaug\u0103 o not\u0103 l\u00e2ng\u0103 nodul 5 cu textul \u201eDe verificat cu juridicul\u201d.",
+  "ref": "Add a note next to node 5 with the text \"De verificat cu juridicul\".",
+  "keys": [
+   [
+    "add",
+    "insert",
+    "create"
+   ],
+   [
+    "note",
+    "annotation",
+    "comment"
+   ],
+   [
+    "next to",
+    "beside",
+    "near"
+   ],
+   [
+    "5",
+    "five"
+   ],
+   [
+    "de verificat cu juridicul",
+    "check with legal",
+    "verify with legal",
+    "legal"
+   ]
+  ],
+  "vsa": "Add a note next to node 5 with the \"De verificat cu juridicul\" text.",
+  "naive": "Add a note next to node 5 with text \"De verificat cu juridicul\".",
+  "source": "Adaug\u0103 o not\u0103 l\u00e2ng\u0103 nodul 5 cu textul \u201eDe verificat cu juridicul\u201d.",
+  "ms": 0.097263,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T026",
+  "domain": "diagram",
+  "ro": "Schimb\u0103 forma tuturor nodurilor de proces \u00een dreptunghiuri rotunjite, dar nu le modifica pe cele de decizie.",
+  "ref": "Change all process nodes to rounded rectangles, but don't modify the decision nodes.",
+  "keys": [
+   [
+    "change",
+    "convert",
+    "turn"
+   ],
+   [
+    "process"
+   ],
+   [
+    "rounded"
+   ],
+   [
+    "rectangles",
+    "rectangle"
+   ],
+   [
+    "don't",
+    "do not",
+    "leave",
+    "without",
+    "except",
+    "not"
+   ],
+   [
+    "decision"
+   ]
+  ],
+  "vsa": "Change the shape tuturor of the process nodes to rounded rectangles, but don't change them the of decision.",
+  "naive": "Change shape tuturor nodes of process in rectangles round, but not them change on the of decision.",
+  "source": "Schimb\u0103 forma tuturor nodurilor de proces \u00een dreptunghiuri rotunjite, dar nu le modifica pe cele de decizie.",
+  "ms": 0.421223,
+  "stats": {
+   "exact": 16,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.833,
+   "naive": 0.833,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T027",
+  "domain": "diagram",
+  "ro": "Aliniaz\u0103 nodruile selectate la st\u00e2nga.",
+  "ref": "Align the selected nodes to the left.",
+  "keys": [
+   [
+    "align"
+   ],
+   [
+    "selected"
+   ],
+   [
+    "nodes"
+   ],
+   [
+    "left"
+   ]
+  ],
+  "vsa": "Align the selected nodes to the left.",
+  "naive": "Align nodruile select to left.",
+  "source": "Aliniaz\u0103 nodruile selectate la st\u00e2nga.",
+  "ms": 0.244151,
+  "stats": {
+   "exact": 4,
+   "vsa": 1,
+   "unknown": 0,
+   "vsaLog": [
+    "nodruile\u2192nodurile (0.72)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.5,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T028",
+  "domain": "diagram",
+  "ro": "Exporta\u021bi doar pagina a doua a diagramei \u00een SVG.",
+  "ref": "Export only the second page of the diagram as SVG.",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "only",
+    "just"
+   ],
+   [
+    "second",
+    "2nd",
+    "page 2"
+   ],
+   [
+    "page"
+   ],
+   [
+    "svg"
+   ]
+  ],
+  "vsa": "Export only the page the second of the diagram to SVG.",
+  "naive": "Export only page of two of diagram in SVG.",
+  "source": "Exporta\u021bi doar pagina a doua a diagramei \u00een SVG.",
+  "ms": 0.135884,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.8,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T029",
+  "domain": "diagram",
+  "ro": "Inverseaza directia sagetii dintre nodurile 3 si 4",
+  "ref": "Reverse the direction of the arrow between nodes 3 and 4.",
+  "keys": [
+   [
+    "reverse",
+    "flip",
+    "invert",
+    "swap"
+   ],
+   [
+    "direction"
+   ],
+   [
+    "arrow"
+   ],
+   [
+    "3",
+    "three"
+   ],
+   [
+    "4",
+    "four"
+   ]
+  ],
+  "vsa": "Reverse the direction of the arrow between nodes 3 and 4",
+  "naive": "Reverse direction arrow between nodes 3 and 4",
+  "source": "Inverseaza directia sagetii dintre nodurile 3 si 4",
+  "ms": 0.060174,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T030",
+  "domain": "diagram",
+  "ro": "creeaza un flowchart simplu cu 4 pasi: Start, Comanda, Livrare, Stop",
+  "ref": "Create a simple flowchart with 4 steps: Start, Comanda, Livrare, Stop.",
+  "keys": [
+   [
+    "create",
+    "make",
+    "build"
+   ],
+   [
+    "flowchart",
+    "flow chart",
+    "flow diagram"
+   ],
+   [
+    "4",
+    "four"
+   ],
+   [
+    "comanda",
+    "comand\u0103",
+    "order"
+   ],
+   [
+    "livrare",
+    "delivery"
+   ],
+   [
+    "stop",
+    "end"
+   ]
+  ],
+  "vsa": "Create a simple flowchart with 4 steps: start, the command, Livrare, Stop",
+  "naive": "Create a flowchart simple with 4 steps: start, command, Livrare, Stop",
+  "source": "creeaza un flowchart simplu cu 4 pasi: Start, Comanda, Livrare, Stop",
+  "ms": 0.091951,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 2,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.833,
+   "naive": 0.833,
+   "source": 0.833
+  }
+ },
+ {
+  "id": "T031",
+  "domain": "edit",
+  "ro": "F\u0103 textul selectat bold \u0219i m\u0103re\u0219te-l la 18.",
+  "ref": "Make the selected text bold and increase it to size 18.",
+  "keys": [
+   [
+    "bold"
+   ],
+   [
+    "selected",
+    "selection"
+   ],
+   [
+    "text"
+   ],
+   [
+    "increase",
+    "enlarge",
+    "size",
+    "bigger"
+   ],
+   [
+    "18"
+   ]
+  ],
+  "vsa": "Make the text selected bold and increase it to 18.",
+  "naive": "Make text select bold and increase it to 18.",
+  "source": "F\u0103 textul selectat bold \u0219i m\u0103re\u0219te-l la 18.",
+  "ms": 0.169198,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.8,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T032",
+  "domain": "edit",
+  "ro": "Ce font are titlul acum? Schimb\u0103-l \u00een Roboto.",
+  "ref": "What font is the title using right now? Change it to Roboto.",
+  "keys": [
+   [
+    "what",
+    "which"
+   ],
+   [
+    "font",
+    "typeface"
+   ],
+   [
+    "title",
+    "heading"
+   ],
+   [
+    "change",
+    "switch",
+    "set"
+   ],
+   [
+    "roboto"
+   ]
+  ],
+  "vsa": "What font has the title now? change it to Roboto.",
+  "naive": "What font have title now? change it in Roboto.",
+  "source": "Ce font are titlul acum? Schimb\u0103-l \u00een Roboto.",
+  "ms": 0.111667,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T033",
+  "domain": "edit",
+  "ro": "seteaza culoarea textului la #1A73E8",
+  "ref": "Set the text color to #1A73E8.",
+  "keys": [
+   [
+    "set",
+    "change"
+   ],
+   [
+    "color",
+    "colour"
+   ],
+   [
+    "text"
+   ],
+   [
+    "#1a73e8",
+    "1a73e8"
+   ]
+  ],
+  "vsa": "Set the color of the text to #1A73E8",
+  "naive": "Set color text to #1A73E8",
+  "source": "seteaza culoarea textului la #1A73E8",
+  "ms": 0.071326,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.25
+  }
+ },
+ {
+  "id": "T034",
+  "domain": "edit",
+  "ro": "Muta\u021bi imaginea pe primul strat.",
+  "ref": "Move the image to the first layer.",
+  "keys": [
+   [
+    "move",
+    "put"
+   ],
+   [
+    "image",
+    "picture",
+    "photo"
+   ],
+   [
+    "first",
+    "1st",
+    "top"
+   ],
+   [
+    "layer"
+   ]
+  ],
+  "vsa": "Move the image on the first layer.",
+  "naive": "Move image on the first layer.",
+  "source": "Muta\u021bi imaginea pe primul strat.",
+  "ms": 0.093949,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T035",
+  "domain": "edit",
+  "ro": "Decupeaz\u0103 poza la format p\u0103trat.",
+  "ref": "Crop the photo to a square format.",
+  "keys": [
+   [
+    "crop"
+   ],
+   [
+    "photo",
+    "image",
+    "picture"
+   ],
+   [
+    "square",
+    "1:1"
+   ]
+  ],
+  "vsa": "Crop the picture to the format square.",
+  "naive": "Crop picture to format square.",
+  "source": "Decupeaz\u0103 poza la format p\u0103trat.",
+  "ms": 0.153665,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T036",
+  "domain": "edit",
+  "ro": "Te rog redimensioneaz\u0103 logo-ul la 200 x 80 de pixeli.",
+  "ref": "Please resize the logo to 200 x 80 pixels.",
+  "keys": [
+   [
+    "resize",
+    "scale"
+   ],
+   [
+    "logo"
+   ],
+   [
+    "200"
+   ],
+   [
+    "80"
+   ],
+   [
+    "pixels",
+    "pixel",
+    "px"
+   ]
+  ],
+  "vsa": "Please resize the logo to 200 x 80 pixels.",
+  "naive": "You rog resize logo to 200 x 80 of pixels.",
+  "source": "Te rog redimensioneaz\u0103 logo-ul la 200 x 80 de pixeli.",
+  "ms": 0.234831,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 2,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.6
+  }
+ },
+ {
+  "id": "T037",
+  "domain": "edit",
+  "ro": "roteste-o cu 45 de grade spre stanga",
+  "ref": "Rotate it 45 degrees to the left.",
+  "keys": [
+   [
+    "rotate",
+    "turn"
+   ],
+   [
+    "45"
+   ],
+   [
+    "degrees",
+    "degree",
+    "\u00b0"
+   ],
+   [
+    "left",
+    "counterclockwise",
+    "counter-clockwise",
+    "anticlockwise",
+    "anti-clockwise",
+    "ccw"
+   ]
+  ],
+  "vsa": "Rotate it by 45 degrees to the left",
+  "naive": "Rotate it with 45 of degrees toward left",
+  "source": "roteste-o cu 45 de grade spre stanga",
+  "ms": 0.086296,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.25
+  }
+ },
+ {
+  "id": "T038",
+  "domain": "edit",
+  "ro": "Duplic\u0103 stratul curent de trei ori.",
+  "ref": "Duplicate the current layer three times.",
+  "keys": [
+   [
+    "duplicate",
+    "copy",
+    "clone"
+   ],
+   [
+    "current",
+    "active",
+    "selected"
+   ],
+   [
+    "layer"
+   ],
+   [
+    "three",
+    "3"
+   ]
+  ],
+  "vsa": "Duplicate the current layer three times.",
+  "naive": "Duplicate layer current of three or.",
+  "source": "Duplic\u0103 stratul curent de trei ori.",
+  "ms": 0.052188,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T039",
+  "domain": "edit",
+  "ro": "Sterge toate imaginile de pe pagina 3",
+  "ref": "Delete all images on page 3.",
+  "keys": [
+   [
+    "delete",
+    "remove"
+   ],
+   [
+    "all"
+   ],
+   [
+    "images",
+    "pictures",
+    "photos"
+   ],
+   [
+    "page"
+   ],
+   [
+    "3",
+    "three"
+   ]
+  ],
+  "vsa": "Delete all the images from page 3",
+  "naive": "Delete all images of on page 3",
+  "source": "Sterge toate imaginile de pe pagina 3",
+  "ms": 0.052544,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T040",
+  "domain": "edit",
+  "ro": "Anuleaza ultimele doua modificari",
+  "ref": "Undo the last two changes.",
+  "keys": [
+   [
+    "undo",
+    "revert",
+    "roll back"
+   ],
+   [
+    "last"
+   ],
+   [
+    "two",
+    "2"
+   ],
+   [
+    "changes",
+    "edits",
+    "actions",
+    "modifications"
+   ]
+  ],
+  "vsa": "Undo the last two changes",
+  "naive": "Undo the last two changes",
+  "source": "Anuleaza ultimele doua modificari",
+  "ms": 0.040681,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T041",
+  "domain": "edit",
+  "ro": "refa ce am anulat",
+  "ref": "Redo what I undid.",
+  "keys": [
+   [
+    "redo",
+    "re-do",
+    "reapply"
+   ],
+   [
+    "undid",
+    "undone",
+    "undo"
+   ]
+  ],
+  "vsa": "Redo what I have undone",
+  "naive": "Redo what have undo",
+  "source": "refa ce am anulat",
+  "ms": 0.185768,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T042",
+  "domain": "edit",
+  "ro": "Seta\u021bi opacitatea fundalului la 60%.",
+  "ref": "Set the background opacity to 60%.",
+  "keys": [
+   [
+    "set",
+    "change"
+   ],
+   [
+    "opacity",
+    "transparency"
+   ],
+   [
+    "background"
+   ],
+   [
+    "60%",
+    "60"
+   ]
+  ],
+  "vsa": "Set the opacity of the background to 60%.",
+  "naive": "Set opacity background to 60%.",
+  "source": "Seta\u021bi opacitatea fundalului la 60%.",
+  "ms": 0.105841,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.25
+  }
+ },
+ {
+  "id": "T043",
+  "domain": "edit",
+  "ro": "Adaug\u0103 un chenar de 2 px cu culoarea #333 \u00een jurul csetei.",
+  "ref": "Add a 2 px border in color #333 around the box.",
+  "keys": [
+   [
+    "add"
+   ],
+   [
+    "border",
+    "outline",
+    "stroke",
+    "frame"
+   ],
+   [
+    "2"
+   ],
+   [
+    "px",
+    "pixels",
+    "pixel"
+   ],
+   [
+    "#333",
+    "333"
+   ],
+   [
+    "box"
+   ]
+  ],
+  "vsa": "Add a 2 px border with the color #333 around the box.",
+  "naive": "Add a border of 2 px with color #333 in jurul csetei.",
+  "source": "Adaug\u0103 un chenar de 2 px cu culoarea #333 \u00een jurul csetei.",
+  "ms": 0.494565,
+  "stats": {
+   "exact": 7,
+   "vsa": 1,
+   "unknown": 1,
+   "vsaLog": [
+    "csetei\u2192casetei (0.76)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.833,
+   "source": 0.5
+  }
+ },
+ {
+  "id": "T044",
+  "domain": "edit",
+  "ro": "\u00cenlocuie\u0219te peste tot \u201eclient\u201d cu \u201ebeneficiar\u201d.",
+  "ref": "Replace \"client\" with \"beneficiar\" everywhere.",
+  "keys": [
+   [
+    "replace"
+   ],
+   [
+    "client"
+   ],
+   [
+    "beneficiar",
+    "beneficiary"
+   ],
+   [
+    "everywhere",
+    "all",
+    "throughout",
+    "every"
+   ]
+  ],
+  "vsa": "Replace over all \"client\" with \"beneficiar\".",
+  "naive": "Replace over all \"client\" with \"beneficiar\".",
+  "source": "\u00cenlocuie\u0219te peste tot \u201eclient\u201d cu \u201ebeneficiar\u201d.",
+  "ms": 0.063444,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.5
+  }
+ },
+ {
+  "id": "T045",
+  "domain": "edit",
+  "ro": "Caut\u0103 cuv\u00e2ntul \u201efactur\u0103\u201d \u00een tot documentul.",
+  "ref": "Search for the word \"factur\u0103\" throughout the document.",
+  "keys": [
+   [
+    "search",
+    "find",
+    "look for",
+    "look up"
+   ],
+   [
+    "factur\u0103",
+    "factura",
+    "invoice"
+   ],
+   [
+    "whole",
+    "entire",
+    "throughout",
+    "all"
+   ],
+   [
+    "document"
+   ]
+  ],
+  "vsa": "Find the \"factur\u0103\" word in the whole document.",
+  "naive": "Find word \"factur\u0103\" in all document.",
+  "source": "Caut\u0103 cuv\u00e2ntul \u201efactur\u0103\u201d \u00een tot documentul.",
+  "ms": 0.114466,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.75,
+   "naive": 0.75,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T046",
+  "domain": "edit",
+  "ro": "Poti sa aliniezi cele trei imagini la centru pe orizontala?",
+  "ref": "Can you center the three images horizontally?",
+  "keys": [
+   [
+    "align",
+    "center",
+    "centre"
+   ],
+   [
+    "three",
+    "3"
+   ],
+   [
+    "images",
+    "pictures"
+   ],
+   [
+    "center",
+    "centre",
+    "middle"
+   ],
+   [
+    "horizontally",
+    "horizontal"
+   ]
+  ],
+  "vsa": "Can you align the three images in the center on horizontal?",
+  "naive": "Can its align the three images to center on horizontal?",
+  "source": "Poti sa aliniezi cele trei imagini la centru pe orizontala?",
+  "ms": 0.168461,
+  "stats": {
+   "exact": 10,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T047",
+  "domain": "edit",
+  "ro": "Distribui\u021bi elementele selectate la distan\u021be egale.",
+  "ref": "Distribute the selected elements evenly.",
+  "keys": [
+   [
+    "distribute",
+    "space"
+   ],
+   [
+    "selected"
+   ],
+   [
+    "elements",
+    "items",
+    "objects",
+    "shapes"
+   ],
+   [
+    "evenly",
+    "equally",
+    "equal",
+    "even"
+   ]
+  ],
+  "vsa": "Distribute the selected elements to equal distances.",
+  "naive": "Distribute elements select to distances equal.",
+  "source": "Distribui\u021bi elementele selectate la distan\u021be egale.",
+  "ms": 0.167739,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.75,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T048",
+  "domain": "edit",
+  "ro": "Nu mai vreau textul subliniat, scoate-i sublinierea.",
+  "ref": "I don't want the text underlined anymore; remove the underline.",
+  "keys": [
+   [
+    "remove",
+    "turn off",
+    "clear",
+    "take off",
+    "delete"
+   ],
+   [
+    "underline",
+    "underlined",
+    "underlining"
+   ],
+   [
+    "text"
+   ]
+  ],
+  "vsa": "No longer I want the underlined text, remove the underline to it.",
+  "naive": "Not more want text underline, remove it underline.",
+  "source": "Nu mai vreau textul subliniat, scoate-i sublinierea.",
+  "ms": 0.102775,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T049",
+  "domain": "edit",
+  "ro": "M\u0103re\u0219te dimensiunea fontului cu 4 puncte \u00een tot paragraful.",
+  "ref": "Increase the font size by 4 points throughout the paragraph.",
+  "keys": [
+   [
+    "increase",
+    "enlarge",
+    "raise",
+    "bump"
+   ],
+   [
+    "font size",
+    "font",
+    "size"
+   ],
+   [
+    "4",
+    "four"
+   ],
+   [
+    "points",
+    "point",
+    "pt"
+   ],
+   [
+    "paragraph"
+   ]
+  ],
+  "vsa": "Increase the font size by 4 points in the whole paragraph.",
+  "naive": "Increase size font with 4 points in all paragraph.",
+  "source": "M\u0103re\u0219te dimensiunea fontului cu 4 puncte \u00een tot paragraful.",
+  "ms": 0.209293,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T050",
+  "domain": "edit",
+  "ro": "Selecteaza dreptunghiul albastru si muta-l in spatele textului",
+  "ref": "Select the blue rectangle and move it behind the text.",
+  "keys": [
+   [
+    "select"
+   ],
+   [
+    "blue"
+   ],
+   [
+    "rectangle"
+   ],
+   [
+    "move",
+    "send",
+    "put"
+   ],
+   [
+    "behind",
+    "back"
+   ],
+   [
+    "text"
+   ]
+  ],
+  "vsa": "Select the blue rectangle and move it to the back of the text",
+  "naive": "Select rectangle blue and move it in back text",
+  "source": "Selecteaza dreptunghiul albastru si muta-l in spatele textului",
+  "ms": 0.086319,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T051",
+  "domain": "edit",
+  "ro": "Adu layer-ul \u201eLogo\u201d \u00een fa\u021b\u0103.",
+  "ref": "Bring the \"Logo\" layer to the front.",
+  "keys": [
+   [
+    "bring",
+    "move"
+   ],
+   [
+    "logo"
+   ],
+   [
+    "layer"
+   ],
+   [
+    "front",
+    "top",
+    "forward"
+   ]
+  ],
+  "vsa": "Bring the \"Logo\" layer to the front.",
+  "naive": "Bring layer \"Logo\" in front.",
+  "source": "Adu layer-ul \u201eLogo\u201d \u00een fa\u021b\u0103.",
+  "ms": 0.10437,
+  "stats": {
+   "exact": 3,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.5
+  }
+ },
+ {
+  "id": "T052",
+  "domain": "edit",
+  "ro": "pune textul pe itlaic si fa-l gri inchis",
+  "ref": "Make the text italic and dark gray.",
+  "keys": [
+   [
+    "italic",
+    "italics"
+   ],
+   [
+    "text"
+   ],
+   [
+    "dark"
+   ],
+   [
+    "gray",
+    "grey"
+   ]
+  ],
+  "vsa": "Put the text on itlaic and make it gray close",
+  "naive": "Put text on itlaic and make it gray close",
+  "source": "pune textul pe itlaic si fa-l gri inchis",
+  "ms": 0.370158,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.5,
+   "naive": 0.5,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T053",
+  "domain": "edit",
+  "ro": "Copiaz\u0103 formatarea din primul paragraf \u0219i aplic-o pe al doilea.",
+  "ref": "Copy the formatting from the first paragraph and apply it to the second.",
+  "keys": [
+   [
+    "copy"
+   ],
+   [
+    "formatting",
+    "format",
+    "style"
+   ],
+   [
+    "first"
+   ],
+   [
+    "paragraph"
+   ],
+   [
+    "apply",
+    "paste"
+   ],
+   [
+    "second"
+   ]
+  ],
+  "vsa": "Copy format from the first paragraph and apply on the second.",
+  "naive": "Copy formatarea from the first paragraph and apply it on of doilea.",
+  "source": "Copiaz\u0103 formatarea din primul paragraf \u0219i aplic-o pe al doilea.",
+  "ms": 0.373304,
+  "stats": {
+   "exact": 8,
+   "vsa": 1,
+   "unknown": 1,
+   "vsaLog": [
+    "formatarea\u2192formata (0.80)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.667,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T054",
+  "domain": "edit",
+  "ro": "Vreau col\u021burile casetei rotunjite, cu o raz\u0103 de 12 px.",
+  "ref": "I want the box corners rounded with a 12 px radius.",
+  "keys": [
+   [
+    "rounded",
+    "round"
+   ],
+   [
+    "corners",
+    "corner"
+   ],
+   [
+    "box"
+   ],
+   [
+    "12"
+   ],
+   [
+    "radius"
+   ],
+   [
+    "px",
+    "pixels",
+    "pixel"
+   ]
+  ],
+  "vsa": "I want the corners of the rounded box, with a raz\u0103 of 12 px.",
+  "naive": "Want corners box round, with a raz\u0103 of 12 px.",
+  "source": "Vreau col\u021burile casetei rotunjite, cu o raz\u0103 de 12 px.",
+  "ms": 0.453691,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.833,
+   "naive": 0.833,
+   "source": 0.333
+  }
+ },
+ {
+  "id": "T055",
+  "domain": "edit",
+  "ro": "Insera\u021bi o imagine din calculator \u00een dreapta titlului.",
+  "ref": "Insert an image from the computer to the right of the title.",
+  "keys": [
+   [
+    "insert",
+    "add",
+    "upload"
+   ],
+   [
+    "image",
+    "picture",
+    "photo"
+   ],
+   [
+    "computer",
+    "local",
+    "device"
+   ],
+   [
+    "right"
+   ],
+   [
+    "title",
+    "heading"
+   ]
+  ],
+  "vsa": "Insert an image in calculate on the right of the title.",
+  "naive": "Insert an image from calculator in right title.",
+  "source": "Insera\u021bi o imagine din calculator \u00een dreapta titlului.",
+  "ms": 0.379019,
+  "stats": {
+   "exact": 7,
+   "vsa": 1,
+   "unknown": 0,
+   "vsaLog": [
+    "calculator\u2192calculat (0.81)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 0.8,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T056",
+  "domain": "edit",
+  "ro": "Blocheaza stratul de fundal ca sa nu-l modific din greseala",
+  "ref": "Lock the background layer so I don't change it by mistake.",
+  "keys": [
+   [
+    "lock"
+   ],
+   [
+    "background"
+   ],
+   [
+    "layer"
+   ]
+  ],
+  "vsa": "Lock the background layer so that don't change it from greseala",
+  "naive": "Lock layer of background that its not it change from greseala",
+  "source": "Blocheaza stratul de fundal ca sa nu-l modific din greseala",
+  "ms": 0.212958,
+  "stats": {
+   "exact": 9,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T057",
+  "domain": "edit",
+  "ro": "Ascunde toate straturile \u00een afar\u0103 de cel selectat.",
+  "ref": "Hide all layers except the selected one.",
+  "keys": [
+   [
+    "hide"
+   ],
+   [
+    "all"
+   ],
+   [
+    "layers"
+   ],
+   [
+    "except",
+    "but",
+    "other than",
+    "apart from"
+   ],
+   [
+    "selected"
+   ]
+  ],
+  "vsa": "Hide all the layers outside of the selected one.",
+  "naive": "Hide all layers in afar\u0103 of the select.",
+  "source": "Ascunde toate straturile \u00een afar\u0103 de cel selectat.",
+  "ms": 0.417417,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 0.6,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T058",
+  "domain": "edit",
+  "ro": "Schimb\u0103 umplerea dreptunghiului \u00een galben deschis.",
+  "ref": "Change the rectangle's fill to light yellow.",
+  "keys": [
+   [
+    "change",
+    "set",
+    "make"
+   ],
+   [
+    "fill"
+   ],
+   [
+    "rectangle"
+   ],
+   [
+    "light",
+    "pale"
+   ],
+   [
+    "yellow"
+   ]
+  ],
+  "vsa": "Change the fill of the rectangle to yellow open.",
+  "naive": "Change fill rectangle in yellow open.",
+  "source": "Schimb\u0103 umplerea dreptunghiului \u00een galben deschis.",
+  "ms": 0.126984,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 0.8,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T059",
+  "domain": "edit",
+  "ro": "Oglinde\u0219te imaginea pe orizontal\u0103.",
+  "ref": "Flip the image horizontally.",
+  "keys": [
+   [
+    "flip",
+    "mirror"
+   ],
+   [
+    "image",
+    "picture",
+    "photo"
+   ],
+   [
+    "horizontally",
+    "horizontal"
+   ]
+  ],
+  "vsa": "Mirror the image on horizontal.",
+  "naive": "Mirror image on horizontal.",
+  "source": "Oglinde\u0219te imaginea pe orizontal\u0103.",
+  "ms": 0.058543,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T060",
+  "domain": "edit",
+  "ro": "Cum fac marginea casetei mai groas\u0103?",
+  "ref": "How do I make the box border thicker?",
+  "keys": [
+   [
+    "how"
+   ],
+   [
+    "border",
+    "outline",
+    "stroke",
+    "edge"
+   ],
+   [
+    "box"
+   ],
+   [
+    "thicker",
+    "thick",
+    "thickness",
+    "wider"
+   ]
+  ],
+  "vsa": "How do I the edge of the thicker box?",
+  "naive": "How make margin box more thick?",
+  "source": "Cum fac marginea casetei mai groas\u0103?",
+  "ms": 0.146876,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.75,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T061",
+  "domain": "animation",
+  "ro": "Adaug\u0103 un efect de fade in de 2 secunde pe titlu.",
+  "ref": "Add a 2-second fade-in effect to the title.",
+  "keys": [
+   [
+    "add",
+    "apply"
+   ],
+   [
+    "fade in",
+    "fade-in",
+    "fades in"
+   ],
+   [
+    "2",
+    "two"
+   ],
+   [
+    "second",
+    "seconds",
+    "sec"
+   ],
+   [
+    "title",
+    "heading"
+   ]
+  ],
+  "vsa": "Add a fade effect in of 2 seconds on the title.",
+  "naive": "Add an effect of fade in of 2 seconds on title.",
+  "source": "Adaug\u0103 un efect de fade in de 2 secunde pe titlu.",
+  "ms": 0.296396,
+  "stats": {
+   "exact": 9,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 1.0,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T062",
+  "domain": "animation",
+  "ro": "Seteaz\u0103 durata anima\u021biei la 500 ms.",
+  "ref": "Set the animation duration to 500 ms.",
+  "keys": [
+   [
+    "set",
+    "change"
+   ],
+   [
+    "duration",
+    "length"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "500"
+   ],
+   [
+    "ms",
+    "milliseconds",
+    "millisecond"
+   ]
+  ],
+  "vsa": "Set the duration of the animation to 500 ms.",
+  "naive": "Set last animation to 500 ms.",
+  "source": "Seteaz\u0103 durata anima\u021biei la 500 ms.",
+  "ms": 0.10757,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.8,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T063",
+  "domain": "animation",
+  "ro": "pune o intarziere de 1,5 secunde inainte sa apara logo-ul",
+  "ref": "Add a 1.5-second delay before the logo appears.",
+  "keys": [
+   [
+    "delay"
+   ],
+   [
+    "1.5",
+    "1,5",
+    "one and a half"
+   ],
+   [
+    "second",
+    "seconds",
+    "sec"
+   ],
+   [
+    "before"
+   ],
+   [
+    "logo"
+   ],
+   [
+    "appears",
+    "appear",
+    "shows",
+    "show"
+   ]
+  ],
+  "vsa": "Set a 1.5 seconds delay before appear the logo",
+  "naive": "Put a delay of 1.5 seconds forward its appear logo",
+  "source": "pune o intarziere de 1,5 secunde inainte sa apara logo-ul",
+  "ms": 0.212449,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.833,
+   "naive": 0.667,
+   "source": 0.167
+  }
+ },
+ {
+  "id": "T064",
+  "domain": "animation",
+  "ro": "F\u0103 anima\u021bia s\u0103 se repete \u00een bucl\u0103 la infinit.",
+  "ref": "Make the animation loop infinitely.",
+  "keys": [
+   [
+    "loop",
+    "repeat"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "infinitely",
+    "infinite",
+    "forever",
+    "indefinitely",
+    "endlessly",
+    "endless"
+   ]
+  ],
+  "vsa": "Make the animation repeat in a loop indefinitely.",
+  "naive": "Make animation its repeat in loop to infinite.",
+  "source": "F\u0103 anima\u021bia s\u0103 se repete \u00een bucl\u0103 la infinit.",
+  "ms": 0.194198,
+  "stats": {
+   "exact": 9,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T065",
+  "domain": "animation",
+  "ro": "Ad\u0103uga\u021bi un cadru cheie la secunda 3 cu opacitatea 0.",
+  "ref": "Add a keyframe at 3 seconds with opacity 0.",
+  "keys": [
+   [
+    "add",
+    "insert",
+    "create"
+   ],
+   [
+    "keyframe",
+    "key frame"
+   ],
+   [
+    "3",
+    "three"
+   ],
+   [
+    "second",
+    "seconds",
+    "sec"
+   ],
+   [
+    "opacity"
+   ],
+   [
+    "0",
+    "zero"
+   ]
+  ],
+  "vsa": "Add a keyframe at second 3 with opacity 0.",
+  "naive": "Add a frame key to second 3 with opacity 0.",
+  "source": "Ad\u0103uga\u021bi un cadru cheie la secunda 3 cu opacitatea 0.",
+  "ms": 0.171223,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.833,
+   "source": 0.333
+  }
+ },
+ {
+  "id": "T066",
+  "domain": "animation",
+  "ro": "Schimba easing-ul in ease-in-out pentru toate tranzitiile",
+  "ref": "Change the easing to ease-in-out for all transitions.",
+  "keys": [
+   [
+    "change",
+    "set"
+   ],
+   [
+    "easing"
+   ],
+   [
+    "ease-in-out",
+    "ease in out"
+   ],
+   [
+    "all"
+   ],
+   [
+    "transitions",
+    "transition"
+   ]
+  ],
+  "vsa": "Change the easing to ease-in-out for all the transitions",
+  "naive": "Change easing in ease-in-out for all transitions",
+  "source": "Schimba easing-ul in ease-in-out pentru toate tranzitiile",
+  "ms": 0.28428,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T067",
+  "domain": "animation",
+  "ro": "F\u0103 cutia s\u0103 intre glis\u00e2nd din st\u00e2nga ecranului.",
+  "ref": "Make the box slide in from the left of the screen.",
+  "keys": [
+   [
+    "slide",
+    "slides",
+    "sliding"
+   ],
+   [
+    "box"
+   ],
+   [
+    "left"
+   ],
+   [
+    "screen"
+   ]
+  ],
+  "vsa": "Make the box enter sliding on the left of the screen.",
+  "naive": "Make box its enter slide from left screen.",
+  "source": "F\u0103 cutia s\u0103 intre glis\u00e2nd din st\u00e2nga ecranului.",
+  "ms": 0.148323,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T068",
+  "domain": "animation",
+  "ro": "M\u0103re\u0219te butonul la 120% c\u00e2nd trec cu mouse-ul peste el.",
+  "ref": "Scale the button up to 120% on hover.",
+  "keys": [
+   [
+    "scale",
+    "enlarge",
+    "grow",
+    "increase",
+    "zoom"
+   ],
+   [
+    "button"
+   ],
+   [
+    "120%",
+    "120"
+   ],
+   [
+    "hover",
+    "mouse over",
+    "mouseover",
+    "hovering",
+    "mouse"
+   ]
+  ],
+  "vsa": "Increase the button to 120% when go with the mouse over it.",
+  "naive": "Increase button to 120% when go with mouse over it.",
+  "source": "M\u0103re\u0219te butonul la 120% c\u00e2nd trec cu mouse-ul peste el.",
+  "ms": 0.138815,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.5
+  }
+ },
+ {
+  "id": "T069",
+  "domain": "animation",
+  "ro": "Rote\u0219te iconi\u021ba 360 de grade \u00eentr-o secud\u0103.",
+  "ref": "Rotate the icon 360 degrees in one second.",
+  "keys": [
+   [
+    "rotate",
+    "spin",
+    "turn"
+   ],
+   [
+    "icon"
+   ],
+   [
+    "360"
+   ],
+   [
+    "degrees",
+    "degree",
+    "\u00b0"
+   ],
+   [
+    "one second",
+    "1 second",
+    "1 s",
+    "1s",
+    "a second",
+    "1-second"
+   ]
+  ],
+  "vsa": "Rotate icon 360 of degrees in a second.",
+  "naive": "Rotate icon 360 of degrees in a secud\u0103.",
+  "source": "Rote\u0219te iconi\u021ba 360 de grade \u00eentr-o secud\u0103.",
+  "ms": 0.420097,
+  "stats": {
+   "exact": 6,
+   "vsa": 1,
+   "unknown": 0,
+   "vsaLog": [
+    "secud\u0103\u2192secunda (0.76)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.8,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T070",
+  "domain": "animation",
+  "ro": "Porne\u0219te anima\u021bia doar la click pe imagine.",
+  "ref": "Start the animation only when the image is clicked.",
+  "keys": [
+   [
+    "start",
+    "play",
+    "trigger",
+    "run"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "only"
+   ],
+   [
+    "click",
+    "clicked",
+    "clicking"
+   ],
+   [
+    "image",
+    "picture"
+   ]
+  ],
+  "vsa": "Play the animation only on click on the image.",
+  "naive": "Start animation only to click on image.",
+  "source": "Porne\u0219te anima\u021bia doar la click pe imagine.",
+  "ms": 0.113473,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T071",
+  "domain": "animation",
+  "ro": "Opreste animatia dupa al treilea ciclu",
+  "ref": "Stop the animation after the third cycle.",
+  "keys": [
+   [
+    "stop",
+    "end",
+    "halt"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "after"
+   ],
+   [
+    "third",
+    "3rd"
+   ],
+   [
+    "cycle",
+    "loop",
+    "iteration",
+    "repetition"
+   ]
+  ],
+  "vsa": "Stop the animation after the third cycle",
+  "naive": "Stop animation after of treilea cycle",
+  "source": "Opreste animatia dupa al treilea ciclu",
+  "ms": 0.215428,
+  "stats": {
+   "exact": 5,
+   "vsa": 1,
+   "unknown": 0,
+   "vsaLog": [
+    "treilea\u2192treimea (0.74)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.8,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T072",
+  "domain": "animation",
+  "ro": "Reda animatia de la inceput",
+  "ref": "Play the animation from the beginning.",
+  "keys": [
+   [
+    "play",
+    "replay",
+    "run"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "beginning",
+    "start"
+   ]
+  ],
+  "vsa": "Play the animation from the beginning",
+  "naive": "Play animation of to start",
+  "source": "Reda animatia de la inceput",
+  "ms": 0.070412,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T073",
+  "domain": "animation",
+  "ro": "Po\u021bi s\u0103 reduci viteza anima\u021biei la 50%?",
+  "ref": "Can you reduce the animation speed to 50%?",
+  "keys": [
+   [
+    "reduce",
+    "slow",
+    "lower",
+    "decrease"
+   ],
+   [
+    "speed"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "50%",
+    "50",
+    "half"
+   ]
+  ],
+  "vsa": "Can you reduce the speed of the animation to 50%?",
+  "naive": "Can its reduce speed animation to 50%?",
+  "source": "Po\u021bi s\u0103 reduci viteza anima\u021biei la 50%?",
+  "ms": 0.089951,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.25
+  }
+ },
+ {
+  "id": "T074",
+  "domain": "animation",
+  "ro": "Mut\u0103 keyframe-ul de la 2 s la 2,5 s.",
+  "ref": "Move the keyframe from 2 s to 2.5 s.",
+  "keys": [
+   [
+    "move",
+    "shift"
+   ],
+   [
+    "keyframe",
+    "key frame"
+   ],
+   [
+    "from 2",
+    "2 s",
+    "2s",
+    "2 seconds",
+    "2 sec"
+   ],
+   [
+    "2.5",
+    "2,5"
+   ],
+   [
+    "s",
+    "seconds",
+    "second",
+    "sec"
+   ]
+  ],
+  "vsa": "Move the keyframe from 2 s to 2.5 s.",
+  "naive": "Move keyframe of to 2 s to 2.5 s.",
+  "source": "Mut\u0103 keyframe-ul de la 2 s la 2,5 s.",
+  "ms": 0.150419,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 2,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 0.8,
+   "source": 0.6
+  }
+ },
+ {
+  "id": "T075",
+  "domain": "animation",
+  "ro": "Te rog s\u0103 \u0219tergi ultimul cadru cheie de pe timeline.",
+  "ref": "Please delete the last keyframe on the timeline.",
+  "keys": [
+   [
+    "delete",
+    "remove"
+   ],
+   [
+    "last",
+    "final"
+   ],
+   [
+    "keyframe",
+    "key frame"
+   ],
+   [
+    "timeline"
+   ]
+  ],
+  "vsa": "Please delete the last keyframe from the timeline.",
+  "naive": "You rog its delete last frame key of on timeline.",
+  "source": "Te rog s\u0103 \u0219tergi ultimul cadru cheie de pe timeline.",
+  "ms": 0.116346,
+  "stats": {
+   "exact": 9,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.75,
+   "source": 0.25
+  }
+ },
+ {
+  "id": "T076",
+  "domain": "animation",
+  "ro": "F\u0103 textele s\u0103 apar\u0103 unul dup\u0103 altul, la 300 ms distan\u021b\u0103.",
+  "ref": "Make the texts appear one after another, 300 ms apart.",
+  "keys": [
+   [
+    "appear",
+    "show",
+    "reveal"
+   ],
+   [
+    "texts",
+    "text"
+   ],
+   [
+    "one after another",
+    "one after the other",
+    "sequentially",
+    "in sequence",
+    "one by one",
+    "staggered"
+   ],
+   [
+    "300"
+   ],
+   [
+    "ms",
+    "milliseconds",
+    "millisecond"
+   ]
+  ],
+  "vsa": "Make the texts appear one after another, to 300 ms distances.",
+  "naive": "Make texts its appear unul after altul, to 300 ms distance.",
+  "source": "F\u0103 textele s\u0103 apar\u0103 unul dup\u0103 altul, la 300 ms distan\u021b\u0103.",
+  "ms": 0.411929,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 2,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.8,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T077",
+  "domain": "animation",
+  "ro": "vreau ca imaginea sa dispara treptat dupa 4 secunde",
+  "ref": "I want the image to fade out after 4 seconds.",
+  "keys": [
+   [
+    "fade out",
+    "fade-out",
+    "fades out",
+    "disappear",
+    "disappears",
+    "gradually"
+   ],
+   [
+    "image",
+    "picture"
+   ],
+   [
+    "after"
+   ],
+   [
+    "4",
+    "four"
+   ],
+   [
+    "seconds",
+    "second",
+    "sec"
+   ]
+  ],
+  "vsa": "I want as the image to disappear gradually after 4 seconds",
+  "naive": "Want that image its disappear gradual after 4 seconds",
+  "source": "vreau ca imaginea sa dispara treptat dupa 4 secunde",
+  "ms": 0.084658,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T078",
+  "domain": "animation",
+  "ro": "Nu mai rula anima\u021bia automat la \u00eenc\u0103rcarea paginii.",
+  "ref": "Stop running the animation automatically when the page loads.",
+  "keys": [
+   [
+    "stop",
+    "don't",
+    "do not",
+    "no longer",
+    "disable"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "automatically",
+    "auto",
+    "autoplay",
+    "automatic"
+   ],
+   [
+    "page"
+   ],
+   [
+    "load",
+    "loads",
+    "loading"
+   ]
+  ],
+  "vsa": "No longer play the automatic animation on the upload of the page.",
+  "naive": "Not more run animation automatic to upload page.",
+  "source": "Nu mai rula anima\u021bia automat la \u00eenc\u0103rcarea paginii.",
+  "ms": 0.150737,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 0.6,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T079",
+  "domain": "animation",
+  "ro": "Aplicati aceeasi animatie si pe celelalte doua butoane",
+  "ref": "Apply the same animation to the other two buttons as well.",
+  "keys": [
+   [
+    "apply",
+    "copy",
+    "add"
+   ],
+   [
+    "same"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "other"
+   ],
+   [
+    "two",
+    "2"
+   ],
+   [
+    "buttons"
+   ]
+  ],
+  "vsa": "Apply the same animation and on the other two buttons",
+  "naive": "Apply the same animation and on the other two buttons",
+  "source": "Aplicati aceeasi animatie si pe celelalte doua butoane",
+  "ms": 0.108033,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T080",
+  "domain": "animation",
+  "ro": "Adaug\u0103-i s\u0103ge\u021bii o anima\u021bie de desenare de la st\u00e2nga la dreapta.",
+  "ref": "Add a draw-on animation to the arrow, going from left to right.",
+  "keys": [
+   [
+    "add",
+    "apply",
+    "give"
+   ],
+   [
+    "arrow"
+   ],
+   [
+    "draw",
+    "drawing",
+    "draw-on",
+    "stroke"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "left"
+   ],
+   [
+    "right"
+   ]
+  ],
+  "vsa": "Add an animation to the arrow of draw from the left to the right.",
+  "naive": "Add it arrow an animation of desenare of to left to right.",
+  "source": "Adaug\u0103-i s\u0103ge\u021bii o anima\u021bie de desenare de la st\u00e2nga la dreapta.",
+  "ms": 0.438541,
+  "stats": {
+   "exact": 10,
+   "vsa": 1,
+   "unknown": 0,
+   "vsaLog": [
+    "desenare\u2192desena (0.77)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.833,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T081",
+  "domain": "animation",
+  "ro": "Pune-le pe toate s\u0103 pulseze u\u0219or, \u00een bucl\u0103.",
+  "ref": "Make them all pulse gently in a loop.",
+  "keys": [
+   [
+    "all"
+   ],
+   [
+    "pulse",
+    "pulsing",
+    "pulsate"
+   ],
+   [
+    "gently",
+    "slightly",
+    "subtly",
+    "subtle",
+    "soft",
+    "softly",
+    "lightly",
+    "gentle"
+   ],
+   [
+    "loop",
+    "looping",
+    "repeat"
+   ]
+  ],
+  "vsa": "Put on all to pulse slight, in a loop.",
+  "naive": "Put them on all its pulse slight, in loop.",
+  "source": "Pune-le pe toate s\u0103 pulseze u\u0219or, \u00een bucl\u0103.",
+  "ms": 0.170274,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.75,
+   "naive": 0.75,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T082",
+  "domain": "animation",
+  "ro": "C\u00e2t dureaz\u0103 \u00een total secven\u021ba de anima\u021bii?",
+  "ref": "How long does the animation sequence last in total?",
+  "keys": [
+   [
+    "how long",
+    "duration",
+    "length",
+    "total time"
+   ],
+   [
+    "total",
+    "overall"
+   ],
+   [
+    "sequence"
+   ],
+   [
+    "animation",
+    "animations"
+   ]
+  ],
+  "vsa": "How long does it take in total the sequence of animations?",
+  "naive": "How much last in total sequence of animations?",
+  "source": "C\u00e2t dureaz\u0103 \u00een total secven\u021ba de anima\u021bii?",
+  "ms": 0.154077,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.75,
+   "source": 0.25
+  }
+ },
+ {
+  "id": "T083",
+  "domain": "animation",
+  "ro": "Seteaz\u0103 vitzea de redare la 2x.",
+  "ref": "Set the playback speed to 2x.",
+  "keys": [
+   [
+    "set",
+    "change"
+   ],
+   [
+    "playback",
+    "play"
+   ],
+   [
+    "speed"
+   ],
+   [
+    "2x",
+    "2",
+    "double",
+    "twice"
+   ]
+  ],
+  "vsa": "Set vitzea of playback to 2x.",
+  "naive": "Set vitzea of playback to 2x.",
+  "source": "Seteaz\u0103 vitzea de redare la 2x.",
+  "ms": 0.166004,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.75,
+   "naive": 0.75,
+   "source": 0.25
+  }
+ },
+ {
+  "id": "T084",
+  "domain": "animation",
+  "ro": "Anima\u021bia de intrare s\u0103 \u00eenceap\u0103 la 0,8 secunde dup\u0103 cea anterioar\u0103.",
+  "ref": "Start the entrance animation 0.8 seconds after the previous one.",
+  "keys": [
+   [
+    "entrance",
+    "entry",
+    "intro",
+    "enter"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "0.8",
+    "0,8"
+   ],
+   [
+    "seconds",
+    "second",
+    "sec"
+   ],
+   [
+    "after"
+   ],
+   [
+    "previous",
+    "prior",
+    "preceding"
+   ]
+  ],
+  "vsa": "The entrance animation to start to 0.8 seconds after the previous one.",
+  "naive": "Animation of input its start to 0.8 seconds after the previous.",
+  "source": "Anima\u021bia de intrare s\u0103 \u00eenceap\u0103 la 0,8 secunde dup\u0103 cea anterioar\u0103.",
+  "ms": 0.157869,
+  "stats": {
+   "exact": 10,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.833,
+   "naive": 0.667,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T085",
+  "domain": "animation",
+  "ro": "Fa ca bulina sa sara de 3 ori cu easign bounce",
+  "ref": "Make the dot bounce 3 times with bounce easing.",
+  "keys": [
+   [
+    "dot",
+    "circle",
+    "bullet",
+    "ball"
+   ],
+   [
+    "bounce",
+    "bounces",
+    "jump",
+    "jumps"
+   ],
+   [
+    "3",
+    "three"
+   ],
+   [
+    "times"
+   ],
+   [
+    "easing",
+    "ease"
+   ]
+  ],
+  "vsa": "Make as the bullet bounce of 3 or with easing bounce",
+  "naive": "Make that bullet its bounce of 3 or with easign bounce",
+  "source": "Fa ca bulina sa sara de 3 ori cu easign bounce",
+  "ms": 0.36962,
+  "stats": {
+   "exact": 8,
+   "vsa": 1,
+   "unknown": 1,
+   "vsaLog": [
+    "easign\u2192easing (0.71)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 0.6,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T086",
+  "domain": "enterprise",
+  "ro": "Cum export documentul \u00een PDF cu fonturile incluse?",
+  "ref": "How do I export the document to PDF with the fonts embedded?",
+  "keys": [
+   [
+    "how"
+   ],
+   [
+    "export",
+    "save"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "fonts",
+    "font"
+   ],
+   [
+    "embedded",
+    "embed",
+    "included",
+    "include",
+    "including"
+   ]
+  ],
+  "vsa": "How do I export the document to PDF with the included fonts?",
+  "naive": "How export document in PDF with fonts include?",
+  "source": "Cum export documentul \u00een PDF cu fonturile incluse?",
+  "ms": 0.147092,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.4
+  }
+ },
+ {
+  "id": "T087",
+  "domain": "enterprise",
+  "ro": "Unde e istoricul versiunilor pentru fi\u0219ierul \u0103sta?",
+  "ref": "Where is the version history for this file?",
+  "keys": [
+   [
+    "where"
+   ],
+   [
+    "version",
+    "versions"
+   ],
+   [
+    "history"
+   ],
+   [
+    "file"
+   ]
+  ],
+  "vsa": "Where is the version history for this file?",
+  "naive": "Where be history versions for file this?",
+  "source": "Unde e istoricul versiunilor pentru fi\u0219ierul \u0103sta?",
+  "ms": 0.096503,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T088",
+  "domain": "enterprise",
+  "ro": "Po\u021bi s\u0103-i dai lui Andrei drept de editare doar pe proiectul \u0103sta?",
+  "ref": "Can you give Andrei edit access to this project only?",
+  "keys": [
+   [
+    "give",
+    "grant"
+   ],
+   [
+    "andrei"
+   ],
+   [
+    "edit",
+    "editing",
+    "editor"
+   ],
+   [
+    "access",
+    "rights",
+    "permission",
+    "permissions"
+   ],
+   [
+    "only",
+    "just"
+   ],
+   [
+    "project"
+   ]
+  ],
+  "vsa": "Can you give it its Andrei edit rights only on this project?",
+  "naive": "Can its it give of Andrei right of editing only on project this?",
+  "source": "Po\u021bi s\u0103-i dai lui Andrei drept de editare doar pe proiectul \u0103sta?",
+  "ms": 0.13024,
+  "stats": {
+   "exact": 11,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 0.833,
+   "source": 0.167
+  }
+ },
+ {
+  "id": "T089",
+  "domain": "enterprise",
+  "ro": "Partaja\u021bi fi\u0219ierul cu echipa de marketing, doar cu drept de vizualizare.",
+  "ref": "Share the file with the marketing team, view-only.",
+  "keys": [
+   [
+    "share"
+   ],
+   [
+    "file"
+   ],
+   [
+    "marketing"
+   ],
+   [
+    "team"
+   ],
+   [
+    "view",
+    "view-only",
+    "read-only",
+    "viewing",
+    "viewer"
+   ]
+  ],
+  "vsa": "Share the file with the marketing team, only with view right.",
+  "naive": "Share file with team of marketing, only with right of view.",
+  "source": "Partaja\u021bi fi\u0219ierul cu echipa de marketing, doar cu drept de vizualizare.",
+  "ms": 0.323903,
+  "stats": {
+   "exact": 10,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T090",
+  "domain": "enterprise",
+  "ro": "restaureaza versiunea de ieri de la ora 14:30",
+  "ref": "Restore yesterday's version from 2:30 PM.",
+  "keys": [
+   [
+    "restore",
+    "revert",
+    "roll back"
+   ],
+   [
+    "version"
+   ],
+   [
+    "yesterday"
+   ],
+   [
+    "14:30",
+    "2:30"
+   ]
+  ],
+  "vsa": "Restore the ieri version from hour 14: 30",
+  "naive": "Restore version of ieri of to hour 14: 30",
+  "source": "restaureaza versiunea de ieri de la ora 14:30",
+  "ms": 0.262746,
+  "stats": {
+   "exact": 6,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.5,
+   "naive": 0.5,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T091",
+  "domain": "enterprise",
+  "ro": "Adaug\u0103 un comentariu la slide-ul 4: \u201eCifrele trebuie actualizate\u201d.",
+  "ref": "Add a comment to slide 4: \"Cifrele trebuie actualizate\".",
+  "keys": [
+   [
+    "add",
+    "leave",
+    "post"
+   ],
+   [
+    "comment"
+   ],
+   [
+    "slide"
+   ],
+   [
+    "4",
+    "four"
+   ],
+   [
+    "cifrele trebuie actualizate",
+    "need to be updated",
+    "needs updating",
+    "need updating",
+    "must be updated",
+    "should be updated",
+    "figures"
+   ]
+  ],
+  "vsa": "Add a comment to slide 4: \"Cifrele trebuie actualizate\".",
+  "naive": "Add a comment to slide 4: \"Cifrele trebuie actualizate\".",
+  "source": "Adaug\u0103 un comentariu la slide-ul 4: \u201eCifrele trebuie actualizate\u201d.",
+  "ms": 0.115367,
+  "stats": {
+   "exact": 4,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.6
+  }
+ },
+ {
+  "id": "T092",
+  "domain": "enterprise",
+  "ro": "Importa datele din fisierul vanzari_2025.csv intr-un tabel nou",
+  "ref": "Import the data from vanzari_2025.csv into a new table.",
+  "keys": [
+   [
+    "import",
+    "load"
+   ],
+   [
+    "vanzari_2025.csv"
+   ],
+   [
+    "new"
+   ],
+   [
+    "table"
+   ]
+  ],
+  "vsa": "Import the data from the file vanzari_2025. csv in a new table",
+  "naive": "Import data from file vanzari_2025. csv in a table new",
+  "source": "Importa datele din fisierul vanzari_2025.csv intr-un tabel nou",
+  "ms": 0.489153,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 2,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.75,
+   "naive": 0.75,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T093",
+  "domain": "enterprise",
+  "ro": "Redenume\u0219te fi\u0219ierul \u00een \u201eRaport_Q3_final\u201d \u0219i salveaz\u0103-l \u00een folderul Rapoarte.",
+  "ref": "Rename the file to \"Raport_Q3_final\" and save it in the Rapoarte folder.",
+  "keys": [
+   [
+    "rename"
+   ],
+   [
+    "raport_q3_final"
+   ],
+   [
+    "save",
+    "move",
+    "put"
+   ],
+   [
+    "rapoarte",
+    "reports"
+   ],
+   [
+    "folder"
+   ]
+  ],
+  "vsa": "Rename the file in \"Raport_Q3_final\" and save it to the Rapoarte folder.",
+  "naive": "Rename file in \"Raport_Q3_final\" and save it in folder reports.",
+  "source": "Redenume\u0219te fi\u0219ierul \u00een \u201eRaport_Q3_final\u201d \u0219i salveaz\u0103-l \u00een folderul Rapoarte.",
+  "ms": 0.198388,
+  "stats": {
+   "exact": 8,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 0.8,
+   "source": 0.2
+  }
+ },
+ {
+  "id": "T094",
+  "domain": "enterprise",
+  "ro": "Vreau s\u0103 creez un \u0219ablon nou pornind de la prezentarea asta.",
+  "ref": "I want to create a new template based on this presentation.",
+  "keys": [
+   [
+    "create",
+    "make",
+    "save"
+   ],
+   [
+    "new"
+   ],
+   [
+    "template"
+   ],
+   [
+    "presentation"
+   ]
+  ],
+  "vsa": "I want to create a new template starting from this presentation.",
+  "naive": "Want its create a template new start of to presentation this.",
+  "source": "Vreau s\u0103 creez un \u0219ablon nou pornind de la prezentarea asta.",
+  "ms": 0.878339,
+  "stats": {
+   "exact": 11,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T095",
+  "domain": "enterprise",
+  "ro": "Cine a modificat ultima data diagrama asta?",
+  "ref": "Who last modified this diagram?",
+  "keys": [
+   [
+    "who"
+   ],
+   [
+    "last"
+   ],
+   [
+    "modified",
+    "edited",
+    "changed"
+   ],
+   [
+    "diagram"
+   ]
+  ],
+  "vsa": "Who of change the last date this diagram?",
+  "naive": "Who of change last date diagram this?",
+  "source": "Cine a modificat ultima data diagrama asta?",
+  "ms": 0.073036,
+  "stats": {
+   "exact": 7,
+   "vsa": 0,
+   "unknown": 0,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.75,
+   "naive": 0.75,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T096",
+  "domain": "enterprise",
+  "ro": "Poti exporta toate paginile ca SVG-uri separate intr-o arhiva zip?",
+  "ref": "Can you export all pages as separate SVGs in a zip archive?",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "all"
+   ],
+   [
+    "pages"
+   ],
+   [
+    "svg",
+    "svgs"
+   ],
+   [
+    "separate",
+    "individual"
+   ],
+   [
+    "zip",
+    "archive"
+   ]
+  ],
+  "vsa": "Can you export all the pages as separate SVGs to an archive zip?",
+  "naive": "Can export all pages that SVG separate in an archive zip?",
+  "source": "Poti exporta toate paginile ca SVG-uri separate intr-o arhiva zip?",
+  "ms": 0.172922,
+  "stats": {
+   "exact": 9,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.5
+  }
+ },
+ {
+  "id": "T097",
+  "domain": "enterprise",
+  "ro": "Retrage\u021bi accesul utilizatorilor externi la acest dosar.",
+  "ref": "Revoke external users' access to this folder.",
+  "keys": [
+   [
+    "revoke",
+    "remove",
+    "withdraw"
+   ],
+   [
+    "access"
+   ],
+   [
+    "external"
+   ],
+   [
+    "users",
+    "user"
+   ],
+   [
+    "folder"
+   ]
+  ],
+  "vsa": "Collapse the access of the external users to this folder.",
+  "naive": "Retrage\u021bi access users external to this folder.",
+  "source": "Retrage\u021bi accesul utilizatorilor externi la acest dosar.",
+  "ms": 0.375369,
+  "stats": {
+   "exact": 6,
+   "vsa": 1,
+   "unknown": 0,
+   "vsaLog": [
+    "Retrage\u021bi\u2192restrangeti (0.73)"
+   ]
+  },
+  "slotRecall": {
+   "vsa": 0.8,
+   "naive": 0.8,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T098",
+  "domain": "enterprise",
+  "ro": "cum activez notificarile pt comentarii noi",
+  "ref": "How do I turn on notifications for new comments?",
+  "keys": [
+   [
+    "how"
+   ],
+   [
+    "enable",
+    "turn on",
+    "activate",
+    "switch on"
+   ],
+   [
+    "notifications",
+    "notification"
+   ],
+   [
+    "new"
+   ],
+   [
+    "comments",
+    "comment"
+   ]
+  ],
+  "vsa": "How do I enable the notifications pt new comments",
+  "naive": "How enable notifications pt comments new",
+  "source": "cum activez notificarile pt comentarii noi",
+  "ms": 0.061109,
+  "stats": {
+   "exact": 5,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 1.0,
+   "naive": 1.0,
+   "source": 0.0
+  }
+ },
+ {
+  "id": "T099",
+  "domain": "enterprise",
+  "ro": "Se poate seta un link de partajare care expir\u0103 dup\u0103 7 zile?",
+  "ref": "Is it possible to set up a sharing link that expires after 7 days?",
+  "keys": [
+   [
+    "set",
+    "create",
+    "make",
+    "generate"
+   ],
+   [
+    "link"
+   ],
+   [
+    "share",
+    "sharing"
+   ],
+   [
+    "expires",
+    "expire",
+    "expiring",
+    "expiration",
+    "expiry"
+   ],
+   [
+    "7",
+    "seven"
+   ],
+   [
+    "days",
+    "day"
+   ]
+  ],
+  "vsa": "Is it possible set a sharing link which expir\u0103 after 7 days?",
+  "naive": "Can set a link of sharing which expir\u0103 after 7 days?",
+  "source": "Se poate seta un link de partajare care expir\u0103 dup\u0103 7 zile?",
+  "ms": 0.376888,
+  "stats": {
+   "exact": 10,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.833,
+   "naive": 0.833,
+   "source": 0.333
+  }
+ },
+ {
+  "id": "T100",
+  "domain": "enterprise",
+  "ro": "Compar\u0103 versiunea curent\u0103 cu cea de luni \u0219i arat\u0103-mi diferene\u021bele.",
+  "ref": "Compare the current version with Monday's and show me the differences.",
+  "keys": [
+   [
+    "compare"
+   ],
+   [
+    "current"
+   ],
+   [
+    "version"
+   ],
+   [
+    "monday"
+   ],
+   [
+    "show",
+    "display",
+    "highlight"
+   ],
+   [
+    "differences",
+    "changes",
+    "diff"
+   ]
+  ],
+  "vsa": "Compare the current version with the of months and show me diferene\u021bele.",
+  "naive": "Compare version current with the of months and show me diferene\u021bele.",
+  "source": "Compar\u0103 versiunea curent\u0103 cu cea de luni \u0219i arat\u0103-mi diferene\u021bele.",
+  "ms": 0.433874,
+  "stats": {
+   "exact": 9,
+   "vsa": 0,
+   "unknown": 1,
+   "vsaLog": []
+  },
+  "slotRecall": {
+   "vsa": 0.667,
+   "naive": 0.667,
+   "source": 0.0
+  }
+ }
+]

@@ -1,0 +1,242 @@
+[
+ {
+  "id": "U001",
+  "vsa": "Connect the \"Facturare\" node to \"Plăți\" to a dotted arrow."
+ },
+ {
+  "id": "U002",
+  "vsa": "Put a decision diamond below step 3 and write in it \"Aprobat?\""
+ },
+ {
+  "id": "U003",
+  "vsa": "Align all the rectangles in the column on the left to the top edge."
+ },
+ {
+  "id": "U004",
+  "vsa": "How can I to group the three green circles so that move them together?"
+ },
+ {
+  "id": "U005",
+  "vsa": "Select the connector between the server and the database and make it red, thick of 3 px."
+ },
+ {
+  "id": "U006",
+  "vsa": "Don't delete the legend, only reduce it by 20%."
+ },
+ {
+  "id": "U007",
+  "vsa": "Aduaga a new named Logistica swimlane enter Vanzari and Productie"
+ },
+ {
+  "id": "U008",
+  "vsa": "I want to change the shape of the start node to an ellipse and put it background #FFE08A."
+ },
+ {
+  "id": "U009",
+  "vsa": "Can you distribute evenly on horizontal the boxes from the row the second?"
+ },
+ {
+  "id": "U010",
+  "vsa": "How many nodes neconectate are in this diagram?"
+ },
+ {
+  "id": "U011",
+  "vsa": "Duplicate the approval flow and then move the copy on page 2"
+ },
+ {
+  "id": "U012",
+  "vsa": "Please, reverse the direction tuturor of the arrows which pleacă in \"Client\"."
+ },
+ {
+  "id": "U013",
+  "vsa": "Rename the label of the cell the de square links in \"retry după 30s\"."
+ },
+ {
+  "id": "U014",
+  "vsa": "Where do I find the rutare option ortogonala pt connectors?"
+ },
+ {
+  "id": "U015",
+  "vsa": "Lock the \"Fundal\" layer and hide the with notes."
+ },
+ {
+  "id": "U016",
+  "vsa": "Crop the picture to 1080 on 1350 and keep the center."
+ },
+ {
+  "id": "U017",
+  "vsa": "Increase the brightness by 15% only on the top layer"
+ },
+ {
+  "id": "U018",
+  "vsa": "Replace the font of the titles with Bold Inter, size 28."
+ },
+ {
+  "id": "U019",
+  "vsa": "Ia the logo in the bottom right corner and rotate it by 90 degrees to the left."
+ },
+ {
+  "id": "U020",
+  "vsa": "Remove the background from the image with the process and export it as transparent PNG."
+ },
+ {
+  "id": "U021",
+  "vsa": "I want to make the text in main white bannerul with 2 pixels black outline"
+ },
+ {
+  "id": "U022",
+  "vsa": "Why can't I edit the \"Umbră\" layer? is lock?"
+ },
+ {
+  "id": "U023",
+  "vsa": "Don't resize proporțional, I want width pin to 600 px and height the letter."
+ },
+ {
+  "id": "U024",
+  "vsa": "Can you apply a blur gaussian of 8 on the background, but not and on the person?"
+ },
+ {
+  "id": "U025",
+  "vsa": "Group the icons in the menu and then align on the vertical center."
+ },
+ {
+  "id": "U026",
+  "vsa": "Change the color of the Trimite button in #2D6CDF to #1B9E5A"
+ },
+ {
+  "id": "U027",
+  "vsa": "Please, make a mockup with the login screen on an iPhone and put a shadow to it discretă."
+ },
+ {
+  "id": "U028",
+  "vsa": "How many hidden layers has the file coperta_final_v3. psd?"
+ },
+ {
+  "id": "U029",
+  "vsa": "Horizontal Îndreaptă in the picture from munte and cut the black stayed margins."
+ },
+ {
+  "id": "U030",
+  "vsa": "Reverse on horizontal the third picture in colaj and put it pste the first"
+ },
+ {
+  "id": "U031",
+  "vsa": "Make the circle appear with fade-in in 0.5 seconds at the beginning of the timeline."
+ },
+ {
+  "id": "U032",
+  "vsa": "Move the keyframe from 2s to 3. 5s on pista title"
+ },
+ {
+  "id": "U033",
+  "vsa": "Set the duration total of the animation to 12 seconds and play it in a loop."
+ },
+ {
+  "id": "U034",
+  "vsa": "Put an ease-out to the arrow on the motion to the right."
+ },
+ {
+  "id": "U035",
+  "vsa": "How do I as the logo to bounce three times before stop?"
+ },
+ {
+  "id": "U036",
+  "vsa": "Don't animate the background, leave it static up to second 4"
+ },
+ {
+  "id": "U037",
+  "vsa": "I want as the \"Bine ați venit\" text to write the letter with the letter, cam 40 ms on the character."
+ },
+ {
+  "id": "U038",
+  "vsa": "Delay the appearance of the button by 300 ms relative to the title"
+ },
+ {
+  "id": "U039",
+  "vsa": "Scale the square from 100% to 150% between 1s and 2s, and then bring it back to normal up to 3s."
+ },
+ {
+  "id": "U040",
+  "vsa": "Can you reverse the order of the clips from pista the second?"
+ },
+ {
+  "id": "U041",
+  "vsa": "How many frames on the second has the export now? change it to 60"
+ },
+ {
+  "id": "U042",
+  "vsa": "Please sync the appearance of the chart with the beat from 00: 07."
+ },
+ {
+  "id": "U043",
+  "vsa": "Rotate the rotations of the solid car, how many a complete tură to each 2 seconds."
+ },
+ {
+  "id": "U044",
+  "vsa": "Where can I set curved of easing pt the transition between scene 1 and scene 2"
+ },
+ {
+  "id": "U045",
+  "vsa": "Hide the character to 5.2 seconds and make it reapară on the left at second 6."
+ },
+ {
+  "id": "U046",
+  "vsa": "Share the \"Buget Q3\" report with the team of Finanțe, only with view right."
+ },
+ {
+  "id": "U047",
+  "vsa": "Export the vanzari table in octombrie to Excel and send it its Andrei"
+ },
+ {
+  "id": "U048",
+  "vsa": "Who of change the last date the contract with the Delta supplier?"
+ },
+ {
+  "id": "U049",
+  "vsa": "Revoke the external access for all the files in Arhivă folder 2023."
+ },
+ {
+  "id": "U050",
+  "vsa": "Import the contracts from clients. csv and bounce over the rows duplicates"
+ },
+ {
+  "id": "U051",
+  "vsa": "I want a report the week with open tichetele, send automatically lunea to 9: 00."
+ },
+ {
+  "id": "U052",
+  "vsa": "Don't send notifications of the vânzări team when update the document."
+ },
+ {
+  "id": "U053",
+  "vsa": "Can you give it Ioanei edit rights on the presentation for board?"
+ },
+ {
+  "id": "U054",
+  "vsa": "How many documents have expirat in the last 30 days and cui appear?"
+ },
+ {
+  "id": "U055",
+  "vsa": "Filter the invoices neplatite of over 5000 lei and then generate a PDF with they"
+ },
+ {
+  "id": "U056",
+  "vsa": "Please, ia give approve, move them in the \"Semnate\" folder and put them OF-2026 prefixul."
+ },
+ {
+  "id": "U057",
+  "vsa": "Which colleagues have edit rights on the Contracte folder?"
+ },
+ {
+  "id": "U058",
+  "vsa": "Why don't do I appear the Departament column in the CSV export?"
+ },
+ {
+  "id": "U059",
+  "vsa": "Set the sharing link to expire on 15 noiembrie and design it with the password."
+ },
+ {
+  "id": "U060",
+  "vsa": "Generate a chart with rata of conversie on regiuni and highlight the below 12%."
+ }
+]

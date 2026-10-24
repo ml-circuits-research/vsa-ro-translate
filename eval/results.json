@@ -1,0 +1,135 @@
+{
+ "generated": "2026-10-24",
+ "notes": "test1 = 100 commands, written by an independent agent before the translator was frozen. test2 = 60 commands, written after v0.1.1 was frozen; neither version saw it. v0.1.1 numbers on test1 are optimistic (fixes were made after looking at test1 errors).",
+ "test1_v010_heldout": {
+  "vsa": {
+   "chrF": 72.3,
+   "BLEU": 49.7,
+   "slotRecall": 93.2,
+   "allSlots": 73
+  },
+  "naive": {
+   "chrF": 52.7,
+   "BLEU": 24.6,
+   "slotRecall": 87.1,
+   "allSlots": 52
+  },
+  "source_copy": {
+   "chrF": 25.9,
+   "slotRecall": 17.7
+  }
+ },
+ "test1_v010_blind_judge": {
+  "vsa": {
+   "n": 100,
+   "dist": {
+    "0": 0,
+    "1": 15,
+    "2": 52,
+    "3": 33
+   },
+   "mean": 2.18,
+   "executable_pct": 85
+  },
+  "naive": {
+   "n": 100,
+   "dist": {
+    "0": 1,
+    "1": 37,
+    "2": 59,
+    "3": 3
+   },
+   "mean": 1.64,
+   "executable_pct": 62
+  }
+ },
+ "test1_v011_seen": {
+  "vsa": {
+   "chrF": 76.7,
+   "slotRecall": 96.9,
+   "allSlots": 86
+  },
+  "naive": {
+   "chrF": 53.7,
+   "slotRecall": 89.2,
+   "allSlots": 57
+  }
+ },
+ "test2_fresh": {
+  "v011": {
+   "chrF": 67.1,
+   "slotRecall": 78.1,
+   "allSlots": 31.7
+  },
+  "v010": {
+   "chrF": 66,
+   "slotRecall": 77.1,
+   "allSlots": 30
+  },
+  "naive": {
+   "chrF": 50.2,
+   "slotRecall": 73.1,
+   "allSlots": 21.7
+  },
+  "BLEU_v011": 43.3,
+  "BLEU_naive": 20
+ },
+ "confidence_gate": {
+  "test1": {
+   "confidentShare": 89,
+   "confident": {
+    "chrF": 77,
+    "slotRecall": 97.1,
+    "allSlots": 86.5
+   },
+   "notConfident": {
+    "chrF": 74.4,
+    "slotRecall": 95.5,
+    "allSlots": 81.8
+   }
+  },
+  "test2": {
+   "confidentShare": 50,
+   "confident": {
+    "chrF": 71.8,
+    "slotRecall": 87.3,
+    "allSlots": 50
+   },
+   "notConfident": {
+    "chrF": 63,
+    "slotRecall": 68.8,
+    "allSlots": 13.3
+   }
+  }
+ },
+ "robustness_dev60": {
+  "noDiacritics": {
+   "vsa": 60,
+   "naive": 60
+  },
+  "noDiacriticsPlusOneTypo": {
+   "vsa": 34,
+   "naive": 1
+  },
+  "of": 60
+ },
+ "calibration": {
+  "threshold": 0.7,
+  "typoRecovered": "445/515",
+  "typoWrongMatch": "8/515",
+  "outOfLexiconFalseMatch": "9/68"
+ },
+ "latencyMs": {
+  "median": 0.364,
+  "p95": 2.091
+ },
+ "info": {
+  "D": 2048,
+  "threshold": 0.7,
+  "forms": 5530,
+  "itemMemory": 5242,
+  "mwes": 242,
+  "lexiconMs": 23,
+  "memoryMs": 234
+ }
+}
