@@ -2,27 +2,42 @@
  "summary": {
   "n": 100,
   "vsa": {
-   "chrF": 76.7,
-   "slotRecall": 96.9,
-   "allSlots": 86
+   "chrF": 77.2,
+   "slotRecall": 97.2,
+   "allSlots": 87
   },
   "naive": {
-   "chrF": 53.7,
+   "chrF": 53.6,
    "slotRecall": 89.2,
    "allSlots": 57
   },
   "latencyMs": {
-   "median": 0.182,
-   "p95": 1.112
+   "median": 0.236,
+   "p95": 3.992
   },
   "info": {
    "D": 2048,
-   "threshold": 0.7,
-   "forms": 5530,
-   "itemMemory": 5242,
-   "mwes": 242,
-   "lexiconMs": 23,
-   "memoryMs": 231
+   "languages": [
+    "ro",
+    "en"
+   ],
+   "dictionaries": [
+    {
+     "name": "ro",
+     "lang": "ro",
+     "forms": 5535
+    },
+    {
+     "name": "en-base",
+     "lang": "en",
+     "forms": 650
+    }
+   ],
+   "forms": 7292,
+   "itemMemory": 7165,
+   "phrases": 247,
+   "lexiconMs": 39,
+   "memoryMs": 334
   }
  },
  "rows": [
@@ -56,7 +71,7 @@
    ],
    "vsa": "Add a blue rectangle in the center of the page.",
    "naive": "Add a rectangle blue in center page.",
-   "ms": 13.327011,
+   "ms": 20.728139,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -64,7 +79,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T002",
@@ -90,7 +107,7 @@
    ],
    "vsa": "Connect the \"Start\" node to the \"Aprobare\" node with an arrow.",
    "naive": "Connect node \"Start\" with node \"Aprobare\" through an arrow.",
-   "ms": 1.112228,
+   "ms": 1.193961,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -98,7 +115,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T003",
@@ -132,15 +151,17 @@
    ],
    "vsa": "Move the second node by 20 pixels to the right",
    "naive": "Move of doilea node with 20 of pixels to right",
-   "ms": 4.674207,
+   "ms": 1.357469,
    "stats": {
     "exact": 8,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T004",
@@ -165,7 +186,7 @@
    ],
    "vsa": "Can you align all the boxes on horizontal?",
    "naive": "Can its align all boxes on horizontal?",
-   "ms": 0.320546,
+   "ms": 0.382384,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -173,7 +194,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T005",
@@ -203,19 +226,21 @@
      "entry"
     ]
    ],
-   "vsa": "Group the first three shapes and name the \"Intrare\" group.",
+   "vsa": "Group the first three shapes and denumește the \"Intrare\" group.",
    "naive": "Group the first three shapes and denumește group \"Intrare\".",
-   "ms": 0.447321,
+   "ms": 7.856496,
    "stats": {
     "exact": 6,
-    "vsa": 1,
-    "unknown": 0,
-    "vsaLog": [
-     "denumește→denumire (0.70)"
-    ],
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
     "confident": false,
-    "unknownWords": []
-   }
+    "unknownWords": [
+     "denumește"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "T006",
@@ -249,7 +274,7 @@
    ],
    "vsa": "I want to change the color of the arrow between \"Start\" and \"Verificare\" in red.",
    "naive": "Want its change color arrow between \"Start\" and \"Verificare\" in red.",
-   "ms": 0.59224,
+   "ms": 0.562697,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -257,7 +282,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T007",
@@ -289,7 +316,7 @@
    ],
    "vsa": "Add a new swimlane for the Financiar department",
    "naive": "Add a swimlane new for department Financiar",
-   "ms": 0.547043,
+   "ms": 0.247891,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -297,7 +324,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T008",
@@ -330,7 +359,7 @@
    ],
    "vsa": "Delete all the connectors that are not connect to no node.",
    "naive": "Delete all connectors which not be connect of no node.",
-   "ms": 1.696225,
+   "ms": 0.634742,
    "stats": {
     "exact": 10,
     "vsa": 0,
@@ -338,7 +367,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T009",
@@ -365,7 +396,7 @@
    ],
    "vsa": "Convert the rectangle selected into a diamond.",
    "naive": "Convert rectangle select in a diamond.",
-   "ms": 0.17866,
+   "ms": 0.238047,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -373,7 +404,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T010",
@@ -405,7 +438,7 @@
    ],
    "vsa": "Put the label \"Da\" on the arrow that exit from the diamond.",
    "naive": "Put label \"Da\" on arrow which exit from diamond.",
-   "ms": 0.554573,
+   "ms": 0.503547,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -413,7 +446,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T011",
@@ -450,7 +485,7 @@
    ],
    "vsa": "Arrange the diagram from top to bottom, by 40 px between nodes.",
    "naive": "Arrange diagram of up in down, with 40 px enter nodes.",
-   "ms": 0.378882,
+   "ms": 0.296596,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -458,7 +493,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T012",
@@ -482,17 +519,19 @@
      "background"
     ]
    ],
-   "vsa": "Please make an export of the diagram in PNG with transparent background",
+   "vsa": "Please export of the diagram in PNG with transparent background",
    "naive": "You rog make an export of diagram in PNG with background transparent",
-   "ms": 0.40467,
+   "ms": 0.523325,
    "stats": {
     "exact": 10,
     "vsa": 0,
-    "unknown": 2,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T013",
@@ -522,15 +561,17 @@
    ],
    "vsa": "Make the arrows curved instead of rights.",
    "naive": "Make arrows curved in loc of rights.",
-   "ms": 0.222175,
+   "ms": 0.234649,
    "stats": {
     "exact": 6,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T014",
@@ -553,7 +594,7 @@
    ],
    "vsa": "How many nodes has the diagram now?",
    "naive": "How many nodes have diagram now?",
-   "ms": 0.063057,
+   "ms": 0.122178,
    "stats": {
     "exact": 5,
     "vsa": 0,
@@ -561,7 +602,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T015",
@@ -595,7 +638,7 @@
    ],
    "vsa": "Double the thickness of the lines for all the connectors.",
    "naive": "Duplicate thickness lines for all connectors.",
-   "ms": 0.095903,
+   "ms": 0.146446,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -603,7 +646,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T016",
@@ -636,7 +681,7 @@
    ],
    "vsa": "Add a light shadow to the \"Plată\" node.",
    "naive": "Add it node \"Plată\" a shadow light.",
-   "ms": 0.180901,
+   "ms": 0.23016,
    "stats": {
     "exact": 5,
     "vsa": 0,
@@ -644,7 +689,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T017",
@@ -664,7 +711,7 @@
    ],
    "vsa": "No longer I want the visible grid, hide it.",
    "naive": "Not more want grid visible, hide it.",
-   "ms": 0.106462,
+   "ms": 0.149265,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -672,7 +719,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T018",
@@ -710,7 +759,7 @@
    ],
    "vsa": "Insert a green circle below the last node and connect it to this to an arrow",
    "naive": "Insert a circle green below last node and connect it of this with an arrow",
-   "ms": 0.188217,
+   "ms": 0.226971,
    "stats": {
     "exact": 14,
     "vsa": 0,
@@ -718,7 +767,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T019",
@@ -744,7 +795,7 @@
    ],
    "vsa": "What is the difference between an orthogonal connector and a straight?",
    "naive": "Which be difference enter a connector orthogonal and one right?",
-   "ms": 0.171038,
+   "ms": 0.241901,
    "stats": {
     "exact": 10,
     "vsa": 0,
@@ -752,7 +803,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T020",
@@ -780,7 +833,7 @@
    ],
    "vsa": "Distribute the nodes evenly on vertical",
    "naive": "Distribute nodes evenly on vertical",
-   "ms": 0.063869,
+   "ms": 0.090344,
    "stats": {
     "exact": 5,
     "vsa": 0,
@@ -788,7 +841,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T021",
@@ -813,7 +868,7 @@
    ],
    "vsa": "Rename the \"Verificare date\" node to \"Validare\".",
    "naive": "Rename node \"Verificare date\" in \"Validare\".",
-   "ms": 0.159815,
+   "ms": 0.235828,
    "stats": {
     "exact": 3,
     "vsa": 0,
@@ -821,7 +876,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T022",
@@ -853,19 +910,21 @@
      "swimlane"
     ]
    ],
-   "vsa": "Move all the nodes from the \"Vânzări\" lane to clear \"Logistică\".",
+   "vsa": "Move all the nodes from the \"Vânzări\" lane to the \"Logistică\" lane.",
    "naive": "Move all nodes from lane \"Vânzări\" in cuolarul \"Logistică\".",
-   "ms": 0.451615,
+   "ms": 3.991851,
    "stats": {
     "exact": 6,
     "vsa": 1,
     "unknown": 0,
     "vsaLog": [
-     "cuolarul→clarul (0.76)"
+     "cuolarul→culoarul (0.76)"
     ],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T023",
@@ -901,7 +960,7 @@
    ],
    "vsa": "Select the decision box and make it twice larger",
    "naive": "Select box of decision and make it of two times more large",
-   "ms": 0.169186,
+   "ms": 0.290551,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -909,7 +968,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T024",
@@ -934,7 +995,7 @@
    ],
    "vsa": "Can you lock the position of the \"Client\" box so that not a move from greșeală?",
    "naive": "Can its lock position box \"Client\" that its not a move from greșeală?",
-   "ms": 1.72114,
+   "ms": 7.394801,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -944,7 +1005,9 @@
     "unknownWords": [
      "greșeală"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "T025",
@@ -980,7 +1043,7 @@
    ],
    "vsa": "Add a note next to node 5 with the text \"De verificat cu juridicul\".",
    "naive": "Add a note next to node 5 with text \"De verificat cu juridicul\".",
-   "ms": 0.200435,
+   "ms": 0.186509,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -988,7 +1051,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T026",
@@ -1025,7 +1090,7 @@
    ],
    "vsa": "Change the shape of all process nodes to rounded rectangles, but don't change the decision ones.",
    "naive": "Change shape of all nodes of process in rectangles round, but not them change on the of decision.",
-   "ms": 0.42228,
+   "ms": 1.233079,
    "stats": {
     "exact": 17,
     "vsa": 0,
@@ -1033,7 +1098,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T027",
@@ -1056,7 +1123,7 @@
    ],
    "vsa": "Align the selected nodes to the left.",
    "naive": "Align nodruile select to left.",
-   "ms": 0.196771,
+   "ms": 3.397046,
    "stats": {
     "exact": 4,
     "vsa": 1,
@@ -1066,7 +1133,9 @@
     ],
     "confident": false,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T028",
@@ -1095,15 +1164,17 @@
    ],
    "vsa": "Export only the page the second of the diagram to SVG.",
    "naive": "Export only page have two have diagram in SVG.",
-   "ms": 0.192438,
+   "ms": 0.603847,
    "stats": {
     "exact": 8,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T029",
@@ -1134,7 +1205,7 @@
    ],
    "vsa": "Reverse the direction of the arrow between nodes 3 and 4",
    "naive": "Reverse direction arrow between nodes 3 and 4",
-   "ms": 0.06614,
+   "ms": 0.108283,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -1142,7 +1213,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T030",
@@ -1179,16 +1252,18 @@
     ]
    ],
    "vsa": "Create a simple flowchart with 4 steps: Start, Comanda, Livrare, Stop",
-   "naive": "Create a flowchart simple with 4 steps: start, command, Livrare, Stop",
-   "ms": 0.107007,
+   "naive": "Create a flowchart simple with 4 steps: start, command, Livrare, stop",
+   "ms": 0.174209,
    "stats": {
-    "exact": 8,
+    "exact": 9,
     "vsa": 0,
-    "unknown": 2,
+    "unknown": 1,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T031",
@@ -1218,17 +1293,17 @@
    ],
    "vsa": "Make the text selected bold and increase it to 18.",
    "naive": "Make text select bold and increase it to 18.",
-   "ms": 0.380994,
+   "ms": 0.762862,
    "stats": {
-    "exact": 6,
+    "exact": 7,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
-    "confident": false,
-    "unknownWords": [
-     "bold"
-    ]
-   }
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T032",
@@ -1259,7 +1334,7 @@
    ],
    "vsa": "What font has the title now? change it to Roboto.",
    "naive": "What font have title now? change it in Roboto.",
-   "ms": 0.211331,
+   "ms": 0.244348,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -1267,7 +1342,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T033",
@@ -1293,7 +1370,7 @@
    ],
    "vsa": "Set the color of the text to #1A73E8",
    "naive": "Set color text to #1A73E8",
-   "ms": 0.086758,
+   "ms": 0.102877,
    "stats": {
     "exact": 4,
     "vsa": 0,
@@ -1301,7 +1378,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T034",
@@ -1329,7 +1408,7 @@
    ],
    "vsa": "Move the image on the first layer.",
    "naive": "Move image on the first layer.",
-   "ms": 0.122747,
+   "ms": 0.197293,
    "stats": {
     "exact": 5,
     "vsa": 0,
@@ -1337,7 +1416,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T035",
@@ -1360,7 +1441,7 @@
    ],
    "vsa": "Crop the picture to the format square.",
    "naive": "Crop picture to format square.",
-   "ms": 0.112202,
+   "ms": 0.170857,
    "stats": {
     "exact": 5,
     "vsa": 0,
@@ -1368,7 +1449,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T036",
@@ -1397,15 +1480,17 @@
    ],
    "vsa": "Please resize the logo to 200 x 80 pixels.",
    "naive": "You rog resize logo to 200 x 80 of pixels.",
-   "ms": 0.278456,
+   "ms": 0.580409,
    "stats": {
-    "exact": 5,
+    "exact": 6,
     "vsa": 0,
-    "unknown": 2,
+    "unknown": 1,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T037",
@@ -1436,7 +1521,7 @@
    ],
    "vsa": "Rotate it by 45 degrees to the left",
    "naive": "Rotate it with 45 of degrees toward left",
-   "ms": 0.089261,
+   "ms": 0.163515,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -1444,7 +1529,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T038",
@@ -1472,7 +1559,7 @@
    ],
    "vsa": "Duplicate the current layer three times.",
    "naive": "Duplicate layer current of three times.",
-   "ms": 0.058389,
+   "ms": 0.093053,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -1480,7 +1567,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T039",
@@ -1510,7 +1599,7 @@
    ],
    "vsa": "Delete all the images from page 3",
    "naive": "Delete all images of on page 3",
-   "ms": 0.054677,
+   "ms": 0.084235,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -1518,7 +1607,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T040",
@@ -1547,7 +1638,7 @@
    ],
    "vsa": "Undo the last two changes",
    "naive": "Undo the last two changes",
-   "ms": 0.043981,
+   "ms": 0.060937,
    "stats": {
     "exact": 4,
     "vsa": 0,
@@ -1555,7 +1646,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T041",
@@ -1576,7 +1669,7 @@
    ],
    "vsa": "Redo what I have undone",
    "naive": "Redo what have undo",
-   "ms": 0.165588,
+   "ms": 0.111378,
    "stats": {
     "exact": 4,
     "vsa": 0,
@@ -1584,7 +1677,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T042",
@@ -1610,7 +1705,7 @@
    ],
    "vsa": "Set the opacity of the background to 60%.",
    "naive": "Set opacity background to 60%.",
-   "ms": 0.072055,
+   "ms": 0.101957,
    "stats": {
     "exact": 4,
     "vsa": 0,
@@ -1618,7 +1713,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T043",
@@ -1653,17 +1750,19 @@
    ],
    "vsa": "Add a 2 px border with the color #333 around the box.",
    "naive": "Add a border of 2 px with color #333 in jurul csetei.",
-   "ms": 0.4801,
+   "ms": 2.494837,
    "stats": {
     "exact": 7,
     "vsa": 1,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [
      "csetei→casetei (0.76)"
     ],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T044",
@@ -1690,7 +1789,7 @@
    ],
    "vsa": "Replace over all \"client\" with \"beneficiar\".",
    "naive": "Replace over all \"client\" with \"beneficiar\".",
-   "ms": 0.056864,
+   "ms": 0.096031,
    "stats": {
     "exact": 4,
     "vsa": 0,
@@ -1698,7 +1797,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T045",
@@ -1729,7 +1830,7 @@
    ],
    "vsa": "Find the word \"factură\" in the whole document.",
    "naive": "Find word \"factură\" in all document.",
-   "ms": 0.116057,
+   "ms": 0.185335,
    "stats": {
     "exact": 5,
     "vsa": 0,
@@ -1737,7 +1838,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T046",
@@ -1770,7 +1873,7 @@
    ],
    "vsa": "Can you align the three images in the center on horizontal?",
    "naive": "Can its align the three images to center on horizontal?",
-   "ms": 0.191096,
+   "ms": 0.201996,
    "stats": {
     "exact": 10,
     "vsa": 0,
@@ -1778,7 +1881,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T047",
@@ -1808,7 +1913,7 @@
    ],
    "vsa": "Distribute the selected elements to equal distances.",
    "naive": "Distribute elements select to distances equal.",
-   "ms": 0.209219,
+   "ms": 0.250638,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -1816,7 +1921,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T048",
@@ -1842,7 +1949,7 @@
    ],
    "vsa": "No longer I want the underlined text, remove the underline to it.",
    "naive": "Not more want text underline, remove it underline.",
-   "ms": 0.110386,
+   "ms": 0.150561,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -1850,7 +1957,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T049",
@@ -1884,7 +1993,7 @@
    ],
    "vsa": "Increase the font size by 4 points in the whole paragraph.",
    "naive": "Increase size font with 4 points in all paragraph.",
-   "ms": 0.211076,
+   "ms": 0.263275,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -1892,7 +2001,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T050",
@@ -1924,7 +2035,7 @@
    ],
    "vsa": "Select the blue rectangle and move it to the back of the text",
    "naive": "Select rectangle blue and move it in back text",
-   "ms": 0.087181,
+   "ms": 0.13738,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -1932,7 +2043,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T051",
@@ -1958,15 +2071,17 @@
    ],
    "vsa": "Bring the \"Logo\" layer to the front.",
    "naive": "Bring layer \"Logo\" in front.",
-   "ms": 0.093574,
+   "ms": 0.171904,
    "stats": {
-    "exact": 3,
+    "exact": 4,
     "vsa": 0,
     "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T052",
@@ -1989,19 +2104,21 @@
      "grey"
     ]
    ],
-   "vsa": "Put the text on itlaic and make it dark gray",
+   "vsa": "Put the text to italic and make it dark gray",
    "naive": "Put text on itlaic and make it gray close",
-   "ms": 0.357182,
+   "ms": 2.284637,
    "stats": {
     "exact": 7,
-    "vsa": 0,
-    "unknown": 1,
-    "vsaLog": [],
+    "vsa": 1,
+    "unknown": 0,
+    "vsaLog": [
+     "itlaic→italic (0.68)"
+    ],
     "confident": false,
-    "unknownWords": [
-     "itlaic"
-    ]
-   }
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T053",
@@ -2033,17 +2150,19 @@
    ],
    "vsa": "Copy format from the first paragraph and apply on the second.",
    "naive": "Copy formatarea from the first paragraph and apply it on of doilea.",
-   "ms": 0.567271,
+   "ms": 2.724427,
    "stats": {
     "exact": 8,
     "vsa": 1,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [
-     "formatarea→formata (0.80)"
+     "formatarea→formatata (0.79)"
     ],
-    "confident": true,
+    "confident": false,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T054",
@@ -2076,7 +2195,7 @@
    ],
    "vsa": "I want the rounded corners of the box, with a 12 px radius.",
    "naive": "Want corners box round, with a radius of 12 px.",
-   "ms": 0.21304,
+   "ms": 0.281189,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -2084,7 +2203,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T055",
@@ -2117,7 +2238,7 @@
    ],
    "vsa": "Insert an image in the computer on the right of the title.",
    "naive": "Insert an image from computer in right title.",
-   "ms": 0.163957,
+   "ms": 0.209349,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -2125,7 +2246,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T056",
@@ -2145,7 +2268,7 @@
    ],
    "vsa": "Lock the background layer so that don't change it from greseala",
    "naive": "Lock layer of background that its not it change from greseala",
-   "ms": 0.272318,
+   "ms": 2.243805,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -2155,7 +2278,9 @@
     "unknownWords": [
      "greseala"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "T057",
@@ -2184,15 +2309,17 @@
    ],
    "vsa": "Hide all the layers except the selected one.",
    "naive": "Hide all layers in afară of the select.",
-   "ms": 0.30501,
+   "ms": 0.199817,
    "stats": {
     "exact": 7,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T058",
@@ -2221,7 +2348,7 @@
    ],
    "vsa": "Change the fill of the rectangle to light yellow.",
    "naive": "Change fill rectangle in yellow open.",
-   "ms": 0.165265,
+   "ms": 0.159308,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -2229,7 +2356,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T059",
@@ -2253,7 +2382,7 @@
    ],
    "vsa": "Mirror the image on horizontal.",
    "naive": "Mirror image on horizontal.",
-   "ms": 0.080971,
+   "ms": 0.085131,
    "stats": {
     "exact": 4,
     "vsa": 0,
@@ -2261,7 +2390,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T060",
@@ -2290,7 +2421,7 @@
    ],
    "vsa": "How do I the edge of the thicker box?",
    "naive": "How make margin box more thick?",
-   "ms": 0.111749,
+   "ms": 0.135317,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -2298,7 +2429,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T061",
@@ -2331,15 +2464,17 @@
    ],
    "vsa": "Add a 2 seconds fade-in effect on the title.",
    "naive": "Add an effect of fade in of 2 seconds on title.",
-   "ms": 0.288025,
+   "ms": 0.265874,
    "stats": {
-    "exact": 9,
+    "exact": 10,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T062",
@@ -2369,7 +2504,7 @@
    ],
    "vsa": "Set the duration of the animation to 500 ms.",
    "naive": "Set last animation to 500 ms.",
-   "ms": 0.12526,
+   "ms": 0.115515,
    "stats": {
     "exact": 4,
     "vsa": 0,
@@ -2377,7 +2512,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T063",
@@ -2413,15 +2550,17 @@
    ],
    "vsa": "Set a 1.5 seconds delay before the logo appears",
    "naive": "Put a delay of 1.5 seconds forward its appear logo",
-   "ms": 0.301816,
+   "ms": 0.228181,
    "stats": {
-    "exact": 8,
+    "exact": 9,
     "vsa": 0,
     "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T064",
@@ -2447,7 +2586,7 @@
    ],
    "vsa": "Make the animation repeat in a loop indefinitely.",
    "naive": "Make animation its repeat in loop to infinite.",
-   "ms": 0.302746,
+   "ms": 0.340272,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -2455,7 +2594,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T065",
@@ -2491,7 +2632,7 @@
    ],
    "vsa": "Add a keyframe at second 3 with opacity 0.",
    "naive": "Add a frame key to second 3 with opacity 0.",
-   "ms": 0.147859,
+   "ms": 0.211134,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -2499,7 +2640,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T066",
@@ -2528,9 +2671,9 @@
    ],
    "vsa": "Change the easing to ease-in-out for all the transitions",
    "naive": "Change easing in ease-in-out for all transitions",
-   "ms": 0.269971,
+   "ms": 1.732876,
    "stats": {
-    "exact": 5,
+    "exact": 6,
     "vsa": 0,
     "unknown": 1,
     "vsaLog": [],
@@ -2538,7 +2681,9 @@
     "unknownWords": [
      "ease-in-out"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "T067",
@@ -2563,7 +2708,7 @@
    ],
    "vsa": "Make the box enter sliding on the left of the screen.",
    "naive": "Make box its enter slide from left screen.",
-   "ms": 0.178511,
+   "ms": 0.177796,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -2571,7 +2716,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T068",
@@ -2603,15 +2750,17 @@
    ],
    "vsa": "Increase the button to 120% when go with the mouse over it.",
    "naive": "Increase button to 120% when go with mouse over it.",
-   "ms": 0.147228,
+   "ms": 0.266387,
    "stats": {
-    "exact": 8,
+    "exact": 9,
     "vsa": 0,
     "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T069",
@@ -2646,7 +2795,7 @@
    ],
    "vsa": "Rotate icon 360 of degrees in a second.",
    "naive": "Rotate icon 360 of degrees in a secudă.",
-   "ms": 0.467617,
+   "ms": 1.782107,
    "stats": {
     "exact": 6,
     "vsa": 1,
@@ -2656,7 +2805,9 @@
     ],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T070",
@@ -2688,7 +2839,7 @@
    ],
    "vsa": "Play the animation only on click on the image.",
    "naive": "Start animation only to click on image.",
-   "ms": 0.153457,
+   "ms": 0.203209,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -2696,7 +2847,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T071",
@@ -2728,17 +2881,17 @@
    ],
    "vsa": "Stop the animation after the third cycle",
    "naive": "Stop animation after of treilea cycle",
-   "ms": 0.182089,
+   "ms": 0.0748,
    "stats": {
     "exact": 5,
-    "vsa": 1,
+    "vsa": 0,
     "unknown": 0,
-    "vsaLog": [
-     "treilea→treimea (0.74)"
-    ],
+    "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T072",
@@ -2761,7 +2914,7 @@
    ],
    "vsa": "Play the animation from the beginning",
    "naive": "Play animation of to start",
-   "ms": 0.067488,
+   "ms": 0.084433,
    "stats": {
     "exact": 5,
     "vsa": 0,
@@ -2769,7 +2922,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T073",
@@ -2797,7 +2952,7 @@
    ],
    "vsa": "Can you reduce the speed of the animation to 50%?",
    "naive": "Can its reduce speed animation to 50%?",
-   "ms": 0.142878,
+   "ms": 0.139894,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -2805,7 +2960,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T074",
@@ -2841,15 +2998,17 @@
    ],
    "vsa": "Move the keyframe from 2 s to 2.5 s.",
    "naive": "Move keyframe of to 2 s to 2.5 s.",
-   "ms": 0.146473,
+   "ms": 0.185888,
    "stats": {
-    "exact": 4,
+    "exact": 5,
     "vsa": 0,
     "unknown": 2,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T075",
@@ -2875,15 +3034,17 @@
    ],
    "vsa": "Please delete the last keyframe from the timeline.",
    "naive": "You rog its delete last frame key of on timeline.",
-   "ms": 0.117595,
+   "ms": 0.155693,
    "stats": {
     "exact": 9,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T076",
@@ -2919,15 +3080,17 @@
    ],
    "vsa": "Make the texts appear one after another, at 300 ms distances.",
    "naive": "Make texts its appear one after altul, to 300 ms distance.",
-   "ms": 0.327249,
+   "ms": 0.161207,
    "stats": {
     "exact": 8,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T077",
@@ -2962,7 +3125,7 @@
    ],
    "vsa": "I want as the image to disappear gradually after 4 seconds",
    "naive": "Want that image its disappear gradual after 4 seconds",
-   "ms": 0.08739,
+   "ms": 0.0966,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -2970,7 +3133,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T078",
@@ -3005,7 +3170,7 @@
    ],
    "vsa": "No longer play the animation automatically on the load of the page.",
    "naive": "Not more run animation automatic to upload page.",
-   "ms": 0.207481,
+   "ms": 0.269112,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -3013,7 +3178,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T079",
@@ -3045,7 +3212,7 @@
    ],
    "vsa": "Apply the same animation and on the other two buttons",
    "naive": "Apply the same animation and on the other two buttons",
-   "ms": 0.157079,
+   "ms": 0.135169,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -3053,7 +3220,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T080",
@@ -3087,17 +3256,19 @@
    ],
    "vsa": "Add an animation to the arrow of draw from the left to the right.",
    "naive": "Add it arrow an animation of desenare of to left to right.",
-   "ms": 0.436487,
+   "ms": 6.58918,
    "stats": {
     "exact": 10,
     "vsa": 1,
     "unknown": 0,
     "vsaLog": [
-     "desenare→desena (0.77)"
+     "desenare→desenate (0.77)"
     ],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T081",
@@ -3131,7 +3302,7 @@
    ],
    "vsa": "Make all pulse slightly, in a loop.",
    "naive": "Put them on all its pulse light, in loop.",
-   "ms": 0.205443,
+   "ms": 0.283356,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -3139,7 +3310,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T082",
@@ -3167,7 +3340,7 @@
    ],
    "vsa": "How long does it take in total the sequence of animations?",
    "naive": "How much last in total sequence of animations?",
-   "ms": 0.161855,
+   "ms": 0.214597,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -3175,7 +3348,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T083",
@@ -3201,19 +3376,21 @@
      "twice"
     ]
    ],
-   "vsa": "Set vitzea of playback to 2x.",
+   "vsa": "Set the playback speed to 2x.",
    "naive": "Set vitzea of playback to 2x.",
-   "ms": 0.176875,
+   "ms": 1.843266,
    "stats": {
     "exact": 4,
-    "vsa": 0,
-    "unknown": 1,
-    "vsaLog": [],
+    "vsa": 1,
+    "unknown": 0,
+    "vsaLog": [
+     "vitzea→viteza (0.68)"
+    ],
     "confident": false,
-    "unknownWords": [
-     "vitzea"
-    ]
-   }
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T084",
@@ -3250,7 +3427,7 @@
    ],
    "vsa": "The entrance animation should start at 0.8 seconds after the previous one.",
    "naive": "Animation of input its start to 0.8 seconds after the previous.",
-   "ms": 0.226674,
+   "ms": 0.226462,
    "stats": {
     "exact": 10,
     "vsa": 0,
@@ -3258,7 +3435,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T085",
@@ -3292,19 +3471,19 @@
    ],
    "vsa": "Make the bullet bounce 3 times with easing bounce",
    "naive": "Make that bullet its bounce of 3 times with easign bounce",
-   "ms": 0.335011,
+   "ms": 1.699475,
    "stats": {
-    "exact": 8,
+    "exact": 9,
     "vsa": 1,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [
      "easign→easing (0.71)"
     ],
     "confident": false,
-    "unknownWords": [
-     "bounce"
-    ]
-   }
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T086",
@@ -3336,15 +3515,17 @@
    ],
    "vsa": "How do I export the document to PDF with the included fonts?",
    "naive": "How export document in PDF with fonts include?",
-   "ms": 0.18947,
+   "ms": 0.322356,
    "stats": {
     "exact": 7,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T087",
@@ -3368,7 +3549,7 @@
    ],
    "vsa": "Where is the version history for this file?",
    "naive": "Where be history versions for file this?",
-   "ms": 0.111164,
+   "ms": 0.406576,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -3376,7 +3557,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T088",
@@ -3412,7 +3595,7 @@
    ],
    "vsa": "Can you give it its Andrei edit rights only on this project?",
    "naive": "Can its it give of Andrei right of editing only on project this?",
-   "ms": 0.189665,
+   "ms": 0.238869,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -3420,7 +3603,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T089",
@@ -3450,7 +3635,7 @@
    ],
    "vsa": "Share the file with the marketing team, only with view right.",
    "naive": "Share file with team of marketing, only with right of view.",
-   "ms": 0.299997,
+   "ms": 2.019234,
    "stats": {
     "exact": 10,
     "vsa": 0,
@@ -3460,7 +3645,9 @@
     "unknownWords": [
      "marketing"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "T090",
@@ -3486,7 +3673,7 @@
    ],
    "vsa": "Restore the version from yesterday from 14:30",
    "naive": "Restore version of yesterday of to hour 14:30",
-   "ms": 0.120448,
+   "ms": 0.180787,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -3494,7 +3681,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T091",
@@ -3529,15 +3718,17 @@
    ],
    "vsa": "Add a comment to slide 4: \"Cifrele trebuie actualizate\".",
    "naive": "Add a comment to slide 4: \"Cifrele trebuie actualizate\".",
-   "ms": 0.116236,
+   "ms": 0.236967,
    "stats": {
-    "exact": 4,
+    "exact": 5,
     "vsa": 0,
     "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T092",
@@ -3561,7 +3752,7 @@
    ],
    "vsa": "Import the data from the file vanzari_2025.csv into a new table",
    "naive": "Import data from file vanzari_2025.csv in a table new",
-   "ms": 0.165699,
+   "ms": 0.203006,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -3569,7 +3760,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T093",
@@ -3598,7 +3791,7 @@
    ],
    "vsa": "Rename the file to „Raport_Q3_final” and save it to the Rapoarte folder.",
    "naive": "Rename file in „Raport_Q3_final” and save it in folder reports.",
-   "ms": 0.221367,
+   "ms": 0.365652,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -3606,7 +3799,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T094",
@@ -3631,7 +3826,7 @@
    ],
    "vsa": "I want to create a new template starting from this presentation.",
    "naive": "Want its create a template new start of to presentation this.",
-   "ms": 0.176725,
+   "ms": 0.214564,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -3639,7 +3834,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T095",
@@ -3664,7 +3861,7 @@
    ],
    "vsa": "Who has changed last this diagram?",
    "naive": "Who have change last date diagram this?",
-   "ms": 0.106542,
+   "ms": 0.121164,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -3672,7 +3869,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T096",
@@ -3704,7 +3903,7 @@
    ],
    "vsa": "Can you export all the pages as separate SVGs to an archive zip?",
    "naive": "Can export all pages that SVG separate in an archive zip?",
-   "ms": 0.331741,
+   "ms": 1.88573,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -3714,7 +3913,9 @@
     "unknownWords": [
      "zip"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "T097",
@@ -3743,7 +3944,7 @@
    ],
    "vsa": "Revoke the access of the external users to this folder.",
    "naive": "Revoke access users external to this folder.",
-   "ms": 0.176898,
+   "ms": 0.260344,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -3751,7 +3952,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T098",
@@ -3782,15 +3985,19 @@
    ],
    "vsa": "How do I enable the notifications pt new comments",
    "naive": "How enable notifications pt comments new",
-   "ms": 0.072311,
+   "ms": 0.11109,
    "stats": {
     "exact": 5,
     "vsa": 0,
     "unknown": 1,
     "vsaLog": [],
-    "confident": true,
-    "unknownWords": []
-   }
+    "confident": false,
+    "unknownWords": [
+     "pt"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "T099",
@@ -3829,7 +4036,7 @@
    ],
    "vsa": "Is it possible to set a sharing link that expires after 7 days?",
    "naive": "Can set a link of sharing which expire after 7 days?",
-   "ms": 0.238161,
+   "ms": 0.288777,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -3837,7 +4044,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "T100",
@@ -3870,7 +4079,7 @@
    ],
    "vsa": "Compare the current version with the month one and show me the differences.",
    "naive": "Compare version current with the of months and show me diferenețele.",
-   "ms": 0.32289,
+   "ms": 1.742392,
    "stats": {
     "exact": 9,
     "vsa": 1,
@@ -3880,7 +4089,9 @@
     ],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   }
  ]
 }

@@ -798,6 +798,7 @@ separat|separată|separați|separate|separate
 mijlociu|mijlocie|mijlocii|mijlocii|middle
 ultim|ultimă|ultimi|ultime|last
 final|finală|finali|finale|final
+primar|primară|primari|primare|primary
 ortogonal|ortogonală|ortogonali|ortogonale|orthogonal
 original|originală|originali|originale|original
 subtil|subtilă|subtili|subtile|subtle
@@ -1179,6 +1180,10 @@ mai subțire => thinner | ADJ
 mai deschis => lighter | ADJ
 mai închis => darker | ADJ
 mai lung => longer | ADJ
+mai vechi => older | ADJ
+mai vechi de => older than | ADJ
+mai nou => newer | ADJ
+mai recent => more recent | ADJ
 mai scurt => shorter | ADJ
 mai lat => wider | ADJ
 mai îngust => narrower | ADJ

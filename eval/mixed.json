@@ -1,0 +1,888 @@
+[
+ {
+  "id": "M001",
+  "domain": "diagram",
+  "ro": "Mută node-ul Start cu 50px la stânga",
+  "ref": "Move the Start node 50px to the left",
+  "keys": [
+   [
+    "move",
+    "shift"
+   ],
+   [
+    "node"
+   ],
+   [
+    "start"
+   ],
+   [
+    "50px",
+    "50 px"
+   ],
+   [
+    "left"
+   ]
+  ]
+ },
+ {
+  "id": "M002",
+  "domain": "diagram",
+  "ro": "Conectează box-ul Login cu box-ul Dashboard printr-un arrow",
+  "ref": "Connect the Login box to the Dashboard box with an arrow",
+  "keys": [
+   [
+    "connect",
+    "link"
+   ],
+   [
+    "login"
+   ],
+   [
+    "dashboard"
+   ],
+   [
+    "arrow"
+   ]
+  ]
+ },
+ {
+  "id": "M003",
+  "domain": "diagram",
+  "ro": "Fă un auto layout pe toată diagrama, top to bottom",
+  "ref": "Apply auto layout to the whole diagram, top to bottom",
+  "keys": [
+   [
+    "auto layout",
+    "layout"
+   ],
+   [
+    "diagram"
+   ],
+   [
+    "top to bottom",
+    "top-to-bottom"
+   ]
+  ]
+ },
+ {
+  "id": "M004",
+  "domain": "diagram",
+  "ro": "schimba culoarea la edge-urile dintre servicii in rosu",
+  "ref": "Change the color of the edges between the services to red",
+  "keys": [
+   [
+    "color",
+    "colour"
+   ],
+   [
+    "edge"
+   ],
+   [
+    "service"
+   ],
+   [
+    "red"
+   ]
+  ]
+ },
+ {
+  "id": "M005",
+  "domain": "diagram",
+  "ro": "Grupează shape-urile selectate și pune-le un label „Backend”",
+  "ref": "Group the selected shapes and give them a Backend label",
+  "keys": [
+   [
+    "group"
+   ],
+   [
+    "shape"
+   ],
+   [
+    "selected"
+   ],
+   [
+    "label"
+   ],
+   [
+    "backend"
+   ]
+  ]
+ },
+ {
+  "id": "M006",
+  "domain": "diagram",
+  "ro": "Align all the selected nodes horizontally and distribute them evenly",
+  "ref": "Align all selected nodes horizontally and distribute them evenly",
+  "keys": [
+   [
+    "align"
+   ],
+   [
+    "node"
+   ],
+   [
+    "horizontal"
+   ],
+   [
+    "distribute",
+    "spacing"
+   ]
+  ]
+ },
+ {
+  "id": "M007",
+  "domain": "diagram",
+  "ro": "Sterge conectorul dashed dintre Cache si Datbase",
+  "ref": "Delete the dashed connector between Cache and Database",
+  "keys": [
+   [
+    "delete",
+    "remove"
+   ],
+   [
+    "dashed"
+   ],
+   [
+    "connector",
+    "edge"
+   ],
+   [
+    "cache"
+   ],
+   [
+    "database"
+   ]
+  ]
+ },
+ {
+  "id": "M008",
+  "domain": "diagram",
+  "ro": "Dă-i un resize la container-ul AWS ca să încapă toate icon-urile",
+  "ref": "Resize the AWS container so that all the icons fit",
+  "keys": [
+   [
+    "resize"
+   ],
+   [
+    "container"
+   ],
+   [
+    "aws"
+   ],
+   [
+    "icon"
+   ],
+   [
+    "fit"
+   ]
+  ]
+ },
+ {
+  "id": "M009",
+  "domain": "diagram",
+  "ro": "Exportă diagrama ca SVG cu background transparent",
+  "ref": "Export the diagram as SVG with a transparent background",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "diagram"
+   ],
+   [
+    "svg"
+   ],
+   [
+    "transparent"
+   ]
+  ]
+ },
+ {
+  "id": "M010",
+  "domain": "diagram",
+  "ro": "adauga un swimlane nou pentru echipa de QA sub cel de Dev",
+  "ref": "Add a new swimlane for the QA team below the Dev one",
+  "keys": [
+   [
+    "add",
+    "create"
+   ],
+   [
+    "swimlane",
+    "lane"
+   ],
+   [
+    "qa"
+   ],
+   [
+    "below",
+    "under"
+   ],
+   [
+    "dev"
+   ]
+  ]
+ },
+ {
+  "id": "M011",
+  "domain": "edit",
+  "ro": "Dă un crop la imagine la 16:9 și pune-o on top",
+  "ref": "Crop the image to 16:9 and put it on top",
+  "keys": [
+   [
+    "crop"
+   ],
+   [
+    "image",
+    "picture"
+   ],
+   [
+    "16:9"
+   ],
+   [
+    "top",
+    "front"
+   ]
+  ]
+ },
+ {
+  "id": "M012",
+  "domain": "edit",
+  "ro": "Mută layer-ul Logo deasupra layer-ului Background",
+  "ref": "Move the Logo layer above the Background layer",
+  "keys": [
+   [
+    "move"
+   ],
+   [
+    "logo"
+   ],
+   [
+    "layer"
+   ],
+   [
+    "above",
+    "over"
+   ],
+   [
+    "background"
+   ]
+  ]
+ },
+ {
+  "id": "M013",
+  "domain": "edit",
+  "ro": "Duplicate this frame and rename it to Mobile v2",
+  "ref": "Duplicate this frame and rename it to Mobile v2",
+  "keys": [
+   [
+    "duplicate",
+    "copy"
+   ],
+   [
+    "frame"
+   ],
+   [
+    "rename"
+   ],
+   [
+    "mobile v2"
+   ]
+  ]
+ },
+ {
+  "id": "M014",
+  "domain": "edit",
+  "ro": "seteaza opacity-ul la 60% pe toate textele din header",
+  "ref": "Set the opacity to 60% on all texts in the header",
+  "keys": [
+   [
+    "opacity"
+   ],
+   [
+    "60%",
+    "60 %"
+   ],
+   [
+    "text"
+   ],
+   [
+    "header"
+   ]
+  ]
+ },
+ {
+  "id": "M015",
+  "domain": "edit",
+  "ro": "Fă font-ul titlului bold și mărește-l la 32px",
+  "ref": "Make the title font bold and increase it to 32px",
+  "keys": [
+   [
+    "font"
+   ],
+   [
+    "title"
+   ],
+   [
+    "bold"
+   ],
+   [
+    "32px",
+    "32 px"
+   ]
+  ]
+ },
+ {
+  "id": "M016",
+  "domain": "edit",
+  "ro": "Aplică un blur de 8px pe backgroud-ul din hero section",
+  "ref": "Apply an 8px blur to the background in the hero section",
+  "keys": [
+   [
+    "blur"
+   ],
+   [
+    "8px",
+    "8 px"
+   ],
+   [
+    "background"
+   ],
+   [
+    "hero"
+   ]
+  ]
+ },
+ {
+  "id": "M017",
+  "domain": "edit",
+  "ro": "Schimbă fill-ul butonului primar în #1E40AF și scoate stroke-ul",
+  "ref": "Change the primary button's fill to #1E40AF and remove the stroke",
+  "keys": [
+   [
+    "fill"
+   ],
+   [
+    "button"
+   ],
+   [
+    "primary"
+   ],
+   [
+    "#1e40af"
+   ],
+   [
+    "remove",
+    "delete"
+   ],
+   [
+    "stroke",
+    "border"
+   ]
+  ]
+ },
+ {
+  "id": "M018",
+  "domain": "edit",
+  "ro": "da undo la ultimele 3 modificari",
+  "ref": "Undo the last 3 changes",
+  "keys": [
+   [
+    "undo",
+    "revert"
+   ],
+   [
+    "3",
+    "three"
+   ],
+   [
+    "change",
+    "edit"
+   ]
+  ]
+ },
+ {
+  "id": "M019",
+  "domain": "edit",
+  "ro": "Fă flip orizontal la icon-ul de săgeată din dropdown-ul de meniu",
+  "ref": "Flip the arrow icon in the menu dropdown horizontally",
+  "keys": [
+   [
+    "flip",
+    "mirror"
+   ],
+   [
+    "horizontal"
+   ],
+   [
+    "arrow"
+   ],
+   [
+    "icon"
+   ],
+   [
+    "dropdown"
+   ]
+  ]
+ },
+ {
+  "id": "M020",
+  "domain": "edit",
+  "ro": "Aliniaza toate elementele din card-ul asta la centru si pune un padding de 16",
+  "ref": "Center-align all the elements in this card and add a padding of 16",
+  "keys": [
+   [
+    "align",
+    "center"
+   ],
+   [
+    "element"
+   ],
+   [
+    "card"
+   ],
+   [
+    "padding"
+   ],
+   [
+    "16"
+   ]
+  ]
+ },
+ {
+  "id": "M021",
+  "domain": "animation",
+  "ro": "Adaugă un fade in de 2 secunde pe titlu",
+  "ref": "Add a 2 second fade in to the title",
+  "keys": [
+   [
+    "fade in",
+    "fade-in"
+   ],
+   [
+    "2 second",
+    "2s"
+   ],
+   [
+    "title"
+   ]
+  ]
+ },
+ {
+  "id": "M022",
+  "domain": "animation",
+  "ro": "Mută keyframe-urile de la secunda 3 la secunda 5",
+  "ref": "Move the keyframes from second 3 to second 5",
+  "keys": [
+   [
+    "move",
+    "shift"
+   ],
+   [
+    "keyframe"
+   ],
+   [
+    "second 3",
+    "3s"
+   ],
+   [
+    "second 5",
+    "5s"
+   ]
+  ]
+ },
+ {
+  "id": "M023",
+  "domain": "animation",
+  "ro": "pune easing-ul pe ease-in-out la toate tranzitiile",
+  "ref": "Set the easing to ease-in-out on all transitions",
+  "keys": [
+   [
+    "easing"
+   ],
+   [
+    "ease-in-out"
+   ],
+   [
+    "transition"
+   ]
+  ]
+ },
+ {
+  "id": "M024",
+  "domain": "animation",
+  "ro": "Loop the bounce animation 3 times and then stop",
+  "ref": "Loop the bounce animation 3 times and then stop",
+  "keys": [
+   [
+    "loop",
+    "repeat"
+   ],
+   [
+    "bounce"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "3 times",
+    "three times"
+   ]
+  ]
+ },
+ {
+  "id": "M025",
+  "domain": "animation",
+  "ro": "Dă-i un delay de 500ms la al doilea layer",
+  "ref": "Give the second layer a 500ms delay",
+  "keys": [
+   [
+    "delay"
+   ],
+   [
+    "500ms",
+    "500 ms"
+   ],
+   [
+    "second"
+   ],
+   [
+    "layer"
+   ]
+  ]
+ },
+ {
+  "id": "M026",
+  "domain": "animation",
+  "ro": "fa timline-ul mai lung, sa aiba 10 secunde in loc de 6",
+  "ref": "Make the timeline longer, 10 seconds instead of 6",
+  "keys": [
+   [
+    "timeline"
+   ],
+   [
+    "longer",
+    "extend"
+   ],
+   [
+    "10 second",
+    "10s"
+   ],
+   [
+    "6"
+   ]
+  ]
+ },
+ {
+  "id": "M027",
+  "domain": "animation",
+  "ro": "Adaugă un slide in din dreapta pentru logo, cu durata de 1.5s",
+  "ref": "Add a slide in from the right for the logo, with a duration of 1.5s",
+  "keys": [
+   [
+    "slide in",
+    "slide-in"
+   ],
+   [
+    "right"
+   ],
+   [
+    "logo"
+   ],
+   [
+    "1.5s",
+    "1.5 s"
+   ]
+  ]
+ },
+ {
+  "id": "M028",
+  "domain": "animation",
+  "ro": "Șterge toate keyframe-urile de pe track-ul de rotație",
+  "ref": "Delete all keyframes on the rotation track",
+  "keys": [
+   [
+    "delete",
+    "remove"
+   ],
+   [
+    "keyframe"
+   ],
+   [
+    "rotation"
+   ],
+   [
+    "track"
+   ]
+  ]
+ },
+ {
+  "id": "M029",
+  "domain": "animation",
+  "ro": "seteaza frame rate-ul la 30 fps si randeaza preview-ul",
+  "ref": "Set the frame rate to 30 fps and render the preview",
+  "keys": [
+   [
+    "frame rate",
+    "fps"
+   ],
+   [
+    "30"
+   ],
+   [
+    "render"
+   ],
+   [
+    "preview"
+   ]
+  ]
+ },
+ {
+  "id": "M030",
+  "domain": "animation",
+  "ro": "Fă scale de la 0 la 100% pe card-uri, cu un stagger de 0.1s",
+  "ref": "Scale the cards from 0 to 100% with a 0.1s stagger",
+  "keys": [
+   [
+    "scale"
+   ],
+   [
+    "card"
+   ],
+   [
+    "100%"
+   ],
+   [
+    "stagger"
+   ],
+   [
+    "0.1s",
+    "0.1 s"
+   ]
+  ]
+ },
+ {
+  "id": "M031",
+  "domain": "enterprise",
+  "ro": "Dă-i share la document-ul Q3 Report cu echipa de Sales, doar view",
+  "ref": "Share the Q3 Report document with the Sales team, view only",
+  "keys": [
+   [
+    "share"
+   ],
+   [
+    "q3 report"
+   ],
+   [
+    "sales"
+   ],
+   [
+    "view",
+    "read"
+   ]
+  ]
+ },
+ {
+  "id": "M032",
+  "domain": "enterprise",
+  "ro": "Export the monthly report as PDF and send it to finance",
+  "ref": "Export the monthly report as PDF and send it to finance",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "monthly"
+   ],
+   [
+    "report"
+   ],
+   [
+    "pdf"
+   ],
+   [
+    "finance"
+   ]
+  ]
+ },
+ {
+  "id": "M033",
+  "domain": "enterprise",
+  "ro": "scoate permisiunile de edit pentru user-ul Andrei pe folder-ul Contracte",
+  "ref": "Remove edit permissions for user Andrei on the Contracte folder",
+  "keys": [
+   [
+    "remove",
+    "revoke"
+   ],
+   [
+    "edit"
+   ],
+   [
+    "permission",
+    "access"
+   ],
+   [
+    "andrei"
+   ],
+   [
+    "folder"
+   ]
+  ]
+ },
+ {
+  "id": "M034",
+  "domain": "enterprise",
+  "ro": "Fă un export în Excel cu toate invoice-urile din octombrie",
+  "ref": "Export all invoices from October to Excel",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "excel",
+    "xlsx"
+   ],
+   [
+    "invoice"
+   ],
+   [
+    "october"
+   ]
+  ]
+ },
+ {
+  "id": "M035",
+  "domain": "enterprise",
+  "ro": "Genereaza un raport cu ticket-urile deschise mai vechi de 30 de zle",
+  "ref": "Generate a report of open tickets older than 30 days",
+  "keys": [
+   [
+    "generate",
+    "create"
+   ],
+   [
+    "report"
+   ],
+   [
+    "ticket"
+   ],
+   [
+    "open"
+   ],
+   [
+    "30 days",
+    "30 day"
+   ]
+  ]
+ },
+ {
+  "id": "M036",
+  "domain": "enterprise",
+  "ro": "Who has access to the Budget 2027 spreadsheet?",
+  "ref": "Who has access to the Budget 2027 spreadsheet?",
+  "keys": [
+   [
+    "who"
+   ],
+   [
+    "access",
+    "permission"
+   ],
+   [
+    "budget 2027"
+   ],
+   [
+    "spreadsheet",
+    "sheet"
+   ]
+  ]
+ },
+ {
+  "id": "M037",
+  "domain": "enterprise",
+  "ro": "Pune-l pe Mihai owner pe workspace-ul de Marketing",
+  "ref": "Make Mihai the owner of the Marketing workspace",
+  "keys": [
+   [
+    "mihai"
+   ],
+   [
+    "owner"
+   ],
+   [
+    "workspace"
+   ],
+   [
+    "marketing"
+   ]
+  ]
+ },
+ {
+  "id": "M038",
+  "domain": "enterprise",
+  "ro": "arhiveaza toate draft-urile mai vechi de un an",
+  "ref": "Archive all drafts older than one year",
+  "keys": [
+   [
+    "archive"
+   ],
+   [
+    "draft"
+   ],
+   [
+    "older"
+   ],
+   [
+    "year"
+   ]
+  ]
+ },
+ {
+  "id": "M039",
+  "domain": "enterprise",
+  "ro": "Programează report-ul de vânzări să se trimită automat în fiecare luni la 9",
+  "ref": "Schedule the sales report to be sent automatically every Monday at 9",
+  "keys": [
+   [
+    "schedule"
+   ],
+   [
+    "sales"
+   ],
+   [
+    "report"
+   ],
+   [
+    "monday"
+   ],
+   [
+    "9"
+   ]
+  ]
+ },
+ {
+  "id": "M040",
+  "domain": "enterprise",
+  "ro": "Revoke the public link for the onboarding deck",
+  "ref": "Revoke the public link for the onboarding deck",
+  "keys": [
+   [
+    "revoke",
+    "disable",
+    "remove"
+   ],
+   [
+    "public link",
+    "link"
+   ],
+   [
+    "onboarding"
+   ],
+   [
+    "deck",
+    "presentation"
+   ]
+  ]
+ }
+]

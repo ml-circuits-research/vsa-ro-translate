@@ -1,7 +1,7 @@
 // Robustness: same dev sentences (a) without diacritics, (b) with one typo in a content word
-const L = require('../src/lexicon-ro-en.js');
-const { createTranslator, strip } = require('../src/vsa-ro-en.js');
-const T = createTranslator(L, {});
+const L = require('../src/lexicon-ro-en.js'), EN = require('../src/dict-en.js');
+const { createTranslator, strip } = require('../src/vsa-translate.js');
+const T = createTranslator({ dictionaries: [Object.assign({ lang: 'ro' }, L), EN] });
 const set = require(process.argv[2] || '../eval/dev.json').map(x => Array.isArray(x) ? x[0] : x.ro);
 const noDia = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 let seed = 11; const rnd = () => { seed ^= seed << 13; seed >>>= 0; seed ^= seed >>> 17; seed ^= seed << 5; seed >>>= 0; return seed / 4294967296; };

@@ -1,0 +1,1480 @@
+{
+ "summary": {
+  "n": 40,
+  "vsa": {
+   "chrF": 76.9,
+   "slotRecall": 79.3,
+   "allSlots": 35
+  },
+  "naive": {
+   "chrF": 60.9,
+   "slotRecall": 82.6,
+   "allSlots": 37.5
+  },
+  "latencyMs": {
+   "median": 0.471,
+   "p95": 7.548
+  },
+  "info": {
+   "D": 2048,
+   "languages": [
+    "ro",
+    "en"
+   ],
+   "dictionaries": [
+    {
+     "name": "ro",
+     "lang": "ro",
+     "forms": 5530
+    },
+    {
+     "name": "en-base",
+     "lang": "en",
+     "forms": 650
+    }
+   ],
+   "forms": 7283,
+   "itemMemory": 7156,
+   "phrases": 243,
+   "lexiconMs": 38,
+   "memoryMs": 287
+  }
+ },
+ "rows": [
+  {
+   "id": "M001",
+   "domain": "diagram",
+   "ro": "Mută node-ul Start cu 50px la stânga",
+   "ref": "Move the Start node 50px to the left",
+   "keys": [
+    [
+     "move",
+     "shift"
+    ],
+    [
+     "node"
+    ],
+    [
+     "start"
+    ],
+    [
+     "50px",
+     "50 px"
+    ],
+    [
+     "left"
+    ]
+   ],
+   "vsa": "Move the Start node by 50px to the left",
+   "naive": "Move node start with 50px to left",
+   "ms": 23.831047,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M002",
+   "domain": "diagram",
+   "ro": "Conectează box-ul Login cu box-ul Dashboard printr-un arrow",
+   "ref": "Connect the Login box to the Dashboard box with an arrow",
+   "keys": [
+    [
+     "connect",
+     "link"
+    ],
+    [
+     "login"
+    ],
+    [
+     "dashboard"
+    ],
+    [
+     "arrow"
+    ]
+   ],
+   "vsa": "Connect the Login box to the Dashboard box with an arrow",
+   "naive": "Connect box login with box dashboard through an arrow",
+   "ms": 1.434907,
+   "stats": {
+    "exact": 9,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M003",
+   "domain": "diagram",
+   "ro": "Fă un auto layout pe toată diagrama, top to bottom",
+   "ref": "Apply auto layout to the whole diagram, top to bottom",
+   "keys": [
+    [
+     "auto layout",
+     "layout"
+    ],
+    [
+     "diagram"
+    ],
+    [
+     "top to bottom",
+     "top-to-bottom"
+    ]
+   ],
+   "vsa": "Make an auto layout on the whole diagram, top to bottom",
+   "naive": "Make an auto layout on the whole diagram, top to bottom",
+   "ms": 7.54819,
+   "stats": {
+    "exact": 9,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "auto"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
+  },
+  {
+   "id": "M004",
+   "domain": "diagram",
+   "ro": "schimba culoarea la edge-urile dintre servicii in rosu",
+   "ref": "Change the color of the edges between the services to red",
+   "keys": [
+    [
+     "color",
+     "colour"
+    ],
+    [
+     "edge"
+    ],
+    [
+     "service"
+    ],
+    [
+     "red"
+    ]
+   ],
+   "vsa": "Change the color to the edges between services to red",
+   "naive": "Change color to edge between services in red",
+   "ms": 1.118864,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M005",
+   "domain": "diagram",
+   "ro": "Grupează shape-urile selectate și pune-le un label „Backend”",
+   "ref": "Group the selected shapes and give them a Backend label",
+   "keys": [
+    [
+     "group"
+    ],
+    [
+     "shape"
+    ],
+    [
+     "selected"
+    ],
+    [
+     "label"
+    ],
+    [
+     "backend"
+    ]
+   ],
+   "vsa": "Group the selected shapes and put them a \"Backend\" label",
+   "naive": "Group shape select and put them a label \"Backend\"",
+   "ms": 0.847426,
+   "stats": {
+    "exact": 7,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M006",
+   "domain": "diagram",
+   "ro": "Align all the selected nodes horizontally and distribute them evenly",
+   "ref": "Align all selected nodes horizontally and distribute them evenly",
+   "keys": [
+    [
+     "align"
+    ],
+    [
+     "node"
+    ],
+    [
+     "horizontal"
+    ],
+    [
+     "distribute",
+     "spacing"
+    ]
+   ],
+   "vsa": "Align all the selected nodes horizontally and distribute them evenly",
+   "naive": "Align all the select nodes horizontally and distribute them evenly",
+   "ms": 0.295922,
+   "stats": {
+    "exact": 10,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "en",
+   "errors": 0
+  },
+  {
+   "id": "M007",
+   "domain": "diagram",
+   "ro": "Sterge conectorul dashed dintre Cache si Datbase",
+   "ref": "Delete the dashed connector between Cache and Database",
+   "keys": [
+    [
+     "delete",
+     "remove"
+    ],
+    [
+     "dashed"
+    ],
+    [
+     "connector",
+     "edge"
+    ],
+    [
+     "cache"
+    ],
+    [
+     "database"
+    ]
+   ],
+   "vsa": "Delete the dashed connector between Cache and Datbase",
+   "naive": "Delete connector dashed between Cache and Datbase",
+   "ms": 0.211504,
+   "stats": {
+    "exact": 5,
+    "vsa": 0,
+    "unknown": 2,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M008",
+   "domain": "diagram",
+   "ro": "Dă-i un resize la container-ul AWS ca să încapă toate icon-urile",
+   "ref": "Resize the AWS container so that all the icons fit",
+   "keys": [
+    [
+     "resize"
+    ],
+    [
+     "container"
+    ],
+    [
+     "aws"
+    ],
+    [
+     "icon"
+    ],
+    [
+     "fit"
+    ]
+   ],
+   "vsa": "Give a resize to it to the AWS container so that start all the icons",
+   "naive": "Give it a resize to container AWS that its încapă all icon",
+   "ms": 7.105819,
+   "stats": {
+    "exact": 9,
+    "vsa": 1,
+    "unknown": 0,
+    "vsaLog": [
+     "încapă→inceapa (0.75)"
+    ],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M009",
+   "domain": "diagram",
+   "ro": "Exportă diagrama ca SVG cu background transparent",
+   "ref": "Export the diagram as SVG with a transparent background",
+   "keys": [
+    [
+     "export"
+    ],
+    [
+     "diagram"
+    ],
+    [
+     "svg"
+    ],
+    [
+     "transparent"
+    ]
+   ],
+   "vsa": "Export the diagram as SVG with transparent background",
+   "naive": "Export diagram that SVG with background transparent",
+   "ms": 0.470739,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M010",
+   "domain": "diagram",
+   "ro": "adauga un swimlane nou pentru echipa de QA sub cel de Dev",
+   "ref": "Add a new swimlane for the QA team below the Dev one",
+   "keys": [
+    [
+     "add",
+     "create"
+    ],
+    [
+     "swimlane",
+     "lane"
+    ],
+    [
+     "qa"
+    ],
+    [
+     "below",
+     "under"
+    ],
+    [
+     "dev"
+    ]
+   ],
+   "vsa": "Add a new swimlane for the team of QA below the of Dev",
+   "naive": "Add a swimlane new for team of QA below the of Dev",
+   "ms": 0.943777,
+   "stats": {
+    "exact": 10,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M011",
+   "domain": "edit",
+   "ro": "Dă un crop la imagine la 16:9 și pune-o on top",
+   "ref": "Crop the image to 16:9 and put it on top",
+   "keys": [
+    [
+     "crop"
+    ],
+    [
+     "image",
+     "picture"
+    ],
+    [
+     "16:9"
+    ],
+    [
+     "top",
+     "front"
+    ]
+   ],
+   "vsa": "Give a crop to the image to 16: 9 and put it on top",
+   "naive": "Give a crop to image to 16: 9 and put it on top",
+   "ms": 1.082315,
+   "stats": {
+    "exact": 10,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M012",
+   "domain": "edit",
+   "ro": "Mută layer-ul Logo deasupra layer-ului Background",
+   "ref": "Move the Logo layer above the Background layer",
+   "keys": [
+    [
+     "move"
+    ],
+    [
+     "logo"
+    ],
+    [
+     "layer"
+    ],
+    [
+     "above",
+     "over"
+    ],
+    [
+     "background"
+    ]
+   ],
+   "vsa": "Move the Logo layer above the Background layer",
+   "naive": "Move layer logo above layer background",
+   "ms": 0.129676,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M013",
+   "domain": "edit",
+   "ro": "Duplicate this frame and rename it to Mobile v2",
+   "ref": "Duplicate this frame and rename it to Mobile v2",
+   "keys": [
+    [
+     "duplicate",
+     "copy"
+    ],
+    [
+     "frame"
+    ],
+    [
+     "rename"
+    ],
+    [
+     "mobile v2"
+    ]
+   ],
+   "vsa": "Duplicate this frame and rename it to Mobile v2",
+   "naive": "Duplicate this frame and rename it to mobile v2",
+   "ms": 0.762172,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "en",
+   "errors": 0
+  },
+  {
+   "id": "M014",
+   "domain": "edit",
+   "ro": "seteaza opacity-ul la 60% pe toate textele din header",
+   "ref": "Set the opacity to 60% on all texts in the header",
+   "keys": [
+    [
+     "opacity"
+    ],
+    [
+     "60%",
+     "60 %"
+    ],
+    [
+     "text"
+    ],
+    [
+     "header"
+    ]
+   ],
+   "vsa": "Set the opacity to 60% on all the texts in the header",
+   "naive": "Set opacity to 60% on all texts from header",
+   "ms": 0.36244,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M015",
+   "domain": "edit",
+   "ro": "Fă font-ul titlului bold și mărește-l la 32px",
+   "ref": "Make the title font bold and increase it to 32px",
+   "keys": [
+    [
+     "font"
+    ],
+    [
+     "title"
+    ],
+    [
+     "bold"
+    ],
+    [
+     "32px",
+     "32 px"
+    ]
+   ],
+   "vsa": "Make the font of the bold title and increase it to 32px",
+   "naive": "Make font title bold and increase it to 32px",
+   "ms": 0.274776,
+   "stats": {
+    "exact": 7,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M016",
+   "domain": "edit",
+   "ro": "Aplică un blur de 8px pe backgroud-ul din hero section",
+   "ref": "Apply an 8px blur to the background in the hero section",
+   "keys": [
+    [
+     "blur"
+    ],
+    [
+     "8px",
+     "8 px"
+    ],
+    [
+     "background"
+    ],
+    [
+     "hero"
+    ]
+   ],
+   "vsa": "Apply an 8px blur on the backgroud in hero section",
+   "naive": "Apply a blur of 8px on backgroud from hero section",
+   "ms": 2.683709,
+   "stats": {
+    "exact": 7,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "backgroud",
+     "hero"
+    ]
+   },
+   "language": "ro",
+   "errors": 2
+  },
+  {
+   "id": "M017",
+   "domain": "edit",
+   "ro": "Schimbă fill-ul butonului primar în #1E40AF și scoate stroke-ul",
+   "ref": "Change the primary button's fill to #1E40AF and remove the stroke",
+   "keys": [
+    [
+     "fill"
+    ],
+    [
+     "button"
+    ],
+    [
+     "primary"
+    ],
+    [
+     "#1e40af"
+    ],
+    [
+     "remove",
+     "delete"
+    ],
+    [
+     "stroke",
+     "border"
+    ]
+   ],
+   "vsa": "Change the fill of the button the first to #1E40AF and remove the stroke",
+   "naive": "Change fill button primar in #1E40AF and remove stroke",
+   "ms": 2.777254,
+   "stats": {
+    "exact": 6,
+    "vsa": 1,
+    "unknown": 0,
+    "vsaLog": [
+     "primar→prima (0.80)"
+    ],
+    "confident": false,
+    "unknownWords": [
+     "stroke"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
+  },
+  {
+   "id": "M018",
+   "domain": "edit",
+   "ro": "da undo la ultimele 3 modificari",
+   "ref": "Undo the last 3 changes",
+   "keys": [
+    [
+     "undo",
+     "revert"
+    ],
+    [
+     "3",
+     "three"
+    ],
+    [
+     "change",
+     "edit"
+    ]
+   ],
+   "vsa": "Give undo to the last 3 changes",
+   "naive": "Give undo to the last 3 changes",
+   "ms": 0.138475,
+   "stats": {
+    "exact": 5,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M019",
+   "domain": "edit",
+   "ro": "Fă flip orizontal la icon-ul de săgeată din dropdown-ul de meniu",
+   "ref": "Flip the arrow icon in the menu dropdown horizontally",
+   "keys": [
+    [
+     "flip",
+     "mirror"
+    ],
+    [
+     "horizontal"
+    ],
+    [
+     "arrow"
+    ],
+    [
+     "icon"
+    ],
+    [
+     "dropdown"
+    ]
+   ],
+   "vsa": "Make flip horizontally to the arrow icon in the menu dropdown",
+   "naive": "Make flip horizontal to icon of arrow from dropdown of menu",
+   "ms": 0.36043,
+   "stats": {
+    "exact": 11,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M020",
+   "domain": "edit",
+   "ro": "Aliniaza toate elementele din card-ul asta la centru si pune un padding de 16",
+   "ref": "Center-align all the elements in this card and add a padding of 16",
+   "keys": [
+    [
+     "align",
+     "center"
+    ],
+    [
+     "element"
+    ],
+    [
+     "card"
+    ],
+    [
+     "padding"
+    ],
+    [
+     "16"
+    ]
+   ],
+   "vsa": "Align all the elements in this card in the center and put a 16 padding",
+   "naive": "Align all elements from card this to center and put a padding of 16",
+   "ms": 0.255932,
+   "stats": {
+    "exact": 13,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M021",
+   "domain": "animation",
+   "ro": "Adaugă un fade in de 2 secunde pe titlu",
+   "ref": "Add a 2 second fade in to the title",
+   "keys": [
+    [
+     "fade in",
+     "fade-in"
+    ],
+    [
+     "2 second",
+     "2s"
+    ],
+    [
+     "title"
+    ]
+   ],
+   "vsa": "Add a 2 seconds fade-in on the title",
+   "naive": "Add a fade in of 2 seconds on title",
+   "ms": 0.228865,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M022",
+   "domain": "animation",
+   "ro": "Mută keyframe-urile de la secunda 3 la secunda 5",
+   "ref": "Move the keyframes from second 3 to second 5",
+   "keys": [
+    [
+     "move",
+     "shift"
+    ],
+    [
+     "keyframe"
+    ],
+    [
+     "second 3",
+     "3s"
+    ],
+    [
+     "second 5",
+     "5s"
+    ]
+   ],
+   "vsa": "Move the keyframes from second 3 at second 5",
+   "naive": "Move keyframes of to second 3 to second 5",
+   "ms": 0.261923,
+   "stats": {
+    "exact": 7,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M023",
+   "domain": "animation",
+   "ro": "pune easing-ul pe ease-in-out la toate tranzitiile",
+   "ref": "Set the easing to ease-in-out on all transitions",
+   "keys": [
+    [
+     "easing"
+    ],
+    [
+     "ease-in-out"
+    ],
+    [
+     "transition"
+    ]
+   ],
+   "vsa": "Put the easing on ease-in-out to all the transitions",
+   "naive": "Put easing on ease-in-out to all transitions",
+   "ms": 2.394226,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "ease-in-out"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
+  },
+  {
+   "id": "M024",
+   "domain": "animation",
+   "ro": "Loop the bounce animation 3 times and then stop",
+   "ref": "Loop the bounce animation 3 times and then stop",
+   "keys": [
+    [
+     "loop",
+     "repeat"
+    ],
+    [
+     "bounce"
+    ],
+    [
+     "animation"
+    ],
+    [
+     "3 times",
+     "three times"
+    ]
+   ],
+   "vsa": "Loop the bounce animation 3 times and then stop",
+   "naive": "Loop the bounce animation 3 times and then stop",
+   "ms": 0.088466,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "en",
+   "errors": 0
+  },
+  {
+   "id": "M025",
+   "domain": "animation",
+   "ro": "Dă-i un delay de 500ms la al doilea layer",
+   "ref": "Give the second layer a 500ms delay",
+   "keys": [
+    [
+     "delay"
+    ],
+    [
+     "500ms",
+     "500 ms"
+    ],
+    [
+     "second"
+    ],
+    [
+     "layer"
+    ]
+   ],
+   "vsa": "Give a 500ms delay to it to the second layer",
+   "naive": "Give it a delay of 500ms to of doilea layer",
+   "ms": 0.318421,
+   "stats": {
+    "exact": 7,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M026",
+   "domain": "animation",
+   "ro": "fa timline-ul mai lung, sa aiba 10 secunde in loc de 6",
+   "ref": "Make the timeline longer, 10 seconds instead of 6",
+   "keys": [
+    [
+     "timeline"
+    ],
+    [
+     "longer",
+     "extend"
+    ],
+    [
+     "10 second",
+     "10s"
+    ],
+    [
+     "6"
+    ]
+   ],
+   "vsa": "Make the timline longer, have 10 seconds instead of 6",
+   "naive": "Make timline more long, its have 10 seconds in loc of 6",
+   "ms": 0.412007,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "timline"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
+  },
+  {
+   "id": "M027",
+   "domain": "animation",
+   "ro": "Adaugă un slide in din dreapta pentru logo, cu durata de 1.5s",
+   "ref": "Add a slide in from the right for the logo, with a duration of 1.5s",
+   "keys": [
+    [
+     "slide in",
+     "slide-in"
+    ],
+    [
+     "right"
+    ],
+    [
+     "logo"
+    ],
+    [
+     "1.5s",
+     "1.5 s"
+    ]
+   ],
+   "vsa": "Add a slide in on the right for logo, with the duration of 1. 5s",
+   "naive": "Add a slide in from right for logo, with last of 1. 5s",
+   "ms": 0.256532,
+   "stats": {
+    "exact": 11,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M028",
+   "domain": "animation",
+   "ro": "Șterge toate keyframe-urile de pe track-ul de rotație",
+   "ref": "Delete all keyframes on the rotation track",
+   "keys": [
+    [
+     "delete",
+     "remove"
+    ],
+    [
+     "keyframe"
+    ],
+    [
+     "rotation"
+    ],
+    [
+     "track"
+    ]
+   ],
+   "vsa": "Delete all the keyframes from the rotation track",
+   "naive": "Delete all keyframes of on track of rotation",
+   "ms": 0.206194,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M029",
+   "domain": "animation",
+   "ro": "seteaza frame rate-ul la 30 fps si randeaza preview-ul",
+   "ref": "Set the frame rate to 30 fps and render the preview",
+   "keys": [
+    [
+     "frame rate",
+     "fps"
+    ],
+    [
+     "30"
+    ],
+    [
+     "render"
+    ],
+    [
+     "preview"
+    ]
+   ],
+   "vsa": "Set frame the rate to 30 fps and randeaza the preview",
+   "naive": "Set frame rate to 30 fps and randeaza preview",
+   "ms": 2.412121,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "randeaza"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
+  },
+  {
+   "id": "M030",
+   "domain": "animation",
+   "ro": "Fă scale de la 0 la 100% pe card-uri, cu un stagger de 0.1s",
+   "ref": "Scale the cards from 0 to 100% with a 0.1s stagger",
+   "keys": [
+    [
+     "scale"
+    ],
+    [
+     "card"
+    ],
+    [
+     "100%"
+    ],
+    [
+     "stagger"
+    ],
+    [
+     "0.1s",
+     "0.1 s"
+    ]
+   ],
+   "vsa": "Make scale from 0 to 100% on cards, with a stagger of 0. 1s",
+   "naive": "Make scale of to 0 to 100% on card, with a stagger of 0. 1s",
+   "ms": 2.326243,
+   "stats": {
+    "exact": 10,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "stagger"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
+  },
+  {
+   "id": "M031",
+   "domain": "enterprise",
+   "ro": "Dă-i share la document-ul Q3 Report cu echipa de Sales, doar view",
+   "ref": "Share the Q3 Report document with the Sales team, view only",
+   "keys": [
+    [
+     "share"
+    ],
+    [
+     "q3 report"
+    ],
+    [
+     "sales"
+    ],
+    [
+     "view",
+     "read"
+    ]
+   ],
+   "vsa": "Give them share to the Q3 document report with the team of sales, only view",
+   "naive": "Give it share to document Q3 report with team of sales, only view",
+   "ms": 0.356274,
+   "stats": {
+    "exact": 11,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M032",
+   "domain": "enterprise",
+   "ro": "Export the monthly report as PDF and send it to finance",
+   "ref": "Export the monthly report as PDF and send it to finance",
+   "keys": [
+    [
+     "export"
+    ],
+    [
+     "monthly"
+    ],
+    [
+     "report"
+    ],
+    [
+     "pdf"
+    ],
+    [
+     "finance"
+    ]
+   ],
+   "vsa": "Export the monthly report as PDF and send it to finance",
+   "naive": "Export the monthly report would PDF and send it to finance",
+   "ms": 2.412125,
+   "stats": {
+    "exact": 9,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "finance"
+    ]
+   },
+   "language": "en",
+   "errors": 1
+  },
+  {
+   "id": "M033",
+   "domain": "enterprise",
+   "ro": "scoate permisiunile de edit pentru user-ul Andrei pe folder-ul Contracte",
+   "ref": "Remove edit permissions for user Andrei on the Contracte folder",
+   "keys": [
+    [
+     "remove",
+     "revoke"
+    ],
+    [
+     "edit"
+    ],
+    [
+     "permission",
+     "access"
+    ],
+    [
+     "andrei"
+    ],
+    [
+     "folder"
+    ]
+   ],
+   "vsa": "Remove the permissions of edit for the Andrei user on the Contracte folder",
+   "naive": "Remove permissions of edit for user Andrei on folder contracts",
+   "ms": 0.28536,
+   "stats": {
+    "exact": 9,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M034",
+   "domain": "enterprise",
+   "ro": "Fă un export în Excel cu toate invoice-urile din octombrie",
+   "ref": "Export all invoices from October to Excel",
+   "keys": [
+    [
+     "export"
+    ],
+    [
+     "excel",
+     "xlsx"
+    ],
+    [
+     "invoice"
+    ],
+    [
+     "october"
+    ]
+   ],
+   "vsa": "Make an export in Excel with all the invoices in octombrie",
+   "naive": "Make an export in Excel with all invoice from octombrie",
+   "ms": 2.361059,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 2,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "octombrie"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
+  },
+  {
+   "id": "M035",
+   "domain": "enterprise",
+   "ro": "Genereaza un raport cu ticket-urile deschise mai vechi de 30 de zle",
+   "ref": "Generate a report of open tickets older than 30 days",
+   "keys": [
+    [
+     "generate",
+     "create"
+    ],
+    [
+     "report"
+    ],
+    [
+     "ticket"
+    ],
+    [
+     "open"
+    ],
+    [
+     "30 days",
+     "30 day"
+    ]
+   ],
+   "vsa": "Generate a report with the open tickets more old of 30 zle",
+   "naive": "Generate a report with ticket open more old of 30 of zle",
+   "ms": 1.841115,
+   "stats": {
+    "exact": 10,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "zle"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
+  },
+  {
+   "id": "M036",
+   "domain": "enterprise",
+   "ro": "Who has access to the Budget 2027 spreadsheet?",
+   "ref": "Who has access to the Budget 2027 spreadsheet?",
+   "keys": [
+    [
+     "who"
+    ],
+    [
+     "access",
+     "permission"
+    ],
+    [
+     "budget 2027"
+    ],
+    [
+     "spreadsheet",
+     "sheet"
+    ]
+   ],
+   "vsa": "Who has access to the Budget 2027 spreadsheet?",
+   "naive": "Who has access to the Budget 2027 spreadsheet?",
+   "ms": 0.131683,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "en",
+   "errors": 0
+  },
+  {
+   "id": "M037",
+   "domain": "enterprise",
+   "ro": "Pune-l pe Mihai owner pe workspace-ul de Marketing",
+   "ref": "Make Mihai the owner of the Marketing workspace",
+   "keys": [
+    [
+     "mihai"
+    ],
+    [
+     "owner"
+    ],
+    [
+     "workspace"
+    ],
+    [
+     "marketing"
+    ]
+   ],
+   "vsa": "Put Mihai owner on the workspace of Marketing",
+   "naive": "Put it on Mihai owner on workspace of Marketing",
+   "ms": 0.227604,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 2,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M038",
+   "domain": "enterprise",
+   "ro": "arhiveaza toate draft-urile mai vechi de un an",
+   "ref": "Archive all drafts older than one year",
+   "keys": [
+    [
+     "archive"
+    ],
+    [
+     "draft"
+    ],
+    [
+     "older"
+    ],
+    [
+     "year"
+    ]
+   ],
+   "vsa": "Archive all the drafts more old of a year",
+   "naive": "Archive all draft more old of a year",
+   "ms": 0.200549,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
+  },
+  {
+   "id": "M039",
+   "domain": "enterprise",
+   "ro": "Programează report-ul de vânzări să se trimită automat în fiecare luni la 9",
+   "ref": "Schedule the sales report to be sent automatically every Monday at 9",
+   "keys": [
+    [
+     "schedule"
+    ],
+    [
+     "sales"
+    ],
+    [
+     "report"
+    ],
+    [
+     "monday"
+    ],
+    [
+     "9"
+    ]
+   ],
+   "vsa": "Schedule the vânzări report to send automatically to each months to 9",
+   "naive": "Schedule report of vânzări its send automatic in each months to 9",
+   "ms": 2.420832,
+   "stats": {
+    "exact": 11,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "vânzări"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
+  },
+  {
+   "id": "M040",
+   "domain": "enterprise",
+   "ro": "Revoke the public link for the onboarding deck",
+   "ref": "Revoke the public link for the onboarding deck",
+   "keys": [
+    [
+     "revoke",
+     "disable",
+     "remove"
+    ],
+    [
+     "public link",
+     "link"
+    ],
+    [
+     "onboarding"
+    ],
+    [
+     "deck",
+     "presentation"
+    ]
+   ],
+   "vsa": "Revoke the public link for the onboarding deck",
+   "naive": "Revoke the publish link for the onboarding deck",
+   "ms": 1.905522,
+   "stats": {
+    "exact": 7,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "onboarding"
+    ]
+   },
+   "language": "en",
+   "errors": 1
+  }
+ ]
+}

@@ -114,79 +114,132 @@ pre { margin: 0; background: var(--paper); border: 1px solid var(--line); border
 ul.plain { margin: 0; padding-left: 18px; display: grid; gap: 6px; max-width: 70ch }
 footer { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 6px 18px }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+/* v0.2: settings, spell check, vocabulary editor */
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--panel) }
+.seg input { position: absolute; opacity: 0; pointer-events: none }
+.seg label { padding: 6px 12px; font-size: 13.5px; cursor: pointer; color: var(--muted) }
+.seg label + input + label, .seg input + label ~ label { border-left: 1px solid var(--line) }
+.seg input:checked + label { background: var(--accent-soft); color: var(--accent); font-weight: 600 }
+.seg input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: -2px }
+.check { display: inline-flex; align-items: center; gap: 6px; font-size: 14px }
+.badge.eng { background: var(--ok-soft); color: var(--ok) }
+.badge.lang { background: var(--label-soft); color: var(--label) }
+.proof { font: 17px/1.7 var(--f-body); overflow-wrap: anywhere; padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel) }
+.proof mark { background: transparent; color: inherit; padding: 0 1px; border-radius: 3px }
+.proof mark.unknown { text-decoration: underline wavy var(--unk); text-underline-offset: 4px; background: var(--unk-soft) }
+.proof mark.corrected { text-decoration: underline var(--vsa); text-decoration-thickness: 2px; text-underline-offset: 4px; background: var(--vsa-soft) }
+.issues { display: grid; gap: 8px }
+.issue { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; font-size: 14px }
+.issue .w { font-weight: 600 }
+.issue.err .w { color: var(--unk) }
+.issue.fix .w { color: var(--vsa) }
+.chip { font: 500 13px var(--f-mono); padding: 3px 8px; border-radius: 6px; border: 1px solid var(--line); background: var(--paper); cursor: pointer; color: var(--ink) }
+.chip:hover { border-color: var(--accent) }
+.vocab { display: grid; gap: 12px; grid-template-columns: 1fr }
+@media (min-width: 860px) { .vocab { grid-template-columns: 280px 1fr } }
+.dicts { display: grid; gap: 8px; align-content: start }
+textarea#vocab { width: 100%; min-height: 168px; resize: vertical; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); font: 13.5px/1.5 var(--f-mono); padding: 10px }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center }
+input[type="text"] { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 5px 8px; width: 5.5em }
 </style>
 
 <div class="wrap">
   <header>
-    <div class="eyebrow">Hyperdimensional computing · ro → en</div>
+    <div class="eyebrow">Hyperdimensional computing · any language → en</div>
     <div class="titlerow"><h1>VSA RO→EN Translator</h1><span class="badge">v__VERSION__</span></div>
-    <p class="lede">Romanian commands for diagram, editing, animation and enterprise tools, translated to plain English in your browser. Under a millisecond per command, about 110&nbsp;KB of code, no model to download. Telegraphic English, built to be understood by people and by agents.</p>
+    <p class="lede">Command translation and spell checking over a vocabulary you choose. Romanian and English are built in, French is an example, and any other language is one dictionary away. Runs in the browser in a few milliseconds, with no model to download. Words outside the vocabulary are reported as errors, not guessed.</p>
   </header>
 
   <section class="console" aria-label="Translator">
+    <div class="toolbar">
+      <span class="eyebrow">Chrome translator</span>
+      <div class="seg" role="radiogroup" aria-label="Chrome translator">
+        <input type="radio" name="chrome" id="ch-never" value="never" checked><label for="ch-never">Never</label>
+        <input type="radio" name="chrome" id="ch-fallback" value="fallback"><label for="ch-fallback">When unsure</label>
+        <input type="radio" name="chrome" id="ch-prefer" value="prefer"><label for="ch-prefer">Whenever available</label>
+      </div>
+      <label class="check"><input type="checkbox" id="strict"> Strict: no translation if a word is unknown</label>
+    </div>
     <div class="panes">
       <div class="pane">
-        <div class="pane-head"><span class="eyebrow">Romanian</span><button id="clear" type="button">Clear</button></div>
-        <textarea id="ro" spellcheck="false" aria-label="Romanian text">Adaugă-i casetei un chenar gri de 2 px si muta nodul Start cu 20 de pixeli la dreapta</textarea>
+        <div class="pane-head"><span class="eyebrow">Your text</span><button id="clear" type="button">Clear</button></div>
+        <textarea id="ro" spellcheck="false" aria-label="Text to translate">Adaugă-i casetei un chenar gri de 2 px si muta layer-ul Start cu 20 de pixeli la drepta</textarea>
         <div></div>
       </div>
       <div class="pane">
-        <div class="pane-head"><span class="eyebrow">English</span><button id="copy-en" type="button">Copy</button></div>
+        <div class="pane-head"><span class="eyebrow">English</span><span class="row"><span class="badge lang" id="b-lang"></span><span class="badge eng" id="b-eng"></span><button id="copy-en" type="button">Copy</button></span></div>
         <div id="en" aria-live="polite"></div>
         <div id="chrome-line" hidden></div>
       </div>
     </div>
     <div class="meta" id="meta"></div>
     <div class="examples" id="examples" aria-label="Examples"></div>
+
     <div class="card">
-      <div class="legend"><span><span class="sw"></span>exact form</span><span><span class="sw vsa"></span>recovered by VSA (typo, missing diacritics, unseen inflection)</span><span><span class="sw phrase"></span>phrase</span><span><span class="sw label"></span>name or label, kept as is</span><span><span class="sw unknown"></span>unknown, passed through</span></div>
+      <h3>Spell check against the vocabulary</h3>
+      <div class="proof" id="proof"></div>
+      <div class="issues" id="issues"></div>
+    </div>
+
+    <div class="card">
+      <div class="legend"><span><span class="sw"></span>exact form</span><span><span class="sw vsa"></span>corrected by VSA</span><span><span class="sw phrase"></span>phrase</span><span><span class="sw label"></span>name or label, kept as is</span><span><span class="sw unknown"></span>not in the vocabulary</span></div>
       <div class="lane" id="lane"></div>
       <div class="hv" id="hv">
         <figure><canvas id="cv-q" width="256" height="128"></canvas><figcaption id="cap-q"></figcaption></figure>
         <figure><canvas id="cv-m" width="256" height="128"></canvas><figcaption id="cap-m"></figcaption></figure>
         <figure><canvas id="cv-d" width="256" height="128"></canvas><figcaption id="cap-d"></figcaption></figure>
       </div>
-      <p class="note">Each word is a 2048-bit hypervector: a majority bundle of its character bigrams and trigrams, with letter order encoded by permutation. A word the lexicon does not contain verbatim is matched to the nearest stored form by Hamming distance. Pick any word above to see its vector and its nearest neighbour.</p>
+      <p class="note">Each word is a 2048-bit hypervector: a majority bundle of its character bigrams and trigrams, letter order encoded by permutation. A word that is not in the vocabulary is compared with every stored form by Hamming distance; the closest ones are re-ranked by edit distance, and the best is accepted only if it is one edit away (two for long words) and the change does not add or drop a prefix.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-vocab">
+    <h2 id="h-vocab">Vocabulary</h2>
+    <p>The translator only knows the dictionaries you give it. Add your product's words here to see the effect, then pass the same dictionary to <code>create()</code> in your code.</p>
+    <div class="card vocab">
+      <div class="dicts">
+        <span class="eyebrow">Dictionaries</span>
+        <label class="check"><input type="checkbox" id="d-ro" checked> Romanian, built in</label>
+        <label class="check"><input type="checkbox" id="d-en" checked> English base (for mixed text)</label>
+        <label class="check"><input type="checkbox" id="d-fr" checked> French example</label>
+        <label class="check"><input type="checkbox" id="d-custom" checked> My words (right)</label>
+        <p class="note" id="vocab-info"></p>
+      </div>
+      <div class="snip">
+        <div class="row"><span class="eyebrow">My words</span><label for="custom-lang" class="note">language</label><input type="text" id="custom-lang" value="ro" aria-label="Language code"></div>
+        <textarea id="vocab" spellcheck="false" aria-label="Custom vocabulary">tichet = ticket (n, pl: tichete)
+tichet de suport = support ticket
+escalada = escalate (v)
+urgent = urgent (adj)
+sprint = sprint (n, pl: sprinturi)</textarea>
+        <div class="row"><button class="primary" id="apply-vocab" type="button">Apply vocabulary</button><span class="note">One entry per line: <code>word = english (n | v | adj, pl: plural)</code>. Several words on the left make a phrase. A JSON dictionary works too.</span></div>
+      </div>
     </div>
   </section>
 
   <section aria-labelledby="h-bench">
     <h2 id="h-bench">How well it works</h2>
-    <p>Measured on 160 commands written by independent agents, never used to build the lexicon. A <em>slot</em> is something an agent needs to act correctly: the action, the object, a value, a unit, a direction. chrF is the standard character-level overlap with a human reference translation (sacreBLEU settings).</p>
+    <p>All test commands were written by independent agents, never used to build the dictionaries. A <em>slot</em> is what an agent needs to act: the action, the object, a value, a unit, a direction. chrF is character-level overlap with a reference translation (sacreBLEU settings).</p>
     <div class="cols">
-      <div class="card">
-        <h3>Fresh set (60 commands, never seen)</h3>
-        <div class="tablewrap"><table id="t-fresh"></table></div>
-        <p class="note">The honest number. Most misses are words outside the ~800-lemma lexicon, which pass through in Romanian.</p>
-      </div>
-      <div class="card">
-        <h3>First held-out set (100 commands)</h3>
-        <div class="tablewrap"><table id="t-held"></table></div>
-        <p class="note" id="judge-note"></p>
-      </div>
+      <div class="card"><h3>Romanian, fresh set (60, never seen)</h3><div class="tablewrap"><table id="t-fresh"></table></div><p class="note">The honest number for open-ended Romanian. Most misses are words outside the built-in vocabulary.</p></div>
+      <div class="card"><h3>Romanian, first held-out set (100)</h3><div class="tablewrap"><table id="t-held"></table></div><p class="note" id="judge-note"></p></div>
     </div>
     <div class="cols">
-      <div class="card">
-        <h3>Knowing when it doesn't know</h3>
-        <div class="tablewrap"><table id="t-gate"></table></div>
-        <p class="note">A translation is <em>confident</em> when every content word was found (exactly or by a strong VSA match). Route the rest to a neural translator: that is the hybrid the comparison below measures.</p>
-      </div>
-      <div class="card">
-        <h3>Robustness</h3>
-        <div class="tablewrap"><table id="t-rob"></table></div>
-        <p class="note" id="rob-note"></p>
-      </div>
+      <div class="card"><h3>Mixed Romanian–English (40) and French (30)</h3><div class="tablewrap"><table id="t-multi"></table></div><p class="note" id="multi-note"></p></div>
+      <div class="card"><h3>Spell checking</h3><div class="tablewrap"><table id="t-spell"></table></div><p class="note" id="spell-note"></p></div>
+    </div>
+    <div class="cols">
+      <div class="card"><h3>Knowing when it doesn't know</h3><div class="tablewrap"><table id="t-gate"></table></div><p class="note">Confident means every word was found, exactly or by a strong correction. The rest is what the "When unsure" Chrome setting sends to Chrome.</p></div>
+      <div class="card"><h3>Robustness</h3><div class="tablewrap"><table id="t-rob"></table></div></div>
     </div>
   </section>
 
   <section aria-labelledby="h-cmp">
     <h2 id="h-cmp">Compare with Chrome, in this browser</h2>
-    <p>Desktop Chrome 138+ and Edge ship an on-device translator (the Translator API). This runs both systems on the same 160 commands and scores them the same way. Chrome downloads its Romanian model the first time.</p>
+    <p>Desktop Chrome 138+ and Edge ship an on-device translator (the Translator API). This runs it and VSA on the 160 Romanian test commands and scores both the same way. Chrome downloads its Romanian model the first time.</p>
     <div class="card">
-      <div class="controls">
-        <button class="primary" id="run" type="button">Run the comparison</button>
-        <button id="chrome-live" type="button">Also translate my text with Chrome</button>
-      </div>
+      <div class="controls"><button class="primary" id="run" type="button">Run the comparison</button></div>
       <div id="run-status" role="status"></div>
       <div class="tablewrap"><table id="t-live"></table></div>
       <div class="controls" id="item-controls" hidden>
@@ -205,142 +258,202 @@ footer { color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; g
   <section aria-labelledby="h-use">
     <h2 id="h-use">Use it</h2>
     <div class="cols">
-      <div class="snip"><div class="snip-head"><span class="eyebrow">Browser, one script tag</span><button type="button" data-copy="s1">Copy</button></div>
+      <div class="snip"><div class="snip-head"><span class="eyebrow">One script tag</span><button type="button" data-copy="s1">Copy</button></div>
 <pre id="s1">&lt;script src="https://cdn.jsdelivr.net/gh/ml-circuits-research/vsa-ro-translate@v__VERSION__/dist/vsa-ro-translate.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
   VSARoTranslate.translate('Șterge toate săgețile roșii');
   // → "Delete all the red arrows"
 &lt;/script&gt;</pre></div>
-      <div class="snip"><div class="snip-head"><span class="eyebrow">ES module</span><button type="button" data-copy="s2">Copy</button></div>
-<pre id="s2">import { translate, translateDetailed } from
-  'https://cdn.jsdelivr.net/gh/ml-circuits-research/vsa-ro-translate@v__VERSION__/dist/vsa-ro-translate.mjs';
-
-const r = translateDetailed('Exportă diagrama ca PDF');
-r.text;              // "Export the diagram as PDF"
-r.stats.confident;   // false → send to a neural fallback</pre></div>
+      <div class="snip"><div class="snip-head"><span class="eyebrow">Your vocabulary and settings</span><button type="button" data-copy="s2">Copy</button></div>
+<pre id="s2">const { create, dictionaries } = VSARoTranslate;
+const t = create({
+  dictionaries: [dictionaries.ro, dictionaries.en, {
+    lang: 'ro', name: 'acme',
+    words: { tichet: { en: 'ticket', plural: 'tichete' },
+             'tichet de suport': 'support ticket' },
+  }],
+  chrome: 'fallback',   // 'never' | 'fallback' | 'prefer'
+  strict: false,
+});
+const r = await t.translateAsync('Închide tichetul de suport');
+r.text; r.ok; r.errors; r.engine;</pre></div>
     </div>
-    <div class="snip"><div class="snip-head"><span class="eyebrow">Hybrid: VSA first, Chrome when unsure</span><button type="button" data-copy="s3">Copy</button></div>
-<pre id="s3">async function toEnglish(ro) {
-  const r = VSARoTranslate.translateDetailed(ro);
-  if (r.stats.confident || !('Translator' in self)) return r.text;
-  const t = await Translator.create({ sourceLanguage: 'ro', targetLanguage: 'en' }); // needs a user gesture the first time
-  return t.translate(ro);
-}</pre></div>
+    <div class="cols">
+      <div class="snip"><div class="snip-head"><span class="eyebrow">Spell check</span><button type="button" data-copy="s3">Copy</button></div>
+<pre id="s3">const s = t.spellcheck('Seteaza opacitaea stratului seletat');
+s.text;     // "Seteaza opacitatea stratului selectat"
+s.errors;   // words not in the vocabulary, with suggestions
+s.tokens;   // per word: ok | corrected | unknown | name</pre></div>
+      <div class="snip"><div class="snip-head"><span class="eyebrow">Another language</span><button type="button" data-copy="s4">Copy</button></div>
+<pre id="s4">&lt;script src=".../dist/dictionaries/fr.js"&gt;&lt;/script&gt;
+const f = create({ dictionaries: [dictionaries.fr, dictionaries.en] });
+f.translate('Ne supprime pas la légende').text;
+// → "Don't delete the legend"</pre></div>
+    </div>
   </section>
 
   <section aria-labelledby="h-how">
     <h2 id="h-how">How it works</h2>
     <div class="cols">
-      <div class="card">
-        <h3>The VSA part</h3>
-        <ul class="plain">
-          <li><b>Lexical memory.</b> About 5,500 Romanian word forms (generated from ~800 lemmas with their inflections, plus ~250 function words and ~200 phrases) each get a 2048-bit hypervector. Exact forms are found directly; anything else is cleaned up to the nearest stored vector, which absorbs missing diacritics, typos and unseen inflections.</li>
-          <li><b>Word sense.</b> Ambiguous words (<span class="mono">rulează</span>: run or play, <span class="mono">anulează</span>: undo or cancel) pick the sense whose bundled context vector best matches the sentence.</li>
-          <li>Bit-sliced majority bundling builds the whole memory in about 0.25&nbsp;s, lazily, on the first unknown word.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>What it is not</h3>
-        <ul class="plain">
-          <li>Word order and grammar (noun–adjective order, genitives, clitics like <span class="mono">mută-l</span>, prepositions, questions) come from a small rule layer, not from VSA.</li>
-          <li>It is a closed-vocabulary tool. Unknown words pass through in Romanian and the result is marked not confident.</li>
-          <li>Only Romanian → English for now. Other Indo-European sources need their own lexicon and a few order rules.</li>
-          <li>Names and quoted labels (<span class="mono">nodul „Aprobare”</span>) are kept as written, because an agent has to find them on the canvas.</li>
-        </ul>
-      </div>
+      <div class="card"><h3>The VSA part</h3><ul class="plain">
+        <li><b>Vocabulary memory.</b> Every word form of every dictionary (inflections are generated for Romanian) becomes a 2048-bit hypervector, built by bit-sliced majority bundling in a few hundred milliseconds, lazily.</li>
+        <li><b>Spelling.</b> Hamming search over the whole memory, then a re-rank by edit distance, length and language, as in <a href="https://github.com/ml-circuits-research/vsa-spell">vsa-spell</a>. Safety rules keep unknown words from being "corrected" into different ones.</li>
+        <li><b>Language.</b> Each sentence's language is the vote of its words that exist in only one dictionary, so Romanian with English terms stays Romanian, and English sentences are only spell checked.</li>
+        <li><b>Word sense.</b> Ambiguous words pick the sense whose bundled context vector matches the sentence.</li>
+      </ul></div>
+      <div class="card"><h3>What it is not</h3><ul class="plain">
+        <li>Word order comes from rules: a full Romanian set, and generic Romance rules (adjective after noun, articles, "de", negation) for other languages.</li>
+        <li>It is a closed-vocabulary tool. Words it does not know are errors; with the Chrome setting they can go to a neural translator instead.</li>
+        <li>Names and quoted labels are kept as written, because an agent has to find them on the canvas.</li>
+      </ul></div>
     </div>
   </section>
 
   <footer>
     <span>vsa-ro-translate v__VERSION__ · MIT</span>
-    <a href="https://github.com/ml-circuits-research/vsa-ro-translate">Source and data on GitHub</a>
+    <a href="https://github.com/ml-circuits-research/vsa-ro-translate">Source, data and documentation</a>
     <a href="https://developer.chrome.com/docs/ai/translator-api">Chrome Translator API</a>
   </footer>
 </div>
 
 <script>/*__BUNDLE__*/</script>
+<script>/*__DICT_FR__*/</script>
 <script>/*__METRICS__*/</script>
 <script>/*__DATA__*/</script>
 <script>
 (function () {
   'use strict';
-  var api = window.VSARoTranslate, D = window.VSA_DEMO_DATA, M = window.VSAMetrics;
+  var V = window.VSARoTranslate, D = window.VSA_DEMO_DATA, M = window.VSAMetrics;
   var $ = function (id) { return document.getElementById(id); };
-  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var css = function (n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); };
+  var store = { get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+  // ---------- vocabulary
+  function parseVocab(txt, lang) {
+    txt = txt.trim();
+    if (/^[\[{]/.test(txt)) { var d = JSON.parse(txt); if (Array.isArray(d)) d = { words: d }; d.lang = d.lang || lang; d.name = d.name || 'my words'; return d; }
+    var words = {};
+    txt.split('\n').forEach(function (line) {
+      var m = /^\s*(.+?)\s*=\s*([^(]+?)\s*(?:\(([^)]*)\))?\s*$/.exec(line); if (!m) return;
+      var e = { en: m[2] }, opt = (m[3] || '').split(',');
+      opt.forEach(function (o) { o = o.trim(); var p = /^pl(?:ural)?\s*:\s*(.+)$/.exec(o); if (p) e.plural = p[1].trim(); else if (/^(n|noun|v|verb|adj|adv)$/.test(o)) e.pos = o; });
+      words[m[1]] = e;
+    });
+    return { lang: lang || 'ro', name: 'my words', words: words };
+  }
+  var T = null, vocabError = '';
+  function build() {
+    var ds = [];
+    if ($('d-ro').checked) ds.push(V.dictionaries.ro);
+    if ($('d-en').checked) ds.push(V.dictionaries.en);
+    if ($('d-fr').checked && V.dictionaries.fr) ds.push(V.dictionaries.fr);
+    vocabError = '';
+    if ($('d-custom').checked && $('vocab').value.trim()) { try { ds.push(parseVocab($('vocab').value, $('custom-lang').value.trim().toLowerCase() || 'ro')); } catch (e) { vocabError = 'Could not read "My words": ' + e.message; } }
+    if (!ds.length) ds.push(V.dictionaries.en);
+    T = V.create({ dictionaries: ds, chrome: chromePolicy(), strict: $('strict').checked });
+    var inf = T.info;
+    $('vocab-info').textContent = vocabError || ('Languages: ' + inf.languages.join(', ') + '. ' + inf.forms.toLocaleString('en') + ' word forms, ' + inf.phrases + ' phrases.');
+    (window.requestIdleCallback || function (f) { return setTimeout(f, 200); })(function () { T.warmup(); });
+  }
+  function chromePolicy() { var c = document.querySelector('input[name="chrome"]:checked'); return c ? c.value : 'never'; }
 
   // ---------- console
-  var chromeTr = null, chromeSeq = 0, selected = null, last = null;
-  function translateNow() {
-    var ro = $('ro').value;
-    var r = api.translateDetailed(ro);
-    last = r;
-    $('en').textContent = r.text || '';
+  var selected = null, last = null, seq = 0;
+  async function translateNow() {
+    var src = $('ro').value, my = ++seq;
+    var r = T.translate(src);
+    last = r; renderSync(r, src);
+    if (chromePolicy() !== 'never' && src.trim()) {
+      var a = await T.translateAsync(src);
+      if (my !== seq) return;
+      $('en').textContent = a.text == null ? '' : a.text;
+      $('b-eng').textContent = a.engine === 'chrome' ? 'Chrome' : 'VSA';
+      $('chrome-line').hidden = !(a.engine === 'chrome' || a.chromeError);
+      $('chrome-line').innerHTML = a.engine === 'chrome' ? '<b>VSA:</b> ' + esc(a.vsaText) + ' <span class="mono">(Chrome ' + Math.round(a.chromeMs) + ' ms)</span>' : esc(a.chromeError || '');
+    }
+  }
+  function renderSync(r, src) {
+    $('en').textContent = r.text == null ? 'Not translated: ' + r.errors.length + ' word' + (r.errors.length === 1 ? '' : 's') + ' outside the vocabulary.' : r.text;
+    $('b-lang').textContent = src.trim() ? r.language : '';
+    $('b-eng').textContent = src.trim() ? 'VSA' : '';
+    $('chrome-line').hidden = true;
     var s = r.stats;
-    var conf = s.confident
-      ? '<span class="pill ok">confident</span>'
-      : '<span class="pill warn">not confident' + (s.unknownWords.length ? ': unknown ' + esc(s.unknownWords.join(', ')) : '') + (s.weakMatches.length ? (s.unknownWords.length ? '; ' : ': ') + 'weak match ' + esc(s.weakMatches.join(', ')) : '') + '</span>';
-    $('meta').innerHTML = '<span>' + r.ms.toFixed(2) + ' ms</span><span>' + s.exact + ' exact</span><span>' + s.vsa + ' recovered by VSA</span><span>' + s.unknown + ' unknown</span>' + (ro.trim() ? conf : '');
+    var conf = r.confident ? '<span class="pill ok">confident</span>' : '<span class="pill warn">not confident' + (s.unknownWords.length ? ': unknown ' + esc(s.unknownWords.join(', ')) : '') + (s.weakMatches.length ? (s.unknownWords.length ? '; ' : ': ') + 'weak correction ' + esc(s.weakMatches.join(', ')) : '') + '</span>';
+    $('meta').innerHTML = '<span>' + r.ms.toFixed(2) + ' ms</span><span>' + s.exact + ' known</span><span>' + r.corrections.length + ' corrected</span><span>' + r.errors.length + ' unknown</span>' + (src.trim() ? conf : '');
+    // spell check view
+    var sp = T.spellcheck(src), html = '', pos = 0;
+    sp.tokens.forEach(function (t) {
+      if (t.start == null || (t.status !== 'unknown' && t.status !== 'corrected')) return;
+      html += esc(src.slice(pos, t.start)) + '<mark class="' + t.status + '" title="' + esc(t.status === 'corrected' ? '→ ' + t.suggestion : 'not in the vocabulary') + '">' + esc(src.slice(t.start, t.end)) + '</mark>';
+      pos = t.end;
+    });
+    $('proof').innerHTML = (html + esc(src.slice(pos))) || '<span class="note">Type something above.</span>';
+    var iss = '';
+    sp.corrections.forEach(function (c) { iss += '<div class="issue fix"><span class="w">' + esc(c.word) + '</span><span>corrected to <b>' + esc(c.to) + '</b>, similarity ' + c.sim.toFixed(2) + ', ' + c.edits + ' edit' + (c.edits === 1 ? '' : 's') + '</span></div>'; });
+    sp.errors.forEach(function (e) {
+      iss += '<div class="issue err"><span class="w">' + esc(e.word) + '</span><span>not in the vocabulary.</span>' + (e.suggestions.length ? '<span>Did you mean</span>' + e.suggestions.map(function (g) { return '<button type="button" class="chip" data-start="' + e.start + '" data-end="' + e.end + '" data-word="' + esc(g.word) + '">' + esc(g.word) + '</button>'; }).join('') : '') + '</div>';
+    });
+    $('issues').innerHTML = iss || '<p class="note">' + (src.trim() ? 'Every word is in the vocabulary.' : '') + '</p>';
+    // token lane
     var lane = '';
     s.tokens.forEach(function (t, i) {
       if (t.how === 'punct') return;
       var en = t.how === 'vsa' ? (t.en + ' · ' + (t.match || '') + ' ' + (t.sim ? t.sim.toFixed(2) : '')) : (t.en || t.text);
-      lane += '<button type="button" class="tok ' + t.how + (selected === i ? ' sel' : '') + '" data-i="' + i + '"><span class="ro">' + esc(t.text) + '</span><span class="en">' + esc(en) + '</span></button>';
+      lane += '<button type="button" class="tok ' + t.how + (selected === i ? ' sel' : '') + '" data-i="' + i + '"><span class="ro">' + esc(t.text) + '</span><span class="en">' + esc(en) + (t.lang ? ' · ' + t.lang : '') + '</span></button>';
     });
     $('lane').innerHTML = lane;
     var pick = selected != null && s.tokens[selected] ? selected : s.tokens.findIndex(function (t) { return t.how === 'vsa'; });
     if (pick < 0) pick = s.tokens.findIndex(function (t) { return t.how === 'exact' && t.text.length >= 4; });
     if (pick >= 0) showHV(s.tokens[pick]);
-    if (chromeTr && ro.trim()) {
-      var seq = ++chromeSeq, t0 = performance.now();
-      chromeTr.translate(ro).then(function (out) { if (seq === chromeSeq) { $('chrome-line').hidden = false; $('chrome-line').innerHTML = '<b>Chrome:</b> ' + esc(out) + ' <span class="mono">(' + (performance.now() - t0).toFixed(0) + ' ms)</span>'; } });
-    }
   }
+  $('issues').addEventListener('click', function (e) {
+    var b = e.target.closest('.chip'); if (!b) return;
+    var v = $('ro').value, st = +b.dataset.start, en = +b.dataset.end;
+    $('ro').value = v.slice(0, st) + b.dataset.word + v.slice(en); selected = null; translateNow();
+  });
   function draw(cv, bits, mode, other) {
-    var ctx = cv.getContext('2d'), W = 64, H = 32, c = 4;
+    var ctx = cv.getContext('2d'), W = 64, c = 4;
     var on = css('--ink'), off = css('--line'), bad = css('--unk'), bg = css('--panel');
     ctx.fillStyle = bg; ctx.fillRect(0, 0, cv.width, cv.height);
     for (var k = 0; k < 2048; k++) {
       var b = (bits[k >>> 5] >>> (k & 31)) & 1;
-      if (mode === 'diff') { var o = (other[k >>> 5] >>> (k & 31)) & 1; ctx.fillStyle = b !== o ? bad : off; }
-      else ctx.fillStyle = b ? on : off;
+      if (mode === 'diff') { var o = (other[k >>> 5] >>> (k & 31)) & 1; ctx.fillStyle = b !== o ? bad : off; } else ctx.fillStyle = b ? on : off;
       ctx.fillRect((k % W) * c, Math.floor(k / W) * c, c - 1, c - 1);
     }
   }
   function showHV(t) {
-    var w = api.strip(t.text), m = t.match || w;
-    var q = api.encode(w), mv = api.encode(m);
-    var sim = api.similarity(w, m), diff = Math.round((1 - sim) * 2048);
+    var w = V.strip(t.text), m = t.match || w;
+    var q = T.encode(w), mv = T.encode(m), sim = T.similarity(w, m), diff = Math.round((1 - sim) * 2048);
     draw($('cv-q'), q); draw($('cv-m'), mv); draw($('cv-d'), q, 'diff', mv);
-    $('cap-q').innerHTML = 'Query <b>' + esc(w) + '</b>';
-    $('cap-m').innerHTML = (t.how === 'vsa' ? 'Nearest stored form ' : 'Stored form ') + '<b>' + esc(m) + '</b>' + (t.en ? ' → ' + esc(t.en) : '');
+    $('cap-q').innerHTML = 'Typed <b>' + esc(w) + '</b>';
+    $('cap-m').innerHTML = (t.how === 'vsa' ? 'Nearest vocabulary form ' : 'Vocabulary form ') + '<b>' + esc(m) + '</b>' + (t.en ? ' → ' + esc(t.en) : '');
     $('cap-d').innerHTML = 'Differing bits <b>' + diff + ' / 2048</b>, similarity <b>' + sim.toFixed(3) + '</b>' + (w === m ? ' (exact hit)' : '') + '. Unrelated words sit near 0.50.';
   }
   $('lane').addEventListener('click', function (e) {
-    var b = e.target.closest('.tok'); if (!b) return;
+    var b = e.target.closest('.tok'); if (!b || !last) return;
     selected = +b.dataset.i;
     Array.prototype.forEach.call(document.querySelectorAll('.tok'), function (x) { x.classList.toggle('sel', x === b); });
     showHV(last.stats.tokens[selected]);
   });
   var timer = null;
-  $('ro').addEventListener('input', function () { selected = null; clearTimeout(timer); timer = setTimeout(translateNow, 60); });
+  $('ro').addEventListener('input', function () { selected = null; clearTimeout(timer); timer = setTimeout(translateNow, 80); });
   $('clear').addEventListener('click', function () { $('ro').value = ''; selected = null; translateNow(); $('ro').focus(); });
   var EX = [
     'Setează durata animației la 2 secunde și repetă-o în buclă',
     'Fa cerclu rosu si mai mare',
-    'Cum export prezentarea în PDF?',
-    'Trimite imaginea în spate și blochează stratul',
-    'Adaugă un romb de decizie după al doilea pas',
-    'Pornește animația când utilizatorul dă clic pe buton',
-    'Dă-i acces de editare colegului meu',
-    'Fă titlul să apară treptat la click'
+    'Dă-i un resize la container-ul principal și fă un export în PNG',
+    'Move the selcted layer to the left',
+    'Ajoute un rectangle bleu en haut à gauche',
+    'Ne supprime pas la légende',
+    'Închide tichetul de suport și escaladează-l',
+    'Șterge tichetele vechi din sprintul curent'
   ];
   $('examples').innerHTML = EX.map(function (x, i) { return '<button type="button" data-ex="' + i + '">' + esc(x) + '</button>'; }).join('');
   $('examples').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; $('ro').value = EX[+b.dataset.ex]; selected = null; translateNow(); });
   function copyText(text, btn) {
     var done = function () { var o = btn.textContent; btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = o; }, 1200); };
-    try { navigator.clipboard.writeText(text).then(done, function () { selectFallback(); }); } catch (e) { selectFallback(); }
-    function selectFallback() { btn.textContent = 'Select and copy'; }
+    try { navigator.clipboard.writeText(text).then(done, function () { btn.textContent = 'Select and copy'; }); } catch (e) { btn.textContent = 'Select and copy'; }
   }
   $('copy-en').addEventListener('click', function () { copyText($('en').textContent, this); });
   Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function (b) {
@@ -349,72 +462,79 @@ r.stats.confident;   // false → send to a neural fallback</pre></div>
       var sel = window.getSelection(), rg = document.createRange(); rg.selectNodeContents(pre); sel.removeAllRanges(); sel.addRange(rg);
     });
   });
-  translateNow();
-  // build the hypervector memory while the page is idle, so the first typo costs nothing
-  (window.requestIdleCallback || function (f) { return setTimeout(f, 300); })(function () { api.warmup(); translateNow(); });
+  // settings
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="chrome"]'), function (r) {
+    r.addEventListener('change', function () {
+      T.setOptions({ chrome: chromePolicy() }); store.set('vsa-chrome', chromePolicy());
+      if (chromePolicy() !== 'never') {
+        if (!T.chromeAvailable()) { $('chrome-line').hidden = false; $('chrome-line').textContent = 'This browser has no built-in Translator API (desktop Chrome 138+ or Edge, top-level page). VSA keeps translating.'; return; }
+        T.prepareChrome().then(function () { translateNow(); }, function (e) { $('chrome-line').hidden = false; $('chrome-line').textContent = e.message; });
+      }
+      translateNow();
+    });
+  });
+  $('strict').addEventListener('change', function () { T.setOptions({ strict: $('strict').checked }); translateNow(); });
+  ['d-ro', 'd-en', 'd-fr', 'd-custom'].forEach(function (id) { $(id).addEventListener('change', function () { build(); translateNow(); }); });
+  $('apply-vocab').addEventListener('click', function () { store.set('vsa-vocab', $('vocab').value); store.set('vsa-vocab-lang', $('custom-lang').value); build(); translateNow(); });
+  var sv = store.get('vsa-vocab'); if (sv) $('vocab').value = sv;
+  var sl = store.get('vsa-vocab-lang'); if (sl) $('custom-lang').value = sl;
+  build(); translateNow();
 
   // ---------- static results
   var R = D.results;
-  function row(name, s, us, extra) {
-    return '<tr' + (us ? ' class="us"' : '') + '><td>' + name + '</td><td class="num">' + s.chrF.toFixed(1) + '</td><td class="num">' + s.slotRecall.toFixed(0) + '%</td><td class="num">' + s.allSlots.toFixed(0) + '%</td>' + (extra || '') + '</tr>';
-  }
+  function row(name, s, us) { return '<tr' + (us ? ' class="us"' : '') + '><td>' + name + '</td><td class="num">' + s.chrF.toFixed(1) + '</td><td class="num">' + Math.round(s.slotRecall) + '%</td><td class="num">' + Math.round(s.allSlots) + '%</td></tr>'; }
   var head = '<tr><th>System</th><th class="num">chrF</th><th class="num">Slots kept</th><th class="num">Fully correct</th></tr>';
   if (R) {
-    $('t-fresh').innerHTML = head + row('VSA v' + D.version, R.test2_fresh.v011, true) + row('VSA v0.1.0', R.test2_fresh.v010) + row('Same lexicon, word by word', R.test2_fresh.naive);
-    $('t-held').innerHTML = head + row('VSA v0.1.0 (frozen)', R.test1_v010_heldout.vsa, true) + row('Same lexicon, word by word', R.test1_v010_heldout.naive) + row('VSA v' + D.version + ' (after error analysis)', R.test1_v011_seen.vsa);
+    $('t-fresh').innerHTML = head + row('VSA v' + D.version, R.test2.vsa, true) + row('VSA v0.1.0', R.test2.v010) + row('Same vocabulary, word by word', R.test2.naive);
+    $('t-held').innerHTML = head + row('VSA v0.1.0 (frozen)', R.test1_v010_heldout.vsa, true) + row('Same vocabulary, word by word', R.test1_v010_heldout.naive) + row('VSA v' + D.version + ' (after error analysis)', R.test1.vsa);
     var j = R.test1_v010_blind_judge;
-    $('judge-note').innerHTML = 'Blind rating by a separate model that saw only the reference and the output: an agent would act correctly on <b>' + j.vsa.executable_pct.toFixed(0) + '%</b> of VSA translations vs ' + j.naive.executable_pct.toFixed(0) + '% for word-by-word; ' + j.vsa.dist['3'] + '% read naturally. The v' + D.version + ' row is optimistic: its fixes came from looking at this set.';
+    $('judge-note').innerHTML = 'Blind rating by a separate model: an agent would act correctly on <b>' + Math.round(j.vsa.executable_pct) + '%</b> of VSA translations vs ' + Math.round(j.naive.executable_pct) + '% word by word.';
+    $('t-multi').innerHTML = '<tr><th>Set</th><th class="num">chrF</th><th class="num">Slots kept</th><th class="num">Fully correct</th></tr>' +
+      row('Mixed, first run', R.mixed.firstLook, true) + row('Mixed, after fixes', R.mixed.final) + row('Mixed, word by word', R.mixed.naive) +
+      row('French, first run', R.fr.firstLook, true) + row('French, after fixes', R.fr.final) + row('French, word by word', R.fr.naive);
+    $('multi-note').textContent = 'Language detected correctly for all 70 sentences. The French result uses only the 20 KB example dictionary. Word by word keeps a few more slots on the mixed set mostly because some test answers accept only singular forms ("edge"), where VSA writes the correct plural.';
+    var sp = R.spell;
+    $('t-spell').innerHTML = '<tr><th>Single-letter typos of vocabulary words</th><th class="num">Share</th></tr>' +
+      '<tr class="us"><td>Corrected to the right word</td><td class="num">' + sp.typosRecovered + '%</td></tr>' +
+      '<tr><td>Reported as unknown, with suggestions</td><td class="num">' + sp.typosReportedAsUnknown + '%</td></tr>' +
+      '<tr><td>Corrected to a wrong word</td><td class="num">' + sp.typosWrong + '%</td></tr>' +
+      '<tr><th>Real words not in the vocabulary</th><th class="num"></th></tr>' +
+      '<tr class="us"><td>Wrongly "corrected" into a vocabulary word</td><td class="num">' + sp.unknownWordsFalselyCorrected + ' / ' + sp.unknownWordsTotal + '</td></tr>';
+    $('spell-note').textContent = 'A looser setting corrects ' + sp.looseSetting.typosRecovered + '% of typos but also turns ' + sp.looseSetting.unknownWordsFalselyCorrected + ' of the ' + sp.unknownWordsTotal + ' unknown words into wrong vocabulary words; the default prefers to report an error.';
     var g = R.confidence_gate.test2;
-    $('t-gate').innerHTML = '<tr><th>Fresh set</th><th class="num">Share</th><th class="num">Slots kept</th><th class="num">Fully correct</th></tr>' +
-      '<tr class="us"><td>Confident</td><td class="num">' + g.confidentShare + '%</td><td class="num">' + g.confident.slotRecall.toFixed(0) + '%</td><td class="num">' + g.confident.allSlots.toFixed(0) + '%</td></tr>' +
-      '<tr><td>Not confident</td><td class="num">' + (100 - g.confidentShare) + '%</td><td class="num">' + g.notConfident.slotRecall.toFixed(0) + '%</td><td class="num">' + g.notConfident.allSlots.toFixed(0) + '%</td></tr>';
+    $('t-gate').innerHTML = '<tr><th>Fresh Romanian set</th><th class="num">Share</th><th class="num">Slots kept</th><th class="num">Fully correct</th></tr>' +
+      '<tr class="us"><td>Confident</td><td class="num">' + g.confidentShare + '%</td><td class="num">' + Math.round(g.confident.slotRecall) + '%</td><td class="num">' + Math.round(g.confident.allSlots) + '%</td></tr>' +
+      '<tr><td>Not confident</td><td class="num">' + (100 - g.confidentShare) + '%</td><td class="num">' + Math.round(g.notConfident.slotRecall) + '%</td><td class="num">' + Math.round(g.notConfident.allSlots) + '%</td></tr>';
     var rb = R.robustness_dev60;
     $('t-rob').innerHTML = '<tr><th>Same 60 commands, output unchanged</th><th class="num">VSA</th><th class="num">Word by word</th></tr>' +
       '<tr><td>Diacritics removed</td><td class="num">' + rb.noDiacritics.vsa + '/60</td><td class="num">' + rb.noDiacritics.naive + '/60</td></tr>' +
       '<tr class="us"><td>Diacritics removed + one typo</td><td class="num">' + rb.noDiacriticsPlusOneTypo.vsa + '/60</td><td class="num">' + rb.noDiacriticsPlusOneTypo.naive + '/60</td></tr>';
-    $('rob-note').innerHTML = 'On synthetic single-letter typos the VSA memory recovers the right word ' + R.calibration.typoRecovered + ' times (wrong word ' + R.calibration.typoWrongMatch + '). It also wrongly matches ' + R.calibration.outOfLexiconFalseMatch + ' words that are not in the lexicon at all, which is why weak matches lower the confidence flag.';
   }
 
-  // ---------- live comparison
+  // ---------- live comparison with Chrome
   var SETS = D.test1.map(function (x) { return Object.assign({ set: 1 }, x); }).concat(D.test2.map(function (x) { return Object.assign({ set: 2 }, x); }));
+  var RO = V.create({ dictionaries: [V.dictionaries.ro, V.dictionaries.en] });
   function status(t) { $('run-status').textContent = t; }
-  function chromeSupportMsg() {
-    if (!('Translator' in self)) return 'This browser has no built-in Translator API, so only VSA runs. Chrome’s API needs desktop Chrome 138+ or Edge, in a top-level page (embedded previews block it). Open this page from GitHub in desktop Chrome to compare.';
-    return null;
-  }
-  async function getChrome() {
-    if (chromeTr) return chromeTr;
-    var msg = chromeSupportMsg(); if (msg) throw new Error(msg);
-    var av = await Translator.availability({ sourceLanguage: 'ro', targetLanguage: 'en' });
-    if (av === 'unavailable') throw new Error('Chrome reports that Romanian → English is unavailable on this device.');
-    chromeTr = await Translator.create({ sourceLanguage: 'ro', targetLanguage: 'en', monitor: function (m) { m.addEventListener('downloadprogress', function (e) { status('Downloading Chrome’s Romanian model: ' + Math.round(e.loaded * 100) + '%'); }); } });
-    return chromeTr;
-  }
   function score(rows, key) {
-    var outs = rows.map(function (r) { return r[key]; }), refs = rows.map(function (r) { return r.ref; });
-    var rec = rows.map(function (r) { return M.slotRecall(r[key], r.keys); });
+    var outs = rows.map(function (r) { return r[key] || ''; }), refs = rows.map(function (r) { return r.ref; });
+    var rec = rows.map(function (r) { return M.slotRecall(r[key] || '', r.keys); });
     var ms = rows.map(function (r) { return r[key + 'Ms']; }).filter(function (x) { return x != null; }).sort(function (a, b) { return a - b; });
     return { chrF: M.chrfCorpus(outs, refs), slotRecall: 100 * rec.reduce(function (a, b) { return a + b; }, 0) / rows.length, allSlots: 100 * rec.filter(function (x) { return x === 1; }).length / rows.length, ms: ms.length ? ms[Math.floor(ms.length / 2)] : null };
   }
   var LIVE = null;
   function renderLive() {
-    if (!LIVE) return;
     var rows = LIVE, hasC = rows[0].chrome != null;
-    var parts = [[1, 'Set 1 (100)'], [2, 'Fresh set 2 (60)']];
     var h = '<tr><th>System</th><th>Set</th><th class="num">chrF</th><th class="num">Slots kept</th><th class="num">Fully correct</th><th class="num">Median ms</th></tr>';
-    parts.forEach(function (p) {
+    [[1, 'Set 1 (100)'], [2, 'Fresh set 2 (60)']].forEach(function (p) {
       var sub = rows.filter(function (r) { return r.set === p[0]; }); if (!sub.length) return;
-      var line = function (name, key, us) { var s = score(sub, key); return '<tr' + (us ? ' class="us"' : '') + '><td>' + name + '</td><td>' + p[1] + '</td><td class="num">' + s.chrF.toFixed(1) + '</td><td class="num">' + s.slotRecall.toFixed(0) + '%</td><td class="num">' + s.allSlots.toFixed(0) + '%</td><td class="num">' + (s.ms != null ? s.ms.toFixed(s.ms < 10 ? 2 : 0) : '–') + '</td></tr>'; };
+      var line = function (name, key, us) { var s = score(sub, key); return '<tr' + (us ? ' class="us"' : '') + '><td>' + name + '</td><td>' + p[1] + '</td><td class="num">' + s.chrF.toFixed(1) + '</td><td class="num">' + Math.round(s.slotRecall) + '%</td><td class="num">' + Math.round(s.allSlots) + '%</td><td class="num">' + (s.ms != null ? s.ms.toFixed(s.ms < 10 ? 2 : 0) : '–') + '</td></tr>'; };
       h += line('VSA', 'vsa', true);
       if (hasC) { h += line('Chrome Translator', 'chrome'); h += line('Hybrid (VSA if confident, else Chrome)', 'hybrid'); }
     });
-    $('t-live').innerHTML = h;
-    $('item-controls').hidden = false;
-    renderItems();
+    $('t-live').innerHTML = h; $('item-controls').hidden = false; renderItems();
   }
   function renderItems() {
-    var f = $('filter').value, rows = LIVE || [];
-    var hasC = rows.length && rows[0].chrome != null;
+    var f = $('filter').value, rows = LIVE || [], hasC = rows.length && rows[0].chrome != null;
     var list = rows.filter(function (r) {
       if (f === 'vsa-miss') return M.slotRecall(r.vsa, r.keys) < 1;
       if (f === 'chrome-miss') return hasC && M.slotRecall(r.chrome, r.keys) < 1;
@@ -423,8 +543,7 @@ r.stats.confident;   // false → send to a neural fallback</pre></div>
     });
     $('items').innerHTML = list.slice(0, 200).map(function (r) {
       var sv = M.slotRecall(r.vsa, r.keys), sc = hasC ? M.slotRecall(r.chrome, r.keys) : null;
-      return '<div class="item"><div><span class="k">' + r.id + '</span>' + esc(r.ro) + '</div>' +
-        '<div><span class="k">ref</span>' + esc(r.ref) + '</div>' +
+      return '<div class="item"><div><span class="k">' + r.id + '</span>' + esc(r.ro) + '</div><div><span class="k">ref</span>' + esc(r.ref) + '</div>' +
         '<div class="' + (sv < 1 ? 'miss' : '') + '"><span class="k">VSA</span>' + esc(r.vsa) + ' <span class="sr">' + Math.round(sv * 100) + '% slots' + (r.conf ? '' : ', not confident') + '</span></div>' +
         (hasC ? '<div class="' + (sc < 1 ? 'miss' : '') + '"><span class="k">Chrome</span>' + esc(r.chrome) + ' <span class="sr">' + Math.round(sc * 100) + '% slots</span></div>' : '') + '</div>';
     }).join('') || '<p class="note">Nothing to show for this filter.</p>';
@@ -433,31 +552,21 @@ r.stats.confident;   // false → send to a neural fallback</pre></div>
   $('run').addEventListener('click', async function () {
     var btn = this; btn.disabled = true;
     var tr = null, chromeErr = null;
-    try { tr = await getChrome(); } catch (e) { chromeErr = e.message; }
+    if (!('Translator' in self)) chromeErr = 'This browser has no built-in Translator API, so only VSA runs. Open the page from GitHub Pages in desktop Chrome 138+ or Edge to compare.';
+    else { try { var av = await Translator.availability({ sourceLanguage: 'ro', targetLanguage: 'en' }); if (av === 'unavailable') throw new Error('Chrome reports that Romanian → English is unavailable here.'); tr = await Translator.create({ sourceLanguage: 'ro', targetLanguage: 'en', monitor: function (m) { m.addEventListener('downloadprogress', function (e) { status('Downloading Chrome’s Romanian model: ' + Math.round(e.loaded * 100) + '%'); }); } }); } catch (e) { chromeErr = e.message; } }
     var rows = [];
     for (var i = 0; i < SETS.length; i++) {
-      var it = SETS[i], t0 = performance.now();
-      var r = api.translateDetailed(it.ro);
-      var row = { set: it.set, id: it.id, ro: it.ro, ref: it.ref, keys: it.keys, vsa: r.text, vsaMs: performance.now() - t0, conf: r.stats.confident };
+      var it = SETS[i], t0 = performance.now(), r = RO.translate(it.ro);
+      var row = { set: it.set, id: it.id, ro: it.ro, ref: it.ref, keys: it.keys, vsa: r.text || '', vsaMs: performance.now() - t0, conf: r.confident };
       if (tr) {
         status('Chrome is translating ' + (i + 1) + ' / ' + SETS.length + '…');
         var t1 = performance.now();
         try { row.chrome = await tr.translate(it.ro); } catch (e) { row.chrome = ''; }
-        row.chromeMs = performance.now() - t1;
-        row.hybrid = row.conf ? row.vsa : row.chrome;
-        row.hybridMs = row.conf ? row.vsaMs : row.vsaMs + row.chromeMs;
+        row.chromeMs = performance.now() - t1; row.hybrid = row.conf ? row.vsa : row.chrome; row.hybridMs = row.conf ? row.vsaMs : row.vsaMs + row.chromeMs;
       }
       rows.push(row);
     }
-    LIVE = rows;
-    status(tr ? 'Done: ' + rows.length + ' commands, both systems.' : 'VSA done on ' + rows.length + ' commands. ' + (chromeErr || ''));
-    renderLive(); btn.disabled = false;
+    LIVE = rows; status(tr ? 'Done: ' + rows.length + ' commands, both systems.' : 'VSA done on ' + rows.length + ' commands. ' + (chromeErr || '')); renderLive(); btn.disabled = false;
   });
-  $('chrome-live').addEventListener('click', async function () {
-    var btn = this;
-    try { await getChrome(); btn.disabled = true; btn.textContent = 'Chrome is on'; status('Chrome translator ready.'); translateNow(); }
-    catch (e) { status(e.message); }
-  });
-  if (chromeSupportMsg()) { status(chromeSupportMsg()); }
 })();
 </script>

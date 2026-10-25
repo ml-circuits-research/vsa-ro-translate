@@ -1,6 +1,6 @@
 {
   "name": "vsa-ro-translate",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Fast, offline Romanian→English translation of technical and agentic commands (diagrams, editing, animation, enterprise) using a hyperdimensional (VSA) lexicon. Runs in any browser, no model download.",
   "main": "dist/vsa-ro-translate.js",
   "module": "dist/vsa-ro-translate.mjs",
@@ -12,10 +12,10 @@
       "require": "./dist/vsa-ro-translate.js"
     }
   },
-  "files": ["dist", "src", "README.md", "LICENSE"],
+  "files": ["dist", "src", "dictionaries", "README.md", "LICENSE"],
   "scripts": {
     "build": "node scripts/build.js",
-    "test": "node test/smoke.js",
+    "test": "node test/smoke.js && node test/chrome-policy.js",
     "eval": "node eval/run.js eval/test.json eval/outputs-test1.json && node eval/run.js eval/test2.json eval/outputs-test2.json",
     "calibrate": "node scripts/calibrate.js",
     "robustness": "node scripts/robustness.js"

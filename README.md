@@ -1,144 +1,226 @@
 # vsa-ro-translate
 
-Fast, offline **Romanian → English** translation of technical and agentic commands (diagram editors, design/editing tools, animation timelines, enterprise apps), built on a **Vector Symbolic Architecture** (hyperdimensional computing) lexicon.
+Translation to English and spell checking of technical and agentic commands (diagram editors, design and editing tools, animation timelines, enterprise apps), **over a vocabulary you choose**, built on a **Vector Symbolic Architecture** (hyperdimensional computing) memory.
 
-- Runs in any browser, Node or a WebView: one 76 KB script (28 KB gzipped), no model download, no server.
-- Under a millisecond per command (median 0.2–0.4 ms on a laptop).
-- Robust to missing diacritics, common typos and unseen inflections, thanks to a 2048-bit hypervector memory of ~5,500 word forms.
-- Tells you when it is unsure (`stats.confident`), so you can route those commands to a neural translator.
-- Output is plain, sometimes telegraphic English: *"Add a 2 px gray border to the box and move the Start node by 20 pixels to the right"*.
+- **Your vocabulary is the input.** Pass any number of dictionaries, in any languages. Romanian and English are built in; French ships as an example.
+- **Spell checking over that vocabulary.** Typos, missing diacritics and inflections are corrected. Words that are not in the vocabulary are reported as errors with suggestions, never silently guessed.
+- **Mixed language.** "Mută layer-ul selectat on top" is understood; English sentences are only spell checked.
+- **Optional Chrome fallback.** Use only VSA, let Chrome's on-device translator handle what VSA is unsure about, or prefer Chrome whenever it exists.
+- Runs in any browser, Node or WebView: one 97 KB script (35 KB gzipped), no model download. Median 0.2–2 ms per command on a laptop (under a millisecond when every word is known; each unknown word costs about 2 ms of search).
 
-**Live demo:** <https://ml-circuits-research.github.io/vsa-ro-translate/> (GitHub Pages, from `docs/`). The demo shows how every word was resolved, draws the hypervectors, and runs a side-by-side benchmark against Chrome's built-in translator when your browser has it.
+**Live demo:** <https://ml-circuits-research.github.io/vsa-ro-translate/>. Type in any loaded language, change the settings, add your own words, see the spell check and the hypervectors, and benchmark against Chrome's translator if your browser has it.
 
 ## Quick start
 
-Browser, one script tag:
-
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ml-circuits-research/vsa-ro-translate@v0.1.1/dist/vsa-ro-translate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ml-circuits-research/vsa-ro-translate@v0.2.0/dist/vsa-ro-translate.min.js"></script>
 <script>
   VSARoTranslate.translate('Șterge toate săgețile roșii');   // "Delete all the red arrows"
 </script>
 ```
 
-ES module:
+ES module: `import VSA, { create, dictionaries } from 'https://cdn.jsdelivr.net/gh/ml-circuits-research/vsa-ro-translate@v0.2.0/dist/vsa-ro-translate.mjs'`.
+Node: `npm install github:ml-circuits-research/vsa-ro-translate#v0.2.0`, then `require('vsa-ro-translate')`.
+Or download the files from the [latest release](https://github.com/ml-circuits-research/vsa-ro-translate/releases/latest).
+
+## Your vocabulary as a parameter
+
+The translator knows exactly the dictionaries you pass to `create()`:
 
 ```js
-import { translate, translateDetailed } from
-  'https://cdn.jsdelivr.net/gh/ml-circuits-research/vsa-ro-translate@v0.1.1/dist/vsa-ro-translate.mjs';
+const { create, dictionaries } = VSARoTranslate;
 
-const r = translateDetailed('Exporta diagarma ca PDF');  // note the typo and missing diacritics
-r.text;               // "Export the diagram as PDF"
-r.stats.confident;    // true
-r.stats.vsaLog;       // ["diagarma→diagrama (0.76)"]
+const t = create({
+  dictionaries: [
+    dictionaries.ro,          // built-in Romanian command vocabulary (optional)
+    dictionaries.en,          // English base, for mixed Romanian-English text (optional)
+    myVocabulary,             // your product's words, any language
+  ],
+});
 ```
 
-Node (no dependencies):
+Leave `dictionaries` out to get `[dictionaries.ro, dictionaries.en]`. Pass only your own dictionary to make the translator know nothing else: every other word becomes an error.
 
-```bash
-npm install github:ml-circuits-research/vsa-ro-translate#v0.1.1
-```
-```js
-const { translate } = require('vsa-ro-translate');
-```
+### Dictionary format
 
-Or download `vsa-ro-translate.min.js` from the [latest release](https://github.com/ml-circuits-research/vsa-ro-translate/releases/latest) and include it directly.
-
-### Hybrid: VSA first, neural fallback when unsure
+A dictionary is plain data. Only `lang` and one word list are required.
 
 ```js
-async function toEnglish(ro) {
-  const r = VSARoTranslate.translateDetailed(ro);
-  if (r.stats.confident || !('Translator' in self)) return r.text;
-  // Chrome/Edge desktop on-device translator; needs a user gesture the first time
-  const t = await Translator.create({ sourceLanguage: 'ro', targetLanguage: 'en' });
-  return t.translate(ro);
-}
+const myVocabulary = {
+  lang: 'ro',                  // source language (BCP 47): 'ro', 'fr', 'it', 'de', ...
+  name: 'acme',
+  // simplest: word -> English. Romanian nouns get their articles and cases generated.
+  words: {
+    tichet:  { en: 'ticket', plural: 'tichete' },
+    sprint:  { en: 'sprint', plural: 'sprinturi' },
+    escalada: { en: 'escalate', pos: 'v' },        // Romanian verb: conjugation generated
+    urgent:  { en: 'urgent', pos: 'adj' },
+    'tichet de suport': 'support ticket',          // several words = a phrase
+  },
+};
 ```
+
+| Field | Format | Notes |
+|---|---|---|
+| `lang` | `'ro'` | Source language code. Used for language detection and for Chrome. |
+| `words` | `{ word: 'english' }` or `{ word: { en, pos, plural, gender, forms, enPlural } }` | `pos`: `n` (default), `v`, `adj`, `adv`. `forms`: extra inflected forms. A key with spaces is a phrase. |
+| `nouns` | `['singular\|plural\|gender\|english', ...]` | Same columns as the built-in lexicon. English plural override: `english;pl=people`. |
+| `verbs` | `['infinitive\|class\|english\|form,form,...']` | Romanian classes: `ez`, `esc`, `a`, `e`, `i`, `irr`; `-` to guess. Other languages: list the forms. |
+| `adjectives` | `['m\|f\|mpl\|fpl\|english']` or `['word\|english']` | |
+| `functionWords` | `['word\|english\|TAG']` | TAG: `DET DEM POSS QUANT ORD NUM PRON CLITIC PREP CONJ ADV NEG Q AUX INTJ`. Use an empty English to drop a word (French `des\|\|DET`). |
+| `phrases` | `{ 'zone de texte': 'text box' }` or `{ src: [english, TAG] }` | Matched on lemmas, so inflected phrases match too. |
+| `senses` | `{ lemma: [['english', 'context words ...'], ...] }` | Word-sense choice by VSA context vectors. |
+| `morphology` | `'ro'` or `'none'` | Default `'ro'` for `lang: 'ro'`, otherwise `'none'` (forms are listed explicitly). |
+
+`dictionaries/fr.js` is a complete example for another language. It generates French verb forms with a few lines of code, which is fine: the engine only sees the resulting data.
+
+### Any number of languages
+
+```js
+// <script src=".../dist/dictionaries/fr.js"> registers dictionaries.fr
+const t = create({ dictionaries: [dictionaries.ro, dictionaries.fr, dictionaries.en, myItalian] });
+t.translate('Ne supprime pas la légende').text;   // "Don't delete the legend"   (language: 'fr')
+t.translate('Mută layer-ul selectat la stânga').text;   // "Move the selected layer to the left" (language: 'ro')
+```
+
+Each sentence's language is decided by the words that exist in only one dictionary. Romanian with English terms stays Romanian, and a sentence that is mostly English is kept as typed, with spelling fixed and stray foreign words translated. Romanian has a full set of word-order rules. Other languages get generic rules (adjective after noun, articles, *de/of* compounds, negation, questions), which suit Romance languages; the French example reaches 74% of command slots on its first run (see Results).
+
+## Settings
+
+```js
+const t = create({
+  dictionaries: [...],
+  chrome: 'never',      // 'never'    VSA only
+                        // 'fallback' Chrome's on-device translator when VSA is not confident
+                        // 'prefer'   Chrome whenever it is available, VSA otherwise
+  strict: false,        // true: text = null when a word is outside the vocabulary
+});
+t.setOptions({ chrome: 'fallback', strict: true });   // change at runtime
+```
+
+| Option | Default | Meaning |
+|---|---|---|
+| `chrome` | `'never'` | When to use Chrome's [Translator API](https://developer.chrome.com/docs/ai/translator-api) (desktop Chrome 138+, Edge). Only `translateAsync` uses it. |
+| `strict` | `false` | Return no translation when a word is unknown (errors are always reported). |
+| `minSim` | `0.64` | Minimum hypervector similarity for a spelling correction. |
+| `maxEdits` | `'auto'` | Edits allowed for a correction: 1, or 2 for words of `longWord` (10)+ letters. A number, or `'loose'` (1/2/3 by length). |
+| `minCorrectLength` | `5` | Shorter unknown words are reported, never corrected. |
+| `firstLetterUntil` | `7` | Shorter words are not corrected by replacing their first letter. |
+| `confidentSim` | `0.75` | Corrections below this similarity, or with 2 edits, make the result "not confident". |
+| `maxSuggestions` | `3` | Suggestions per unknown word. |
+| `D` | `2048` | Hypervector size; `1024` is about as accurate and 40% faster. |
+
+Chrome needs a user gesture to download a language model, so call `t.prepareChrome()` from a click handler once. English sentences are never sent to Chrome, and Chrome receives the spell-corrected text. If Chrome is missing or cannot handle the language, `translateAsync` returns the VSA result with `chromeError` set.
 
 ## API
 
-| Call | Returns |
+```js
+const r = t.translate(text);            // VSA only, synchronous
+const r = await t.translateAsync(text); // honours the chrome setting
+```
+
+| Field | Meaning |
 |---|---|
-| `translate(text)` | English string |
-| `translateDetailed(text)` | `{ text, ms, stats }`. `stats.confident`, `stats.unknownWords`, `stats.weakMatches`, `stats.tokens` (how each word was resolved: `exact`, `vsa`, `phrase`, `label`, `unknown`), `stats.vsaLog` |
-| `translateNaive(text)` | Word-by-word baseline with the same lexicon (for comparison) |
-| `warmup()` | Builds the hypervector memory now (otherwise built on the first unknown word, ~0.25 s). Returns ms |
-| `create({ D, threshold, confidentSim })` | An independent translator. Defaults: `D: 2048`, `threshold: 0.70`, `confidentSim: 0.75` |
-| `encode(word)`, `similarity(a, b)` | The word's hypervector (`Uint32Array`) and the Hamming similarity of two words |
+| `text` | English, or `null` in strict mode when a word is unknown |
+| `ok` | every word is in the vocabulary (exactly or after a correction) |
+| `errors` | `[{ word, start, end, message, suggestions: [{ word, sim, edits, lang }] }]` |
+| `corrections` | `[{ word, to, start, end, sim, edits, lang }]` |
+| `language` | detected source language |
+| `confident` | no errors and no weak corrections; the signal `chrome: 'fallback'` uses |
+| `engine` | `'vsa'` or `'chrome'` (then `vsaText` holds the VSA output) |
+| `source` | the input with spelling corrections applied |
+
+```js
+const s = t.spellcheck('Seteaza opacitaea stratului seletat');
+s.text;     // "Seteaza opacitatea stratului selectat"
+s.tokens;   // [{ text, start, end, status: 'ok' | 'corrected' | 'unknown' | 'name', suggestion, suggestions, lang }]
+s.errors;   // words outside the vocabulary
+```
+
+Also: `t.knows(word)`, `t.languages`, `t.warmup()` (build the memory now instead of on the first unknown word), `t.info`, `t.encode(word)`, `t.similarity(a, b)`, `t.translateNaive(text)` (word-by-word baseline). The default instance is available as `VSARoTranslate.translate(text)` (returns a string), `translateDetailed`, `spellcheck`.
+
+Names and labels are kept as written: quoted text (`nodul „Aprobare”`), capitalised words after a noun (`nodul Start`), mixed-case brands (`iPhone`), file names, times, hex colors.
 
 ## Results
 
-All test commands were written by independent agents that never saw the lexicon. A **slot** is something an agent needs in order to act correctly (the action, the object, a value, a unit, a direction). chrF and BLEU use sacreBLEU defaults against human-style references.
+All test commands were written by independent agents that never saw the dictionaries. A **slot** is something an agent needs in order to act (the action, the object, a value, a unit, a direction). chrF and BLEU use sacreBLEU defaults.
 
-**Fresh set, 60 commands, written after v0.1.1 was frozen (the clean number):**
+**Romanian, fresh set (60 commands, written after v0.1.1 was frozen):**
 
-| System | chrF | BLEU | Slots kept | Fully correct |
-|---|---:|---:|---:|---:|
-| **VSA v0.1.1** | **67.1** | **43.3** | **78%** | **32%** |
-| VSA v0.1.0 | 66.0 | | 77% | 30% |
-| Same lexicon, word by word | 50.2 | 20.0 | 73% | 22% |
+| System | chrF | Slots kept | Fully correct |
+|---|---:|---:|---:|
+| **VSA v0.2.0** | **67.1** | **78%** | **32%** |
+| VSA v0.1.0 | 66.0 | 77% | 30% |
+| Same vocabulary, word by word | 50.1 | 73% | 22% |
 
-**First held-out set, 100 commands (v0.1.0 frozen before it was opened):**
+**Romanian, first held-out set (100 commands):** v0.1.0 frozen before the set was opened: chrF 72.3, 93% slots, 73% fully correct (word by word: 52.7 / 87% / 52%). A blind rater judged 85% of VSA translations executable, vs 62% word by word. v0.2.0, after error analysis on this set: chrF 77.2, 97%, 87%.
 
-| System | chrF | BLEU | Slots kept | Fully correct |
-|---|---:|---:|---:|---:|
-| **VSA v0.1.0** | **72.3** | **49.7** | **93%** | **73%** |
-| Same lexicon, word by word | 52.7 | 24.6 | 87% | 52% |
-| Copy the Romanian source | 25.9 | 3.1 | 18% | 0% |
-| VSA v0.1.1 (fixes made after reading this set's errors, optimistic) | 76.7 | 55.6 | 97% | 86% |
+**Mixed Romanian–English (40) and French (30), written before v0.2.0:**
 
-Blind rating of the first set by a separate model that saw only the reference and the candidate (0 = wrong, 1 = partly wrong, 2 = correct but telegraphic, 3 = natural): **85%** of VSA translations would make an agent do the right thing (scores 2–3) and 33% read naturally, vs 62% and 3% for word-by-word.
+| Set | chrF | Slots kept | Fully correct |
+|---|---:|---:|---:|
+| Mixed, first run of the frozen engine | 76.9 | 79% | 35% |
+| Mixed, after fixes from its errors | 78.8 | 80% | 38% |
+| Mixed, word by word | 60.9 | 83% | 40% |
+| French (example dictionary), first run | 67.8 | 74% | 30% |
+| French, after fixes | 80.3 | 82% | 47% |
+| French, word by word | 60.0 | 75% | 40% |
 
-**Confidence flag (fresh set):** half the commands are flagged confident. Those keep 87% of slots and 50% are fully correct. The other half keep 69% and 13% are fully correct. Routing the second half to a neural translator is the intended hybrid.
+The sentence language was detected correctly for all 70 sentences (34 Romanian, 6 English, 30 French). On the mixed set word by word keeps a few more slots, mostly because some test answers accept only singular forms (`edge`) where VSA writes the correct plural.
 
-**Robustness (60 dev commands):** output is unchanged for 60/60 when diacritics are removed, and for 34/60 when diacritics are removed *and* one letter is swapped (word by word: 1/60). On synthetic single-letter typos the memory recovers the right word 445/515 times (wrong word 8/515) and falsely matches 9/68 words that are not in the lexicon. That is why weak matches lower the confidence flag.
+**Spelling** (`scripts/calibrate-spell.js`: 700 synthetic single-letter typos of vocabulary words, 94 real Romanian words that are not in the vocabulary):
 
-**Where it fails:** words outside the ~800-lemma lexicon pass through in Romanian (`vânzări`, `rutare`, `tichete`, `roți`). It is a closed-vocabulary tool. Grow `src/lexicon-ro-en.js` with your product's command vocabulary and it improves directly.
+| | Default | Loose (`maxEdits: 'loose'`, no safety rules) |
+|---|---:|---:|
+| Typos corrected to the right word | 76% | 93% |
+| Typos reported as unknown (with suggestions) | 20% | 0% |
+| Typos corrected to a wrong word | 3% | 6% |
+| Unknown words wrongly "corrected" into vocabulary words | 6 / 94 | 71 / 94 |
 
-### Compared with neural translators
+The default prefers an error to a guess: `tichete` (not in the vocabulary) is reported, not turned into `etichete`. The safety rules: one edit (two for long words), no correction that adds or removes a prefix (`neconectate` ≠ `conectate`), no first-letter replacement in short words, no cross-language correction of short words.
 
-Chrome's built-in [Translator API](https://developer.chrome.com/docs/ai/translator-api) (desktop Chrome 138+, Edge) and Firefox's Bergamot models translate open-domain text far better than a lexicon can. Mozilla's tiny ro→en model is about 17 MB and scores 39.9 BLEU on the general-domain FLORES benchmark ([model metadata](https://github.com/mozilla/firefox-translations-models)), which is not comparable with the command sets here. The development environment for this release could not download either model, so **the head-to-head runs in your browser**: open the demo in desktop Chrome and press *Run the comparison* to get chrF, slot recall and latency for VSA, Chrome and the hybrid on the same 160 commands.
+**Robustness (60 dev commands):** output unchanged for 60/60 without diacritics, and for 55/60 without diacritics plus one swapped letter (word by word: 1/60).
 
-What VSA brings next to them: no download (76 KB vs tens of MB), every browser including mobile Safari and in-app WebViews, sub-millisecond latency, deterministic terminology (your lexicon decides that *strat* is *layer*), and names and labels kept verbatim.
+**Confidence:** on the fresh Romanian set, 47% of commands are confident; they keep 88% of slots and 50% are fully correct, vs 70% and 16% for the rest. That second group is what `chrome: 'fallback'` sends to Chrome.
+
+### Compared with Chrome
+
+Chrome's on-device translator handles open vocabulary far better than a dictionary can. Mozilla's comparable tiny ro→en model is about 17 MB ([model metadata](https://github.com/mozilla/firefox-translations-models)). The development environment could not download either model, so the head-to-head runs in your browser: open the demo in desktop Chrome and press *Run the comparison*. VSA's place next to them: no download, every browser including mobile, sub-millisecond, deterministic terminology, errors instead of guesses, and labels kept verbatim.
 
 ## How it works
 
-1. **Tokenize** Romanian, split clitics (`mută-l` → *move it*), keep numbers with units, times, file names, hex colors and quoted labels.
-2. **Lexical lookup in a VSA item memory.** Each known word form is a 2048-bit hypervector: the majority bundle of its character bigrams and trigrams, where an n-gram is the XOR of permuted character vectors (`ρ²(a) ⊕ ρ(b) ⊕ c`). Exact forms hit directly; anything else is cleaned up to the nearest stored vector (Hamming distance, restricted to the same first letter, accepted at similarity ≥ 0.70). Bundling is bit-sliced: per-bit counters are kept as bit planes and updated with word-wide ripple-carry adders.
-3. **Word sense** for ambiguous lemmas: each sense has a prototype bundled from context lemmas; the sentence's context vectors vote by superposed similarity.
-4. **Phrases and order rules** (symbolic, ~350 lines): multiword expressions (*cadru cheie* → *keyframe*, *trimite în spate* → *send to back*), noun–adjective swap, genitives (*culoarea textului* → *the color of the text*), datives, prepositions by verb context (*cu 20 px* → *by*, *cu 3 coloane* → *with*), questions (*Cum export…?* → *How do I export…?*), verb-subject inversion in subordinate clauses.
+1. **Tokenize**: clitics (`mută-l`), elisions (`l'image`), inversions (`puis-je`), loanwords with Romanian articles (`layer-ul`), numbers with units, times, file names, colors, quoted labels.
+2. **Vocabulary memory (VSA)**: every word form of every dictionary is a 2048-bit hypervector, the majority bundle of its character bigrams and trigrams (`n-gram = ρ²(a) ⊕ ρ(b) ⊕ c`), built with bit-sliced counters.
+3. **Language vote**: words that exist in only one dictionary decide the sentence language.
+4. **Spelling**: unknown words are compared with the whole memory by Hamming distance; the closest 24 are re-ranked by edit distance (OSA), length and language, as in [vsa-spell](https://github.com/ml-circuits-research/vsa-spell), then accepted only under the safety rules above.
+5. **Word sense** for ambiguous lemmas by superposed context vectors.
+6. **Phrases and word order**: multiword expressions, then rules (Romanian set, generic Romance set) for noun phrases, genitives, clitics, prepositions, light verbs (`dă-i un resize` → *resize*), questions and negation.
 
-VSA does the memory and the sense choice. Grammar is rules. That division is deliberate: hypervectors are good at robust association, not at generating fluent word order.
+From vsa-spell this project takes the n-gram encoding, bit-sliced bundling, the OSA re-rank and the idea of decoding over the user's dictionary. Its Double Metaphone (English-only phonetics), the 16 MB context models and the Harper grammar layer are not used, to stay dependency-free and small.
 
 ## Repository
 
 ```
-src/lexicon-ro-en.js     lexicon: verbs, nouns, adjectives, function words, phrases, sense contexts
-src/vsa-ro-en.js         engine: hypervectors, item memory, analysis, rule layer
-dist/                    built bundles (UMD, minified, ESM, .d.ts)
-docs/index.html          self-contained demo page (GitHub Pages)
-eval/                    test sets, outputs, scores, blind ratings (eval/v0.1.0 = frozen first release)
-scripts/build.js         builds dist/ and the demo page
-scripts/calibrate.js     threshold calibration: synthetic typos vs out-of-lexicon words
-scripts/robustness.js    diacritics and typo robustness on the dev set
-test/smoke.js            regression tests
+src/vsa-translate.js       engine: dictionaries, hypervector memory, spelling, language vote, rules, Chrome
+src/lexicon-ro-en.js       built-in Romanian dictionary
+src/dict-en.js             built-in English base (function words, product terms)
+dictionaries/fr.js         French example dictionary
+dist/                      bundles (UMD, minified, ESM, .d.ts) and dist/dictionaries/
+docs/index.html            demo page (GitHub Pages)
+eval/                      test sets, outputs, results.json, frozen first runs (v0.1.0/, v0.2-firstlook/)
+scripts/                   build, calibrate-spell, robustness, metrics
+test/                      smoke tests and Chrome-policy tests (simulated Translator API)
 ```
 
 ```bash
 npm run build      # dist/ and docs/index.html (terser optional: TERSER_PATH=…)
 npm test
-npm run eval       # translates and scores eval/test.json and eval/test2.json
+node eval/summarize.js   # re-runs every evaluation, writes eval/results.json
 ```
-
-## Extending
-
-- **More vocabulary:** add lines to `NOUNS`, `VERBS` (`infinitive|class|english|irregular forms`), `ADJ` or `MWE`. Inflected forms are generated; the hypervector memory covers the rest.
-- **Other source languages:** the engine is language-agnostic at the memory level; a new source language needs its own lexicon file and its word-order rules (Italian, Spanish, French and Portuguese are closest to the Romanian rules).
 
 ## Pe scurt (RO)
 
-Traducere rapidă română → engleză pentru comenzi tehnice (diagrame, editare, animații, aplicații enterprise), direct în browser. Un singur script de 76 KB, fără model de descărcat, sub o milisecundă pe comandă. Folosește o memorie hiperdimensională (VSA) ca să recunoască cuvintele scrise fără diacritice, cu greșeli de tastare sau la forme flexionate. Engleza rezultată e uneori telegrafică, dar inteligibilă. Când nu e sigur, o spune (`stats.confident`), ca să poți trimite comanda unui traducător neural (de ex. API-ul Translator din Chrome). Pe un set nou de 60 de comenzi păstrează 78% din informațiile necesare unui agent. Pe primul set de 100 de comenzi, 85% din traduceri sunt executabile corect.
+Traducere în engleză și corectare ortografică pentru comenzi tehnice, **pe vocabularul tău**. Dai la inițializare oricâte dicționare, în oricâte limbi (română și engleză incluse, franceză ca exemplu). Cuvintele care nu sunt în vocabular sunt raportate ca erori, cu sugestii, nu ghicite. Înțelege textul amestecat română–engleză. Din setări alegi dacă poate folosi traducătorul din Chrome: niciodată, doar când VSA nu e sigur, sau oricând există. Un singur script de 97 KB, fără model de descărcat, câteva milisecunde pe comandă (sub una când toate cuvintele sunt cunoscute).
 
 ## License
 

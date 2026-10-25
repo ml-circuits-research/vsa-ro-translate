@@ -1,6 +1,7 @@
 {
- "generated": "2026-10-24",
- "notes": "test1 = 100 commands, written by an independent agent before the translator was frozen. test2 = 60 commands, written after v0.1.1 was frozen; neither version saw it. v0.1.1 numbers on test1 are optimistic (fixes were made after looking at test1 errors).",
+ "version": "0.2.0",
+ "generated": "2026-10-25",
+ "notes": "test1 (100) was written before v0.1.0 was frozen; test2 (60) after v0.1.1 was frozen; mixed (40) and fr (30) were written before v0.2.0 and first scored with the frozen engine in eval/v0.2-firstlook. \"final\" rows include fixes made after reading those errors (optimistic).",
  "test1_v010_heldout": {
   "vsa": {
    "chrF": 72.3,
@@ -43,19 +44,29 @@
    "executable_pct": 62
   }
  },
- "test1_v011_seen": {
+ "test1": {
   "vsa": {
-   "chrF": 76.7,
-   "slotRecall": 96.9,
-   "allSlots": 86
+   "chrF": 77.2,
+   "slotRecall": 97.2,
+   "allSlots": 87
   },
   "naive": {
-   "chrF": 53.7,
+   "chrF": 53.6,
    "slotRecall": 89.2,
    "allSlots": 57
   }
  },
- "test2_fresh": {
+ "test2": {
+  "vsa": {
+   "chrF": 67.1,
+   "slotRecall": 78.4,
+   "allSlots": 31.7
+  },
+  "naive": {
+   "chrF": 50.1,
+   "slotRecall": 73.1,
+   "allSlots": 21.7
+  },
   "v011": {
    "chrF": 67.1,
    "slotRecall": 78.1,
@@ -65,40 +76,69 @@
    "chrF": 66,
    "slotRecall": 77.1,
    "allSlots": 30
+  }
+ },
+ "mixed": {
+  "firstLook": {
+   "chrF": 76.9,
+   "slotRecall": 79.3,
+   "allSlots": 35
+  },
+  "final": {
+   "chrF": 78.8,
+   "slotRecall": 80.4,
+   "allSlots": 37.5
   },
   "naive": {
-   "chrF": 50.2,
-   "slotRecall": 73.1,
-   "allSlots": 21.7
+   "chrF": 60.9,
+   "slotRecall": 83,
+   "allSlots": 40
   },
-  "BLEU_v011": 43.3,
-  "BLEU_naive": 20
+  "n": 40
+ },
+ "fr": {
+  "firstLook": {
+   "chrF": 67.8,
+   "slotRecall": 73.9,
+   "allSlots": 30
+  },
+  "final": {
+   "chrF": 80.3,
+   "slotRecall": 82,
+   "allSlots": 46.7
+  },
+  "naive": {
+   "chrF": 60,
+   "slotRecall": 74.5,
+   "allSlots": 40
+  },
+  "n": 30
  },
  "confidence_gate": {
-  "test1": {
-   "confidentShare": 89,
-   "confident": {
-    "chrF": 77,
-    "slotRecall": 97.1,
-    "allSlots": 86.5
-   },
-   "notConfident": {
-    "chrF": 74.4,
-    "slotRecall": 95.5,
-    "allSlots": 81.8
-   }
-  },
   "test2": {
-   "confidentShare": 50,
+   "confidentShare": 47,
    "confident": {
-    "chrF": 71.8,
-    "slotRecall": 87.3,
+    "chrF": 71.5,
+    "slotRecall": 87.6,
     "allSlots": 50
    },
    "notConfident": {
-    "chrF": 63,
-    "slotRecall": 68.8,
-    "allSlots": 13.3
+    "chrF": 63.8,
+    "slotRecall": 70.3,
+    "allSlots": 15.6
+   }
+  },
+  "mixed": {
+   "confidentShare": 70,
+   "confident": {
+    "chrF": 81.8,
+    "slotRecall": 82.8,
+    "allSlots": 39.3
+   },
+   "notConfident": {
+    "chrF": 72.3,
+    "slotRecall": 74.7,
+    "allSlots": 33.3
    }
   }
  },
@@ -108,28 +148,63 @@
    "naive": 60
   },
   "noDiacriticsPlusOneTypo": {
-   "vsa": 34,
+   "vsa": 55,
    "naive": 1
   },
   "of": 60
  },
- "calibration": {
-  "threshold": 0.7,
-  "typoRecovered": "445/515",
-  "typoWrongMatch": "8/515",
-  "outOfLexiconFalseMatch": "9/68"
+ "spell": {
+  "typosRecovered": 76.4,
+  "typosWrong": 3.4,
+  "typosReportedAsUnknown": 20.1,
+  "unknownWordsFalselyCorrected": 6,
+  "unknownWordsTotal": 94,
+  "looseSetting": {
+   "typosRecovered": 93.4,
+   "unknownWordsFalselyCorrected": 71
+  }
+ },
+ "languageDetection": {
+  "mixed": {
+   "ro": 34,
+   "en": 6
+  },
+  "fr": {
+   "fr": 30
+  }
  },
  "latencyMs": {
-  "median": 0.364,
-  "p95": 2.091
+  "median": 1.854,
+  "p95": 5.955
  },
  "info": {
   "D": 2048,
-  "threshold": 0.7,
-  "forms": 5530,
-  "itemMemory": 5242,
-  "mwes": 242,
-  "lexiconMs": 23,
-  "memoryMs": 234
+  "languages": [
+   "ro",
+   "en",
+   "fr"
+  ],
+  "dictionaries": [
+   {
+    "name": "ro",
+    "lang": "ro",
+    "forms": 5535
+   },
+   {
+    "name": "en-base",
+    "lang": "en",
+    "forms": 650
+   },
+   {
+    "name": "fr-example",
+    "lang": "fr",
+    "forms": 1768
+   }
+  ],
+  "forms": 9094,
+  "itemMemory": 8937,
+  "phrases": 331,
+  "lexiconMs": 52,
+  "memoryMs": 443
  }
 }

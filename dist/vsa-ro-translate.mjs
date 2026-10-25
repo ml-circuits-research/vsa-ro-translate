@@ -1,4 +1,4 @@
-/*! vsa-ro-translate v0.1.1 | Romanian -> English command translator with a hyperdimensional (VSA) lexicon | MIT | https://github.com/ml-circuits-research/vsa-ro-translate */
+/*! vsa-ro-translate v0.2.0 | Romanian (and any language you give a dictionary for) -> English command translation and spell checking with a hyperdimensional (VSA) lexicon | MIT | https://github.com/ml-circuits-research/vsa-ro-translate */
 
   var LEX = (function () { var module = { exports: {} }; // Romanian -> English lexicon for technical / agentic commands
 // (diagrams, editing, animation, enterprise). Diacritics are kept here for
@@ -800,6 +800,7 @@ separat|separată|separați|separate|separate
 mijlociu|mijlocie|mijlocii|mijlocii|middle
 ultim|ultimă|ultimi|ultime|last
 final|finală|finali|finale|final
+primar|primară|primari|primare|primary
 ortogonal|ortogonală|ortogonali|ortogonale|orthogonal
 original|originală|originali|originale|original
 subtil|subtilă|subtili|subtile|subtle
@@ -1181,6 +1182,10 @@ mai subțire => thinner | ADJ
 mai deschis => lighter | ADJ
 mai închis => darker | ADJ
 mai lung => longer | ADJ
+mai vechi => older | ADJ
+mai vechi de => older than | ADJ
+mai nou => newer | ADJ
+mai recent => more recent | ADJ
 mai scurt => shorter | ADJ
 mai lat => wider | ADJ
 mai îngust => narrower | ADJ
@@ -1312,6 +1317,414 @@ const SENSES = {
 
 const L = { VERBS, NOUNS, ADJ, FUNC, MWE, SENSES };
 if (typeof module !== 'undefined' && module.exports) module.exports = L; else root.RO_EN_LEXICON = L;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+  ; return module.exports; })();
+  var EN = (function () { var module = { exports: {} }; // English base vocabulary: function words and common product/UI/dev terms.
+// Used for mixed Romanian-English input ("mută layer-ul on top") and for English sentences
+// (spell check only). English words that appear as translations in the other dictionaries
+// are added automatically by the engine (option english: 'auto').
+(function (root) {
+const EN = {
+  lang: 'en',
+  name: 'en-base',
+  morphology: 'none',
+  FUNC: `
+the|the|DET
+a|a|DET
+an|an|DET
+some|some|DET
+this|this|DEM
+that|that|DEM
+these|these|DEM
+those|those|DEM
+my|my|POSS
+your|your|POSS
+its|its|POSS
+our|our|POSS
+their|their|POSS
+all|all|QUANT
+each|each|QUANT
+every|every|QUANT
+any|any|QUANT
+no|no|QUANT
+other|other|QUANT
+another|another|QUANT
+both|both|QUANT
+first|first|ORD
+last|last|ORD
+second|second|ORD
+third|third|ORD
+next|next|ORD
+previous|previous|ORD
+to|to|PREP
+in|in|PREP
+into|into|PREP
+on|on|PREP
+onto|onto|PREP
+at|at|PREP
+of|of|PREP
+with|with|PREP
+by|by|PREP
+from|from|PREP
+for|for|PREP
+without|without|PREP
+between|between|PREP
+under|under|PREP
+over|over|PREP
+above|above|PREP
+below|below|PREP
+behind|behind|PREP
+before|before|PREP
+after|after|PREP
+around|around|PREP
+through|through|PREP
+toward|toward|PREP
+towards|towards|PREP
+near|near|PREP
+inside|inside|PREP
+outside|outside|PREP
+per|per|PREP
+as|as|PREP
+than|than|PREP
+until|until|PREP
+and|and|CONJ
+or|or|CONJ
+but|but|CONJ
+then|then|CONJ
+if|if|CONJ
+when|when|CONJ
+while|while|CONJ
+so|so|CONJ
+because|because|CONJ
+please|please|INTJ
+thanks|thanks|INTJ
+yes|yes|INTJ
+not|not|NEG
+don't|don't|NEG
+doesn't|doesn't|NEG
+can't|can't|NEG
+won't|won't|NEG
+isn't|isn't|NEG
+i|I|PRON
+you|you|PRON
+it|it|PRON
+we|we|PRON
+they|they|PRON
+me|me|PRON
+them|them|PRON
+us|us|PRON
+how|how|Q
+where|where|Q
+what|what|Q
+which|which|Q
+who|who|Q
+why|why|Q
+is|is|AUX
+are|are|AUX
+be|be|AUX
+was|was|AUX
+were|were|AUX
+been|been|AUX
+do|do|AUX
+does|does|AUX
+did|did|AUX
+has|has|AUX
+have|have|AUX
+had|had|AUX
+will|will|AUX
+would|would|AUX
+should|should|AUX
+can|can|AUX
+could|could|AUX
+must|must|AUX
+may|may|AUX
+one|one|NUM
+two|two|NUM
+three|three|NUM
+four|four|NUM
+five|five|NUM
+six|six|NUM
+seven|seven|NUM
+eight|eight|NUM
+nine|nine|NUM
+ten|ten|NUM
+hundred|hundred|NUM
+up|up|ADV
+down|down|ADV
+again|again|ADV
+now|now|ADV
+here|here|ADV
+there|there|ADV
+also|also|ADV
+only|only|ADV
+very|very|ADV
+more|more|ADV
+less|less|ADV
+most|most|ADV
+back|back|ADV
+forward|forward|ADV
+together|together|ADV
+slowly|slowly|ADV
+quickly|quickly|ADV
+gently|gently|ADV
+horizontally|horizontally|ADV
+vertically|vertically|ADV
+automatically|automatically|ADV
+evenly|evenly|ADV
+always|always|ADV
+never|never|ADV
+once|once|ADV
+twice|twice|ADV
+top|top|ADV
+bottom|bottom|ADV
+left|left|ADV
+right|right|ADV
+center|center|ADV
+middle|middle|ADV
+front|front|ADV
+away|away|ADV
+off|off|ADV
+out|out|ADV
+`,
+  NOUNS: `
+layer|layers|n|layer
+frame|frames|n|frame
+keyframe|keyframes|n|keyframe
+easing|easings|n|easing
+tooltip|tooltips|n|tooltip
+dropdown|dropdowns|n|dropdown
+toggle|toggles|n|toggle
+slider|sliders|n|slider
+checkbox|checkboxes|n|checkbox
+button|buttons|n|button
+link|links|n|link
+dashboard|dashboards|n|dashboard
+mockup|mockups|n|mockup
+wireframe|wireframes|n|wireframe
+banner|banners|n|banner
+template|templates|n|template
+commit|commits|n|commit
+branch|branches|n|branch
+merge|merges|n|merge
+deploy|deploys|n|deploy
+release|releases|n|release
+build|builds|n|build
+feature|features|n|feature
+bug|bugs|n|bug
+issue|issues|n|issue
+ticket|tickets|n|ticket
+sprint|sprints|n|sprint
+backlog|backlogs|n|backlog
+board|boards|n|board
+card|cards|n|card
+widget|widgets|n|widget
+sidebar|sidebars|n|sidebar
+navbar|navbars|n|navbar
+header|headers|n|header
+footer|footers|n|footer
+modal|modals|n|modal
+popup|popups|n|popup
+asset|assets|n|asset
+component|components|n|component
+prop|props|n|prop
+track|tracks|n|track
+fade|fades|n|fade
+resize|resizes|n|resize
+padding|paddings|n|padding
+artboard|artboards|n|artboard
+workspace|workspaces|n|workspace
+channel|channels|n|channel
+thread|threads|n|thread
+chat|chats|n|chat
+feedback|feedbacks|n|feedback
+draft|drafts|n|draft
+workflow|workflows|n|workflow
+pipeline|pipelines|n|pipeline
+staging|stagings|n|staging
+production|productions|n|production
+endpoint|endpoints|n|endpoint
+api|apis|n|API
+screenshot|screenshots|n|screenshot
+mobile|mobiles|n|mobile
+desktop|desktops|n|desktop
+tablet|tablets|n|tablet
+deck|decks|n|deck
+spreadsheet|spreadsheets|n|spreadsheet
+doc|docs|n|doc
+item|items|n|item
+owner|owners|n|owner
+viewer|viewers|n|viewer
+login|logins|n|login
+logout|logouts|n|logout
+deadline|deadlines|n|deadline
+meeting|meetings|n|meeting
+invoice|invoices|n|invoice
+offer|offers|n|offer
+contact|contacts|n|contact
+lead|leads|n|lead
+customer|customers|n|customer
+region|regions|n|region
+rate|rates|n|rate
+sale|sales|n|sale
+team|teams|n|team
+`,
+  VERBS: `
+add|-|add|adds,added,adding
+remove|-|remove|removes,removed,removing
+delete|-|delete|deletes,deleted,deleting
+move|-|move|moves,moved,moving
+drag|-|drag|drags,dragged,dragging
+drop|-|drop|drops,dropped,dropping
+resize|-|resize|resizes,resized,resizing
+rotate|-|rotate|rotates,rotated,rotating
+scale|-|scale|scales,scaled,scaling
+crop|-|crop|crops,cropped,cropping
+align|-|align|aligns,aligned,aligning
+group|-|group|groups,grouped,grouping
+ungroup|-|ungroup|ungroups,ungrouped
+lock|-|lock|locks,locked
+unlock|-|unlock|unlocks,unlocked
+hide|-|hide|hides,hidden,hiding
+show|-|show|shows,shown,showing
+duplicate|-|duplicate|duplicates,duplicated
+copy|-|copy|copies,copied
+paste|-|paste|pastes,pasted
+cut|-|cut|cuts,cutting
+undo|-|undo|undoes,undone
+redo|-|redo|redoes,redone
+export|-|export|exports,exported,exporting
+import|-|import|imports,imported,importing
+upload|-|upload|uploads,uploaded
+download|-|download|downloads,downloaded
+share|-|share|shares,shared,sharing
+save|-|save|saves,saved,saving
+open|-|open|opens,opened
+close|-|close|closes,closed
+rename|-|rename|renames,renamed
+select|-|select|selects,selected
+insert|-|insert|inserts,inserted
+create|-|create|creates,created,creating
+make|-|make|makes,made,making
+set|-|set|sets,setting
+change|-|change|changes,changed,changing
+replace|-|replace|replaces,replaced
+connect|-|connect|connects,connected
+draw|-|draw|draws,drawn,drawing
+fill|-|fill|fills,filled
+apply|-|apply|applies,applied
+zoom|-|zoom|zooms,zoomed,zooming
+scroll|-|scroll|scrolls,scrolled,scrolling
+play|-|play|plays,played,playing
+pause|-|pause|pauses,paused
+stop|-|stop|stops,stopped
+start|-|start|starts,started,starting
+loop|-|loop|loops,looped,looping
+repeat|-|repeat|repeats,repeated
+animate|-|animate|animates,animated
+bounce|-|bounce|bounces,bounced
+delay|-|delay|delays,delayed
+sync|-|sync|syncs,synced
+trigger|-|trigger|triggers,triggered
+preview|-|preview|previews,previewed
+publish|-|publish|publishes,published
+deploy|-|deploy|deploys,deployed,deploying
+commit|-|commit|commits,committed
+merge|-|merge|merges,merged
+push|-|push|pushes,pushed
+pull|-|pull|pulls,pulled
+review|-|review|reviews,reviewed
+approve|-|approve|approves,approved
+reject|-|reject|rejects,rejected
+send|-|send|sends,sent,sending
+invite|-|invite|invites,invited
+assign|-|assign|assigns,assigned
+sort|-|sort|sorts,sorted
+filter|-|filter|filters,filtered
+search|-|search|searches,searched
+find|-|find|finds,found
+refresh|-|refresh|refreshes,refreshed
+reset|-|reset|resets
+restore|-|restore|restores,restored
+revert|-|revert|reverts,reverted
+archive|-|archive|archives,archived
+update|-|update|updates,updated,updating
+edit|-|edit|edits,edited,editing
+format|-|format|formats,formatted
+highlight|-|highlight|highlights,highlighted
+generate|-|generate|generates,generated
+convert|-|convert|converts,converted
+compare|-|compare|compares,compared
+check|-|check|checks,checked
+run|-|run|runs,ran,running
+test|-|test|tests,tested,testing
+fix|-|fix|fixes,fixed
+enable|-|enable|enables,enabled
+disable|-|disable|disables,disabled
+expand|-|expand|expands,expanded
+collapse|-|collapse|collapses,collapsed
+pin|-|pin|pins,pinned
+snap|-|snap|snaps,snapped
+flip|-|flip|flips,flipped
+swap|-|swap|swaps,swapped
+skip|-|skip|skips,skipped
+belong|-|belong|belongs
+appear|-|appear|appears,appeared
+`,
+  ADJ: `
+new|new
+selected|selected
+current|current
+active|active
+hidden|hidden
+visible|visible
+locked|locked
+red|red
+blue|blue
+green|green
+yellow|yellow
+black|black
+white|white
+gray|gray
+grey|gray
+orange|orange
+purple|purple
+pink|pink
+brown|brown
+light|light
+dark|dark
+big|big
+small|small
+large|large
+bold|bold
+italic|italic
+transparent|transparent
+dashed|dashed
+dotted|dotted
+solid|solid
+rounded|rounded
+horizontal|horizontal
+vertical|vertical
+main|main
+default|default
+custom|custom
+public|public
+private|private
+shared|shared
+final|final
+smooth|smooth
+fast|fast
+slow|slow
+open|open
+closed|closed
+weekly|weekly
+daily|daily
+monthly|monthly
+unpaid|unpaid
+duplicate|duplicate
+`,
+};
+if (typeof module !== 'undefined' && module.exports) module.exports = EN; else root.VSA_DICT_EN = EN;
 })(typeof window !== 'undefined' ? window : globalThis);
 
   ; return module.exports; })();
@@ -1538,21 +1951,74 @@ function adjForms(m, f, mpl, fpl) {
 
 // ---------------------------------------------------------------- lexicon loading
 function parseLines(txt) { return txt.split('\n').map(l => l.trim()).filter(l => l && !l.startsWith('//')); }
+function toLines(x) {
+  if (!x) return [];
+  if (typeof x === 'string') return parseLines(x);
+  return x.map(e => Array.isArray(e) ? e.join('|') : String(e)).map(s => s.trim()).filter(Boolean);
+}
+const now = () => (typeof performance !== 'undefined' ? performance : Date).now();
+// optimal string alignment (Damerau) distance, as in ml-circuits-research/vsa-spell
+function osa(a, b) {
+  const m = a.length, n = b.length; if (!m) return n; if (!n) return m;
+  let p2 = new Array(n + 1), p1 = new Array(n + 1), c = new Array(n + 1);
+  for (let j = 0; j <= n; j++) p1[j] = j;
+  for (let i = 1; i <= m; i++) {
+    c[0] = i;
+    for (let j = 1; j <= n; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      let v = Math.min(p1[j] + 1, c[j - 1] + 1, p1[j - 1] + cost);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, p2[j - 2] + 1);
+      c[j] = v;
+    }
+    [p2, p1, c] = [p1, c, p2];
+  }
+  return p1[n];
+}
+function guessRoGender(w) { return /[ăae]$/.test(w) ? 'f' : 'n'; }
+function guessRoClass(inf) { return /[eâ]a$/.test(inf) ? 'irr' : /a$/.test(inf) ? 'ez' : /[iî]$/.test(inf) ? 'esc' : 'e'; }
+function posToTag(p) { p = String(p || 'n').toLowerCase(); return p[0] === 'v' ? 'V' : p.startsWith('adj') || p === 'a' ? 'ADJ' : p.startsWith('adv') ? 'ADV' : p.startsWith('prep') ? 'PREP' : p.startsWith('conj') ? 'CONJ' : 'N'; }
 
-function createTranslator(LEX, opts) {
-  opts = Object.assign({ D: 2048, threshold: 0.70, ngrams: [2, 3], firstLetter: true, confidentSim: 0.75 }, opts || {});
+const DEFAULTS = {
+  D: 2048, ngrams: [2, 3],
+  english: 'auto',        // derive an English vocabulary from the dictionaries' translations (for mixed text)
+  target: 'en',
+  minSim: 0.64,           // spell: minimum hypervector similarity of the best candidate (calibrated: scripts/calibrate-spell.js)
+  confidentSim: 0.75,     // corrections below this similarity (or with 2+ edits) lower `confident`
+  wEd: 0.08, wLen: 0.02, wLang: 0.03,   // spell rerank: edit distance, length difference, same-language bonus
+  maxSuggestions: 3,
+  minCorrectLength: 5,    // shorter unknown words are reported, never auto-corrected
+  firstLetterUntil: 7,    // words shorter than this are not corrected by replacing their first letter
+  maxEdits: 'auto',       // 'auto': 1 edit, 2 for words of `longWord`+ letters; or a number; 'loose' = 1/2/3 by length
+  longWord: 10,
+  chrome: 'never',        // 'never' | 'fallback' (Chrome when VSA is unsure) | 'prefer' (Chrome whenever available)
+  strict: false,          // true: return text = null when a word is outside the vocabulary
+};
+
+function createTranslator(a1, a2) {
+  // createTranslator(options)  or legacy createTranslator(lexicon, options)
+  let opts;
+  if (a1 && (a1.VERBS || a1.NOUNS || a1.FUNC) && !a1.dictionaries) opts = Object.assign({}, a2 || {}, { dictionaries: [a1] });
+  else opts = Object.assign({}, a1 || {});
+  if (opts.threshold && !opts.minSim) opts.minSim = opts.threshold;
+  opts = Object.assign({}, DEFAULTS, opts);
+  const dictionaries = (opts.dictionaries || []).filter(Boolean);
+  if (!dictionaries.length) throw new Error('vsa-translate: no vocabulary. Pass options.dictionaries, e.g. [dictionaries.ro, dictionaries.en, myVocabulary]');
   const HD = makeHD(opts.D);
-  const t0 = (typeof performance !== 'undefined' ? performance : Date).now();
+  const t0 = now();
 
   const surf = new Map();   // stripped surface -> [analysis]
-  const lemmaInfo = new Map();
+  const lemmaInfo = new Set();
+  const langs = [];
+  const MWE_LINES = [];
+  const SENSES_RAW = {};
+  const dictInfo = [];
   function addForm(surface, an) {
     const key = strip(surface);
+    if (!key) return;
     an.orig = surface.toLowerCase();
     if (!surf.has(key)) surf.set(key, []);
     const arr = surf.get(key);
-    // merge identical lemma+pos analyses
-    const ex = arr.find(a => a.pos === an.pos && a.lemma === an.lemma && a.tag === an.tag);
+    const ex = arr.find(a => a.pos === an.pos && a.lemma === an.lemma && a.tag === an.tag && a.lang === an.lang);
     if (ex) {
       if (an.pos === 'V') ex.feats = Array.from(new Set(ex.feats.concat(an.feats)));
       else if (an.pos === 'N' || an.pos === 'A') {
@@ -1564,74 +2030,151 @@ function createTranslator(LEX, opts) {
     arr.push(an);
   }
 
-  for (const l of parseLines(LEX.VERBS)) {
-    const [inf, cls, en, extra] = l.split('|');
-    const lemma = strip(inf);
-    const ex = extra ? extra.split(',').map(s => s.trim()).filter(Boolean) : [];
-    lemmaInfo.set(lemma + ':V', { en });
-    for (const [s, feats] of verbForms(inf, cls, ex)) addForm(s, { pos: 'V', lemma, en, feats: feats.slice() });
+  function compile(dict) {
+    const lang = String(dict.lang || 'ro').toLowerCase();
+    if (!langs.includes(lang)) langs.push(lang);
+    const ro = (dict.morphology || (lang === 'ro' ? 'ro' : 'none')) === 'ro';
+    const before = surf.size;
+    const seen = k => { if (lemmaInfo.has(k)) return true; lemmaInfo.add(k); return false; };
+    for (const l of toLines(dict.VERBS || dict.verbs)) {
+      const [inf, cls0, en, extra] = l.split('|').map(s => (s || '').trim());
+      if (!inf || !en) continue;
+      const lemma = strip(inf), ex = extra ? extra.split(',').map(s => s.trim()).filter(Boolean) : [];
+      const cls = cls0 && cls0 !== '-' ? cls0 : (ro ? guessRoClass(inf) : 'irr');
+      const forms = ro ? verbForms(inf, cls, ex) : [[inf, ['inf', 'imp', 'fin']]].concat(ex.map(x => [x, ['fin', 'imp', '3sg']]));
+      for (const [s, feats] of forms) addForm(s, { pos: 'V', lemma, en, feats: feats.slice(), lang });
+    }
+    function addNoun(p) {
+      const [lem, pl0, g0, enRaw, extra] = p;
+      if (!lem || !enRaw) return;
+      const lemma = strip(lem);
+      if (seen(lang + ':N:' + lemma)) return;
+      let en = enRaw, enPl = null;
+      const m = /^(.*);pl=(.*)$/.exec(enRaw);
+      if (m) { en = m[1]; enPl = m[2]; }
+      const pl = pl0 && pl0 !== '-' ? pl0 : null, g = g0 && g0 !== '-' ? g0 : (ro ? guessRoGender(lem) : 'n');
+      const forms = ro ? nounForms(lem, pl, g) : [[lem, { num: 'sg' }]].concat(pl && pl !== lem ? [[pl, { num: 'pl' }]] : []);
+      if (extra) for (const x of extra.split(',').map(s => s.trim()).filter(Boolean)) forms.push([x, ro ? guessNounFeats(strip(x), lemma) : { num: 'sg' }]);
+      for (const [s, feats] of forms) addForm(s, { pos: 'N', lemma, en, enPl, feats: Object.assign({ g }, feats), lang });
+    }
+    for (const l of toLines(dict.NOUNS || dict.nouns)) addNoun(l.split('|').map(s => (s || '').trim()));
+    function addAdj(p) {
+      let m, f, mpl, fpl, en;
+      if (p.length >= 5) [m, f, mpl, fpl, en] = p; else { m = p[0]; en = p[p.length - 1]; f = mpl = fpl = m; }
+      if (!m || !en || m === en && p.length < 2) return;
+      const lemma = strip(m);
+      const forms = ro && p.length >= 5 ? adjForms(m, f, mpl, fpl) : [[m, { g: 'm', num: 'sg' }], [f, { g: 'f', num: 'sg' }], [mpl, { num: 'pl' }], [fpl, { num: 'pl' }]];
+      for (const [s, feats] of forms) if (s) addForm(s, { pos: 'A', lemma, en, feats, lang });
+    }
+    for (const l of toLines(dict.ADJ || dict.adjectives)) addAdj(l.split('|').map(s => (s || '').trim()));
+    for (const l of toLines(dict.FUNC || dict.functionWords)) {
+      const [s, en, tag] = l.split('|').map(x => (x || '').trim());
+      if (!s) continue;
+      if (/\s/.test(s)) { MWE_LINES.push({ src: s, en, tag: tag || 'ADV', lang }); continue; }
+      addForm(s, { pos: 'F', tag: (tag || 'ADV').toUpperCase(), lemma: strip(s), en, feats: {}, lang });
+    }
+    // simple vocabulary: { word: 'english' } | { word: { en, pos, plural, gender, forms, tag } } | [[word, english, pos], ...]
+    const W = dict.words;
+    const entries = !W ? [] : Array.isArray(W)
+      ? W.map(e => Array.isArray(e) ? [e[0], { en: e[1], pos: e[2] }] : [e.word || e.src, e])
+      : Object.entries(W).map(([k, v]) => [k, typeof v === 'string' ? { en: v } : v]);
+    for (const [src0, e] of entries) {
+      const src = String(src0 || '').trim();
+      if (!src || !e || !e.en) continue;
+      if (/\s/.test(src)) { MWE_LINES.push({ src, en: e.en, tag: posToTag(e.pos), lang }); continue; }
+      const pos = String(e.pos || 'n').toLowerCase();
+      if (e.tag || pos === 'f' || pos === 'func') addForm(src, { pos: 'F', tag: String(e.tag || 'ADV').toUpperCase(), lemma: strip(src), en: e.en, feats: {}, lang });
+      else if (pos[0] === 'v') {
+        const lemma = strip(src);
+        const forms = ro ? verbForms(src, e.class || guessRoClass(src), e.forms || []) : [[src, ['inf', 'imp', 'fin']]].concat((e.forms || []).map(x => [x, ['fin', 'imp', '3sg']]));
+        for (const [s, feats] of forms) addForm(s, { pos: 'V', lemma, en: e.en, feats: feats.slice(), lang });
+      } else if (pos.startsWith('adj') || pos === 'a') {
+        const fs = e.forms || [];
+        addAdj(fs.length >= 3 ? [src, fs[0], fs[1], fs[2], e.en] : [src].concat(fs).concat([e.en]));
+      } else if (pos.startsWith('adv')) addForm(src, { pos: 'F', tag: 'ADV', lemma: strip(src), en: e.en, feats: {}, lang });
+      else addNoun([src, e.plural || '', e.gender || '', e.en + (e.enPlural ? ';pl=' + e.enPlural : ''), (e.forms || []).join(',')]);
+    }
+    const P = dict.MWE || dict.phrases;
+    if (typeof P === 'string') {
+      for (const l of parseLines(P)) {
+        const [src, rest] = l.split('=>'); if (!rest) continue;
+        const [en, tag] = rest.split('|').map(s => s.trim());
+        MWE_LINES.push({ src: src.trim(), en, tag: tag || 'N', lang });
+      }
+    } else if (Array.isArray(P)) {
+      for (const e of P) { const [src, en, tag] = Array.isArray(e) ? e : [e.src, e.en, e.tag]; if (src && en) MWE_LINES.push({ src, en, tag: tag || 'N', lang }); }
+    } else if (P) {
+      for (const [src, v] of Object.entries(P)) {
+        const en = typeof v === 'string' ? v : Array.isArray(v) ? v[0] : v.en;
+        const tag = typeof v === 'string' ? 'N' : Array.isArray(v) ? v[1] : v.tag;
+        if (en) MWE_LINES.push({ src, en, tag: tag ? (/^[a-z]/.test(tag) ? posToTag(tag) : tag) : 'N', lang });
+      }
+    }
+    Object.assign(SENSES_RAW, dict.SENSES || dict.senses || {});
+    dictInfo.push({ name: dict.name || lang, lang, forms: surf.size - before });
   }
-  for (const l of parseLines(LEX.NOUNS)) {
-    const p = l.split('|');
-    const [lem, pl, g, enRaw] = p;
-    const lemma = strip(lem);
-    let en = enRaw, enPl = null;
-    const m = /^(.*);pl=(.*)$/.exec(enRaw);
-    if (m) { en = m[1]; enPl = m[2]; }
-    if (lemmaInfo.has(lemma + ':N')) continue;
-    lemmaInfo.set(lemma + ':N', { en });
-    const forms = nounForms(lem, pl, g);
-    if (p[4]) for (const x of p[4].split(',')) forms.push([x.trim(), guessNounFeats(strip(x.trim()), lemma)]);
-    for (const [s, feats] of forms) addForm(s, { pos: 'N', lemma, en, enPl, feats: Object.assign({ g }, feats) });
+  for (const d of dictionaries) compile(d);
+
+  // English vocabulary derived from every translation in the dictionaries, so mixed RO-EN text is understood
+  function deriveEnglish() {
+    if (!langs.includes('en')) langs.push('en');
+    const add = (w, an) => { if (!w || !/^[a-z][a-z'-]*$/i.test(w)) return; addForm(w, Object.assign({ lemma: strip(w), en: w, lang: 'en', derived: true }, an)); };
+    const src = [];
+    for (const ans of surf.values()) for (const a of ans) if (a.lang !== 'en' && a.en && a.pos !== 'F') src.push(a);
+    for (const l of MWE_LINES) if (l.lang !== 'en' && l.en) src.push({ pos: l.tag === 'V' ? 'V' : l.tag === 'ADJ' ? 'A' : l.tag === 'N' ? 'N' : 'X', en: l.en });
+    const done = new Set();
+    for (const a of src) {
+      const k = a.pos + ':' + a.en + ':' + (a.enPl || '');
+      if (done.has(k)) continue; done.add(k);
+      const words = a.en.toLowerCase().replace(/^(the|a|an) /, '').split(/\s+/).filter(Boolean);
+      if (!words.length) continue;
+      if (a.pos === 'N') {
+        const head = words[words.length - 1], pl = a.enPl ? a.enPl.toLowerCase().split(/\s+/).pop() : enPlural(head);
+        add(head, { pos: 'N', feats: { num: 'sg' }, enPl: pl });
+        if (pl !== head) add(pl, { pos: 'N', feats: { num: 'pl' }, enPl: pl, lemma: strip(head) });
+        for (const w of words.slice(0, -1)) add(w, { pos: 'A', feats: {} });
+      } else if (a.pos === 'V') {
+        const v = words[0];
+        add(v, { pos: 'V', feats: ['inf', 'imp', 'fin'] });
+        add(enInflect(v, '3sg'), { pos: 'V', feats: ['fin', '3sg'], lemma: strip(v) });
+        add(enInflect(v, 'ing'), { pos: 'V', feats: ['ger'], lemma: strip(v) });
+        add(enInflect(v, 'part'), { pos: 'V', feats: ['part', 'adj'], lemma: strip(v) });
+        for (const w of words.slice(1)) add(w, { pos: 'F', tag: 'ADV', feats: {} });
+      } else if (a.pos === 'A') for (const w of words) add(w, { pos: 'A', feats: {} });
+    }
   }
-  for (const l of parseLines(LEX.ADJ)) {
-    const [m, f, mpl, fpl, en] = l.split('|');
-    const lemma = strip(m);
-    for (const [s, feats] of adjForms(m, f, mpl, fpl)) addForm(s, { pos: 'A', lemma, en, feats });
-  }
-  const funcSet = new Set();
-  for (const l of parseLines(LEX.FUNC)) {
-    const [s, en, tag] = l.split('|');
-    if (s.includes(' ')) continue;
-    funcSet.add(strip(s));
-    addForm(s, { pos: 'F', tag, lemma: strip(s), en, feats: {} });
-  }
+  if (opts.english === 'auto' && opts.target === 'en') deriveEnglish();
+
   // MWEs: list of word arrays (stripped)
   const COLORS = ['rosu', 'albastru', 'verde', 'galben', 'gri', 'mov', 'violet', 'roz', 'maro', 'portocaliu', 'turcoaz', 'cenusiu'];
-  const extraMwe = [];
   for (const c of COLORS) {
-    const en = (surf.get(c) || []).find(a => a.pos === 'A');
+    const en = (surf.get(c) || []).find(a => a.pos === 'A' && a.lang === 'ro');
     if (!en) continue;
-    extraMwe.push(c + ' deschis => light ' + en.en + ' | ADJ', c + ' inchis => dark ' + en.en + ' | ADJ', c + ' aprins => bright ' + en.en + ' | ADJ');
+    MWE_LINES.push({ src: c + ' deschis', en: 'light ' + en.en, tag: 'ADJ', lang: 'ro' }, { src: c + ' inchis', en: 'dark ' + en.en, tag: 'ADJ', lang: 'ro' }, { src: c + ' aprins', en: 'bright ' + en.en, tag: 'ADJ', lang: 'ro' });
   }
-  const MWES = parseLines(LEX.MWE + '\n' + extraMwe.join('\n')).map(l => {
-    const [ro, rest] = l.split('=>');
-    const [en, tag] = rest.split('|').map(s => s.trim());
-    return { words: ro.trim().split(/\s+/).map(strip), en, tag };
-  }).sort((a, b) => b.words.length - a.words.length);
+  const MWES = MWE_LINES.map(l => ({ words: String(l.src).trim().split(/\s+/).map(strip), en: l.en, tag: l.tag, lang: l.lang }))
+    .filter(m => m.words.length > 1 || m.words[0])
+    .sort((a, b) => b.words.length - a.words.length);
   const mweByFirst = new Map();
   for (const m of MWES) { const k = m.words[0]; if (!mweByFirst.has(k)) mweByFirst.set(k, []); mweByFirst.get(k).push(m); }
 
-  // ---------- VSA item memory over content-word surface forms
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789#-';
-  const C = {}, C1 = {}, C2 = {};
-  for (const ch of alphabet) { C[ch] = HD.rand('char:' + ch); C1[ch] = HD.rot(C[ch], 1); C2[ch] = HD.rot(C[ch], 2); }
-  const CR = {};
+  // ---------- VSA item memory over the vocabulary's surface forms
+  const C = {}, CR = {};
   function charv(ch, t) {
     const k = ch + t;
     if (!CR[k]) { if (!C[ch]) C[ch] = HD.rand('char:' + ch); CR[k] = t === 0 ? C[ch] : HD.rot(C[ch], t); }
     return CR[k];
   }
-  const NG = opts.ngrams || [2, 3], STEMW = opts.stemWeight || 1;
+  const NG = opts.ngrams || [2, 3];
   function encodeWord(key) {
     const s = '#' + key + '#';
-    const vecs = [], w = [];
+    const vecs = [];
     for (const n of NG) {
-      if (n === 's') { // skip-bigram (c_i, c_i+2): tolerant to transpositions/substitutions
+      if (n === 's') { // skip-bigram (c_i, c_i+2)
         for (let i = 0; i + 3 <= s.length; i++) {
           const a = charv(s[i], 3), b = charv(s[i + 2], 0), v = new Uint32Array(HD.W);
           for (let k = 0; k < HD.W; k++) v[k] = a[k] ^ b[k];
-          vecs.push(v); w.push(1);
+          vecs.push(v);
         }
         continue;
       }
@@ -1639,61 +2182,98 @@ function createTranslator(LEX, opts) {
         // n-gram = rho^(n-1)(c1) XOR ... XOR rho^0(cn)   (permutation encodes position inside the n-gram)
         const v = new Uint32Array(HD.W);
         for (let t = 0; t < n; t++) { const cv = charv(s[i + t], n - 1 - t); for (let k = 0; k < HD.W; k++) v[k] ^= cv[k]; }
-        vecs.push(v); w.push(i < 2 ? STEMW : 1);
+        vecs.push(v);
       }
     }
-    return HD.bundle(vecs, w);
+    return HD.bundle(vecs);
   }
-  const itemKeys = [], itemVecs = [], byFirst = new Map();
+  let itemKeys = [], itemVecs = [], itemLangs = [];
   let memoryMs = null;
   function ensureMemory() {
     if (memoryMs !== null) return;
-    const tm = (typeof performance !== 'undefined' ? performance : Date).now();
+    const tm = now();
     for (const [key, ans] of surf) {
-      if (key.length < 4) continue;
-      if (!ans.some(a => a.pos !== 'F')) continue;
-      itemKeys.push(key); itemVecs.push(encodeWord(key));
-      const f = key[0]; if (!byFirst.has(f)) byFirst.set(f, []); byFirst.get(f).push(itemKeys.length - 1);
+      if (key.length < 3 || /^-/.test(key)) continue;
+      if (key.length < 4 && ans.every(a => a.pos === 'F')) continue;
+      itemKeys.push(key); itemVecs.push(encodeWord(key)); itemLangs.push(Array.from(new Set(ans.map(a => a.lang))));
     }
-    memoryMs = Math.round((typeof performance !== 'undefined' ? performance : Date).now() - tm);
+    memoryMs = Math.round(now() - tm);
   }
   // ---------- VSA sense prototypes
   const lemmaVecCache = new Map();
   function lemmaVec(k) { if (!lemmaVecCache.has(k)) lemmaVecCache.set(k, HD.rand('lemma:' + k)); return lemmaVecCache.get(k); }
   const SENSES = {};
-  for (const lem in LEX.SENSES) {
-    SENSES[lem] = LEX.SENSES[lem].map(([en, ctx]) => ({ en, ctx: ctx.split(/\s+/).filter(Boolean).map(lemmaVec) }));
+  for (const lem in SENSES_RAW) {
+    SENSES[lem] = SENSES_RAW[lem].map(([en, ctx]) => ({ en, ctx: String(ctx || '').split(/\s+/).filter(Boolean).map(s => lemmaVec(strip(s))) }));
   }
-  const buildMs = (typeof performance !== 'undefined' ? performance : Date).now() - t0;
+  const buildMs = now() - t0;
 
-  function cleanup(key) {
+  // ---------- spelling: Hamming top-K in the item memory, reranked by edit distance (vsa-spell style)
+  function spell(key, domLang) {
     ensureMemory();
-    const q = encodeWord(key);
-    let best = -1, bi = -1, second = -1;
-    const pool = opts.firstLetter === false ? itemVecs.map((_, i) => i) : (byFirst.get(key[0]) || []);
-    for (const i of pool) {
+    const q = encodeWord(key), K = 24, N = itemVecs.length;
+    const topI = new Int32Array(K).fill(-1), topS = new Float64Array(K).fill(-1);
+    for (let i = 0; i < N; i++) {
       const s = HD.sim(q, itemVecs[i]);
-      if (s > best) { second = best; best = s; bi = i; } else if (s > second) second = s;
+      if (s > topS[K - 1]) { let j = K - 1; while (j > 0 && topS[j - 1] < s) { topS[j] = topS[j - 1]; topI[j] = topI[j - 1]; j--; } topS[j] = s; topI[j] = i; }
     }
-    return { key: itemKeys[bi], sim: best, margin: best - second };
+    const cands = [];
+    for (let j = 0; j < K; j++) {
+      const i = topI[j]; if (i < 0) continue;
+      const w = itemKeys[i], ed = osa(key, w), lg = itemLangs[i];
+      const score = topS[j] - opts.wEd * ed - opts.wLen * Math.abs(w.length - key.length) + (domLang && lg.includes(domLang) ? opts.wLang : 0);
+      cands.push({ key: w, sim: topS[j], ed, langs: lg, score });
+    }
+    cands.sort((a, b) => b.score - a.score);
+    // safety rules: a correction must not change meaning by adding/removing a prefix or the first letter
+    // (neconectate -> conectate, tichete -> etichete), and must stay in the sentence language for short words
+    const safe = c => {
+      if (key.length < opts.minCorrectLength) return false;
+      const d = Math.abs(c.key.length - key.length);
+      if (d >= 1 && (key.endsWith(c.key) || c.key.endsWith(key))) return false;
+      if (domLang && !c.langs.includes(domLang) && key.length < 6) return false;
+      if (key.length < opts.firstLetterUntil && c.key[0] !== key[0] && c.key.length === key.length) return false; // pista -> lista, ventes -> lentes
+      return true;
+    };
+    for (const c of cands) c.safe = safe(c);
+    const best = cands[0];
+    const maxEd = typeof opts.maxEdits === 'number' ? opts.maxEdits : opts.maxEdits === 'loose' ? (key.length <= 4 ? 1 : key.length <= 7 ? 2 : 3) : (key.length >= opts.longWord ? 2 : 1);
+    const accepted = !!best && best.safe && best.ed <= maxEd && best.sim >= opts.minSim;
+    return { accepted, best, cands, maxEd };
   }
+  function cleanup(key) { const s = spell(key); return s.best ? { key: s.best.key, sim: s.best.sim, ed: s.best.ed, accepted: s.accepted } : { key: null, sim: 0 }; }
 
   // ---------------------------------------------------------------- tokenizer
   const CLITIC_SUFFIX = new Set(['l', 'o', 'i', 'le', 'mi', 'ti', 'ne', 'va', 'ma', 'te', 'se', 'si', 'ii', 'li']);
   const LOAN_SUFFIX = { ul: { num: 'sg', def: true }, ului: { num: 'sg', def: true, gen: true }, uri: { num: 'pl' }, urile: { num: 'pl', def: true }, urilor: { num: 'pl', def: true, gen: true }, ul_: {}, lui: { num: 'sg', def: true, gen: true }, le: { num: 'pl', def: true }, a: { num: 'sg', def: true }, ei: { num: 'sg', def: true, gen: true }, i: { num: 'pl' }, ii: { num: 'pl', def: true }, ilor: { num: 'pl', def: true, gen: true }, rile: { num: 'pl', def: true } };
   function tokenize(text) {
     const toks = [];
-    const re = /\b\d{1,2}:\d{2}\b|[\p{L}\d_-]+\.(?:csv|pdf|svg|png|jpe?g|json|xml|xlsx?|docx?|pptx?|txt|html?|md|gif|mp4|zip)\b|[\p{L}\d]+(?:_[\p{L}\d]+)+|"[^"]*"|„[^”"]*[”"]|“[^”]*”|«[^»]*»|'[^']{2,}'|#[0-9a-fA-F]{3,8}\b|\d+(?:[.,]\d+)?(?:-(?:lea|a))?(?:\s?(?:%|px|ms|pt|fps|deg|°))?(?![\p{L}\d])|\d+(?:[.,]\d+)?[\p{L}]+|[\p{L}\d_]+(?:-[\p{L}\d_]+)*|[.,!?;:()]/gu;
+    const re = /\b\d{1,2}:\d{2}\b|[\p{L}\d_-]+\.(?:csv|pdf|svg|png|jpe?g|json|xml|xlsx?|docx?|pptx?|txt|html?|md|gif|mp4|zip)\b|[\p{L}\d]+(?:_[\p{L}\d]+)+|"[^"]*"|„[^”"]*[”"]|“[^”]*”|«[^»]*»|(?<![\p{L}\d])'[^']{2,}'|#[0-9a-fA-F]{3,8}\b|\d+(?:[.,]\d+)?(?:-(?:lea|a))?(?:\s?(?:%|px|ms|pt|fps|deg|°))?(?![\p{L}\d])|\d+(?:[.,]\d+)?[\p{L}]+|[\p{L}\d_]+(?:['’][\p{L}]+)*(?:-[\p{L}\d_]+)*|[.,!?;:()]/gu;
     let m;
     while ((m = re.exec(text))) {
-      const t = m[0];
-      if (/^\d{1,2}:\d{2}$/.test(t)) { toks.push({ kind: 'LIT', text: t, time: true }); continue; }
-      if (/\.[a-z0-9]{2,4}$/i.test(t) && !/^\d/.test(t) || /_/.test(t)) { toks.push({ kind: 'LIT', text: t, ident: true }); continue; }
-      if (/^["„“«']/.test(t)) { toks.push({ kind: 'LIT', text: '"' + t.slice(1, -1) + '"', quoted: true }); continue; }
-      if (/^#[0-9a-f]/i.test(t)) { toks.push({ kind: 'LIT', text: t, hex: true }); continue; }
-      if (/^\d+-(lea|a)$/.test(t)) { const n = parseInt(t); toks.push({ kind: 'ORDN', text: t, en: 'the ' + n + (n % 10 === 1 && n !== 11 ? 'st' : n % 10 === 2 && n !== 12 ? 'nd' : n % 10 === 3 && n !== 13 ? 'rd' : 'th') }); continue; }
-      if (/^\d/.test(t)) { toks.push({ kind: 'NUMLIT', text: t.replace(/(\d),(\d)/, '$1.$2') }); continue; }
-      if (/^[.,!?;:()]$/.test(t)) { toks.push({ kind: 'PUNCT', text: t }); continue; }
+      const n0 = toks.length, t = m[0];
+      pushMatch(t.replace(/’/g, "'"));
+      // character offsets of each produced token inside the original text
+      let cur = 0;
+      for (let q = n0; q < toks.length; q++) {
+        const part = toks[q].text.replace(/^-/, '').replace(/^"|"$/g, '');
+        const at = t.replace(/’/g, "'").toLowerCase().indexOf(part.toLowerCase(), cur);
+        if (at >= 0 && part) { toks[q].start = m.index + at; toks[q].end = m.index + at + part.length; cur = at + part.length; }
+        else { toks[q].start = m.index; toks[q].end = m.index + t.length; }
+      }
+    }
+    function pushMatch(t) {
+      // elision: l'image, dell'oggetto, d'animation -> article + word (when the article is in a dictionary)
+      const el = /^(\p{L}{1,4}')(\p{L}[\p{L}'-]*)$/u.exec(t);
+      if (el && surf.has(strip(el[1]))) { toks.push({ kind: 'W', text: el[1] }); pushMatch(el[2]); return; }
+
+      if (/^\d{1,2}:\d{2}$/.test(t)) { toks.push({ kind: 'LIT', text: t, time: true }); return; }
+      if (/\.[a-z0-9]{2,4}$/i.test(t) && !/^\d/.test(t) || /_/.test(t)) { toks.push({ kind: 'LIT', text: t, ident: true }); return; }
+      if (/^["„“«']/.test(t)) { toks.push({ kind: 'LIT', text: '"' + t.slice(1, -1).trim() + '"', quoted: true }); return; }
+      if (/^#[0-9a-f]/i.test(t)) { toks.push({ kind: 'LIT', text: t, hex: true }); return; }
+      if (/^\d+-(lea|a)$/.test(t)) { const n = parseInt(t); toks.push({ kind: 'ORDN', text: t, en: 'the ' + n + (n % 10 === 1 && n !== 11 ? 'st' : n % 10 === 2 && n !== 12 ? 'nd' : n % 10 === 3 && n !== 13 ? 'rd' : 'th') }); return; }
+      if (/^\d/.test(t)) { toks.push({ kind: 'NUMLIT', text: t.replace(/(\d),(\d)/, '$1.$2') }); return; }
+      if (/^[.,!?;:()]$/.test(t)) { toks.push({ kind: 'PUNCT', text: t }); return; }
       // hyphenated forms
       if (t.includes('-')) {
         const parts = t.split('-');
@@ -1702,20 +2282,25 @@ function createTranslator(LEX, opts) {
         if (/^(intr|dintr|printr)$/.test(lp) && parts.length === 2) {
           toks.push({ kind: 'W', text: lp === 'intr' ? 'în' : lp === 'dintr' ? 'din' : 'prin' });
           toks.push({ kind: 'W', text: parts[1] });
-          continue;
+          return;
         }
         // pre-verbal clitic + aux: l-am, i-am, s-a, s-o, n-am, mi-a
         if (['l', 'i', 's', 'n', 'mi', 'ti', 'v', 'ne', 'le', 'm'].includes(lp) && parts.length === 2) {
           const map = { l: '-l', i: '-i', s: 'se', n: 'nu', mi: '-mi', ti: '-ți', v: '-vă', ne: '-ne', le: '-le', m: '-mă' };
-          if (lp === 's' && strip(parts[1]) === 'o') { toks.push({ kind: 'W', text: 'să' }); toks.push({ kind: 'W', text: '-o' }); continue; }
-          toks.push({ kind: 'W', text: map[lp] }); toks.push({ kind: 'W', text: parts[1] }); continue;
+          if (lp === 's' && strip(parts[1]) === 'o') { toks.push({ kind: 'W', text: 'să' }); toks.push({ kind: 'W', text: '-o' }); return; }
+          toks.push({ kind: 'W', text: map[lp] }); toks.push({ kind: 'W', text: parts[1] }); return;
         }
-        if (lp === 'nu' && parts.length === 2) { toks.push({ kind: 'W', text: 'nu' }); toks.push({ kind: 'W', text: '-' + parts[1] }); continue; }
-        if (lp === 'sa' && parts.length === 2) { toks.push({ kind: 'W', text: 'să' }); toks.push({ kind: 'W', text: '-' + parts[1] }); continue; }
+        if (lp === 'nu' && parts.length === 2) { toks.push({ kind: 'W', text: 'nu' }); toks.push({ kind: 'W', text: '-' + parts[1] }); return; }
+        if (lp === 'sa' && parts.length === 2) { toks.push({ kind: 'W', text: 'să' }); toks.push({ kind: 'W', text: '-' + parts[1] }); return; }
         // known hyphenated word (prim-plan, e-mail, de-a)
-        if (surf.has(strip(t))) { toks.push({ kind: 'W', text: t }); continue; }
+        if (surf.has(strip(t))) { toks.push({ kind: 'W', text: t }); return; }
         const last = strip(parts[parts.length - 1]);
         const head = parts.slice(0, -1).join('-');
+        // other languages: verb-pronoun inversion / enclitics (puis-je, envoie-le, est-ce)
+        const headAns = surf.get(strip(head)), lastAns = surf.get(last);
+        if (headAns && lastAns && !headAns.some(a => a.lang === 'ro') && lastAns.some(a => a.pos === 'F' && a.lang !== 'ro')) {
+          toks.push({ kind: 'W', text: head }); toks.push({ kind: 'W', text: parts[parts.length - 1] }); return;
+        }
         // verb + clitic(s): mută-l, adaugă-i, dă-mi-l
         if (CLITIC_SUFFIX.has(last) && parts.length >= 2) {
           let k = parts.length - 1;
@@ -1726,23 +2311,24 @@ function createTranslator(LEX, opts) {
           if (!/^[A-Z0-9]+$/.test(base)) {
             toks.push({ kind: 'W', text: base });
             for (const c of cl) toks.push({ kind: 'W', text: c });
-            continue;
+            return;
           }
         }
         // loanword/acronym + Romanian article: PDF-ul, layer-ul, mouse-ului, SVG-uri
         if (LOAN_SUFFIX[last] && parts.length >= 2) {
           toks.push({ kind: 'W', text: head, loanFeats: LOAN_SUFFIX[last] });
-          continue;
+          return;
         }
         toks.push({ kind: 'W', text: t });
-        continue;
+        return;
       }
       toks.push({ kind: 'W', text: t });
+    
     }
     let first = true;
     for (const t of toks) {
       if (t.kind === 'PUNCT' && /[.!?]/.test(t.text)) { first = true; continue; }
-      if (t.kind === 'W') { t.first = first; t.cap = /^\p{Lu}/u.test(t.text) && !/^\p{Lu}+$/u.test(t.text) ; t.acr = /^[\p{Lu}\d]{2,}$/u.test(t.text); first = false; }
+      if (t.kind === 'W') { t.first = first; t.cap = /^\p{Lu}/u.test(t.text) && !/^\p{Lu}+$/u.test(t.text) || /\p{Ll}\p{Lu}/u.test(t.text); t.acr = /^[\p{Lu}\d]{2,}$/u.test(t.text); if (/\p{Ll}\p{Lu}/u.test(t.text)) t.first = false; first = false; }
       else if (t.kind !== 'PUNCT') first = false;
     }
     return toks;
@@ -1750,46 +2336,104 @@ function createTranslator(LEX, opts) {
 
   // ---------------------------------------------------------------- lexical analysis
   const CLITIC_EN = { '-l': ['it', 'acc'], '-o': ['it', 'acc'], '-le': ['them', 'acc'], '-i': ['it', 'dat?'], '-ii': ['it', 'dat?'], '-li': ['them', 'acc'], '-mi': ['me', 'dat'], '-ti': ['you', 'dat'], '-ne': ['us', 'dat'], '-va': ['you', 'dat'], '-ma': ['me', 'acc'], '-te': ['you', 'acc'], '-se': ['', 'refl'], '-si': ['', 'refl'] };
-  function analyze(tok, stats) {
+  const copyA = (a, extra) => Object.assign({}, a, { feats: Array.isArray(a.feats) ? a.feats.slice() : Object.assign({}, a.feats) }, extra || {});
+  function exactAnalyze(tok, stats) {
     const key = strip(tok.text);
     if (key.startsWith('-')) {
       const c = CLITIC_EN[key];
-      return [{ pos: 'F', tag: 'POSTCLITIC', lemma: key, en: c ? c[0] : 'it', feats: { kase: c ? c[1] : 'acc' } }];
+      return [{ pos: 'F', tag: 'POSTCLITIC', lemma: key, en: c ? c[0] : 'it', feats: { kase: c ? c[1] : 'acc' }, lang: 'ro' }];
     }
     if (tok.loanFeats) {
       const hit = surf.get(key);
       const n = hit && hit.find(a => a.pos === 'N');
-      if (n) return [Object.assign({}, n, { feats: Object.assign({}, n.feats, tok.loanFeats) })];
-      return [{ pos: 'N', lemma: key, en: tok.text, enPl: /^[A-Z0-9]+$/.test(tok.text) ? tok.text + 's' : null, feats: Object.assign({}, tok.loanFeats), loan: true }];
+      if (n) { stats.exact++; return [copyA(n, { feats: Object.assign({}, n.feats, tok.loanFeats), how: 'exact' })]; }
+      return null;
     }
-    if (tok.acr && !surf.has(key)) { stats.unknown++; return [{ pos: 'LIT', lemma: key, en: tok.text, feats: {}, unknown: true, acr: true }]; }
-    if (surf.has(key)) {
-      stats.exact++;
-      let ans = surf.get(key).map(a => Object.assign({}, a, { feats: Array.isArray(a.feats) ? a.feats.slice() : Object.assign({}, a.feats), how: 'exact' }));
-      // diacritics-aware preference: if input carried diacritics, prefer analyses with the same spelling
-      const low = tok.text.toLowerCase();
-      if (low !== key) {
-        const same = ans.filter(a => a.orig === low);
-        if (same.length) ans = same.concat(ans.filter(a => a.orig !== low && a.pos !== 'F'));
-      } else if (key === 'ca') {
-        ans = ans.filter(a => a.tag !== 'CONJ').concat(ans.filter(a => a.tag === 'CONJ'));
-      }
-      return ans;
+    if (tok.acr && !surf.has(key)) return [{ pos: 'LIT', lemma: key, en: tok.text, feats: {}, acr: true }];
+    if (!surf.has(key)) return null;
+    stats.exact++;
+    let ans = surf.get(key).map(a => copyA(a, { how: 'exact' }));
+    const low = tok.text.toLowerCase();
+    if (low !== key) {
+      const same = ans.filter(a => a.orig === low);
+      if (same.length) ans = same.concat(ans.filter(a => a.orig !== low && a.pos !== 'F'));
+    } else if (key === 'ca') {
+      ans = ans.filter(a => a.tag !== 'CONJ').concat(ans.filter(a => a.tag === 'CONJ'));
     }
-    if (key.length >= 4 && !(tok.cap && !tok.first)) {
-      const c = cleanup(key);
-      const thr = key.length <= 5 ? opts.threshold + 0.04 : opts.threshold;
-      if (c.sim >= thr) {
+    return ans;
+  }
+  function spellAnalyze(tok, stats, domLang) {
+    const key = strip(tok.text);
+    if (tok.loanFeats) { // unknown loanword with a Romanian article: keep it as a noun
+      return [{ pos: 'N', lemma: key, en: tok.text, enPl: /^[A-Z0-9]+$/.test(tok.text) ? tok.text + 's' : null, feats: Object.assign({}, tok.loanFeats), loan: true, unknown: !/^[A-Z0-9]+$/.test(tok.text) }];
+    }
+    if (key.length >= 3 && !(tok.cap && !tok.first) && /\p{L}/u.test(key)) {
+      const sp = spell(key, domLang);
+      tok.spell = sp;
+      if (sp.accepted) {
         stats.vsa++;
-        stats.vsaLog.push(tok.text + '→' + c.key + ' (' + c.sim.toFixed(2) + ')');
-        stats.vsaPairs.push([tok.text, c.key, c.sim]);
-        return surf.get(c.key).filter(a => a.pos !== 'F').map(a => Object.assign({}, a, { feats: Array.isArray(a.feats) ? a.feats.slice() : Object.assign({}, a.feats), how: 'vsa', sim: c.sim, match: c.key }));
+        stats.vsaLog.push(tok.text + '→' + sp.best.key + ' (' + sp.best.sim.toFixed(2) + ')');
+        stats.vsaPairs.push([tok.text, sp.best.key, sp.best.sim]);
+        let ans = surf.get(sp.best.key).filter(a => a.pos !== 'F' || key.length >= 4);
+        const pref = ans.filter(a => a.lang === domLang);
+        if (pref.length) ans = pref;
+        if (ans.length) return ans.map(a => copyA(a, { how: 'vsa', sim: sp.best.sim, ed: sp.best.ed, match: sp.best.key }));
       }
     }
     stats.unknown++;
     return [{ pos: 'LIT', lemma: key, en: tok.text, feats: {}, unknown: true, label: tok.cap && !tok.first }];
   }
-
+  function analyzeAll(text, stats) {
+    const items = tokenize(text).map(t => Object.assign(t, { cands: t.kind === 'W' ? exactAnalyze(t, stats) : [] }));
+    // sentence language: vote of the words that exist in exactly one language
+    const votes = {};
+    for (const it of items) {
+      if (it.kind !== 'W' || !it.cands) continue;
+      const ls = new Set(it.cands.map(a => a.lang).filter(Boolean));
+      if (ls.size === 1) { const l = ls.values().next().value; votes[l] = (votes[l] || 0) + 1; }
+    }
+    let dom = langs[0], bestV = -1;
+    for (const l of langs) if ((votes[l] || 0) > bestV) { bestV = votes[l] || 0; dom = l; }
+    // words inside a known phrase ("fondu entrant") are known even if not listed alone
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].kind !== 'W') continue;
+      const mm = mweMatchRaw(items, i);
+      if (mm) for (let q = i; q < mm; q++) if (!items[q].cands) { items[q].cands = [{ pos: 'LIT', lemma: strip(items[q].text), en: items[q].text, feats: {}, inPhrase: true }]; items[q].inMwe = true; }
+    }
+    for (const it of items) if (it.kind === 'W' && !it.cands) it.cands = spellAnalyze(it, stats, dom);
+    // a word that exists in several languages takes the sentence language's readings
+    for (const it of items) {
+      if (it.kind !== 'W' || it.cands.length < 2) continue;
+      const pref = it.cands.filter(a => a.lang === dom || !a.lang);
+      if (pref.length && pref.length < it.cands.length) it.cands = pref;
+    }
+    return { items, dom, votes };
+  }
+  function matchCase(src, w) {
+    if (!w) return src;
+    if (/^[\p{Lu}\d]{2,}$/u.test(src)) return w.toUpperCase();
+    if (/^\p{Lu}/u.test(src)) return w[0].toUpperCase() + w.slice(1);
+    return w;
+  }
+  function displayForm(key) { const a = (surf.get(key) || [])[0]; return a ? a.orig : key; }
+  function report(text, items) {
+    const errors = [], corrections = [];
+    let src = '', last = 0;
+    for (const it of items) {
+      if (it.kind !== 'W' || !it.cands || !it.cands.length) continue;
+      const a = it.cands[0];
+      if (a.unknown && !a.label && !a.acr && /\p{L}{2,}/u.test(it.text)) {
+        const sug = it.spell ? it.spell.cands.slice(0, opts.maxSuggestions).map(c => ({ word: displayForm(c.key), sim: +c.sim.toFixed(3), edits: c.ed, lang: c.langs[0] })) : [];
+        errors.push({ word: it.text, start: it.start, end: it.end, message: 'Unknown word "' + it.text + '": not in the vocabulary', suggestions: sug });
+      } else if (a.how === 'vsa') {
+        const to = matchCase(it.text, a.orig || displayForm(a.match));
+        corrections.push({ word: it.text, to, start: it.start, end: it.end, sim: +a.sim.toFixed(3), edits: a.ed, lang: a.lang });
+        if (it.start != null) { src += text.slice(last, it.start) + to; last = it.end; }
+      }
+    }
+    src += text.slice(last);
+    return { errors, corrections, source: src };
+  }
   const isNounish = a => a && (a.pos === 'N' || a.pos === 'LIT' && !a.quoted);
   function has(cands, pred) { return cands && cands.some(pred); }
 
@@ -1852,11 +2496,22 @@ function createTranslator(LEX, opts) {
   }
 
   // ---------------------------------------------------------------- MWE merge
+  // phrase match on surface forms only (before analysis): returns end index or 0
+  function mweMatchRaw(items, i) {
+    const k0 = strip(items[i].text);
+    const ms = mweByFirst.get(k0); if (!ms) return 0;
+    for (const m of ms) {
+      let j = i, w = 0;
+      while (w < m.words.length && j < items.length && items[j].kind === 'W' && strip(items[j].text) === m.words[w]) { w++; j++; }
+      if (w === m.words.length && m.words.length > 1) return j;
+    }
+    return 0;
+  }
   function mweMatch(items, i) {
     const first = items[i];
     const keys = k => {
       const s = new Set([strip(k.text)]);
-      for (const a of k.cands) s.add(a.lemma);
+      for (const a of (k.cands || [])) s.add(a.lemma);
       return s;
     };
     const cand = new Set();
@@ -1917,12 +2572,12 @@ function createTranslator(LEX, opts) {
 
   function translate(text) {
     const stats = { exact: 0, vsa: 0, unknown: 0, vsaLog: [], vsaPairs: [] };
-    const t1 = (typeof performance !== 'undefined' ? performance : Date).now();
-    const toks = tokenize(text);
-    let items = toks.map(t => {
-      if (t.kind === 'W') return Object.assign(t, { cands: analyze(t, stats) });
-      return Object.assign(t, { cands: [] });
-    });
+    const t1 = now();
+    const an = analyzeAll(String(text || ''), stats);
+    let items = an.items;
+    const dom = an.dom;
+    const rep = report(String(text || ''), items);
+    if (dom === opts.target) return finishResult(renderTarget(items), items, rep, dom, stats, t1);
     for (let i = 1; i < items.length; i++) {
       const it = items[i], pv = items[i - 1];
       const listCtx = pv.kind === 'PUNCT' && /^[:,]$/.test(pv.text) && items.slice(0, i).some(x => x.kind === 'PUNCT' && x.text === ':');
@@ -1939,7 +2594,7 @@ function createTranslator(LEX, opts) {
         if (mm) {
           const tag = mm.m.tag;
           const pos = tag === 'N' ? 'N' : tag === 'V' ? 'V' : tag === 'ADJ' ? 'A' : 'F';
-          const a = { pos, tag: pos === 'F' ? tag : undefined, lemma: mm.m.words.join('_'), en: mm.m.en, feats: pos === 'V' ? ['imp', 'fin', '3sg'] : (mm.feats || {}), mwe: true };
+          const a = { pos, tag: pos === 'F' ? tag : undefined, lemma: mm.m.words.join('_'), en: mm.m.en, feats: pos === 'V' ? ['imp', 'fin', '3sg'] : (mm.feats || {}), mwe: true, lang: mm.m.lang };
           if (pos === 'N') a.enPl = enPlural(mm.m.en);
           merged.push({ kind: 'W', text: items.slice(i, mm.end).map(x => x.text).join(' '), cands: [a], a });
           for (const c of mm.clitics) merged.push(c);
@@ -1958,21 +2613,91 @@ function createTranslator(LEX, opts) {
       const en = senseOf(it.a, ctx);
       if (en) it.a = Object.assign({}, it.a, { en });
     }
-    // per-token report (for UIs and debugging)
-    stats.tokens = items.map(it => {
+    return finishResult(renderAll(items), items, rep, dom, stats, t1);
+  }
+  function tokenReport(items) {
+    return items.map(it => {
       if (it.kind === 'PUNCT') return { text: it.text, how: 'punct' };
       if (it.kind !== 'W') return { text: it.text, how: 'literal' };
-      const a = it.a || {};
+      const a = it.a || it.cands[0] || {};
       const how = a.mwe ? 'phrase' : a.how === 'vsa' ? 'vsa' : a.label || a.acr ? 'label' : a.unknown ? 'unknown' : 'exact';
-      return { text: it.text, how, lemma: a.lemma, pos: a.pos === 'F' ? a.tag : a.pos, en: a.en, sim: a.sim, match: a.match };
+      return { text: it.text, how, lemma: a.lemma, pos: a.pos === 'F' ? a.tag : a.pos, en: a.en, sim: a.sim, edits: a.ed, match: a.match, lang: a.lang, start: it.start, end: it.end };
     });
-    const out = renderAll(items);
-    // confidence for routing: unknown content words or weak VSA matches -> let a neural fallback handle it
-    stats.unknownWords = stats.tokens.filter(t => t.how === 'unknown' && /\p{L}{3,}/u.test(t.text)).map(t => t.text);
-    stats.weakMatches = stats.tokens.filter(t => t.how === 'vsa' && t.sim < opts.confidentSim).map(t => t.text);
+  }
+  function finishResult(out, items, rep, dom, stats, t1) {
+    stats.tokens = tokenReport(items);
+    // confidence for routing: unknown words or weak corrections -> let a neural fallback handle it
+    stats.unknownWords = rep.errors.map(e => e.word);
+    stats.weakMatches = rep.corrections.filter(c => c.sim < opts.confidentSim || c.edits >= 2).map(c => c.word);
     stats.confident = stats.unknownWords.length === 0 && stats.weakMatches.length === 0;
-    const ms = (typeof performance !== 'undefined' ? performance : Date).now() - t1;
-    return { text: out, stats, ms };
+    const ms = now() - t1;
+    return {
+      text: opts.strict && rep.errors.length ? null : out,
+      ok: rep.errors.length === 0, errors: rep.errors, corrections: rep.corrections,
+      language: dom, confident: stats.confident, engine: 'vsa', source: rep.source, ms, stats,
+    };
+  }
+  // sentence already in the target language (English): keep it, fix spelling, translate stray foreign words
+  function renderTarget(items) {
+    choose(items);
+    const w = [];
+    for (const it of items) {
+      if (it.kind === 'PUNCT') { w.push({ p: it.text }); continue; }
+      if (it.kind !== 'W') { w.push(it.text); continue; }
+      const a = it.a || it.cands[0];
+      if (!a || a.unknown || a.pos === 'LIT') { w.push(it.text); continue; }
+      if (a.lang === opts.target) w.push(a.how === 'vsa' ? matchCase(it.text, a.orig) : it.text);
+      else if (a.pos === 'F' && (a.tag === 'POSTCLITIC' || a.tag === 'CLITIC')) { if (a.en && a.en !== '·') w.push(a.en); }
+      else w.push(a.pos === 'N' && a.feats.num === 'pl' ? nounEn(a, true) : a.en);
+    }
+    return finish(w);
+  }
+  function spellcheck(text) {
+    const stats = { exact: 0, vsa: 0, unknown: 0, vsaLog: [], vsaPairs: [] };
+    const t1 = now();
+    const { items, dom } = analyzeAll(String(text || ''), stats);
+    const rep = report(String(text || ''), items);
+    const tokens = items.filter(it => it.kind === 'W' || it.kind === 'LIT').map(it => {
+      const a = it.cands && it.cands[0] || {};
+      const status = it.kind === 'LIT' || a.label || a.acr ? 'name' : a.unknown ? 'unknown' : a.how === 'vsa' ? 'corrected' : 'ok';
+      const t = { text: it.text, start: it.start, end: it.end, status, lang: a.lang || null };
+      if (status === 'corrected') { t.suggestion = matchCase(it.text, a.orig); t.sim = +a.sim.toFixed(3); t.edits = a.ed; }
+      if (it.spell && status !== 'ok') t.suggestions = it.spell.cands.slice(0, opts.maxSuggestions).map(c => matchCase(it.text, displayForm(c.key)));
+      return t;
+    });
+    return { ok: rep.errors.length === 0, text: rep.source, language: dom, errors: rep.errors, corrections: rep.corrections, tokens, ms: now() - t1 };
+  }
+  // ---------------------------------------------------------------- optional Chrome on-device translator
+  const chromeCache = new Map();
+  function chromeAvailable() { return typeof self !== 'undefined' && !!self && 'Translator' in self; }
+  function chromeFor(lang) {
+    if (!chromeCache.has(lang)) {
+      chromeCache.set(lang, (async () => {
+        const av = await self.Translator.availability({ sourceLanguage: lang, targetLanguage: opts.target });
+        if (av === 'unavailable') throw new Error('Chrome cannot translate ' + lang + ' to ' + opts.target + ' on this device');
+        return self.Translator.create({ sourceLanguage: lang, targetLanguage: opts.target, monitor: opts.chromeMonitor });
+      })().catch(e => { chromeCache.delete(lang); throw e; }));
+    }
+    return chromeCache.get(lang);
+  }
+  async function translateAsync(text, o) {
+    const policy = (o && o.chrome) || opts.chrome;
+    const r = translate(text);
+    if (policy === 'never' || !chromeAvailable() || r.language === opts.target) return r;
+    if (policy === 'fallback' && r.confident) return r;
+    try {
+      const tr = await chromeFor(r.language);
+      const t1 = now();
+      const out = await tr.translate(r.source);
+      return Object.assign({}, r, { text: out, vsaText: r.text, engine: 'chrome', chromeMs: now() - t1 });
+    } catch (e) {
+      return Object.assign({}, r, { chromeError: String(e && e.message || e) });
+    }
+  }
+  // call from a click handler: Chrome needs a user gesture to download a language model
+  function prepareChrome(languages) {
+    if (!chromeAvailable()) return Promise.reject(new Error('The Translator API is not available in this browser'));
+    return Promise.all((languages || langs.filter(l => l !== opts.target)).map(l => chromeFor(l).then(() => l)));
   }
 
   function renderAll(items) {
@@ -2043,7 +2768,7 @@ function createTranslator(LEX, opts) {
     let auxHave = null;
     let futPending = false;
     let prevWasAdvMwe = false;
-    let lastVerbIdx = -1, lastVerbEn = null;
+    let lastVerbIdx = -1, lastVerbEn = null, subjectNot3 = false;
     const A = k => items[k] && items[k].a;
     const K = k => items[k] && items[k].kind;
     const isLabelLit = x => x && (x.quoted || x.label || x.acr);
@@ -2099,7 +2824,7 @@ function createTranslator(LEX, opts) {
         if (!np.head) break;
         if (a.pos === 'F' && a.tag === 'POSS') { np.poss = a.en; j++; continue; }
         if (a.pos === 'F' && a.tag === 'DEM') { np.dem = a.en; j++; continue; }
-        if (a.pos === 'F' && a.lemma === 'de' && np.head.pos === 'N' && items[j + 1] && (items[j + 1].kind === 'NUMLIT' || A(j + 1) && A(j + 1).pos === 'F' && A(j + 1).tag === 'NUM')) {
+        if (a.pos === 'F' && a.lemma === 'de' && a.lang === 'ro' && np.head.pos === 'N' && items[j + 1] && (items[j + 1].kind === 'NUMLIT' || A(j + 1) && A(j + 1).pos === 'F' && A(j + 1).tag === 'NUM')) {
           const m = [items[j + 1].kind === 'NUMLIT' ? items[j + 1].text : A(j + 1).en]; j += 2;
           if (A(j) && A(j).pos === 'F' && A(j).lemma === 'de') j++;
           if (items[j] && (A(j) && (A(j).pos === 'N' && UNIT_NOUNS.has(A(j).lemma) || A(j).pos === 'LIT' && !isLabelLit(A(j)) && /^(px|ms|s|pt|em|rem|fps|deg)$/i.test(items[j].text)))) {
@@ -2163,6 +2888,14 @@ function createTranslator(LEX, opts) {
     }
 
     function prepEn(a, k) {
+      if (a.lang && a.lang !== 'ro') {
+        if (a.en === 'of' && lastVerb) {
+          const nx = items[k + 1], u = A(k + 2);
+          const unitAfter = u && u.pos === 'N' && /^(pixels?|degrees?|percent|points?|seconds?|milliseconds?)$/.test(u.en);
+          if (nx && (nx.kind === 'NUMLIT' && (/(px|%|°|deg)$/.test(nx.text) || unitAfter) || nx.a && nx.a.tag === 'NUM' && unitAfter) && !(A(k - 1) && A(k - 1).pos === 'N' && !/^(move|rotate|increase|decrease|reduce|shift|scale|enlarge|delay)$/.test(lastVerbEn || ''))) return 'by';
+        }
+        return a.en && a.en !== '·' ? a.en : null;
+      }
       const nx = items[k + 1], na = nx && nx.a;
       const prevA = A(k - 1);
       const nxNum = nx && (nx.kind === 'NUMLIT' || na && na.pos === 'F' && na.tag === 'NUM');
@@ -2226,7 +2959,7 @@ function createTranslator(LEX, opts) {
       let words = [];
       let form = 'base';
       const feats = Array.isArray(a.feats) ? a.feats : [];
-      if (PERSON_VERB[key] && !a.mwe) {
+      if (PERSON_VERB[key] && !a.mwe && a.lang === 'ro') {
         let s = PERSON_VERB[key];
         if (negPending) { s = s.replace(/^can I$/, "can't I").replace(/^can you$/, "can't you").replace(/^I want$/, "I don't want").replace(/^need to$/, "don't need to"); negPending = false; }
         words.push(s);
@@ -2234,12 +2967,12 @@ function createTranslator(LEX, opts) {
         lastVerb = a.lemma;
         return words;
       }
-      if (a.lemma === 'fi' && !a.mwe) {
+      if (a.lemma === 'fi' && !a.mwe && a.lang === 'ro') {
         const be = { sunt: 'are', este: 'is', e: 'is', esti: 'are', suntem: 'are', sunteti: 'are', fie: 'be', fi: 'be', fost: 'been', fii: 'be' }[key] || 'is';
         words.push(be); if (negPending) { words.push('not'); negPending = false; }
         lastVerb = 'fi'; qPrev = null; return words;
       }
-      if (a.lemma === 'avea' && !a.mwe) {
+      if (a.lemma === 'avea' && !a.mwe && a.lang === 'ro') {
         const nxa = A(k + 1);
         if (nxa && nxa.pos === 'V' && nxa.feats.includes && nxa.feats.includes('part')) {
           auxHave = { am: 'I have', ai: 'you have', a: 'has', au: 'have', ati: 'you have', avem: 'we have' }[key] || 'have';
@@ -2248,17 +2981,19 @@ function createTranslator(LEX, opts) {
         words.push({ am: 'I have', ai: 'you have', are: 'has', au: 'have', avem: 'we have', aveti: 'you have' }[key] || 'have');
         lastVerb = 'avea'; return words;
       }
+      const modalEn = /^(can|must|should|will|would|could)$/.test(a.en);
       if (auxHave) { words.push(auxHave); form = 'part'; auxHave = null; }
+      else if (qPrev === 'who' && feats.includes('3sg')) form = '3sg';
       else if (feats.includes('ger') && !feats.includes('imp')) form = 'ing';
-      else if (force3sg || subjectSeen && !qPrev && feats.includes('3sg') && !modalPrev && !wantPrev && !futPending) form = '3sg';
+      else if (force3sg || subjectSeen && !subjectNot3 && !qPrev && feats.includes('3sg') && !modalPrev && !wantPrev && !futPending && !modalEn) form = '3sg';
       if (negPending) {
         if (form === '3sg') { words.push("doesn't"); form = 'base'; }
         else words.push("don't");
         negPending = false;
       }
-      if (qPrev && /^(how|where|why)$/.test(qPrev) && form === 'base' && !modalPrev) words.push('do I');
+      if (qPrev && /^(how|where|why)$/.test(qPrev) && form === 'base' && !modalPrev && !modalEn) words.push('do I');
       words.push(form === 'base' ? a.en : enInflect(a.en, form));
-      modalPrev = false; wantPrev = false; futPending = false; qPrev = null;
+      modalPrev = modalEn; wantPrev = false; futPending = false; qPrev = null;
       lastVerb = a.lemma; lastVerbEn = a.en;
       // clitic doubling "nu le modifica pe cele..." -> drop the clitic
       if (A(k + 1) && A(k + 1).pos === 'F' && A(k + 1).lemma === 'pe') pendingPreClitics = [];
@@ -2299,6 +3034,19 @@ function createTranslator(LEX, opts) {
       }
       if (!a) { out.push(it.text); i++; continue; }
       const tg = a.pos === 'F' ? a.tag : a.pos;
+      if (tg === 'V' && a.lang === 'ro' && (a.lemma === 'da' || a.lemma === 'face') && !a.mwe) {
+        let j = i + 1;
+        while (A(j) && A(j).pos === 'F' && A(j).tag === 'POSTCLITIC') j++;
+        if (A(j) && A(j).pos === 'F' && A(j).tag === 'DET') j++;
+        const xIt = items[j], xv = xIt && xIt.kind === 'W' ? (surf.get(strip(xIt.text)) || []).find(x => x.lang === 'en' && x.pos === 'V') : null;
+        if (xv) {
+          if (negPending) { out.push("don't"); negPending = false; }
+          out.push(xv.en); lastVerb = xv.lemma; lastVerbEn = xv.en; lastVerbIdx = out.length - 1;
+          i = j + 1;
+          if (A(i) && A(i).pos === 'F' && /^(la|pe)$/.test(A(i).lemma) && A(i).lang === 'ro') i++; // object marker
+          continue;
+        }
+      }
       if (tg === 'V') {
         // subordinate clause with verb-subject order: "înainte să apară logo-ul" -> before the logo appears
         if (ctxClause && ctxClause.sub && !lastVerb && !subjectSeen && Array.isArray(a.feats) && (a.feats.includes('subj') || a.feats.includes('3sg') || a.feats.includes('fin')) && A(i + 1) && A(i + 1).pos === 'N' && A(i + 1).feats.def) {
@@ -2363,7 +3111,10 @@ function createTranslator(LEX, opts) {
         if (A(i + 1) && A(i + 1).pos === 'V') { pendingPreClitics.push(a.en); i++; continue; }
         out.push(a.en); i++; continue;
       }
-      if (tg === 'PRON') { out.push(a.en); subjectSeen = true; i++; continue; }
+      if (tg === 'PRON') {
+        if (qPrev && /^(how|where|why)$/.test(qPrev) && a.en === 'I' && A(i + 1) && A(i + 1).pos === 'V') { out.push('do'); qPrev = null; }
+        out.push(a.en); subjectSeen = true; subjectNot3 = /^(I|we|you|they)$/.test(a.en); i++; continue;
+      }
       if (tg === 'Q') {
         const pa = A(i - 1);
         if (a.lemma === 'care' && pa && (pa.pos === 'N' || pa.pos === 'LIT')) { out.push('that'); subjectSeen = true; lastVerb = null; i++; continue; }
@@ -2401,39 +3152,66 @@ function createTranslator(LEX, opts) {
     return finish(w);
   }
 
+  const RUNTIME = ['chrome', 'strict', 'minSim', 'confidentSim', 'maxSuggestions', 'maxEdits', 'longWord', 'minCorrectLength', 'firstLetterUntil', 'wEd', 'wLen', 'wLang', 'chromeMonitor'];
   return {
-    translate, translateNaive, tokenize,
+    /** Translate with VSA only (synchronous). */
+    translate, translateSync: translate,
+    /** Translate honouring the `chrome` setting (may call Chrome's on-device Translator API). */
+    translateAsync,
+    /** Spell check against the vocabulary: per-word status, errors with suggestions, corrected source text. */
+    spellcheck,
+    translateNaive, tokenize, prepareChrome, chromeAvailable,
+    /** Change runtime settings: chrome, strict, minSim, confidentSim, maxSuggestions. */
+    setOptions(o) { for (const k of RUNTIME) if (o && k in o) opts[k] = o[k]; return this; },
+    get options() { const o = {}; for (const k of RUNTIME.concat(['D', 'target', 'english'])) o[k] = opts[k]; return o; },
+    get languages() { return langs.slice(); },
+    /** true if the word (any inflected form) is in the vocabulary */
+    knows(word) { return surf.has(strip(word)); },
     warmup() { ensureMemory(); return memoryMs; },
     /** hypervector of a (normalised) word, and its similarity to another word: for visualisation */
     encode(word) { return encodeWord(strip(word)); },
     similarity(a, b) { return HD.sim(encodeWord(strip(a)), encodeWord(strip(b))); },
-    get info() { return { D: opts.D, threshold: opts.threshold, forms: surf.size, itemMemory: itemVecs.length, mwes: MWES.length, lexiconMs: Math.round(buildMs), memoryMs }; },
-    _cleanup: cleanup,
+    get info() { return { D: opts.D, languages: langs.slice(), dictionaries: dictInfo.slice(), forms: surf.size, itemMemory: itemVecs.length, phrases: MWES.length, lexiconMs: Math.round(buildMs), memoryMs }; },
+    _cleanup: cleanup, _spell: spell,
   };
 }
 
-const API = { createTranslator, strip };
-if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.VSATranslator = API;
+const API = { createTranslator, strip, osa, DEFAULTS };
+if (typeof module !== 'undefined' && module.exports) module.exports = API; else root.VSATranslateEngine = API;
 })(typeof window !== 'undefined' ? window : globalThis);
 
   ; return module.exports; })();
+  var RO = Object.assign({ lang: 'ro', name: 'ro-builtin' }, LEX);
+  /** Built-in dictionaries. Add more (e.g. dictionaries/fr.js registers dictionaries.fr). */
+  var dictionaries = { ro: RO, en: EN };
   var _default = null;
-  function create(opts) { return ENGINE.createTranslator(LEX, opts); }
+  /**
+   * Create a translator. options.dictionaries is the vocabulary: any number of dictionaries, any languages.
+   * Default: [dictionaries.ro, dictionaries.en]. Other options: chrome ('never'|'fallback'|'prefer'), strict, D, minSim...
+   */
+  function create(opts) {
+    opts = Object.assign({}, opts || {});
+    if (!opts.dictionaries) opts.dictionaries = [dictionaries.ro, dictionaries.en];
+    return ENGINE.createTranslator(opts);
+  }
   function getDefault() { return _default || (_default = create()); }
   var api = {
-    version: '0.1.1',
-    /** Translate Romanian text to English. Returns a string. */
+    version: '0.2.0',
+    /** Translate with the default translator (Romanian + English vocabulary). Returns a string. */
     translate: function (text) { return getDefault().translate(text).text; },
-    /** Translate and return { text, ms, stats: { exact, vsa, unknown, vsaLog } }. */
+    /** Translate and return { text, ok, errors, corrections, language, confident, engine, source, ms, stats }. */
     translateDetailed: function (text) { return getDefault().translate(text); },
+    /** Spell check against the vocabulary. */
+    spellcheck: function (text) { return getDefault().spellcheck(text); },
     /** Word-by-word dictionary baseline (same lexicon, no VSA, no reordering). */
     translateNaive: function (text) { return getDefault().translateNaive(text); },
     /** Build the hypervector item memory now (otherwise built on first unknown word). Returns ms. */
     warmup: function () { return getDefault().warmup(); },
-    /** Create an independent translator, e.g. create({ D: 4096, threshold: 0.72 }). */
     create: create,
+    dictionaries: dictionaries,
+    defaults: ENGINE.DEFAULTS,
     info: function () { return getDefault().info; },
-    /** 2048-bit hypervector (Uint32Array) of a word, for visualisation. */
+    /** hypervector (Uint32Array) of a word, for visualisation. */
     encode: function (w) { return getDefault().encode(w); },
     similarity: function (a, b) { return getDefault().similarity(a, b); },
     lexicon: LEX,
@@ -2445,5 +3223,7 @@ export const translate = api.translate;
 export const translateDetailed = api.translateDetailed;
 export const translateNaive = api.translateNaive;
 export const warmup = api.warmup;
+export const spellcheck = api.spellcheck;
+export const dictionaries = api.dictionaries;
 export { create };
 export const version = api.version;

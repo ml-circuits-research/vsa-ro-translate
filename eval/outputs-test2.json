@@ -3,26 +3,41 @@
   "n": 60,
   "vsa": {
    "chrF": 67.1,
-   "slotRecall": 78.1,
+   "slotRecall": 78.4,
    "allSlots": 31.7
   },
   "naive": {
-   "chrF": 50.2,
+   "chrF": 50.1,
    "slotRecall": 73.1,
    "allSlots": 21.7
   },
   "latencyMs": {
-   "median": 0.364,
-   "p95": 2.091
+   "median": 1.854,
+   "p95": 5.955
   },
   "info": {
    "D": 2048,
-   "threshold": 0.7,
-   "forms": 5530,
-   "itemMemory": 5242,
-   "mwes": 242,
-   "lexiconMs": 23,
-   "memoryMs": 234
+   "languages": [
+    "ro",
+    "en"
+   ],
+   "dictionaries": [
+    {
+     "name": "ro",
+     "lang": "ro",
+     "forms": 5535
+    },
+    {
+     "name": "en-base",
+     "lang": "en",
+     "forms": 650
+    }
+   ],
+   "forms": 7292,
+   "itemMemory": 7165,
+   "phrases": 247,
+   "lexiconMs": 44,
+   "memoryMs": 292
   }
  },
  "rows": [
@@ -52,7 +67,7 @@
    ],
    "vsa": "Connect the \"Facturare\" node to \"Plăți\" to a dotted arrow.",
    "naive": "Connect node \"Facturare\" of \"Plăți\" with an arrow dotted.",
-   "ms": 14.98614,
+   "ms": 22.304368,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -60,7 +75,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U002",
@@ -91,7 +108,7 @@
    ],
    "vsa": "Put a decision diamond below step 3 and write in it \"Aprobat?\"",
    "naive": "Put a diamond of decision below step 3 and write in it \"Aprobat?\"",
-   "ms": 2.633281,
+   "ms": 2.887521,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -99,7 +116,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U003",
@@ -126,7 +145,7 @@
    ],
    "vsa": "Align all the rectangles in the column on the left to the top edge.",
    "naive": "Align all rectangles from column from left to margin of up.",
-   "ms": 1.075419,
+   "ms": 0.958466,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -134,7 +153,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U004",
@@ -162,7 +183,7 @@
    ],
    "vsa": "How can I to group the three green circles so that move them together?",
    "naive": "How can its group the three circles green that its them move together?",
-   "ms": 2.091158,
+   "ms": 0.510696,
    "stats": {
     "exact": 13,
     "vsa": 0,
@@ -170,7 +191,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U005",
@@ -199,7 +222,7 @@
    ],
    "vsa": "Select the connector between the server and the database and make it red, thick of 3 px.",
    "naive": "Select connector between server and base of data and make it red, thick of 3 px.",
-   "ms": 0.606763,
+   "ms": 0.898587,
    "stats": {
     "exact": 13,
     "vsa": 0,
@@ -207,7 +230,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U006",
@@ -238,7 +263,7 @@
    ],
    "vsa": "Don't delete the legend, only reduce it by 20%.",
    "naive": "Not delete legend, only micșoreaz it with 20%.",
-   "ms": 0.722651,
+   "ms": 4.974694,
    "stats": {
     "exact": 5,
     "vsa": 1,
@@ -248,7 +273,9 @@
     ],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U007",
@@ -275,19 +302,21 @@
      "production"
     ]
    ],
-   "vsa": "Aduaga a new named Logistica swimlane enter Vanzari and Productie",
+   "vsa": "Add a new named Logistica swimlane enter Vanzari and Productie",
    "naive": "Aduaga a swimlane new name Logistica enter Vanzari and Productie",
-   "ms": 1.685859,
+   "ms": 3.203219,
    "stats": {
     "exact": 6,
-    "vsa": 0,
-    "unknown": 4,
-    "vsaLog": [],
+    "vsa": 1,
+    "unknown": 3,
+    "vsaLog": [
+     "aduaga→adauga (0.69)"
+    ],
     "confident": false,
-    "unknownWords": [
-     "aduaga"
-    ]
-   }
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U008",
@@ -318,7 +347,7 @@
    ],
    "vsa": "I want to change the shape of the start node to an ellipse and put it background #FFE08A.",
    "naive": "Want its change shape node of start in an ellipse and its it put background #FFE08A.",
-   "ms": 1.250896,
+   "ms": 0.706678,
    "stats": {
     "exact": 14,
     "vsa": 0,
@@ -326,7 +355,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U009",
@@ -359,15 +390,17 @@
    ],
    "vsa": "Can you distribute evenly on horizontal the boxes from the row the second?",
    "naive": "Can its distribute evenly on horizontal boxes of on row of doilea?",
-   "ms": 0.615771,
+   "ms": 0.450965,
    "stats": {
     "exact": 11,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U010",
@@ -392,7 +425,7 @@
    ],
    "vsa": "How many nodes neconectate are in this diagram?",
    "naive": "How many nodes neconectate be in diagram this?",
-   "ms": 0.319828,
+   "ms": 3.123464,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -402,7 +435,9 @@
     "unknownWords": [
      "neconectate"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U011",
@@ -430,7 +465,7 @@
    ],
    "vsa": "Duplicate the approval flow and then move the copy on page 2",
    "naive": "Duplicate flow of approval and then move copy on page 2",
-   "ms": 0.17897,
+   "ms": 0.416212,
    "stats": {
     "exact": 10,
     "vsa": 0,
@@ -438,7 +473,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U012",
@@ -464,17 +501,19 @@
    ],
    "vsa": "Please, reverse the direction of all arrows that pleacă in \"Client\".",
    "naive": "You rog, reverse direction of all arrows which pleacă from \"Client\".",
-   "ms": 0.738648,
+   "ms": 2.800524,
    "stats": {
     "exact": 7,
     "vsa": 0,
-    "unknown": 2,
+    "unknown": 1,
     "vsaLog": [],
     "confident": false,
     "unknownWords": [
      "pleacă"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U013",
@@ -503,20 +542,24 @@
      "retry after 30s"
     ]
    ],
-   "vsa": "Rename the label of the cell the de square links to \"retry după 30s\".",
+   "vsa": "Rename the label the de four links to \"retry după 30s\".",
    "naive": "Rename label celei of patra links in \"retry după 30s\".",
-   "ms": 0.775334,
+   "ms": 5.954938,
    "stats": {
     "exact": 4,
     "vsa": 2,
     "unknown": 0,
     "vsaLog": [
-     "celei→celulei (0.80)",
-     "patra→patrat (0.80)"
+     "celei→cele (0.80)",
+     "patra→patru (0.78)"
     ],
-    "confident": true,
-    "unknownWords": []
-   }
+    "confident": false,
+    "unknownWords": [
+     "de"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U014",
@@ -540,7 +583,7 @@
    ],
    "vsa": "Where do I find the orthogonal rutare option pt connectors?",
    "naive": "Where find option of rutare orthogonal pt connectors?",
-   "ms": 0.313291,
+   "ms": 2.31763,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -548,9 +591,12 @@
     "vsaLog": [],
     "confident": false,
     "unknownWords": [
-     "rutare"
+     "rutare",
+     "pt"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 2
   },
   {
    "id": "U015",
@@ -574,19 +620,21 @@
      "notes"
     ]
    ],
-   "vsa": "Lock the \"Fundal\" layer and hide the with notes.",
+   "vsa": "Lock the \"Fundal\" layer and hide the with notițe.",
    "naive": "Lock layer \"Fundal\" and hide them on the with notițe.",
-   "ms": 0.363663,
+   "ms": 2.606284,
    "stats": {
-    "exact": 6,
-    "vsa": 1,
-    "unknown": 0,
-    "vsaLog": [
-     "notițe→note (0.77)"
-    ],
-    "confident": true,
-    "unknownWords": []
-   }
+    "exact": 7,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "notițe"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U016",
@@ -615,7 +663,7 @@
    ],
    "vsa": "Crop the picture to 1080 on 1350 and keep the center.",
    "naive": "Crop picture to 1080 on 1350 and keep center.",
-   "ms": 0.143773,
+   "ms": 0.282098,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -623,7 +671,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U017",
@@ -651,7 +701,7 @@
    ],
    "vsa": "Increase the brightness by 15% only on the top layer",
    "naive": "Increase brightness with 15% only on layer of up",
-   "ms": 0.153668,
+   "ms": 0.222213,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -659,7 +709,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U018",
@@ -689,17 +741,19 @@
      "28"
     ]
    ],
-   "vsa": "Replace the font of the titles with Bold Inter, size 28.",
-   "naive": "Replace font titles with Inter Bold, size 28.",
-   "ms": 0.095539,
+   "vsa": "Replace the font of the titles with bold Inter, size 28.",
+   "naive": "Replace font titles with Inter bold, size 28.",
+   "ms": 0.215488,
    "stats": {
-    "exact": 5,
+    "exact": 6,
     "vsa": 0,
-    "unknown": 2,
+    "unknown": 1,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U019",
@@ -731,15 +785,19 @@
    ],
    "vsa": "Ia the logo in the bottom right corner and rotate it by 90 degrees to the left.",
    "naive": "Ia logo from corner from right down and rotate it with 90 of degrees toward left.",
-   "ms": 0.274308,
+   "ms": 0.323972,
    "stats": {
-    "exact": 12,
+    "exact": 13,
     "vsa": 0,
     "unknown": 1,
     "vsaLog": [],
-    "confident": true,
-    "unknownWords": []
-   }
+    "confident": false,
+    "unknownWords": [
+     "Ia"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U020",
@@ -768,20 +826,23 @@
      "transparent"
     ]
    ],
-   "vsa": "Remove the background from the image with the process and export it as transparent PNG.",
+   "vsa": "Remove the background from the image with produsul and export it as transparent PNG.",
    "naive": "Remove background from imagniea with produsul and export it that PNG transparent.",
-   "ms": 0.589445,
+   "ms": 6.550945,
    "stats": {
     "exact": 8,
-    "vsa": 2,
+    "vsa": 1,
     "unknown": 1,
     "vsaLog": [
-     "imagniea→imaginea (0.74)",
-     "produsul→procesul (0.70)"
+     "imagniea→imaginea (0.74)"
     ],
     "confident": false,
-    "unknownWords": []
-   }
+    "unknownWords": [
+     "produsul"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U021",
@@ -815,7 +876,7 @@
    ],
    "vsa": "I want to make the text in main white bannerul with 2 pixels black outline",
    "naive": "Want its make text from bannerul main white with outline black of 2 pixels",
-   "ms": 0.346149,
+   "ms": 3.739522,
    "stats": {
     "exact": 12,
     "vsa": 0,
@@ -825,7 +886,9 @@
     "unknownWords": [
      "bannerul"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U022",
@@ -852,7 +915,7 @@
    ],
    "vsa": "Why can't I edit the \"Umbră\" layer? is lock?",
    "naive": "Of what not can its edit layer \"Umbră\"? be lock?",
-   "ms": 0.183478,
+   "ms": 0.614928,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -860,7 +923,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U023",
@@ -890,7 +955,7 @@
    ],
    "vsa": "Don't resize proporțional, I want width pin to 600 px and height the letter.",
    "naive": "Not resize proporțional, want width pin of 600 px and height liberă.",
-   "ms": 0.363892,
+   "ms": 3.250829,
    "stats": {
     "exact": 8,
     "vsa": 1,
@@ -902,7 +967,9 @@
     "unknownWords": [
      "proporțional"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U024",
@@ -934,7 +1001,7 @@
    ],
    "vsa": "Can you apply a blur gaussian of 8 on the background, but not and on the person?",
    "naive": "Can its apply a blur gaussian of 8 on background, but not and on person?",
-   "ms": 0.308819,
+   "ms": 1.854253,
    "stats": {
     "exact": 13,
     "vsa": 0,
@@ -944,7 +1011,9 @@
     "unknownWords": [
      "gaussian"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U025",
@@ -977,7 +1046,7 @@
    ],
    "vsa": "Group the icons in the menu and then align on the vertical center.",
    "naive": "Group icons from menu and then align them on center vertical.",
-   "ms": 0.137202,
+   "ms": 0.25642,
    "stats": {
     "exact": 10,
     "vsa": 0,
@@ -985,7 +1054,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U026",
@@ -1018,7 +1089,7 @@
    ],
    "vsa": "Change the color of the Trimite button in #2D6CDF to #1B9E5A",
    "naive": "Change color button send from #2D6CDF in #1B9E5A",
-   "ms": 0.21015,
+   "ms": 0.236348,
    "stats": {
     "exact": 6,
     "vsa": 0,
@@ -1026,7 +1097,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U027",
@@ -1059,20 +1132,19 @@
    ],
    "vsa": "Please, make a mockup with the login screen on an iPhone and put a shadow to it discretă.",
    "naive": "You rog, make a mockup with screen of login on an iPhone and put it a shadow discretă.",
-   "ms": 0.819091,
+   "ms": 2.018415,
    "stats": {
-    "exact": 12,
+    "exact": 14,
     "vsa": 0,
-    "unknown": 5,
+    "unknown": 2,
     "vsaLog": [],
     "confident": false,
     "unknownWords": [
-     "mockup",
-     "login",
-     "iPhone",
      "discretă"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U028",
@@ -1097,7 +1169,7 @@
    ],
    "vsa": "How many hidden layers has the file coperta_final_v3. psd?",
    "naive": "How many layers hide have file coperta_final_v3. psd?",
-   "ms": 0.12085,
+   "ms": 1.767341,
    "stats": {
     "exact": 5,
     "vsa": 0,
@@ -1107,7 +1179,9 @@
     "unknownWords": [
      "psd"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U029",
@@ -1139,22 +1213,24 @@
      "margins"
     ]
    ],
-   "vsa": "Horizontal Îndreaptă in the picture from munte and cut the black stayed margins.",
+   "vsa": "Horizontal Îndreaptă in the picture from move and cut the black stayed margins.",
    "naive": "Îndreaptă orizontul in picture of to munte and cut margins black stay.",
-   "ms": 0.555832,
+   "ms": 4.896384,
    "stats": {
     "exact": 9,
-    "vsa": 1,
-    "unknown": 2,
+    "vsa": 2,
+    "unknown": 1,
     "vsaLog": [
-     "orizontul→orizontalul (0.79)"
+     "orizontul→orizontal (0.79)",
+     "munte→mute (0.72)"
     ],
     "confident": false,
     "unknownWords": [
-     "Îndreaptă",
-     "munte"
+     "Îndreaptă"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U030",
@@ -1189,20 +1265,20 @@
    ],
    "vsa": "Reverse on horizontal the third picture in colaj and put it pste the first",
    "naive": "Reverse on horizontal have treia picture from colaj and put it pste the first",
-   "ms": 0.521458,
+   "ms": 3.423183,
    "stats": {
     "exact": 9,
-    "vsa": 1,
+    "vsa": 0,
     "unknown": 2,
-    "vsaLog": [
-     "treia→treimea (0.74)"
-    ],
+    "vsaLog": [],
     "confident": false,
     "unknownWords": [
      "colaj",
      "pste"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 2
   },
   {
    "id": "U031",
@@ -1234,17 +1310,17 @@
    ],
    "vsa": "Make the circle appear with fade-in in 0.5 seconds at the beginning of the timeline.",
    "naive": "Make circle its appear with fade-in in 0.5 seconds to beginning timeline.",
-   "ms": 0.345011,
+   "ms": 0.793513,
    "stats": {
-    "exact": 9,
+    "exact": 11,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
-    "confident": false,
-    "unknownWords": [
-     "fade-in"
-    ]
-   }
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U032",
@@ -1279,9 +1355,9 @@
    ],
    "vsa": "Move the keyframe from 2s to 3. 5s on pista title",
    "naive": "Move keyframe of to 2s to 3. 5s on pista title",
-   "ms": 0.298201,
+   "ms": 1.911925,
    "stats": {
-    "exact": 6,
+    "exact": 7,
     "vsa": 0,
     "unknown": 1,
     "vsaLog": [],
@@ -1289,7 +1365,9 @@
     "unknownWords": [
      "pista"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U033",
@@ -1319,7 +1397,7 @@
    ],
    "vsa": "Set the duration total of the animation to 12 seconds and play it in a loop.",
    "naive": "Set last totală have animation to 12 seconds and play it in loop.",
-   "ms": 0.43599,
+   "ms": 3.373355,
    "stats": {
     "exact": 10,
     "vsa": 1,
@@ -1329,7 +1407,9 @@
     ],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U034",
@@ -1355,7 +1435,7 @@
    ],
    "vsa": "Put an ease-out to the arrow on the motion to the right.",
    "naive": "Put it arrow an ease-out on motion toward right.",
-   "ms": 0.27069,
+   "ms": 1.823776,
    "stats": {
     "exact": 7,
     "vsa": 0,
@@ -1365,7 +1445,9 @@
     "unknownWords": [
      "ease-out"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U035",
@@ -1394,15 +1476,17 @@
    ],
    "vsa": "How do I as the logo to bounce three times before stop?",
    "naive": "How make that logo its bounce of three times forward its stop?",
-   "ms": 0.130762,
+   "ms": 0.253493,
    "stats": {
-    "exact": 12,
+    "exact": 13,
     "vsa": 0,
     "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U036",
@@ -1432,7 +1516,7 @@
    ],
    "vsa": "Don't animate the background, leave it static up to second 4",
    "naive": "Not animate background, leave it static until to second 4",
-   "ms": 0.082133,
+   "ms": 0.133754,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -1440,7 +1524,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U037",
@@ -1472,7 +1558,7 @@
    ],
    "vsa": "I want as the text \"Bine ați venit\" to write the letter with the letter, cam 40 ms on the character.",
    "naive": "Want that text \"Bine ați venit\" its write letter with letter, cam 40 ms on character.",
-   "ms": 0.172861,
+   "ms": 1.761094,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -1482,7 +1568,9 @@
     "unknownWords": [
      "cam"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U038",
@@ -1512,7 +1600,7 @@
    ],
    "vsa": "Delay the appearance of the button by 300 ms relative to the title",
    "naive": "Delay appearance butonlui with 300 ms front of title",
-   "ms": 0.182682,
+   "ms": 1.660837,
    "stats": {
     "exact": 6,
     "vsa": 1,
@@ -1522,7 +1610,9 @@
     ],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U039",
@@ -1555,7 +1645,7 @@
    ],
    "vsa": "Scale the square from 100% to 150% between 1s and 2s, and then bring it back to normal up to 3s.",
    "naive": "Scale square of to 100% to 150% enter 1s and 2s, and then bring it back to normal until to 3s.",
-   "ms": 0.341925,
+   "ms": 2.222232,
    "stats": {
     "exact": 14,
     "vsa": 0,
@@ -1565,7 +1655,9 @@
     "unknownWords": [
      "normal"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U040",
@@ -1595,7 +1687,7 @@
    ],
    "vsa": "Can you reverse the order of the clips from pista the second?",
    "naive": "Can its reverse order clips of on pista have two?",
-   "ms": 0.273864,
+   "ms": 1.651312,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -1605,7 +1697,9 @@
     "unknownWords": [
      "pista"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U041",
@@ -1631,7 +1725,7 @@
    ],
    "vsa": "How many frames on the second has the export now? change it to 60",
    "naive": "How many frames on second have export now? change it to 60",
-   "ms": 0.225733,
+   "ms": 0.245083,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -1639,7 +1733,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U042",
@@ -1666,15 +1762,19 @@
    ],
    "vsa": "Please sync the appearance of the chart with the beat from 00:07.",
    "naive": "You rog its sync appearance chart with beat of to 00:07.",
-   "ms": 0.478852,
+   "ms": 0.212249,
    "stats": {
     "exact": 8,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
-    "confident": true,
-    "unknownWords": []
-   }
+    "confident": false,
+    "unknownWords": [
+     "beat"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U043",
@@ -1708,21 +1808,23 @@
      "2s"
     ]
    ],
-   "vsa": "Rotate the rotations of the car continuously, how many a complete tură to each 2 seconds.",
+   "vsa": "Rotate rotate continuously to the car, how many a complete tură to each 2 seconds.",
    "naive": "Rotate roțile car solid, how many a tură complete to each 2 seconds.",
-   "ms": 0.674284,
+   "ms": 3.645032,
    "stats": {
     "exact": 9,
     "vsa": 1,
     "unknown": 1,
     "vsaLog": [
-     "roțile→rotirile (0.80)"
+     "roțile→rotite (0.73)"
     ],
     "confident": false,
     "unknownWords": [
      "tură"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U044",
@@ -1751,15 +1853,19 @@
    ],
    "vsa": "Where can I set curved of easing pt the transition between scene 1 and scene 2",
    "naive": "Where can set curved of easing pt transition between scene 1 and scene 2",
-   "ms": 0.275671,
+   "ms": 0.228633,
    "stats": {
     "exact": 11,
     "vsa": 0,
     "unknown": 1,
     "vsaLog": [],
-    "confident": true,
-    "unknownWords": []
-   }
+    "confident": false,
+    "unknownWords": [
+     "pt"
+    ]
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U045",
@@ -1791,7 +1897,7 @@
    ],
    "vsa": "Hide the character at 5.2 seconds and make it reapară on the left at second 6.",
    "naive": "Hide character to 5.2 seconds and make it its reapară from left to second 6.",
-   "ms": 0.806841,
+   "ms": 1.875798,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -1801,7 +1907,9 @@
     "unknownWords": [
      "reapară"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U046",
@@ -1831,7 +1939,7 @@
    ],
    "vsa": "Share the report \"Buget Q3\" with the team of Finanțe, only with view right.",
    "naive": "Share report \"Buget Q3\" with team of Finanțe, only with right of view.",
-   "ms": 1.348301,
+   "ms": 0.374589,
    "stats": {
     "exact": 10,
     "vsa": 0,
@@ -1839,7 +1947,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U047",
@@ -1870,7 +1980,7 @@
    ],
    "vsa": "Export the vanzari table in octombrie to Excel and send it its Andrei",
    "naive": "Export table of vanzari from octombrie in Excel and send it of Andrei",
-   "ms": 0.596377,
+   "ms": 3.292803,
    "stats": {
     "exact": 8,
     "vsa": 0,
@@ -1881,7 +1991,9 @@
      "vanzari",
      "octombrie"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 2
   },
   {
    "id": "U048",
@@ -1914,7 +2026,7 @@
    ],
    "vsa": "Who has changed last the contract with the Delta supplier?",
    "naive": "Who have modficat last date contract with supplier Delta?",
-   "ms": 0.462131,
+   "ms": 1.830773,
    "stats": {
     "exact": 7,
     "vsa": 1,
@@ -1924,7 +2036,9 @@
     ],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U049",
@@ -1955,7 +2069,7 @@
    ],
    "vsa": "Revoke the external access for all the files in Arhivă folder 2023.",
    "naive": "Revoke access external for all files from folder archive 2023.",
-   "ms": 0.141024,
+   "ms": 0.183577,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -1963,7 +2077,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U050",
@@ -1995,7 +2111,7 @@
    ],
    "vsa": "Import the contracts from clienti_noi.csv and bounce over the rows duplicates",
    "naive": "Import contactele from clienti_noi.csv and bounce over rows dulpicate",
-   "ms": 0.468013,
+   "ms": 3.55747,
    "stats": {
     "exact": 6,
     "vsa": 2,
@@ -2004,9 +2120,11 @@
      "contactele→contractele (0.81)",
      "dulpicate→duplicate (0.75)"
     ],
-    "confident": false,
+    "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U051",
@@ -2037,22 +2155,24 @@
      "9am"
     ]
    ],
-   "vsa": "I want a report the week with open tichetele, send automatically lunea to 9:00.",
+   "vsa": "I want a report the week with open tichetele, send automatically the month to 9:00.",
    "naive": "Want a report săptămânal with tichetele open, send automatic lunea to 9:00.",
-   "ms": 0.680504,
+   "ms": 5.050461,
    "stats": {
     "exact": 8,
-    "vsa": 1,
-    "unknown": 2,
+    "vsa": 2,
+    "unknown": 1,
     "vsaLog": [
-     "săptămânal→saptamana (0.85)"
+     "săptămânal→saptamana (0.85)",
+     "lunea→luna (0.73)"
     ],
     "confident": false,
     "unknownWords": [
-     "tichetele",
-     "lunea"
+     "tichetele"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U052",
@@ -2084,7 +2204,7 @@
    ],
    "vsa": "Don't send notifications of the vânzări team when the document updates.",
    "naive": "Not send notifications team of vânzări when update document.",
-   "ms": 0.37476,
+   "ms": 1.94107,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -2094,7 +2214,9 @@
     "unknownWords": [
      "vânzări"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 1
   },
   {
    "id": "U053",
@@ -2124,17 +2246,17 @@
    ],
    "vsa": "Can you give it Ioanei edit rights on the presentation for board?",
    "naive": "Can its it give Ioanei right of editing on presentation for board?",
-   "ms": 0.22974,
+   "ms": 0.227892,
    "stats": {
-    "exact": 9,
+    "exact": 10,
     "vsa": 0,
-    "unknown": 2,
+    "unknown": 1,
     "vsaLog": [],
-    "confident": false,
-    "unknownWords": [
-     "board"
-    ]
-   }
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U054",
@@ -2163,21 +2285,22 @@
      "belong"
     ]
    ],
-   "vsa": "How many documents have expired in the last 30 days and cui appear?",
+   "vsa": "How many documents have expired in the last 30 days and cui aparțin?",
    "naive": "How many documents have expire in the last 30 of days and cui aparțin?",
-   "ms": 0.390499,
+   "ms": 3.470362,
    "stats": {
     "exact": 9,
-    "vsa": 1,
-    "unknown": 1,
-    "vsaLog": [
-     "aparțin→apar (0.71)"
-    ],
+    "vsa": 0,
+    "unknown": 2,
+    "vsaLog": [],
     "confident": false,
     "unknownWords": [
-     "cui"
+     "cui",
+     "aparțin"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 2
   },
   {
    "id": "U055",
@@ -2209,18 +2332,20 @@
    ],
    "vsa": "Filter the invoices neplatite of over 5000 lei and then generate a PDF with they",
    "naive": "Filter invoices neplatite of over 5000 of lei and then generate a PDF with they",
-   "ms": 0.335872,
+   "ms": 3.340102,
    "stats": {
     "exact": 11,
     "vsa": 0,
-    "unknown": 3,
+    "unknown": 2,
     "vsaLog": [],
     "confident": false,
     "unknownWords": [
      "neplatite",
      "lei"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 2
   },
   {
    "id": "U056",
@@ -2249,21 +2374,23 @@
      "of-2026"
     ]
    ],
-   "vsa": "Please, ia give approve, move them to the folder \"Semnate\" and put them OF-2026 prefixul.",
+   "vsa": "Please, ia approved ofertele, move them to the folder \"Semnate\" and put them OF-2026 prefixul.",
    "naive": "You rog, ia ofertele approve, move them in folder \"Semnate\" and put them prefixul OF-2026.",
-   "ms": 0.486507,
+   "ms": 3.334069,
    "stats": {
     "exact": 7,
-    "vsa": 1,
+    "vsa": 0,
     "unknown": 4,
-    "vsaLog": [
-     "ofertele→ofere (0.71)"
-    ],
+    "vsaLog": [],
     "confident": false,
     "unknownWords": [
+     "ia",
+     "ofertele",
      "prefixul"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 3
   },
   {
    "id": "U057",
@@ -2292,7 +2419,7 @@
    ],
    "vsa": "Which colleagues have edit rights on the Contracte folder?",
    "naive": "Which colleagues have right of editing on folder contracts?",
-   "ms": 0.168745,
+   "ms": 1.160961,
    "stats": {
     "exact": 9,
     "vsa": 0,
@@ -2300,7 +2427,9 @@
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U058",
@@ -2326,15 +2455,17 @@
    ],
    "vsa": "Why don't do I appear the Departament column in the CSV export?",
    "naive": "Of what not appear column department in export CSV?",
-   "ms": 0.188409,
+   "ms": 0.1702,
    "stats": {
     "exact": 8,
     "vsa": 0,
-    "unknown": 1,
+    "unknown": 0,
     "vsaLog": [],
     "confident": true,
     "unknownWords": []
-   }
+   },
+   "language": "ro",
+   "errors": 0
   },
   {
    "id": "U059",
@@ -2361,21 +2492,22 @@
      "password"
     ]
    ],
-   "vsa": "Set the sharing link to expire on 15 noiembrie and design it with the password.",
+   "vsa": "Set the sharing link to expire on 15 noiembrie and protejează it with the password.",
    "naive": "Set link of sharing its expire on 15 noiembrie and protejează it with password.",
-   "ms": 0.428416,
+   "ms": 3.753269,
    "stats": {
     "exact": 10,
-    "vsa": 1,
-    "unknown": 1,
-    "vsaLog": [
-     "protejează→proiecteaza (0.71)"
-    ],
+    "vsa": 0,
+    "unknown": 2,
+    "vsaLog": [],
     "confident": false,
     "unknownWords": [
-     "noiembrie"
+     "noiembrie",
+     "protejează"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 2
   },
   {
    "id": "U060",
@@ -2409,7 +2541,7 @@
    ],
    "vsa": "Generate a chart with rata of conversie on regiuni and highlight the below 12%.",
    "naive": "Generate a chart with rata of conversie on regiuni and highlight them on the below 12%.",
-   "ms": 0.654253,
+   "ms": 4.774034,
    "stats": {
     "exact": 11,
     "vsa": 0,
@@ -2421,7 +2553,9 @@
      "conversie",
      "regiuni"
     ]
-   }
+   },
+   "language": "ro",
+   "errors": 3
   }
  ]
 }

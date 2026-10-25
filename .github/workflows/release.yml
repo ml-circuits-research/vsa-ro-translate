@@ -26,5 +26,5 @@ jobs:
           if gh release view "v$V" >/dev/null 2>&1; then echo "Release v$V already exists"; exit 0; fi
           cp docs/index.html vsa-ro-en-demo.html
           gh release create "v$V" \
-            dist/vsa-ro-translate.min.js dist/vsa-ro-translate.js dist/vsa-ro-translate.mjs dist/vsa-ro-translate.d.ts vsa-ro-en-demo.html \
+            dist/vsa-ro-translate.min.js dist/vsa-ro-translate.js dist/vsa-ro-translate.mjs dist/vsa-ro-translate.d.ts dist/dictionaries/fr.js vsa-ro-en-demo.html \
             --target "$GITHUB_SHA" --title "v$V" --notes-file .github/release-notes.md

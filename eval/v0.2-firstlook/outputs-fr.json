@@ -1,0 +1,1090 @@
+{
+ "summary": {
+  "n": 30,
+  "vsa": {
+   "chrF": 67.8,
+   "slotRecall": 73.9,
+   "allSlots": 30
+  },
+  "naive": {
+   "chrF": 55.6,
+   "slotRecall": 68.9,
+   "allSlots": 30
+  },
+  "latencyMs": {
+   "median": 0.422,
+   "p95": 10.312
+  },
+  "info": {
+   "D": 2048,
+   "languages": [
+    "ro",
+    "en",
+    "fr"
+   ],
+   "dictionaries": [
+    {
+     "name": "ro",
+     "lang": "ro",
+     "forms": 5530
+    },
+    {
+     "name": "en-base",
+     "lang": "en",
+     "forms": 650
+    },
+    {
+     "name": "fr-example",
+     "lang": "fr",
+     "forms": 1723
+    }
+   ],
+   "forms": 9000,
+   "itemMemory": 8841,
+   "phrases": 313,
+   "lexiconMs": 78,
+   "memoryMs": 449
+  }
+ },
+ "rows": [
+  {
+   "id": "F001",
+   "domain": "diagram",
+   "ro": "Ajoute un rectangle bleu à droite du nœud « Client »",
+   "ref": "Add a blue rectangle to the right of the Client node",
+   "keys": [
+    [
+     "add",
+     "insert"
+    ],
+    [
+     "blue"
+    ],
+    [
+     "rectangle"
+    ],
+    [
+     "right"
+    ],
+    [
+     "client"
+    ]
+   ],
+   "vsa": "Add a blue rectangle to the right of the \" Client \" node",
+   "naive": "Add a rectangle blue have right take node \" Client \"",
+   "ms": 21.174889,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F002",
+   "domain": "diagram",
+   "ro": "Déplace le cercle de 20 pixels vers le haut",
+   "ref": "Move the circle up by 20 pixels",
+   "keys": [
+    [
+     "move",
+     "shift"
+    ],
+    [
+     "circle"
+    ],
+    [
+     "20 pixel",
+     "20px"
+    ],
+    [
+     "up"
+    ]
+   ],
+   "vsa": "Move the circle of 20 pixels up",
+   "naive": "Move them circle of 20 pixels toward them top",
+   "ms": 1.753805,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F003",
+   "domain": "diagram",
+   "ro": "Relie la boîte « Paiement » à la base de données avec une flèche",
+   "ref": "Connect the Payment box to the database with an arrow",
+   "keys": [
+    [
+     "connect",
+     "link"
+    ],
+    [
+     "payment"
+    ],
+    [
+     "database"
+    ],
+    [
+     "arrow"
+    ]
+   ],
+   "vsa": "Connect the \" Paiement \" box to the base of data with an arrow",
+   "naive": "Connect to box \" Paiement \" have to base of data with an arrow",
+   "ms": 0.916904,
+   "stats": {
+    "exact": 11,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F004",
+   "domain": "diagram",
+   "ro": "Supprimez tous les connecteurs en pointillés",
+   "ref": "Delete all dashed connectors",
+   "keys": [
+    [
+     "delete",
+     "remove"
+    ],
+    [
+     "dashed",
+     "dotted"
+    ],
+    [
+     "connector"
+    ]
+   ],
+   "vsa": "Delete all the connectors in dotted",
+   "naive": "Delete all the connectors in dotted",
+   "ms": 0.218103,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F005",
+   "domain": "diagram",
+   "ro": "Comment est-ce que je regroupe ces trois formes ?",
+   "ref": "How do I group these three shapes?",
+   "keys": [
+    [
+     "how"
+    ],
+    [
+     "group"
+    ],
+    [
+     "three",
+     "3"
+    ],
+    [
+     "shape"
+    ]
+   ],
+   "vsa": "How I groups these three shapes?",
+   "naive": "How est-ce what I group these three shapes?",
+   "ms": 0.304251,
+   "stats": {
+    "exact": 7,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F006",
+   "domain": "diagram",
+   "ro": "Change la couleur de l'étiquette en vert",
+   "ref": "Change the label color to green",
+   "keys": [
+    [
+     "color",
+     "colour"
+    ],
+    [
+     "label"
+    ],
+    [
+     "green"
+    ]
+   ],
+   "vsa": "Change the color of the label in green",
+   "naive": "Change to color of the label in green",
+   "ms": 0.200009,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F007",
+   "domain": "diagram",
+   "ro": "Alignez les nœuds sélectionnés verticalement",
+   "ref": "Align the selected nodes vertically",
+   "keys": [
+    [
+     "align"
+    ],
+    [
+     "selected"
+    ],
+    [
+     "node"
+    ],
+    [
+     "vertical"
+    ]
+   ],
+   "vsa": "Align the selected nodes vertically",
+   "naive": "Align the nodes select vertically",
+   "ms": 0.153503,
+   "stats": {
+    "exact": 5,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F008",
+   "domain": "diagram",
+   "ro": "Exporte le diagramme en PNG avec un fond blanc",
+   "ref": "Export the diagram as PNG with a white background",
+   "keys": [
+    [
+     "export"
+    ],
+    [
+     "diagram"
+    ],
+    [
+     "png"
+    ],
+    [
+     "white"
+    ],
+    [
+     "background"
+    ]
+   ],
+   "vsa": "Export the diagram in PNG with a white background",
+   "naive": "Export them diagram in PNG with a background white",
+   "ms": 0.220976,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F009",
+   "domain": "edit",
+   "ro": "Recadre l'image au format carré",
+   "ref": "Crop the image to a square format",
+   "keys": [
+    [
+     "crop"
+    ],
+    [
+     "image",
+     "picture"
+    ],
+    [
+     "square"
+    ]
+   ],
+   "vsa": "Crop the image to the format square",
+   "naive": "Crop the image have format square",
+   "ms": 0.212781,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F010",
+   "domain": "edit",
+   "ro": "Augmentez la luminosité de 15 %",
+   "ref": "Increase the brightness by 15%",
+   "keys": [
+    [
+     "increase",
+     "raise"
+    ],
+    [
+     "brightness"
+    ],
+    [
+     "15%",
+     "15 %"
+    ]
+   ],
+   "vsa": "Increase the luminosité of 15 %",
+   "naive": "Increase to luminosité of 15 %",
+   "ms": 8.16902,
+   "stats": {
+    "exact": 3,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "luminosité"
+    ]
+   },
+   "language": "fr",
+   "errors": 1
+  },
+  {
+   "id": "F011",
+   "domain": "edit",
+   "ro": "Mets le texte en gras et en italique",
+   "ref": "Make the text bold and italic",
+   "keys": [
+    [
+     "text"
+    ],
+    [
+     "bold"
+    ],
+    [
+     "italic"
+    ]
+   ],
+   "vsa": "Put the bold text and italic",
+   "naive": "Put them texts in bold and in italic",
+   "ms": 0.422354,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F012",
+   "domain": "edit",
+   "ro": "Où se trouve l'outil de détourage ?",
+   "ref": "Where is the cutout tool?",
+   "keys": [
+    [
+     "where"
+    ],
+    [
+     "cutout",
+     "clipping",
+     "background removal"
+    ],
+    [
+     "tool"
+    ]
+   ],
+   "vsa": "Where do I find the détourage tool?",
+   "naive": "Or find the tool of détourage?",
+   "ms": 4.318711,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "détourage"
+    ]
+   },
+   "language": "fr",
+   "errors": 1
+  },
+  {
+   "id": "F013",
+   "domain": "edit",
+   "ro": "Redimensionne le calque à 800 × 600 pixels",
+   "ref": "Resize the layer to 800 x 600 pixels",
+   "keys": [
+    [
+     "resize",
+     "scale"
+    ],
+    [
+     "layer"
+    ],
+    [
+     "800"
+    ],
+    [
+     "600"
+    ]
+   ],
+   "vsa": "Resize the layer to 800 600 pixels",
+   "naive": "Resize them layer have 800 600 pixels",
+   "ms": 0.148902,
+   "stats": {
+    "exact": 5,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F014",
+   "domain": "edit",
+   "ro": "Applique une ombre portée grise sous le bouton",
+   "ref": "Apply a gray drop shadow under the button",
+   "keys": [
+    [
+     "apply",
+     "add"
+    ],
+    [
+     "gray",
+     "grey"
+    ],
+    [
+     "drop shadow",
+     "shadow"
+    ],
+    [
+     "button"
+    ]
+   ],
+   "vsa": "Apply a shadow gray portée under the button",
+   "naive": "Apply a shadow portée gray under them button",
+   "ms": 3.188026,
+   "stats": {
+    "exact": 7,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "portée"
+    ]
+   },
+   "language": "fr",
+   "errors": 1
+  },
+  {
+   "id": "F015",
+   "domain": "edit",
+   "ro": "Supprime l'arrière-plan de la photo",
+   "ref": "Remove the background from the photo",
+   "keys": [
+    [
+     "remove",
+     "delete"
+    ],
+    [
+     "background"
+    ],
+    [
+     "photo",
+     "image"
+    ]
+   ],
+   "vsa": "Delete the background from the photo",
+   "naive": "Delete the background of to photo",
+   "ms": 0.174672,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F016",
+   "domain": "edit",
+   "ro": "Annulez les deux dernières modifications",
+   "ref": "Undo the last two changes",
+   "keys": [
+    [
+     "undo",
+     "revert"
+    ],
+    [
+     "two",
+     "2"
+    ],
+    [
+     "change",
+     "edit"
+    ]
+   ],
+   "vsa": "Undo the last two changes",
+   "naive": "Undo the two the last changes",
+   "ms": 0.075895,
+   "stats": {
+    "exact": 5,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F017",
+   "domain": "animation",
+   "ro": "Ajoute une animation d'apparition de 2 secondes sur le titre",
+   "ref": "Add a 2 second fade in animation to the title",
+   "keys": [
+    [
+     "add"
+    ],
+    [
+     "fade in",
+     "appear"
+    ],
+    [
+     "2 second",
+     "2s"
+    ],
+    [
+     "title"
+    ]
+   ],
+   "vsa": "Add an animation of apparition of 2 seconds on the title",
+   "naive": "Add an animation of apparition of 2 seconds on them title",
+   "ms": 3.991421,
+   "stats": {
+    "exact": 9,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "apparition"
+    ]
+   },
+   "language": "fr",
+   "errors": 1
+  },
+  {
+   "id": "F018",
+   "domain": "animation",
+   "ro": "Déplace l'image clé à 3 secondes",
+   "ref": "Move the keyframe to 3 seconds",
+   "keys": [
+    [
+     "move",
+     "shift"
+    ],
+    [
+     "keyframe",
+     "key frame"
+    ],
+    [
+     "3 second",
+     "3s"
+    ]
+   ],
+   "vsa": "Move the keyframe to 3 seconds",
+   "naive": "Move the image clé have 3 seconds",
+   "ms": 0.206628,
+   "stats": {
+    "exact": 5,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F019",
+   "domain": "animation",
+   "ro": "Fais tourner le logo de 90 degrés en 1 seconde",
+   "ref": "Rotate the logo 90 degrees in 1 second",
+   "keys": [
+    [
+     "rotate",
+     "spin"
+    ],
+    [
+     "logo"
+    ],
+    [
+     "90 degree",
+     "90°"
+    ],
+    [
+     "1 second",
+     "1s"
+    ]
+   ],
+   "vsa": "Rotate the logo of 90 degrees in 1 second",
+   "naive": "Make rotate them logo of 90 degrees in 1 second",
+   "ms": 0.203583,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F020",
+   "domain": "animation",
+   "ro": "Répète l'animation trois fois",
+   "ref": "Repeat the animation three times",
+   "keys": [
+    [
+     "repeat",
+     "loop"
+    ],
+    [
+     "animation"
+    ],
+    [
+     "three",
+     "3"
+    ]
+   ],
+   "vsa": "Repeat the animation three times",
+   "naive": "Repeat the animation three time",
+   "ms": 0.069277,
+   "stats": {
+    "exact": 5,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F021",
+   "domain": "animation",
+   "ro": "Comment ralentir la transition entre les deux scènes ?",
+   "ref": "How do I slow down the transition between the two scenes?",
+   "keys": [
+    [
+     "how"
+    ],
+    [
+     "slow"
+    ],
+    [
+     "transition"
+    ],
+    [
+     "scene"
+    ]
+   ],
+   "vsa": "How do I slow down the transition between the two scenes?",
+   "naive": "How slow down to transition between the two scenes?",
+   "ms": 0.222468,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F022",
+   "domain": "animation",
+   "ro": "Ajoutez un délai de 500 millisecondes avant l'entrée du texte",
+   "ref": "Add a 500 millisecond delay before the text enters",
+   "keys": [
+    [
+     "delay"
+    ],
+    [
+     "500 millisecond",
+     "500ms",
+     "500 ms"
+    ],
+    [
+     "before"
+    ],
+    [
+     "text"
+    ]
+   ],
+   "vsa": "Add a delay of 500 milliseconds before the input of the text",
+   "naive": "Add a delay of 500 milliseconds before the input take texts",
+   "ms": 0.168881,
+   "stats": {
+    "exact": 10,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F023",
+   "domain": "animation",
+   "ro": "Fais glisser le bouton depuis la gauche avec un effet d'accélération",
+   "ref": "Slide the button in from the left with an ease-in effect",
+   "keys": [
+    [
+     "slide"
+    ],
+    [
+     "button"
+    ],
+    [
+     "left"
+    ],
+    [
+     "ease",
+     "acceleration"
+    ]
+   ],
+   "vsa": "Drag the button from the left with an effect of acceleration",
+   "naive": "Make slide them button from to left with an effect of acceleration",
+   "ms": 0.235923,
+   "stats": {
+    "exact": 12,
+    "vsa": 0,
+    "unknown": 0,
+    "vsaLog": [],
+    "confident": true,
+    "unknownWords": []
+   },
+   "language": "fr",
+   "errors": 0
+  },
+  {
+   "id": "F024",
+   "domain": "enterprise",
+   "ro": "Partage le document avec l'équipe juridique en lecture seule",
+   "ref": "Share the document with the legal team as read-only",
+   "keys": [
+    [
+     "share"
+    ],
+    [
+     "document"
+    ],
+    [
+     "legal"
+    ],
+    [
+     "read-only",
+     "read only",
+     "view"
+    ]
+   ],
+   "vsa": "Share the document with the team juridique in playback seule",
+   "naive": "Share them document with the team juridique in playback seule",
+   "ms": 10.312344,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 2,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "juridique",
+     "seule"
+    ]
+   },
+   "language": "fr",
+   "errors": 2
+  },
+  {
+   "id": "F025",
+   "domain": "enterprise",
+   "ro": "Exportez le rapport trimestriel en PDF",
+   "ref": "Export the quarterly report as PDF",
+   "keys": [
+    [
+     "export"
+    ],
+    [
+     "quarterly"
+    ],
+    [
+     "report"
+    ],
+    [
+     "pdf"
+    ]
+   ],
+   "vsa": "Export the report trimestriel in PDF",
+   "naive": "Export them report trimestriel in PDF",
+   "ms": 4.303483,
+   "stats": {
+    "exact": 4,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "trimestriel"
+    ]
+   },
+   "language": "fr",
+   "errors": 1
+  },
+  {
+   "id": "F026",
+   "domain": "enterprise",
+   "ro": "Retire les droits d'édition à Julien sur le dossier Contrats",
+   "ref": "Remove Julien's edit rights on the Contracts folder",
+   "keys": [
+    [
+     "remove",
+     "revoke"
+    ],
+    [
+     "edit"
+    ],
+    [
+     "julien"
+    ],
+    [
+     "contract"
+    ],
+    [
+     "folder"
+    ]
+   ],
+   "vsa": "Remove the rights of édition to Julien on the Contrats folder",
+   "naive": "Remove the rights of édition have Julien on them folder contracts",
+   "ms": 8.840999,
+   "stats": {
+    "exact": 9,
+    "vsa": 0,
+    "unknown": 2,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "édition"
+    ]
+   },
+   "language": "fr",
+   "errors": 1
+  },
+  {
+   "id": "F027",
+   "domain": "enterprise",
+   "ro": "Qui a accès au tableau des budgets ?",
+   "ref": "Who has access to the budget spreadsheet?",
+   "keys": [
+    [
+     "who"
+    ],
+    [
+     "access",
+     "permission"
+    ],
+    [
+     "budget"
+    ]
+   ],
+   "vsa": "Who have access to the table budgets?",
+   "naive": "Who have access have table budgets?",
+   "ms": 4.276175,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "budgets"
+    ]
+   },
+   "language": "fr",
+   "errors": 1
+  },
+  {
+   "id": "F028",
+   "domain": "enterprise",
+   "ro": "Génère un rapport des ventes de septembre et envoie-le par e-mail à la direction",
+   "ref": "Generate a September sales report and email it to management",
+   "keys": [
+    [
+     "generate",
+     "create"
+    ],
+    [
+     "sales"
+    ],
+    [
+     "september"
+    ],
+    [
+     "report"
+    ],
+    [
+     "email",
+     "e-mail"
+    ],
+    [
+     "management"
+    ]
+   ],
+   "vsa": "Generate a report slow of septembre and send them by email to the direction",
+   "naive": "Generate a report ventes of septembre and send them by email have to direction",
+   "ms": 7.749931,
+   "stats": {
+    "exact": 12,
+    "vsa": 1,
+    "unknown": 1,
+    "vsaLog": [
+     "ventes→lentes (0.74)"
+    ],
+    "confident": false,
+    "unknownWords": [
+     "septembre"
+    ]
+   },
+   "language": "fr",
+   "errors": 1
+  },
+  {
+   "id": "F029",
+   "domain": "enterprise",
+   "ro": "Où puis-je modifier les autorisations d'un utilisateur ?",
+   "ref": "Where can I change a user's permissions?",
+   "keys": [
+    [
+     "where"
+    ],
+    [
+     "change",
+     "modify",
+     "edit"
+    ],
+    [
+     "permission"
+    ],
+    [
+     "user"
+    ]
+   ],
+   "vsa": "Where puis-je change the autorisations of a user?",
+   "naive": "Or puis-je change the autorisations of a user?",
+   "ms": 7.357743,
+   "stats": {
+    "exact": 6,
+    "vsa": 0,
+    "unknown": 2,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "puis-je",
+     "autorisations"
+    ]
+   },
+   "language": "fr",
+   "errors": 2
+  },
+  {
+   "id": "F030",
+   "domain": "enterprise",
+   "ro": "Archivez tous les fichiers de plus de deux ans",
+   "ref": "Archive all files older than two years",
+   "keys": [
+    [
+     "archive"
+    ],
+    [
+     "file"
+    ],
+    [
+     "two year",
+     "2 year"
+    ]
+   ],
+   "vsa": "Archive all the files of more of two ans",
+   "naive": "Archive all the files of more of two ans",
+   "ms": 4.022254,
+   "stats": {
+    "exact": 8,
+    "vsa": 0,
+    "unknown": 1,
+    "vsaLog": [],
+    "confident": false,
+    "unknownWords": [
+     "ans"
+    ]
+   },
+   "language": "fr",
+   "errors": 1
+  }
+ ]
+}

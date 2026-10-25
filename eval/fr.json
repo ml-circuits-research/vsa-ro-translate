@@ -1,0 +1,625 @@
+[
+ {
+  "id": "F001",
+  "domain": "diagram",
+  "src": "Ajoute un rectangle bleu à droite du nœud « Client »",
+  "ref": "Add a blue rectangle to the right of the Client node",
+  "keys": [
+   [
+    "add",
+    "insert"
+   ],
+   [
+    "blue"
+   ],
+   [
+    "rectangle"
+   ],
+   [
+    "right"
+   ],
+   [
+    "client"
+   ]
+  ]
+ },
+ {
+  "id": "F002",
+  "domain": "diagram",
+  "src": "Déplace le cercle de 20 pixels vers le haut",
+  "ref": "Move the circle up by 20 pixels",
+  "keys": [
+   [
+    "move",
+    "shift"
+   ],
+   [
+    "circle"
+   ],
+   [
+    "20 pixel",
+    "20px"
+   ],
+   [
+    "up"
+   ]
+  ]
+ },
+ {
+  "id": "F003",
+  "domain": "diagram",
+  "src": "Relie la boîte « Paiement » à la base de données avec une flèche",
+  "ref": "Connect the Payment box to the database with an arrow",
+  "keys": [
+   [
+    "connect",
+    "link"
+   ],
+   [
+    "payment"
+   ],
+   [
+    "database"
+   ],
+   [
+    "arrow"
+   ]
+  ]
+ },
+ {
+  "id": "F004",
+  "domain": "diagram",
+  "src": "Supprimez tous les connecteurs en pointillés",
+  "ref": "Delete all dashed connectors",
+  "keys": [
+   [
+    "delete",
+    "remove"
+   ],
+   [
+    "dashed",
+    "dotted"
+   ],
+   [
+    "connector"
+   ]
+  ]
+ },
+ {
+  "id": "F005",
+  "domain": "diagram",
+  "src": "Comment est-ce que je regroupe ces trois formes ?",
+  "ref": "How do I group these three shapes?",
+  "keys": [
+   [
+    "how"
+   ],
+   [
+    "group"
+   ],
+   [
+    "three",
+    "3"
+   ],
+   [
+    "shape"
+   ]
+  ]
+ },
+ {
+  "id": "F006",
+  "domain": "diagram",
+  "src": "Change la couleur de l'étiquette en vert",
+  "ref": "Change the label color to green",
+  "keys": [
+   [
+    "color",
+    "colour"
+   ],
+   [
+    "label"
+   ],
+   [
+    "green"
+   ]
+  ]
+ },
+ {
+  "id": "F007",
+  "domain": "diagram",
+  "src": "Alignez les nœuds sélectionnés verticalement",
+  "ref": "Align the selected nodes vertically",
+  "keys": [
+   [
+    "align"
+   ],
+   [
+    "selected"
+   ],
+   [
+    "node"
+   ],
+   [
+    "vertical"
+   ]
+  ]
+ },
+ {
+  "id": "F008",
+  "domain": "diagram",
+  "src": "Exporte le diagramme en PNG avec un fond blanc",
+  "ref": "Export the diagram as PNG with a white background",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "diagram"
+   ],
+   [
+    "png"
+   ],
+   [
+    "white"
+   ],
+   [
+    "background"
+   ]
+  ]
+ },
+ {
+  "id": "F009",
+  "domain": "edit",
+  "src": "Recadre l'image au format carré",
+  "ref": "Crop the image to a square format",
+  "keys": [
+   [
+    "crop"
+   ],
+   [
+    "image",
+    "picture"
+   ],
+   [
+    "square"
+   ]
+  ]
+ },
+ {
+  "id": "F010",
+  "domain": "edit",
+  "src": "Augmentez la luminosité de 15 %",
+  "ref": "Increase the brightness by 15%",
+  "keys": [
+   [
+    "increase",
+    "raise"
+   ],
+   [
+    "brightness"
+   ],
+   [
+    "15%",
+    "15 %"
+   ]
+  ]
+ },
+ {
+  "id": "F011",
+  "domain": "edit",
+  "src": "Mets le texte en gras et en italique",
+  "ref": "Make the text bold and italic",
+  "keys": [
+   [
+    "text"
+   ],
+   [
+    "bold"
+   ],
+   [
+    "italic"
+   ]
+  ]
+ },
+ {
+  "id": "F012",
+  "domain": "edit",
+  "src": "Où se trouve l'outil de détourage ?",
+  "ref": "Where is the cutout tool?",
+  "keys": [
+   [
+    "where"
+   ],
+   [
+    "cutout",
+    "clipping",
+    "background removal"
+   ],
+   [
+    "tool"
+   ]
+  ]
+ },
+ {
+  "id": "F013",
+  "domain": "edit",
+  "src": "Redimensionne le calque à 800 × 600 pixels",
+  "ref": "Resize the layer to 800 x 600 pixels",
+  "keys": [
+   [
+    "resize",
+    "scale"
+   ],
+   [
+    "layer"
+   ],
+   [
+    "800"
+   ],
+   [
+    "600"
+   ]
+  ]
+ },
+ {
+  "id": "F014",
+  "domain": "edit",
+  "src": "Applique une ombre portée grise sous le bouton",
+  "ref": "Apply a gray drop shadow under the button",
+  "keys": [
+   [
+    "apply",
+    "add"
+   ],
+   [
+    "gray",
+    "grey"
+   ],
+   [
+    "drop shadow",
+    "shadow"
+   ],
+   [
+    "button"
+   ]
+  ]
+ },
+ {
+  "id": "F015",
+  "domain": "edit",
+  "src": "Supprime l'arrière-plan de la photo",
+  "ref": "Remove the background from the photo",
+  "keys": [
+   [
+    "remove",
+    "delete"
+   ],
+   [
+    "background"
+   ],
+   [
+    "photo",
+    "image"
+   ]
+  ]
+ },
+ {
+  "id": "F016",
+  "domain": "edit",
+  "src": "Annulez les deux dernières modifications",
+  "ref": "Undo the last two changes",
+  "keys": [
+   [
+    "undo",
+    "revert"
+   ],
+   [
+    "two",
+    "2"
+   ],
+   [
+    "change",
+    "edit"
+   ]
+  ]
+ },
+ {
+  "id": "F017",
+  "domain": "animation",
+  "src": "Ajoute une animation d'apparition de 2 secondes sur le titre",
+  "ref": "Add a 2 second fade in animation to the title",
+  "keys": [
+   [
+    "add"
+   ],
+   [
+    "fade in",
+    "appear"
+   ],
+   [
+    "2 second",
+    "2s"
+   ],
+   [
+    "title"
+   ]
+  ]
+ },
+ {
+  "id": "F018",
+  "domain": "animation",
+  "src": "Déplace l'image clé à 3 secondes",
+  "ref": "Move the keyframe to 3 seconds",
+  "keys": [
+   [
+    "move",
+    "shift"
+   ],
+   [
+    "keyframe",
+    "key frame"
+   ],
+   [
+    "3 second",
+    "3s"
+   ]
+  ]
+ },
+ {
+  "id": "F019",
+  "domain": "animation",
+  "src": "Fais tourner le logo de 90 degrés en 1 seconde",
+  "ref": "Rotate the logo 90 degrees in 1 second",
+  "keys": [
+   [
+    "rotate",
+    "spin"
+   ],
+   [
+    "logo"
+   ],
+   [
+    "90 degree",
+    "90°"
+   ],
+   [
+    "1 second",
+    "1s"
+   ]
+  ]
+ },
+ {
+  "id": "F020",
+  "domain": "animation",
+  "src": "Répète l'animation trois fois",
+  "ref": "Repeat the animation three times",
+  "keys": [
+   [
+    "repeat",
+    "loop"
+   ],
+   [
+    "animation"
+   ],
+   [
+    "three",
+    "3"
+   ]
+  ]
+ },
+ {
+  "id": "F021",
+  "domain": "animation",
+  "src": "Comment ralentir la transition entre les deux scènes ?",
+  "ref": "How do I slow down the transition between the two scenes?",
+  "keys": [
+   [
+    "how"
+   ],
+   [
+    "slow"
+   ],
+   [
+    "transition"
+   ],
+   [
+    "scene"
+   ]
+  ]
+ },
+ {
+  "id": "F022",
+  "domain": "animation",
+  "src": "Ajoutez un délai de 500 millisecondes avant l'entrée du texte",
+  "ref": "Add a 500 millisecond delay before the text enters",
+  "keys": [
+   [
+    "delay"
+   ],
+   [
+    "500 millisecond",
+    "500ms",
+    "500 ms"
+   ],
+   [
+    "before"
+   ],
+   [
+    "text"
+   ]
+  ]
+ },
+ {
+  "id": "F023",
+  "domain": "animation",
+  "src": "Fais glisser le bouton depuis la gauche avec un effet d'accélération",
+  "ref": "Slide the button in from the left with an ease-in effect",
+  "keys": [
+   [
+    "slide"
+   ],
+   [
+    "button"
+   ],
+   [
+    "left"
+   ],
+   [
+    "ease",
+    "acceleration"
+   ]
+  ]
+ },
+ {
+  "id": "F024",
+  "domain": "enterprise",
+  "src": "Partage le document avec l'équipe juridique en lecture seule",
+  "ref": "Share the document with the legal team as read-only",
+  "keys": [
+   [
+    "share"
+   ],
+   [
+    "document"
+   ],
+   [
+    "legal"
+   ],
+   [
+    "read-only",
+    "read only",
+    "view"
+   ]
+  ]
+ },
+ {
+  "id": "F025",
+  "domain": "enterprise",
+  "src": "Exportez le rapport trimestriel en PDF",
+  "ref": "Export the quarterly report as PDF",
+  "keys": [
+   [
+    "export"
+   ],
+   [
+    "quarterly"
+   ],
+   [
+    "report"
+   ],
+   [
+    "pdf"
+   ]
+  ]
+ },
+ {
+  "id": "F026",
+  "domain": "enterprise",
+  "src": "Retire les droits d'édition à Julien sur le dossier Contrats",
+  "ref": "Remove Julien's edit rights on the Contracts folder",
+  "keys": [
+   [
+    "remove",
+    "revoke"
+   ],
+   [
+    "edit"
+   ],
+   [
+    "julien"
+   ],
+   [
+    "contract"
+   ],
+   [
+    "folder"
+   ]
+  ]
+ },
+ {
+  "id": "F027",
+  "domain": "enterprise",
+  "src": "Qui a accès au tableau des budgets ?",
+  "ref": "Who has access to the budget spreadsheet?",
+  "keys": [
+   [
+    "who"
+   ],
+   [
+    "access",
+    "permission"
+   ],
+   [
+    "budget"
+   ]
+  ]
+ },
+ {
+  "id": "F028",
+  "domain": "enterprise",
+  "src": "Génère un rapport des ventes de septembre et envoie-le par e-mail à la direction",
+  "ref": "Generate a September sales report and email it to management",
+  "keys": [
+   [
+    "generate",
+    "create"
+   ],
+   [
+    "sales"
+   ],
+   [
+    "september"
+   ],
+   [
+    "report"
+   ],
+   [
+    "email",
+    "e-mail"
+   ],
+   [
+    "management"
+   ]
+  ]
+ },
+ {
+  "id": "F029",
+  "domain": "enterprise",
+  "src": "Où puis-je modifier les autorisations d'un utilisateur ?",
+  "ref": "Where can I change a user's permissions?",
+  "keys": [
+   [
+    "where"
+   ],
+   [
+    "change",
+    "modify",
+    "edit"
+   ],
+   [
+    "permission"
+   ],
+   [
+    "user"
+   ]
+  ]
+ },
+ {
+  "id": "F030",
+  "domain": "enterprise",
+  "src": "Archivez tous les fichiers de plus de deux ans",
+  "ref": "Archive all files older than two years",
+  "keys": [
+   [
+    "archive"
+   ],
+   [
+    "file"
+   ],
+   [
+    "two year",
+    "2 year"
+   ]
+  ]
+ }
+]
